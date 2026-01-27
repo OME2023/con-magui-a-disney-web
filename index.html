@@ -23,6 +23,7 @@
                 <span class="text-2xl font-bold gradient-text">CON MAGUI A DISNEY</span>
             </div>
             <div class="hidden md:flex gap-6 items-center">
+                <a id="inicio"></a>
                 <a href="#destinos" class="text-gray-700 hover:text-purple-600 transition">Destinos</a>
                 <a href="#servicios" class="text-gray-700 hover:text-purple-600 transition">Servicios</a>
                 <a href="#faqs" class="text-gray-700 hover:text-purple-600 transition">FAQs</a>
@@ -41,20 +42,181 @@
     </nav>
 
     <!-- Hero -->
-    <section class="pt-32 pb-20 px-4 text-center">
-        <div class="text-6xl mb-4 animate-float">✨</div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">CON MAGUI A DISNEY</h1>
-        <p class="text-xl md:text-2xl text-gray-700 mb-4">Tu Especialista en Experiencias Mágicas</p>
-        <p class="text-lg text-gray-600 mb-8">Disney • Universal • Cruceros • Visas USA • Seguros</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20planear%20mi%20viaje%20mágico" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                💬 ¡Cotiza tu Viaje Gratis!
-            </a>
-            <a href="#destinos" class="bg-white hover:bg-gray-50 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-purple-600 shadow-lg transition">
-                Ver Destinos →
-            </a>
+<section class="pt-32 pb-20 px-4 text-center">
+    <div class="text-6xl mb-4 animate-float">🏰✨</div>
+
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">
+        Tu viaje a Disney sin errores, sin estrés y sin gastar de más
+    </h1>
+
+    <p class="text-xl md:text-2xl text-gray-700 mb-4">
+        Ayudo a familias a planear Disney, Universal y USA con estrategia,
+        para que disfruten cada día sin preocupaciones.
+    </p>
+
+    <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        Si es tu primer viaje a Disney, evitá los errores más comunes que hacen
+        perder tiempo y dinero. Planeá con una especialista y viajá tranquilo.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <!-- CTA PRINCIPAL: LEAD MAGNET -->
+        <a href="#lead-magnet"
+           class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105">
+            🎁 Descargá la Guía GRATIS
+        </a>
+
+        <!-- CTA SECUNDARIO: WHATSAPP -->
+        <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20ayuda%20para%20planear%20mi%20viaje%20a%20Disney"
+           target="_blank"
+           class="bg-white hover:bg-gray-50 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-purple-600 shadow-lg transition">
+            💬 Hablar por WhatsApp
+        </a>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-6">
+        ✔️ Asesoramiento 100% gratuito · ✔️ Pagás lo mismo que solo · ✔️ Soporte personalizado
+    </p>
+</section>
+
+<!-- Lead Magnet -->
+<section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+    <div class="mb-4">
+  <label class="block text-sm font-medium text-gray-600 mb-1">
+    País
+  </label>
+  <select
+    id="codigoPais"
+    class="w-full px-4 py-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+  >
+    <option value="54">🇦🇷 Argentina (+54)</option>
+    <option value="52">🇲🇽 México (+52)</option>
+    <option value="57">🇨🇴 Colombia (+57)</option>
+    <option value="34">🇪🇸 España (+34)</option>
+    <option value="1">🇺🇸 USA (+1)</option>
+    <option value="593">🇪🇨 Ecuador (+593)</option>
+    <option value="51">🇵🇪 Perú (+51)</option>
+    <option value="56">🇨🇱 Chile (+56)</option>
+  </select>
+</div>
+
+<div class="mb-4">
+  <label class="block text-sm font-medium text-gray-600 mb-1">
+    Tu WhatsApp
+  </label>
+  <input
+    type="tel"
+    id="telefono"
+    placeholder="Ej: 11 2345 6789"
+    required
+    class="w-full px-4 py-3 border rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+  >
+  <p class="text-xs text-gray-400 mt-1">
+    Sin 0 ni 15 / solo números
+  </p>
+</div>
+<script>
+function enviarWhatsAppInternacional(nombre) {
+  const codigoPais = document.getElementById('codigoPais').value;
+  let telefono = document.getElementById('telefono').value;
+
+  telefono = telefono.replace(/\D/g, ''); // elimina espacios y símbolos
+
+  const numeroFinal = codigoPais + telefono;
+
+  const mensaje = `Hola Magui 👋
+Soy ${nombre}.
+Quiero información para planear mi viaje a Disney.`;
+
+  const url = `https://wa.me/${numeroFinal}?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, '_blank');
+}
+</script>
+
+
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- Texto -->
+        <div>
+            <h2 class="text-4xl font-bold mb-6 text-purple-700">
+                🎁 Guía GRATIS para viajar a Disney por primera vez
+            </h2>
+
+            <p class="text-lg text-gray-700 mb-4">
+                Si es tu primer viaje a Disney, esta guía puede ahorrarte
+                <strong>mucho dinero, tiempo y frustraciones</strong>.
+            </p>
+
+            <p class="text-gray-600 mb-6">
+                Descubrí los errores más comunes que cometen las familias
+                al planear su viaje y cómo evitarlos antes de comprar nada.
+            </p>
+
+            <ul class="space-y-3 text-gray-700 mb-6">
+                <li>✅ Elegir mal fechas y pagar de más</li>
+                <li>✅ Comprar entradas incorrectas</li>
+                <li>✅ Hacer filas eternas sin estrategia</li>
+                <li>✅ Elegir mal el hotel</li>
+                <li>✅ Pensar que un agente sale más caro</li>
+            </ul>
+
+            <p class="text-sm text-gray-500">
+                ✔️ Gratis · ✔️ Sin spam · ✔️ Hecha para familias reales
+            </p>
         </div>
-    </section>
+
+        <!-- Formulario -->
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h3 class="text-2xl font-bold mb-4 text-center">
+                Descargá la guía ahora
+            </h3>
+
+            <p class="text-center text-gray-600 mb-6">
+                Completá tus datos y te la envío por WhatsApp
+            </p>
+
+            <form 
+                action="https://wa.me/5493804000000"
+                method="get"
+                target="_blank"
+            >
+                <input type="hidden" name="text" value="Hola Magui 👋 Descargué la guía gratuita para viajar a Disney por primera vez y quiero empezar a planear nuestro viaje.">
+
+                <div class="mb-4">
+                    <input
+                        type="text"
+                        placeholder="Tu nombre"
+                        required
+                        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    >
+                </div>
+
+                <div class="mb-4">
+                    <input
+                        type="tel"
+                        placeholder="Tu WhatsApp"
+                        required
+                        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-full text-lg font-semibold hover:shadow-xl transition transform hover:scale-105"
+                >
+                    🎁 Quiero la guía GRATIS
+                </button>
+            </form>
+
+            <p class="text-xs text-gray-400 text-center mt-4">
+                Al enviar aceptás recibir la guía por WhatsApp.  
+                No compartimos tus datos.
+            </p>
+        </div>
+    </div>
+</section>
+
+
 
     <!-- Destinos -->
     <section id="destinos" class="py-20 px-4 bg-white">
@@ -87,6 +249,12 @@
                     
                     <p class="font-bold text-green-600 mb-4">💰 Desde USD $2,500 por persona</p>
                     <a href="https://wa.me/5493804000000?text=Quiero cotización para Orlando" target="_blank" class="block text-center bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">Cotizar Orlando</a>
+                    <p class="text-sm text-gray-600 mt-4 text-center">
+    ¿Es tu primer viaje a Disney?
+    <a href="#lead-magnet" class="text-purple-600 font-semibold underline hover:text-purple-800">
+        Descargá la guía gratuita antes de cotizar
+    </a>
+</p>
                 </div>
 
                 <!-- Cruceros -->
@@ -171,6 +339,13 @@
                     <div>✅ Guía digital completa</div>
                 </div>
             </div>
+            <div class="mt-6 text-center">
+    <a href="#lead-magnet"
+       class="inline-block bg-purple-100 text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-purple-200 transition">
+        🎁 Es mi primer viaje – Quiero la guía GRATIS
+    </a>
+</div>
+
 
             <!-- Servicio 2: Universal -->
             <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
@@ -196,6 +371,14 @@
                     <div>✅ Tips aumentar aprobación</div>
                     <div>✅ Visa familiar completa</div>
                 </div>
+                <div class="mt-6 text-center">
+    <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Necesito%20ayuda%20con%20la%20visa%20para%20USA"
+       target="_blank"
+       class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
+        📄 Quiero asesoría para la Visa
+    </a>
+</div>
+
                 <div class="mt-4 p-4 bg-orange-50 rounded-lg">
                     <p class="font-bold mb-2">Proceso Visa USA:</p>
                     <ol class="text-sm space-y-1">
@@ -275,6 +458,23 @@
                 </details>
             </div>
         </div>
+        <div class="mt-12 text-center">
+    <p class="text-lg font-semibold mb-4">
+        ¿Seguís con dudas sobre tu viaje?
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#lead-magnet"
+           class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold">
+            🎁 Descargá la guía GRATIS
+        </a>
+        <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Tengo%20dudas%20sobre%20mi%20viaje"
+           target="_blank"
+           class="bg-white border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-semibold">
+            💬 Hablar por WhatsApp
+        </a>
+    </div>
+</div>
+
     </section>
 
     <!-- Testimonios -->
@@ -299,6 +499,17 @@
                 </div>
             </div>
         </div>
+        <div class="mt-12 text-center">
+    <p class="text-lg font-semibold mb-4">
+        Vos también podés vivir un viaje así ✨
+    </p>
+    <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20planear%20mi%20viaje"
+       target="_blank"
+       class="bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl">
+        💬 Quiero planear mi viaje
+    </a>
+</div>
+
     </section>
 
     <!-- Sobre Mi -->
@@ -361,6 +572,13 @@
     <footer class="bg-gray-900 text-white py-12 px-4 text-center">
         <div class="mb-4 text-2xl font-bold gradient-text">CON MAGUI A DISNEY</div>
         <p class="text-gray-400 mb-6">Convirtiendo sueños en experiencias mágicas desde La Rioja, Argentina</p>
+        <p class="text-sm text-gray-400 mt-6">
+    ¿Es tu primer viaje a Disney?
+    <a href="#lead-magnet" class="text-purple-400 underline hover:text-purple-300">
+        Descargá la guía gratuita
+    </a>
+</p>
+
         <p class="text-sm text-gray-500">© 2026 Con Magui a Disney - Todos los derechos reservados</p>
     </footer>
 
