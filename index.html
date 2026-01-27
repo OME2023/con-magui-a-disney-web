@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Con Magui a Disney | Travel Planner Especializada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-text { background: linear-gradient(to right, #9333ea, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-purple-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                <span class="text-2xl font-bold gradient-text">CON MAGUI A DISNEY</span>
+            </div>
+            <div class="hidden md:flex gap-6 items-center">
+                <a href="#destinos" class="text-gray-700 hover:text-purple-600 transition">Destinos</a>
+                <a href="#servicios" class="text-gray-700 hover:text-purple-600 transition">Servicios</a>
+                <a href="#faqs" class="text-gray-700 hover:text-purple-600 transition">FAQs</a>
+                <a href="#contacto" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition">Contacto</a>
+            </div>
+            <button onclick="toggleMenu()" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+            <a href="#destinos" class="block py-2 text-gray-700">Destinos</a>
+            <a href="#servicios" class="block py-2 text-gray-700">Servicios</a>
+            <a href="#faqs" class="block py-2 text-gray-700">FAQs</a>
+            <a href="#contacto" class="block py-2 text-gray-700">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 px-4 text-center">
+        <div class="text-6xl mb-4 animate-float">✨</div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">CON MAGUI A DISNEY</h1>
+        <p class="text-xl md:text-2xl text-gray-700 mb-4">Tu Especialista en Experiencias Mágicas</p>
+        <p class="text-lg text-gray-600 mb-8">Disney • Universal • Cruceros • Visas USA • Seguros</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20planear%20mi%20viaje%20mágico" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                💬 ¡Cotiza tu Viaje Gratis!
+            </a>
+            <a href="#destinos" class="bg-white hover:bg-gray-50 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-purple-600 shadow-lg transition">
+                Ver Destinos →
+            </a>
+        </div>
+    </section>
+
+    <!-- Destinos -->
+    <section id="destinos" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4">Destinos que Ofrezco</h2>
+            <p class="text-center text-gray-600 mb-12">Planificación completa con todos los detalles</p>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Orlando -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2 text-purple-600">🏰 Orlando, Florida</h3>
+                    <p class="text-sm text-gray-600 mb-4">La capital mundial de los parques temáticos</p>
+                    
+                    <h4 class="font-bold mb-2">Parques Incluidos:</h4>
+                    <ul class="text-sm space-y-1 mb-4">
+                        <li>✅ Magic Kingdom - Castillo de Cenicienta</li>
+                        <li>✅ EPCOT - Viaje por el mundo</li>
+                        <li>✅ Hollywood Studios - Star Wars</li>
+                        <li>✅ Animal Kingdom - Safari y Pandora</li>
+                        <li>✅ Universal Studios - Harry Potter</li>
+                        <li>✅ Islands of Adventure</li>
+                    </ul>
+                    
+                    <h4 class="font-bold mb-2">Tips Importantes:</h4>
+                    <ul class="text-sm space-y-1 mb-4">
+                        <li>⭐ Mejor época: Sept-Nov o Ene-Mayo</li>
+                        <li>⭐ Duración: 7-10 días ideal</li>
+                        <li>⭐ Renta de auto recomendada</li>
+                    </ul>
+                    
+                    <p class="font-bold text-green-600 mb-4">💰 Desde USD $2,500 por persona</p>
+                    <a href="https://wa.me/5493804000000?text=Quiero cotización para Orlando" target="_blank" class="block text-center bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition">Cotizar Orlando</a>
+                </div>
+
+                <!-- Cruceros -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2 text-blue-600">🚢 Cruceros Caribe</h3>
+                    <p class="text-sm text-gray-600 mb-4">Todo incluido navegando</p>
+                    
+                    <h4 class="font-bold mb-2">Navieras:</h4>
+                    <ul class="text-sm space-y-1 mb-4">
+                        <li>✅ Disney Cruise Line</li>
+                        <li>✅ Royal Caribbean</li>
+                        <li>✅ Carnival</li>
+                        <li>✅ Norwegian</li>
+                    </ul>
+                    
+                    <h4 class="font-bold mb-2">Destinos:</h4>
+                    <ul class="text-sm space-y-1 mb-4">
+                        <li>🏝️ Bahamas - Nassau, Cococay</li>
+                        <li>🏝️ Caribe Oriental - St. Maarten</li>
+                        <li>🏝️ Caribe Occidental - Cozumel</li>
+                    </ul>
+                    
+                    <p class="font-bold text-green-600 mb-4">💰 Desde USD $800 (7 noches)</p>
+                    <a href="https://wa.me/5493804000000?text=Quiero info sobre cruceros" target="_blank" class="block text-center bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">Cotizar Crucero</a>
+                </div>
+
+                <!-- Miami -->
+                <div class="bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2 text-orange-600">🏖️ Miami & Playas</h3>
+                    <p class="text-sm text-gray-600 mb-4">Sol, playa y compras</p>
+                    
+                    <h4 class="font-bold mb-2">Lugares Destacados:</h4>
+                    <ul class="text-sm space-y-1 mb-4">
+                        <li>✅ South Beach</li>
+                        <li>✅ Art Deco District</li>
+                        <li>✅ Everglades (airboat)</li>
+                        <li>✅ Sawgrass Mills (outlets)</li>
+                    </ul>
+                    
+                    <p class="font-bold text-green-600 mb-4">💰 Desde USD $1,800 (3-4 días)</p>
+                    <a href="https://wa.me/5493804000000?text=Quiero cotización para Miami" target="_blank" class="block text-center bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition">Cotizar Miami</a>
+                </div>
+
+                <!-- Nueva York -->
+                <div class="bg-gradient-to-br from-gray-100 to-blue-50 rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-700">🗽 Nueva York</h3>
+                    <p class="text-sm text-gray-600 mb-4">La ciudad que nunca duerme</p>
+                    
+                    <h4 class="font-bold mb-2">Imperdibles:</h4>
+                    <ul class="text-sm space-y-1 mb-4">
+                        <li>✅ Estatua de la Libertad</li>
+                        <li>✅ Times Square</li>
+                        <li>✅ Central Park</li>
+                        <li>✅ Empire State Building</li>
+                        <li>✅ Broadway</li>
+                    </ul>
+                    
+                    <p class="font-bold text-green-600 mb-4">💰 Desde USD $2,200 (5 días)</p>
+                    <a href="https://wa.me/5493804000000?text=Quiero cotización para Nueva York" target="_blank" class="block text-center bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">Cotizar NY</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Completos -->
+    <section id="servicios" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4">Mis Servicios Completos</h2>
+            <p class="text-center text-gray-600 mb-12">Todo incluido en mi asesoramiento GRATUITO</p>
+
+            <!-- Servicio 1: Disney -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-purple-600">🏰 Planificación Viajes Disney</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>✅ Itinerario personalizado día por día</div>
+                    <div>✅ Reserva hoteles Disney o externos</div>
+                    <div>✅ Compra entradas Park Hopper/Genie+</div>
+                    <div>✅ Reservas restaurantes temáticos</div>
+                    <div>✅ Estrategias evitar filas</div>
+                    <div>✅ Lista shows imperdibles</div>
+                    <div>✅ Consejos qué llevar</div>
+                    <div>✅ Guía digital completa</div>
+                </div>
+            </div>
+
+            <!-- Servicio 2: Universal -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-blue-600">⚡ Viajes Universal Orlando</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>✅ Universal Studios + Islands of Adventure</div>
+                    <div>✅ Mundo Harry Potter (ambos parques)</div>
+                    <div>✅ Express Pass para saltar filas</div>
+                    <div>✅ Volcano Bay (parque acuático)</div>
+                    <div>✅ Mejor momento cada atracción</div>
+                    <div>✅ Combinación con Disney</div>
+                </div>
+            </div>
+
+            <!-- Servicio 3: Visas -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-orange-600">📄 Asesoría Visa USA</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>✅ Revisión completa perfil</div>
+                    <div>✅ Ayuda formulario DS-160</div>
+                    <div>✅ Lista documentos necesarios</div>
+                    <div>✅ Preparación entrevista consular</div>
+                    <div>✅ Tips aumentar aprobación</div>
+                    <div>✅ Visa familiar completa</div>
+                </div>
+                <div class="mt-4 p-4 bg-orange-50 rounded-lg">
+                    <p class="font-bold mb-2">Proceso Visa USA:</p>
+                    <ol class="text-sm space-y-1">
+                        <li>1️⃣ Completar DS-160 online</li>
+                        <li>2️⃣ Pagar tasa $185 USD</li>
+                        <li>3️⃣ Agendar entrevista embajada</li>
+                        <li>4️⃣ Preparar documentación</li>
+                        <li>5️⃣ Asistir a entrevista</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Servicio 4: Seguros -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-green-600">🛡️ Seguros Assist Card</h3>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <div>✅ Cobertura $30k - $150k USD</div>
+                    <div>✅ Asistencia médica 24/7 español</div>
+                    <div>✅ Pérdida/retraso equipaje</div>
+                    <div>✅ Cancelación viaje</div>
+                    <div>✅ Responsabilidad civil</div>
+                    <div>✅ Asistencia legal</div>
+                    <div>✅ Planes familiares</div>
+                    <div>✅ Mejor precio-cobertura</div>
+                </div>
+            </div>
+
+            <!-- Precio Servicios -->
+            <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white text-center">
+                <h3 class="text-3xl font-bold mb-4">💰 ¿Cuánto Cuestan Mis Servicios?</h3>
+                <p class="text-2xl mb-2">¡GRATIS! Así es, CERO COSTO.</p>
+                <p class="text-lg mb-6 opacity-90">Gano comisiones de proveedores. Pagas lo mismo que pagarías solo, pero con mi experiencia profesional sin cargo adicional.</p>
+                <a href="#contacto" class="bg-white text-purple-600 px-8 py-3 rounded-full font-bold hover:shadow-xl transition inline-block">Empecemos a Planear Gratis →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faqs" class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-4">
+                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
+                    <summary class="font-bold text-lg">¿Cuánto tiempo antes debo planear?</summary>
+                    <p class="mt-3 text-gray-700">Lo ideal es 6-12 meses de anticipación para Disney. Mejores tarifas, más opciones de reservas y experiencias especiales.</p>
+                </details>
+
+                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
+                    <summary class="font-bold text-lg">¿Qué incluyen tus servicios?</summary>
+                    <p class="mt-3 text-gray-700">Itinerario completo día por día, reservas vuelos/hoteles, compra entradas, reservas restaurantes, consejos personalizados, guía digital, y soporte durante tu viaje.</p>
+                </details>
+
+                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
+                    <summary class="font-bold text-lg">¿Necesito visa para USA?</summary>
+                    <p class="mt-3 text-gray-700">Sí, argentinos necesitan visa B1/B2. Incluye: DS-160, pago $185 USD, entrevista embajada. Te ayudo en cada paso.</p>
+                </details>
+
+                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
+                    <summary class="font-bold text-lg">¿Es necesario seguro de viaje?</summary>
+                    <p class="mt-3 text-gray-700">SÍ, absolutamente. Protege ante emergencias médicas (carisimas en USA), cancelaciones, pérdida equipaje. Assist Card con asistencia 24/7 español.</p>
+                </details>
+
+                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
+                    <summary class="font-bold text-lg">¿Mejor época para Disney?</summary>
+                    <p class="mt-3 text-gray-700">Enero-febrero, septiembre-noviembre, primera semana diciembre. Evita vacaciones USA, semana santa, julio y 15-31 diciembre.</p>
+                </details>
+
+                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
+                    <summary class="font-bold text-lg">¿Cuántos días para Disney World?</summary>
+                    <p class="mt-3 text-gray-700">Mínimo 5 días para 4 parques principales. Con Universal: 7-10 días ideal para disfrutar sin apuros.</p>
+                </details>
+
+                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
+                    <summary class="font-bold text-lg">¿Conviene hotel dentro de Disney?</summary>
+                    <p class="mt-3 text-gray-700">Ventajas: transporte gratis, Early Entry (30 min antes), ambiente mágico 24hs. Más caro. Externos en International Drive: más económicos, buena ubicación. Te ayudo a elegir.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Lo Que Dicen Mis Clientes</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 italic mb-4">"Magui hizo que nuestro viaje a Disney fuera PERFECTO. Cada detalle pensado, nos ahorró tiempo y dinero!"</p>
+                    <p class="font-bold text-purple-600">- Familia González</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 italic mb-4">"La asesoría para visa fue clave. Nos aprobaron a toda la familia. Súper profesional."</p>
+                    <p class="font-bold text-purple-600">- Carolina M.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 italic mb-4">"Nuestro crucero por Caribe fue increíble. Mejor cabina y excursiones perfectas!"</p>
+                    <p class="font-bold text-purple-600">- Rodrigo y Ana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mi -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <span class="text-6xl">👸</span>
+            </div>
+            <h2 class="text-4xl font-bold mb-4">¡Hola! Soy Magui Saavedra</h2>
+            <p class="text-lg text-gray-700 mb-4">Travel Planner especializada en convertir tus sueños de viaje en experiencias inolvidables. Mi pasión es que cada familia viva la magia de Disney y viaje sin preocupaciones.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">❤️</div>
+                    <div class="font-bold">+100 Familias</div>
+                </div>
+                <div class="bg-pink-50 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">⭐</div>
+                    <div class="font-bold">Certificada</div>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">🌍</div>
+                    <div class="font-bold">La Rioja, AR</div>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">🕐</div>
+                    <div class="font-bold">24/7 Soporte</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 px-4 bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">¿Lista para tu Aventura Mágica?</h2>
+            <p class="text-xl mb-12">Contáctame ahora y empecemos a planear el viaje de tus sueños</p>
+            
+            <div class="bg-white rounded-2xl p-8 text-gray-800">
+                <h3 class="text-2xl font-bold mb-6">Hablemos por WhatsApp</h3>
+                <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20planear%20mi%20viaje" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8">
+                    💬 Enviar WhatsApp
+                </a>
+
+                <div class="grid md:grid-cols-3 gap-4 mt-8">
+                    <a href="https://wa.me/5493804000000" target="_blank" class="flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
+                        <span>💬</span> WhatsApp
+                    </a>
+                    <a href="mailto:magui@ejemplo.com" class="flex items-center justify-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
+                        <span>✉️</span> Email
+                    </a>
+                    <a href="https://instagram.com/conmaguiadisney" target="_blank" class="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition">
+                        <span>📸</span> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 text-center">
+        <div class="mb-4 text-2xl font-bold gradient-text">CON MAGUI A DISNEY</div>
+        <p class="text-gray-400 mb-6">Convirtiendo sueños en experiencias mágicas desde La Rioja, Argentina</p>
+        <p class="text-sm text-gray-500">© 2026 Con Magui a Disney - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20info" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 animate-pulse">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077
