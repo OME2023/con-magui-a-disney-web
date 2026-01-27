@@ -81,59 +81,6 @@
 
 <!-- Lead Magnet -->
 <section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
-    <div class="mb-4">
-  <label class="block text-sm font-medium text-gray-600 mb-1">
-    País
-  </label>
-  <select
-    id="codigoPais"
-    class="w-full px-4 py-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-  >
-    <option value="54">🇦🇷 Argentina (+54)</option>
-    <option value="52">🇲🇽 México (+52)</option>
-    <option value="57">🇨🇴 Colombia (+57)</option>
-    <option value="34">🇪🇸 España (+34)</option>
-    <option value="1">🇺🇸 USA (+1)</option>
-    <option value="593">🇪🇨 Ecuador (+593)</option>
-    <option value="51">🇵🇪 Perú (+51)</option>
-    <option value="56">🇨🇱 Chile (+56)</option>
-  </select>
-</div>
-
-<div class="mb-4">
-  <label class="block text-sm font-medium text-gray-600 mb-1">
-    Tu WhatsApp
-  </label>
-  <input
-    type="tel"
-    id="telefono"
-    placeholder="Ej: 11 2345 6789"
-    required
-    class="w-full px-4 py-3 border rounded-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-  >
-  <p class="text-xs text-gray-400 mt-1">
-    Sin 0 ni 15 / solo números
-  </p>
-</div>
-<script>
-function enviarWhatsAppInternacional(nombre) {
-  const codigoPais = document.getElementById('codigoPais').value;
-  let telefono = document.getElementById('telefono').value;
-
-  telefono = telefono.replace(/\D/g, ''); // elimina espacios y símbolos
-
-  const numeroFinal = codigoPais + telefono;
-
-  const mensaje = `Hola Magui 👋
-Soy ${nombre}.
-Quiero información para planear mi viaje a Disney.`;
-
-  const url = `https://wa.me/${numeroFinal}?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, '_blank');
-}
-</script>
-
-
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
         <!-- Texto -->
@@ -582,6 +529,26 @@ Quiero información para planear mi viaje a Disney.`;
         <p class="text-sm text-gray-500">© 2026 Con Magui a Disney - Todos los derechos reservados</p>
     </footer>
 
-    <!-- WhatsApp Flotante -->
-    <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20info" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 animate-pulse">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077
+   <!-- WhatsApp Flotante -->
+<a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20info"
+   target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 animate-pulse">
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 32 32"
+     class="w-8 h-8 fill-current">
+  <path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/>
+</svg>
+</a>
+
+
+<script>
+function abrirWhatsApp(mensaje) {
+  const numero = "5493804000000";
+  const texto = encodeURIComponent(mensaje);
+  window.open(`https://wa.me/${numero}?text=${texto}`, "_blank");
+}
+</script>
+
+</body>
+</html>
