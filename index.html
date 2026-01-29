@@ -67,11 +67,13 @@
         </a>
 
         <!-- CTA SECUNDARIO: WHATSAPP -->
-        <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20ayuda%20para%20planear%20mi%20viaje%20a%20Disney"
-           target="_blank"
-           class="bg-white hover:bg-gray-50 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-purple-600 shadow-lg transition">
-            💬 Hablar por WhatsApp
-        </a>
+<button
+  type="button"
+  onclick="whatsappAccion('consulta')"
+  class="bg-white hover:bg-gray-50 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-purple-600 shadow-lg transition">
+  💬 Hablar por WhatsApp
+</button>
+
     </div>
 
     <p class="text-sm text-gray-500 mt-6">
@@ -236,11 +238,13 @@
                     <div>✅ Visa familiar completa</div>
                 </div>
                 <div class="mt-6 text-center">
-    <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Necesito%20ayuda%20con%20la%20visa%20para%20USA"
-       target="_blank"
-       class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
-        📄 Quiero asesoría para la Visa
-    </a>
+    <button
+  type="button"
+  onclick="whatsappAccion('visa')"
+  class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
+  📄 Quiero asesoría para la Visa
+</button>
+
 </div>
 
                 <div class="mt-4 p-4 bg-orange-50 rounded-lg">
@@ -331,11 +335,13 @@
            class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold">
             🎁 Descargá la guía GRATIS
         </a>
-        <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Tengo%20dudas%20sobre%20mi%20viaje"
-           target="_blank"
-           class="bg-white border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-semibold">
-            💬 Hablar por WhatsApp
-        </a>
+        <button
+  type="button"
+  onclick="whatsappAccion('consulta')"
+  class="bg-white border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-semibold">
+  💬 Hablar por WhatsApp
+</button>
+
     </div>
 </div>
 
@@ -367,11 +373,13 @@
     <p class="text-lg font-semibold mb-4">
         Vos también podés vivir un viaje así ✨
     </p>
-    <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20planear%20mi%20viaje"
-       target="_blank"
-       class="bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl">
-        💬 Quiero planear mi viaje
-    </a>
+    <button
+  type="button"
+  onclick="whatsappAccion('cotizacion')"
+  class="bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl">
+  💬 Quiero planear mi viaje
+</button>
+
 </div>
 
     </section>
@@ -413,15 +421,19 @@
             
             <div class="bg-white rounded-2xl p-8 text-gray-800">
                 <h3 class="text-2xl font-bold mb-6">Hablemos por WhatsApp</h3>
-                <a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20planear%20mi%20viaje" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8">
-                    💬 Enviar WhatsApp
-                </a>
+                <button
+  type="button"
+  onclick="whatsappAccion('consulta')"
+  class="inline-block bg-green-500 hover:bg-green-600 text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8">
+  💬 Enviar WhatsApp
+</button>
+
 
                 <div class="grid md:grid-cols-3 gap-4 mt-8">
                     <a href="https://wa.me/5493804000000" target="_blank" class="flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
                         <span>💬</span> WhatsApp
                     </a>
-                    <a href="mailto:magui@ejemplo.com" class="flex items-center justify-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
+                    <a href="mailto:magui.saavedra@gmail.com" class="flex items-center justify-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
                         <span>✉️</span> Email
                     </a>
                     <a href="https://instagram.com/conmaguiadisney" target="_blank" class="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition">
@@ -447,8 +459,7 @@
     </footer>
 
    <!-- WhatsApp Flotante -->
-<a href="https://wa.me/5493804000000?text=Hola%20Magui!%20Quiero%20info"
-   target="_blank"
+<a href="javascript:void(0)" onclick="abrirWhatsApp('consulta')"
    class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 animate-pulse">
 
 <svg xmlns="http://www.w3.org/2000/svg"
