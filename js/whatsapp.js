@@ -41,13 +41,37 @@ const FORM_VARIANTS = {
   subtitle: "Completá tus datos y te ayudo a elegir la mejor cobertura",
   button: "🛡️ Quiero asesoría en seguros",
   tipoConsulta: "Seguros de viaje"
-},
+  },
   cotizacion: {
     title: "Pedí tu cotización personalizada",
     subtitle: "Dejame tus datos y armamos tu propuesta",
     button: "✨ Quiero mi cotización",
     tipoConsulta: "Cotización viaje"
-  }
+  },
+    quince_info: {
+    title: "Magic Queens VIP: asesoria personalizada",
+    subtitle: "Dejame tus datos y te cuento todo sobre el programa",
+    button: "👑 Quiero info Magic Queens",
+    tipoConsulta: "Quinceaneras VIP - Info general"
+  },
+  quince_essential: {
+    title: "Magic Queen Essential",
+    subtitle: "Completá tus datos y te envio el detalle del paquete",
+    button: "👑 Quiero info Essential",
+    tipoConsulta: "Quinceaneras VIP - Essential"
+  },
+  quince_deluxe: {
+    title: "Magic Queen Deluxe",
+    subtitle: "Completá tus datos y te envio el detalle del paquete",
+    button: "✨ Quiero info Deluxe",
+    tipoConsulta: "Quinceaneras VIP - Deluxe"
+  },
+  quince_royale: {
+    title: "Magic Queen Royale",
+    subtitle: "Completá tus datos y te envio el detalle del paquete",
+    button: "🚢 Quiero info Royale",
+    tipoConsulta: "Quinceaneras VIP - Royale"
+  },
 };
 
 function setOrigenFormulario(origen = "guia") {
