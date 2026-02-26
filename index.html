@@ -1,126 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Con Magui a Disney | Travel Planner Especializada</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
-        .gradient-text { background: linear-gradient(to right, #9333ea, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .animate-float { animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Con Magui a Disney | Travel Planner Especializada</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/styles.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPrimary: "#C56F95",
+            brandSecondary: "#E1A9C2",
+            brandAccent: "#C9A24A",
+            brandDark: "#8E6D2A",
+            brandLight: "#FDF8F2",
+            brandSurface: "#F7EEF3",
+            brandText: "#4A3240"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+    :root {
+      --brand-primary: #c56f95;
+      --brand-secondary: #c9a24a;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-b from-blue-50 to-purple-50">
-    
-   <!-- Navigation -->
-<nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+<body class="bg-brandLight text-brandText">
 
-    <!-- LOGO -->
-  <div class="flex items-center">
-  <a href="#hero">
-    <img 
-      src="assets/img/logo-con-magui.png" 
-      alt="Con Magui a Disney"
-      class="h-14 md:h-16 w-auto object-contain"
-    >
-  </a>
-</div>
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <!-- LOGO -->
+      <div class="flex items-center">
+        <a href="#hero">
+          <img
+            src="assets/img/logo-con-magui.png"
+            alt="Con Magui a Disney"
+            class="h-14 md:h-16 w-auto object-contain"
+          />
+        </a>
+      </div>
 
-    <!-- DESKTOP MENU -->
-    <div class="hidden md:flex gap-6 items-center">
-      <a href="#hero" class="text-gray-700 hover:text-purple-600 transition">Inicio</a>
-      <a href="#quinceaneras" class="text-gray-700 hover:text-purple-600 transition">Quinceañeras</a>
-      <a href="#servicios" class="text-gray-700 hover:text-purple-600 transition">Servicios</a>
-      <a href="#faqs" class="text-gray-700 hover:text-purple-600 transition">FAQs</a>
-      <a href="#contacto" class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition">
-        Contacto
-      </a>
+      <!-- DESKTOP MENU -->
+      <div class="hidden md:flex gap-6 items-center">
+        <a href="#hero" class="text-gray-700 hover:text-brandPrimary transition">Inicio</a>
+        <a href="#quinceaneras" class="text-gray-700 hover:text-brandPrimary transition">Quinceañeras</a>
+        <a href="#servicios" class="text-gray-700 hover:text-brandPrimary transition">Servicios</a>
+        <a href="#faqs" class="text-gray-700 hover:text-brandPrimary transition">FAQs</a>
+        <a
+          href="#contacto"
+          class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition"
+        >
+          Contacto
+        </a>
+      </div>
+
+      <!-- MOBILE BUTTON -->
+      <button onclick="toggleMenu()" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
 
-    <!-- MOBILE BUTTON -->
-    <button onclick="toggleMenu()" class="md:hidden">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16">
-        </path>
-      </svg>
-    </button>
-  </div>
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <a href="#hero" class="block py-2 text-gray-700 hover:text-brandPrimary">Inicio</a>
+      <a href="#quinceaneras" class="block py-2 text-gray-700 hover:text-brandPrimary">Quinceañeras</a>
+      <a href="#servicios" class="block py-2 text-gray-700 hover:text-brandPrimary">Servicios</a>
+      <a href="#faqs" class="block py-2 text-gray-700 hover:text-brandPrimary">FAQs</a>
+      <a href="#contacto" class="block py-2 text-gray-700 hover:text-brandPrimary">Contacto</a>
+    </div>
+  </nav>
 
-  <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
-    <a href="#hero" class="block py-2 text-gray-700">Inicio</a>
-    <a href="#quinceaneras" class="block py-2 text-gray-700">Quinceañeras</a>
-    <a href="#servicios" class="block py-2 text-gray-700">Servicios</a>
-    <a href="#faqs" class="block py-2 text-gray-700">FAQs</a>
-    <a href="#contacto" class="block py-2 text-gray-700">Contacto</a>
-  </div>
-</nav>
-
-    <!-- Hero -->
-<section id=hero class="pt-32 pb-20 px-4 text-center">
-    <div class="text-6xl mb-4 animate-float">🏰✨</div>
+  <!-- Hero -->
+  <section id="hero" class="pt-32 pb-20 px-4 text-center">
+    
 
     <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-        Tu viaje a Disney sin errores, sin estrés y sin gastar de más
+      Tu viaje a Disney sin errores, sin estrés y sin gastar de más
     </h1>
 
     <p class="text-xl md:text-2xl text-gray-700 mb-4">
-        Ayudo a familias a planear Disney, Universal y USA con estrategia,
-        para que disfruten cada día sin preocupaciones.
+      Ayudo a familias a planear Disney, Universal y USA con estrategia, para que disfruten cada día sin preocupaciones.
     </p>
 
     <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-        Si es tu primer viaje a Disney, evitá los errores más comunes que hacen
-        perder tiempo y dinero. Planeá con una especialista y viajá tranquilo.
+      Si es tu primer viaje a Disney, evitá los errores más comunes que hacen perder tiempo y dinero. Planeá con una especialista y viajá
+      tranquilo.
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <!-- CTA PRINCIPAL: LEAD MAGNET -->
-        <a href="#lead-magnet"
-           class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105">
-            🎁 Descargá la Guía GRATIS
-        </a>
+      <a
+        href="#lead-magnet"
+        class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105"
+      >
+        🎁 Descargá la Guía GRATIS
+      </a>
 
-        <!-- CTA SECUNDARIO: WHATSAPP -->
-<button
-  type="button"
-  onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-  class="bg-white hover:bg-gray-50 text-purple-600 px-8 py-4 rounded-full text-lg font-semibold border-2 border-purple-600 shadow-lg transition">
-  💬 Hablar por WhatsApp
-</button>
-
-
+      <button
+        type="button"
+        onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+        class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
+      >
+        💬 Hablar por WhatsApp
+      </button>
     </div>
 
     <p class="text-sm text-gray-500 mt-6">
-        ✔️ Asesoramiento 100% gratuito · ✔️ Pagás lo mismo que solo · ✔️ Soporte personalizado
+      ✔️ Asesoramiento 100% gratuito · ✔️ Pagás lo mismo que solo · ✔️ Soporte personalizado
     </p>
-</section>
+  </section>
 
-<!-- Lead Magnet -->
-<section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+  <!-- Lead Magnet -->
+<section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-brandSurface to-brandLight">
   <div class="max-w-5xl mx-auto w-full">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
       <!-- Texto -->
       <div>
-        <h2 class="text-4xl font-bold mb-6 text-purple-700">
-          🎁 Guía GRATIS para viajar a Disney por primera vez
-        </h2>
+        <h2 class="text-4xl font-bold mb-6 text-brandPrimary">🎁 Guía GRATIS para viajar a Disney por primera vez</h2>
 
         <p class="text-lg text-gray-700 mb-4">
-          Si es tu primer viaje a Disney, esta guía puede ahorrarte
-          <strong>mucho dinero, tiempo y frustraciones</strong>.
+          Si es tu primer viaje a Disney, esta guía puede ahorrarte <strong>mucho dinero, tiempo y frustraciones</strong>.
         </p>
 
         <p class="text-gray-600 mb-6">
-          Descubrí los errores más comunes que cometen las familias
-          al planear su viaje y cómo evitarlos antes de comprar nada.
+          Descubrí los errores más comunes que cometen las familias al planear su viaje y cómo evitarlos antes de comprar nada.
         </p>
 
         <ul class="space-y-3 text-gray-700 mb-6">
@@ -131,404 +170,516 @@
           <li>✅ Pensar que un agente sale más caro</li>
         </ul>
 
-        <p class="text-sm text-gray-500">
-          ✔️ Gratis · ✔️ Sin spam · ✔️ Hecha para familias reales
-        </p>
+        <p class="text-sm text-gray-500">✔️ Gratis · ✔️ Sin spam · ✔️ Hecha para familias reales</p>
       </div>
 
-      <!-- Formulario -->
+      <!-- Formulario Dinámico -->
       <div class="bg-white rounded-2xl shadow-xl p-8 w-full">
-        <h3 class="text-2xl font-bold mb-4 text-center">
-          Descargá la guía ahora
-        </h3>
+        <h3 id="formTitle" class="text-2xl font-bold mb-4 text-center">Descargá la guía ahora</h3>
 
-        <p class="text-center text-gray-600 mb-6">
-          Completá tus datos y te la envío por WhatsApp
-        </p>
+        <p id="formSubtitle" class="text-center text-gray-600 mb-6">Completá tus datos y te la envío por WhatsApp</p>
 
         <form onsubmit="enviarFormularioGeneral(event)">
-            <input type="hidden" id="intencion" value="guia">
+          <input type="hidden" id="intencion" value="Guía Disney" />
+          <input type="hidden" id="origen" value="guia" />
 
-          <!-- Nombre -->
           <div class="mb-4">
             <input
               type="text"
               id="nombre"
               placeholder="Tu Nombre y Apellido"
               required
-              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-            >
+              class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary"
+            />
           </div>
 
-          <!-- TELÉFONO -->
-<div class="mb-4">
-  <label class="block text-left font-semibold mb-1">
-    WhatsApp
-  </label>
+          <div class="mb-4">
+            <label class="block text-left font-semibold mb-1">WhatsApp</label>
 
-  <div class="flex items-center gap-2">
-    
-    <select
-      id="codigoPais"
-      required
-      class="w-24 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-    >
-      <option value="+54">🇦🇷 +54</option>
-      <option value="+598">🇺🇾 +598</option>
-      <option value="+52">🇲🇽 +52</option>
-      <option value="+57">🇨🇴 +57</option>
-      <option value="+1">🇺🇸 +1</option>
-    </select>
+            <div class="flex items-center gap-2">
+              <select
+                id="codigoPais"
+                required
+                class="w-24 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary"
+              >
+                <option value="+54">🇦🇷 +54</option>
+                <option value="+598">🇺🇾 +598</option>
+                <option value="+52">🇲🇽 +52</option>
+                <option value="+57">🇨🇴 +57</option>
+                <option value="+1">🇺🇸 +1</option>
+              </select>
 
-    <input
-      type="tel"
-      id="telefono"
-      required
-      placeholder="Tu número de WhatsApp"
-      class="flex-1 min-w-0 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-    >
-  
-  </div>
-</div>
+              <input
+                type="tel"
+                id="telefono"
+                required
+                placeholder="Tu número de WhatsApp"
+                class="flex-1 min-w-0 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary"
+              />
+            </div>
+          </div>
 
           <button
             type="submit"
             id="botonFormulario"
-            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-full text-lg font-semibold hover:shadow-xl transition transform hover:scale-105"
+            class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full text-lg font-semibold hover:shadow-xl transition transform hover:scale-105"
           >
-            🎁 Quiero la guía GRATIS
+            <span id="formButtonText">🎁 Quiero la guía GRATIS</span>
           </button>
-
         </form>
 
         <p class="text-xs text-gray-400 text-center mt-4">
-          Al enviar aceptás recibir la guía por WhatsApp.  
+          Al enviar aceptás recibir info por WhatsApp.
+          <br />
           No compartimos tus datos.
         </p>
       </div>
-
     </div>
   </div>
 </section>
 
 
-    <!-- Servicios Completos -->
-    <section id="servicios" class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4">Mis Servicios Completos</h2>
-            <p class="text-center text-gray-600 mb-12">Todo incluido en mi asesoramiento GRATUITO</p>
+  <!-- Servicios -->
+  <section id="servicios" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-4">Mis Servicios Completos</h2>
+      <p class="text-center text-gray-600 mb-12">Todo incluido en mi asesoramiento GRATUITO</p>
 
-            <!-- Servicio 1: Disney -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-                <h3 class="text-2xl font-bold mb-4 text-purple-600">🏰 Planificación Viajes Disney</h3>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>✅ Itinerario personalizado día por día</div>
-                    <div>✅ Reserva hoteles Disney o externos</div>
-                    <div>✅ Compra entradas Park Hopper/Genie+</div>
-                    <div>✅ Reservas restaurantes temáticos</div>
-                    <div>✅ Estrategias evitar filas</div>
-                    <div>✅ Lista shows imperdibles</div>
-                    <div>✅ Consejos qué llevar</div>
-                    <div>✅ Guía digital completa</div>
-                </div>
-            </div>
-            <div class="mt-6 text-center">
-    <a href="#lead-magnet"
-       class="inline-block bg-purple-100 text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-purple-200 transition">
-        🎁 Es mi primer viaje – Quiero la guía GRATIS
-    </a>
-</div>
-
-
-            <!-- Servicio 2: Universal -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-                <h3 class="text-2xl font-bold mb-4 text-blue-600">⚡ Viajes Universal Orlando</h3>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>✅ Universal Studios + Islands of Adventure</div>
-                    <div>✅ Mundo Harry Potter (ambos parques)</div>
-                    <div>✅ Express Pass para saltar filas</div>
-                    <div>✅ Volcano Bay (parque acuático)</div>
-                    <div>✅ Mejor momento cada atracción</div>
-                    <div>✅ Combinación con Disney</div>
-                </div>
-            </div>
-
-            <!-- Servicio 3: Visas -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-                <h3 class="text-2xl font-bold mb-4 text-orange-600">📄 Asesoría Visa USA</h3>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>✅ Revisión completa perfil</div>
-                    <div>✅ Ayuda formulario DS-160</div>
-                    <div>✅ Lista documentos necesarios</div>
-                    <div>✅ Preparación entrevista consular</div>
-                    <div>✅ Tips aumentar aprobación</div>
-                    <div>✅ Visa familiar completa</div>
-                </div>
-                <div class="mt-6 text-center">
-    <button
-  type="button"
-  onclick="setOrigenFormulario('visa'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-
-
-  class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-600 transition">
-  📄 Quiero asesoría para la Visa
-</button>
-
-</div>
-
-                <div class="mt-4 p-4 bg-orange-50 rounded-lg">
-                    <p class="font-bold mb-2">Proceso Visa USA:</p>
-                    <ol class="text-sm space-y-1">
-                        <li>1️⃣ Completar DS-160 online</li>
-                        <li>2️⃣ Pagar tasa $185 USD</li>
-                        <li>3️⃣ Agendar entrevista embajada</li>
-                        <li>4️⃣ Preparar documentación</li>
-                        <li>5️⃣ Asistir a entrevista</li>
-                    </ol>
-                </div>
-            </div>
-
-            <!-- Servicio 4: Seguros -->
-            <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-                <h3 class="text-2xl font-bold mb-4 text-green-600">🛡️ Seguros Assist Card</h3>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>✅ Cobertura $30k - $150k USD</div>
-                    <div>✅ Asistencia médica 24/7 español</div>
-                    <div>✅ Pérdida/retraso equipaje</div>
-                    <div>✅ Cancelación viaje</div>
-                    <div>✅ Responsabilidad civil</div>
-                    <div>✅ Asistencia legal</div>
-                    <div>✅ Planes familiares</div>
-                    <div>✅ Mejor precio-cobertura</div>
-                </div>
-            </div>
-
-            <!-- Precio Servicios -->
-            <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white text-center">
-                <h3 class="text-3xl font-bold mb-4">💰 ¿Cuánto Cuestan Mis Servicios?</h3>
-                <p class="text-2xl mb-2">¡GRATIS! Así es, CERO COSTO.</p>
-                <p class="text-lg mb-6 opacity-90">Gano comisiones de proveedores. Pagas lo mismo que pagarías solo, pero con mi experiencia profesional sin cargo adicional.</p>
-                <a href="#contacto" class="bg-white text-purple-600 px-8 py-3 rounded-full font-bold hover:shadow-xl transition inline-block">Empecemos a Planear Gratis →</a>
-            </div>
+      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-brandPrimary">🏰 Planificación Viajes Disney</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>✅ Itinerario personalizado día por día</div>
+          <div>✅ Reserva hoteles Disney o externos</div>
+          <div>✅ Compra entradas Park Hopper/Genie+</div>
+          <div>✅ Reservas restaurantes temáticos</div>
+          <div>✅ Estrategias evitar filas</div>
+          <div>✅ Lista shows imperdibles</div>
+          <div>✅ Consejos qué llevar</div>
+          <div>✅ Guía digital completa</div>
         </div>
-    </section>
+      </div>
 
-    <!-- FAQs -->
-    <section id="faqs" class="py-20 px-4 bg-white">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-            
-            <div class="space-y-4">
-                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
-                    <summary class="font-bold text-lg">¿Cuánto tiempo antes debo planear?</summary>
-                    <p class="mt-3 text-gray-700">Lo ideal es 6-12 meses de anticipación para Disney. Mejores tarifas, más opciones de reservas y experiencias especiales.</p>
-                </details>
-
-                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
-                    <summary class="font-bold text-lg">¿Qué incluyen tus servicios?</summary>
-                    <p class="mt-3 text-gray-700">Itinerario completo día por día, reservas vuelos/hoteles, compra entradas, reservas restaurantes, consejos personalizados, guía digital, y soporte durante tu viaje.</p>
-                </details>
-
-                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
-                    <summary class="font-bold text-lg">¿Necesito visa para USA?</summary>
-                    <p class="mt-3 text-gray-700">Sí, argentinos necesitan visa B1/B2. Incluye: DS-160, pago $185 USD, entrevista embajada. Te ayudo en cada paso.</p>
-                </details>
-
-                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
-                    <summary class="font-bold text-lg">¿Es necesario seguro de viaje?</summary>
-                    <p class="mt-3 text-gray-700">SÍ, absolutamente. Protege ante emergencias médicas (carisimas en USA), cancelaciones, pérdida equipaje. Assist Card con asistencia 24/7 español.</p>
-                </details>
-
-                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
-                    <summary class="font-bold text-lg">¿Mejor época para Disney?</summary>
-                    <p class="mt-3 text-gray-700">Enero-febrero, septiembre-noviembre, primera semana diciembre. Evita vacaciones USA, semana santa, julio y 15-31 diciembre.</p>
-                </details>
-
-                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
-                    <summary class="font-bold text-lg">¿Cuántos días para Disney World?</summary>
-                    <p class="mt-3 text-gray-700">Mínimo 5 días para 4 parques principales. Con Universal: 7-10 días ideal para disfrutar sin apuros.</p>
-                </details>
-
-                <details class="bg-purple-50 rounded-lg p-6 cursor-pointer">
-                    <summary class="font-bold text-lg">¿Conviene hotel dentro de Disney?</summary>
-                    <p class="mt-3 text-gray-700">Ventajas: transporte gratis, Early Entry (30 min antes), ambiente mágico 24hs. Más caro. Externos en International Drive: más económicos, buena ubicación. Te ayudo a elegir.</p>
-                </details>
-            </div>
-        </div>
-        <div class="mt-12 text-center">
-    <p class="text-lg font-semibold mb-4">
-        ¿Seguís con dudas sobre tu viaje?
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#lead-magnet"
-           class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold">
-            🎁 Descargá la guía GRATIS
+      <div class="mt-6 text-center">
+        <a href="#lead-magnet" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:bg-brandLight transition">
+          🎁 Es mi primer viaje – Quiero la guía GRATIS
         </a>
-        <button
-  type="button"
-  onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+      </div>
 
+      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-brandAccent">⚡ Viajes Universal Orlando</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>✅ Universal Studios + Islands of Adventure</div>
+          <div>✅ Mundo Harry Potter (ambos parques)</div>
+          <div>✅ Express Pass para saltar filas</div>
+          <div>✅ Volcano Bay (parque acuático)</div>
+          <div>✅ Mejor momento cada atracción</div>
+          <div>✅ Combinación con Disney</div>
+        </div>
+      </div>
 
+      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-brandPrimary">📄 Asesoría Visa USA</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>✅ Revisión completa perfil</div>
+          <div>✅ Ayuda formulario DS-160</div>
+          <div>✅ Lista documentos necesarios</div>
+          <div>✅ Preparación entrevista consular</div>
+          <div>✅ Tips aumentar aprobación</div>
+          <div>✅ Visa familiar completa</div>
+        </div>
 
-  class="bg-white border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-semibold">
-  💬 Hablar por WhatsApp
-</button>
+        <div class="mt-6 text-center">
+          <button
+            type="button"
+            onclick="setOrigenFormulario('visa'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+            class="inline-block bg-brandPrimary text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
+          >
+            📄 Quiero asesoría para la Visa
+          </button>
+        </div>
 
-    </div>
+        <div class="mt-4 p-4 bg-brandSurface rounded-lg">
+          <p class="font-bold mb-2">Proceso Visa USA:</p>
+          <ol class="text-sm space-y-1">
+            <li>1️⃣ Completar DS-160 online</li>
+            <li>2️⃣ Pagar tasa $185 USD</li>
+            <li>3️⃣ Agendar entrevista embajada</li>
+            <li>4️⃣ Preparar documentación</li>
+            <li>5️⃣ Asistir a entrevista</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+        <h3 class="text-2xl font-bold mb-4 text-brandDark">🛡️ Seguros Assist Card</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>✅ Cobertura $30k - $150k USD</div>
+          <div>✅ Asistencia médica 24/7 español</div>
+          <div>✅ Pérdida/retraso equipaje</div>
+          <div>✅ Cancelación viaje</div>
+          <div>✅ Responsabilidad civil</div>
+          <div>✅ Asistencia legal</div>
+          <div>✅ Planes familiares</div>
+          <div>✅ Mejor precio-cobertura</div>
+        </div>
+        <div class="mt-6 text-center">
+  <button
+    type="button"
+    onclick="setOrigenFormulario('seguros'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+    class="inline-block bg-brandAccent text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
+  >
+    🛡️ Quiero asesoría en seguros
+  </button>
 </div>
-
-    </section>
-
-    <!-- Testimonios -->
-    <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-12">Lo Que Dicen Mis Clientes</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
-                    <p class="text-gray-700 italic mb-4">"Magui hizo que nuestro viaje a Disney fuera PERFECTO. Cada detalle pensado, nos ahorró tiempo y dinero!"</p>
-                    <p class="font-bold text-purple-600">- Familia González</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
-                    <p class="text-gray-700 italic mb-4">"La asesoría para visa fue clave. Nos aprobaron a toda la familia. Súper profesional."</p>
-                    <p class="font-bold text-purple-600">- Carolina M.</p>
-                </div>
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
-                    <p class="text-gray-700 italic mb-4">"Nuestro crucero por Caribe fue increíble. Mejor cabina y excursiones perfectas!"</p>
-                    <p class="font-bold text-purple-600">- Rodrigo y Ana</p>
-                </div>
-            </div>
-        </div>
-        <div class="mt-12 text-center">
-    <p class="text-lg font-semibold mb-4">
-        Vos también podés vivir un viaje así ✨
-    </p>
-    <button
-  type="button"
-  
-
-onclick="setOrigenFormulario('cotizacion'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-
-
-  class="bg-green-500 hover:bg-green-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl">
-  💬 Quiero planear mi viaje
-</button>
-
-</div>
-
-    </section>
-
-    <!-- Sobre Mi -->
-    <section class="py-20 px-4 bg-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span class="text-6xl">👸</span>
-            </div>
-            <h2 class="text-4xl font-bold mb-4">¡Hola! Soy Magui Saavedra</h2>
-            <p class="text-lg text-gray-700 mb-4">Travel Planner especializada en convertir tus sueños de viaje en experiencias inolvidables. Mi pasión es que cada familia viva la magia de Disney y viaje sin preocupaciones.</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-                <div class="bg-purple-50 p-4 rounded-lg">
-                    <div class="text-3xl mb-2">❤️</div>
-                    <div class="font-bold">+100 Familias</div>
-                </div>
-                <div class="bg-pink-50 p-4 rounded-lg">
-                    <div class="text-3xl mb-2">⭐</div>
-                    <div class="font-bold">Certificada</div>
-                </div>
-                <div class="bg-blue-50 p-4 rounded-lg">
-                    <div class="text-3xl mb-2">🌍</div>
-                    <div class="font-bold">La Rioja, AR</div>
-                </div>
-                <div class="bg-purple-50 p-4 rounded-lg">
-                    <div class="text-3xl mb-2">🕐</div>
-                    <div class="font-bold">24/7 Soporte</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <!-- Contacto -->
-<section id="contacto" class="py-20 px-4 bg-gradient-to-br from-purple-600 to-pink-600 text-white">
-  <div class="max-w-4xl mx-auto text-center">
-
-    <h2 class="text-4xl font-bold mb-4">
-      ¿Lista para tu Aventura Mágica?
-    </h2>
-
-    <p class="text-xl mb-12">
-      Contactame ahora y empecemos a planear el viaje de tus sueños
-    </p>
-
-    <div class="bg-white rounded-2xl p-8 text-gray-800 shadow-xl">
-
-      <h3 class="text-2xl font-bold mb-6">
-        Elegí cómo querés que te acompañe
-      </h3>
-
-      <!-- BOTÓN PRINCIPAL -->
-      <button
-        type="button"
-        onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-        class="inline-block bg-green-500 hover:bg-green-600 text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8">
-        💬 Escribirme por WhatsApp
-      </button>
-
-      <!-- BOTONES SECUNDARIOS -->
-      <div class="grid md:grid-cols-3 gap-4 mt-8">
-
-        <!-- Videollamada -->
-        <a href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true"
-           target="_blank"
-           class="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
-          <span>🎥</span> Agendar videollamada
-        </a>
-
-        <!-- Email -->
-        <a href="mailto:magui.saavedra@gmail.com"
-           class="flex items-center justify-center gap-2 bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
-          <span>✉️</span> Email
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://instagram.com/conmaguiadisney"
-           target="_blank"
-           class="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full hover:shadow-lg transition">
-          <span>📸</span> Instagram
-        </a>
 
       </div>
+
+      <div class="bg-gradient-to-r from-brandPrimary to-brandAccent rounded-2xl p-8 text-white text-center">
+        <h3 class="text-3xl font-bold mb-4">💰 ¿Cuánto Cuestan Mis Servicios?</h3>
+        <p class="text-2xl mb-2">¡GRATIS! Así es, CERO COSTO.</p>
+        <p class="text-lg mb-6 opacity-90">
+          Gano comisiones de proveedores. Pagas lo mismo que pagarías solo, pero con mi experiencia profesional sin cargo adicional.
+        </p>
+        <a href="#contacto" class="bg-white text-brandPrimary px-8 py-3 rounded-full font-bold hover:shadow-xl transition inline-block">
+          Empecemos a Planear Gratis →
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 text-center">
-        <div class="mb-4 text-2xl font-bold gradient-text">CON MAGUI A DISNEY</div>
-        <p class="text-gray-400 mb-6">Convirtiendo sueños en experiencias mágicas </p>
-        <p class="text-sm text-gray-400 mt-6">
-    ¿Es tu primer viaje a Disney?
-    <a href="#lead-magnet" class="text-purple-400 underline hover:text-purple-300">
-        Descargá la guía gratuita
-    </a>
-</p>
+  <!-- FAQs -->
+  <section id="faqs" class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
 
-        <p class="text-sm text-gray-500">© 2026 Con Magui a Disney - Todos los derechos reservados</p>
-    </footer>
+      <div class="space-y-4">
+        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
+          <summary class="font-bold text-lg">¿Cuánto tiempo antes debo planear?</summary>
+          <p class="mt-3 text-gray-700">Lo ideal es 6-12 meses de anticipación para Disney. Mejores tarifas, más opciones de reservas y experiencias especiales.</p>
+        </details>
 
-   <!-- WhatsApp Flotante -->
-<a href="javascript:void(0)" onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 animate-pulse">
+        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
+          <summary class="font-bold text-lg">¿Qué incluyen tus servicios?</summary>
+          <p class="mt-3 text-gray-700">Itinerario completo día por día, reservas vuelos/hoteles, compra entradas, reservas restaurantes, consejos personalizados, guía digital, y soporte durante tu viaje.</p>
+        </details>
 
-<svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 32 32"
-     class="w-8 h-8 fill-current">
-  <path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/>
-</svg>
-</a>
+        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
+          <summary class="font-bold text-lg">¿Necesito visa para USA?</summary>
+          <p class="mt-3 text-gray-700">Sí, argentinos necesitan visa B1/B2. Incluye: DS-160, pago $185 USD, entrevista embajada. Te ayudo en cada paso.</p>
+        </details>
 
-<script src="js/whatsapp.js"></script>
+        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
+          <summary class="font-bold text-lg">¿Es necesario seguro de viaje?</summary>
+          <p class="mt-3 text-gray-700">SÍ, absolutamente. Protege ante emergencias médicas (carisimas en USA), cancelaciones, pérdida equipaje. Assist Card con asistencia 24/7 español.</p>
+        </details>
+
+        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
+          <summary class="font-bold text-lg">¿Mejor época para Disney?</summary>
+          <p class="mt-3 text-gray-700">Enero-febrero, septiembre-noviembre, primera semana diciembre. Evita vacaciones USA, semana santa, julio y 15-31 diciembre.</p>
+        </details>
+
+        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
+          <summary class="font-bold text-lg">¿Cuántos días para Disney World?</summary>
+          <p class="mt-3 text-gray-700">Mínimo 5 días para 4 parques principales. Con Universal: 7-10 días ideal para disfrutar sin apuros.</p>
+        </details>
+
+        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
+          <summary class="font-bold text-lg">¿Conviene hotel dentro de Disney?</summary>
+          <p class="mt-3 text-gray-700">Ventajas: transporte gratis, Early Entry (30 min antes), ambiente mágico 24hs. Más caro. Externos en International Drive: más económicos, buena ubicación. Te ayudo a elegir.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-lg font-semibold mb-4">¿Seguís con dudas sobre tu viaje?</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#lead-magnet" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full font-semibold">
+          🎁 Descargá la guía GRATIS
+        </a>
+        <button
+          type="button"
+          onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="bg-white border-2 border-brandPrimary text-brandPrimary px-8 py-4 rounded-full font-semibold"
+        >
+          💬 Hablar por WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12">Lo Que Dicen Mis Clientes</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+          <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 italic mb-4">"Magui hizo que nuestro viaje a Disney fuera PERFECTO. Cada detalle pensado, nos ahorró tiempo y dinero!"</p>
+          <p class="font-bold text-brandPrimary">- Familia González</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+          <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 italic mb-4">"La asesoría para visa fue clave. Nos aprobaron a toda la familia. Súper profesional."</p>
+          <p class="font-bold text-brandPrimary">- Carolina M.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-lg">
+          <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
+          <p class="text-gray-700 italic mb-4">"Nuestro crucero por Caribe fue increíble. Mejor cabina y excursiones perfectas!"</p>
+          <p class="font-bold text-brandPrimary">- Rodrigo y Ana</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-lg font-semibold mb-4">Vos también podés vivir un viaje así ✨</p>
+      <button
+        type="button"
+        onclick="setOrigenFormulario('cotizacion'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+        class="bg-brandAccent hover:bg-brandDark text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl"
+      >
+        💬 Quiero planear mi viaje
+      </button>
+    </div>
+  </section>
+
+  <!-- Sobre Mi -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="w-32 h-32 bg-gradient-to-br from-brandPrimary to-brandAccent rounded-full mx-auto mb-6 flex items-center justify-center">
+        <span class="text-6xl">👸</span>
+      </div>
+      <h2 class="text-4xl font-bold mb-4">¡Hola! Soy Magui Saavedra</h2>
+      <p class="text-lg text-gray-700 mb-4">
+        Travel Planner especializada en convertir tus sueños de viaje en experiencias inolvidables. Mi pasión es que cada familia viva la
+        magia de Disney y viaje sin preocupaciones.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-brandSurface p-4 rounded-lg">
+          <div class="text-3xl mb-2">❤️</div>
+          <div class="font-bold">+100 Familias</div>
+        </div>
+        <div class="bg-brandSurface p-4 rounded-lg">
+          <div class="text-3xl mb-2">⭐</div>
+          <div class="font-bold">Certificada</div>
+        </div>
+        <div class="bg-brandSurface p-4 rounded-lg">
+          <div class="text-3xl mb-2">🌍</div>
+          <div class="font-bold">Argentina</div>
+        </div>
+        <div class="bg-brandSurface p-4 rounded-lg">
+          <div class="text-3xl mb-2">🕐</div>
+          <div class="font-bold">24/7 Soporte</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-20 px-4 bg-gradient-to-br from-brandPrimary to-brandAccent text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">¿Lista para tu Aventura Mágica?</h2>
+      <p class="text-xl mb-12">Contactame ahora y empecemos a planear el viaje de tus sueños</p>
+
+      <div class="bg-white rounded-2xl p-8 text-gray-800 shadow-xl">
+        <h3 class="text-2xl font-bold mb-6">Elegí cómo querés que te acompañe</h3>
+
+        <button
+          type="button"
+          onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="inline-block bg-brandAccent hover:bg-brandDark text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8"
+        >
+          💬 Escribirme por WhatsApp
+        </button>
+
+        <div class="grid md:grid-cols-3 gap-4 mt-8">
+          <a
+            href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true"
+            target="_blank"
+            class="flex items-center justify-center gap-2 bg-brandPrimary text-white px-6 py-3 rounded-full hover:bg-brandDark transition"
+          >
+            <span>🎥</span> Agendar videollamada
+          </a>
+
+          <a href="mailto:magui.saavedra@gmail.com" class="flex items-center justify-center gap-2 bg-brandDark text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+            <span>✉️</span> Email
+          </a>
+
+          <a
+            href="https://instagram.com/conmaguiadisney"
+            target="_blank"
+            class="flex items-center justify-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-3 rounded-full hover:shadow-lg transition"
+          >
+            <span>📸</span> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 px-4 text-center">
+    <div class="mb-4 text-2xl font-bold gradient-text">CON MAGUI A DISNEY</div>
+    <p class="text-gray-400 mb-6">Convirtiendo sueños en experiencias mágicas</p>
+    <p class="text-sm text-gray-400 mt-6">
+      ¿Es tu primer viaje a Disney?
+      <a href="#lead-magnet" class="text-brandSecondary underline hover:opacity-80">Descargá la guía gratuita</a>
+    </p>
+    <p class="text-sm text-gray-500">© 2026 Con Magui a Disney - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- WhatsApp Flotante -->
+  <a
+    href="javascript:void(0)"
+    onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+    class="fixed bottom-6 right-6 bg-brandAccent text-white p-4 rounded-full shadow-2xl hover:bg-brandDark transition transform hover:scale-110 z-50 animate-pulse"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8 fill-current">
+      <path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z" />
+    </svg>
+  </a>
+
+  <script src="js/whatsapp.js"></script>
+
+  <canvas id="pixieTrail" aria-hidden="true"></canvas>
+
+<style>
+  #pixieTrail {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 40;
+  }
+</style>
+
+<!-- Punteros de mouse -->
+
+<script>
+(() => {
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isTouch = window.matchMedia("(pointer: coarse)").matches;
+  if (prefersReduced || isTouch) return;
+
+  const canvas = document.getElementById("pixieTrail");
+  const ctx = canvas.getContext("2d");
+  let w = 0, h = 0;
+  let particles = [];
+  let mouse = { x: -9999, y: -9999, moving: false };
+  let lastSpawn = 0;
+
+  const colors = ["#C9A24A", "#E1A9C2", "#F6E7B8", "#FFFFFF"];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+
+  function spawnTrail(x, y, count = 4) {
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.25 + Math.random() * 1.1;
+      particles.push({
+        type: "dust",
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 0.2,
+        life: 30 + Math.random() * 30,
+        maxLife: 60,
+        size: 1.2 + Math.random() * 2.4,
+        color: colors[(Math.random() * colors.length) | 0]
+      });
+    }
+  }
+
+  function spawnBurst(x, y, count = 28) {
+    for (let i = 0; i < count; i++) {
+      const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.35;
+      const speed = 0.8 + Math.random() * 2.3;
+      particles.push({
+        type: "spark",
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 26 + Math.random() * 26,
+        maxLife: 52,
+        size: 1.6 + Math.random() * 3.2,
+        color: colors[(Math.random() * colors.length) | 0]
+      });
+    }
+  }
+
+  function drawParticle(p) {
+    const a = p.life / p.maxLife;
+    ctx.globalAlpha = Math.max(0, a) * (p.type === "spark" ? 1 : 0.85);
+    ctx.fillStyle = p.color;
+    ctx.shadowBlur = p.type === "spark" ? 14 : 10;
+    ctx.shadowColor = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function updateParticle(p) {
+    p.life -= 1;
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.type === "spark") {
+      p.vx *= 0.985;
+      p.vy *= 0.985;
+      p.vy += 0.005;
+    } else {
+      p.vx *= 0.99;
+      p.vy += 0.01;
+    }
+  }
+
+  function tick(now) {
+    ctx.clearRect(0, 0, w, h);
+
+    if (mouse.moving && now - lastSpawn > 12) {
+      spawnTrail(mouse.x, mouse.y, 4);
+      lastSpawn = now;
+    }
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      updateParticle(p);
+      if (p.life <= 0) {
+        particles.splice(i, 1);
+        continue;
+      }
+      drawParticle(p);
+    }
+
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    mouse.moving = true;
+  });
+
+  window.addEventListener("mouseleave", () => {
+    mouse.moving = false;
+  });
+
+  window.addEventListener("click", (e) => {
+    const target = e.target.closest("a, button");
+    if (target) {
+      spawnBurst(e.clientX, e.clientY, 38); // mas intenso en CTAs
+    } else {
+      spawnBurst(e.clientX, e.clientY, 22); // normal en cualquier click
+    }
+  });
+
+  window.addEventListener("resize", resize);
+  resize();
+  requestAnimationFrame(tick);
+})();
+</script>
 
 
 </body>

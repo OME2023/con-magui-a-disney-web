@@ -1,0 +1,35 @@
+:root {
+  --rosa-principal: #E88BB2;
+  --dorado-principal: #C9A227;
+  --rosa-suave: #F6D6E4;
+  --color-texto: #333333;
+}
+
+.bg-brand {
+  background-color: var(--rosa-principal);
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--rosa-principal),
+    var(--dorado-principal)
+  );
+}
+
+.text-brand {
+  color: var(--rosa-principal);
+}
+
+.btn-brand {
+  background-color: var(--rosa-principal);
+  color: white;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-brand:hover {
+  background-color: var(--dorado-principal);
+}

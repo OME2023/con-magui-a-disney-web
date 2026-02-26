@@ -1,154 +1,173 @@
 /**************************************************
-MENU HAMBURGUESA MOVIL
+ * CONFIG
  **************************************************/
-
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("hidden");
-}
-
-
-
-/**************************************************
- * CONFIGURACIÓN GENERAL
- **************************************************/
-const WHATSAPP_MAGUI = "5493834319891"; // número destino (Magui)
 const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxJELWxTDwxDQYc0YtPua6xSBc-HuWHCAKJipmZiSQ1Le_4ddJOFjTKIMyPJzkYcVb-Ag/exec";
 
+// Link de descarga directa de Drive (reemplaza FILE_ID por el tuyo)
+const GUIDE_PDF_URL = "https://drive.google.com/uc?export=download&id=1HpxjsWq9R2M-besBd7c_23XWh7YlNuV-";
 
 /**************************************************
- * MENSAJES PREDEFINIDOS
+ * MENU MOBILE
  **************************************************/
-const mensajes = {
-  guia: (nombre = "") =>
-    `Hola Magui 👋 Soy ${nombre}. Me gustaría que me envíes la guía gratuita para viajar a Disney y empezar a planear mi viaje.`,
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  if (menu) menu.classList.toggle("hidden");
+}
 
-  cotizacion:
-    "Hola Magui 👋 Quiero cotizar mi viaje. ¿Me ayudas?",
-
-  consulta:
-    "Hola Magui 👋 Tengo una consulta.",
-
-  visa:
-    "Hola Magui 👋 Necesito ayuda con la visa para USA."
+/**************************************************
+ * FORM VARIANTS
+ **************************************************/
+const FORM_VARIANTS = {
+  guia: {
+    title: "Descargá la guía ahora",
+    subtitle: "Completá tus datos y te la envío por WhatsApp",
+    button: "🎁 Quiero la guía GRATIS",
+    tipoConsulta: "Guía Disney"
+  },
+  consulta: {
+    title: "Contame tu viaje ideal",
+    subtitle: "Dejame tus datos y te escribo por WhatsApp",
+    button: "💬 Quiero asesoramiento",
+    tipoConsulta: "Consulta general"
+  },
+  visa: {
+    title: "Asesoría para Visa USA",
+    subtitle: "Completá tus datos y te ayudo con el proceso",
+    button: "📄 Quiero asesoría para Visa",
+    tipoConsulta: "Visa USA"
+  },
+  seguros: {
+  title: "Asesoría en seguros de viaje",
+  subtitle: "Completá tus datos y te ayudo a elegir la mejor cobertura",
+  button: "🛡️ Quiero asesoría en seguros",
+  tipoConsulta: "Seguros de viaje"
+},
+  cotizacion: {
+    title: "Pedí tu cotización personalizada",
+    subtitle: "Dejame tus datos y armamos tu propuesta",
+    button: "✨ Quiero mi cotización",
+    tipoConsulta: "Cotización viaje"
+  }
 };
 
-/**************************************************
- * FUNCIÓN GENÉRICA PARA ABRIR WHATSAPP
- **************************************************/
-function abrirWhatsAppDestino(mensaje) {
-  const url = `https://wa.me/${WHATSAPP_MAGUI}?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, "_blank");
+function setOrigenFormulario(origen = "guia") {
+  const cfg = FORM_VARIANTS[origen] || FORM_VARIANTS.guia;
+
+  const titleEl = document.getElementById("formTitle");
+  const subtitleEl = document.getElementById("formSubtitle");
+  const buttonTextEl = document.getElementById("formButtonText");
+  const intencionEl = document.getElementById("intencion");
+  const origenEl = document.getElementById("origen");
+
+  if (titleEl) titleEl.textContent = cfg.title;
+  if (subtitleEl) subtitleEl.textContent = cfg.subtitle;
+  if (buttonTextEl) buttonTextEl.textContent = cfg.button;
+  if (intencionEl) intencionEl.value = cfg.tipoConsulta;
+  if (origenEl) origenEl.value = origen;
 }
 
 /**************************************************
- * FORMULARIO GUÍA (con nombre + país)
+ * HELPERS
  **************************************************/
-function enviarGuiaWhatsApp(event) {
-  event.preventDefault();
-
-  const nombre = document.getElementById("nombre").value.trim();
-
-  if (!nombre) {
-    alert("Por favor ingresá tu nombre");
-    return;
-  }
-
-  abrirWhatsAppDestino(mensajes.guia(nombre));
+function getValue(id) {
+  const el = document.getElementById(id);
+  return el ? String(el.value || "").trim() : "";
 }
 
-/**************************************************
- * BOTONES SIMPLES (cotizar, consulta, visa, etc.)
- **************************************************/
-function whatsappAccion(tipo) {
-  abrirWhatsAppDestino(mensajes[tipo] || mensajes.consulta);
+function setButtonLoading(isLoading) {
+  const btn = document.getElementById("botonFormulario");
+  if (!btn) return;
+  btn.disabled = isLoading;
+  btn.classList.toggle("opacity-70", isLoading);
+  btn.classList.toggle("cursor-not-allowed", isLoading);
 }
 
-/**************************************************
- * FORMULARIO ÚNICO – ORIGEN DINÁMICO
- **************************************************/
-
-let ORIGEN_FORMULARIO = "consulta"; // valor por defecto
-
-function setOrigenFormulario(valor) {
-  const campo = document.getElementById("intencion");
-  const boton = document.getElementById("botonFormulario");
-
-  if (campo) {
-    campo.value = valor;
-  }
-
-  if (!boton) return;
-
-  const textos = {
-    guia: "🎁 Quiero la guía GRATIS",
-    cotizacion: "✈️ Quiero mi cotización",
-    visa: "🛂 Quiero asesoría para la visa",
-    consulta: "💬 Quiero hacer una consulta"
-  };
-
-  if (boton.tagName === "INPUT") {
-    boton.value = textos[valor] || textos.consulta;
+function showSuccessModal() {
+  const modal = document.getElementById("lead-modal");
+  if (modal) {
+    modal.classList.remove("hidden");
   } else {
-    boton.textContent = textos[valor] || textos.consulta;
+    alert("Recibimos tus datos. Te contactamos por WhatsApp.");
   }
 }
 
-/**************************************************
- * ENVÍO DEL FORMULARIO GENERAL
- **************************************************/
+function triggerGuideDownload() {
+  if (!GUIDE_PDF_URL) return;
+  const a = document.createElement("a");
+  a.href = GUIDE_PDF_URL;
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.click();
+}
 
+/**************************************************
+ * SUBMIT FORM
+ **************************************************/
 async function enviarFormularioGeneral(event) {
   event.preventDefault();
 
-  const nombre = document.getElementById("nombre")?.value.trim();
-  const codigoPais = document.getElementById("codigoPais")?.value;
-  const telefonoRaw = document.getElementById("telefono")?.value;
-  const campoIntencion = document.getElementById("intencion");
-
-  if (!nombre || !telefonoRaw) {
-    alert("Por favor completá tu nombre y WhatsApp");
-    return;
-  }
-
+  const nombre = getValue("nombre");
+  const codigoPais = getValue("codigoPais") || "+54";
+  const telefonoRaw = getValue("telefono");
   const telefono = telefonoRaw.replace(/\D/g, "");
-  if (telefono.length < 6) {
-    alert("Ingresá un número de WhatsApp válido");
+  const telefonoCompleto = `${codigoPais}${telefono}`;
+
+  const tipoDeConsulta = getValue("intencion") || "Consulta general";
+  const origen = getValue("origen") || "guia";
+
+  if (!nombre) {
+    alert("Por favor ingresá tu nombre.");
     return;
   }
 
-  // 🔥 Tomamos intención desde campo oculto (si existe)
-  const intencion = campoIntencion?.value || ORIGEN_FORMULARIO || "consulta";
+  if (!telefono || telefono.length < 6) {
+    alert("Ingresá un número de WhatsApp válido.");
+    return;
+  }
 
-  const mensajePorOrigen = {
-    guia: `Hola Magui 👋 Soy ${nombre}. Me gustaría que me envíes la guía gratuita para viajar a Disney.`,
-    cotizacion: `Hola Magui 👋 Soy ${nombre}. Quiero solicitar una cotización para mi viaje.`,
-    visa: `Hola Magui 👋 Soy ${nombre}. Necesito asesoramiento para la visa USA.`,
-    consulta: `Hola Magui 👋 Soy ${nombre}. Tengo una consulta.`
+  const payload = {
+    nombre: nombre,
+    whatsapp: telefonoCompleto,
+    telefono: telefonoCompleto,
+    email: "",
+    destino: "",
+    fecha_desde: "",
+    fecha_hasta: "",
+    tipo_de_consulta: tipoDeConsulta,
+    intencion: tipoDeConsulta,
+    mensaje: "",
+    origen: origen,
+    landing_version: "v1",
+    fecha: new Date().toISOString()
   };
 
-  const mensaje =
-    mensajePorOrigen[intencion] || mensajePorOrigen.consulta;
+  setButtonLoading(true);
 
-  // 🔥 1️⃣ GUARDAR EN GOOGLE SHEET
   try {
+    // no-cors para evitar preflight/cors en Apps Script
     await fetch(WEBAPP_URL, {
       method: "POST",
       mode: "no-cors",
-      body: JSON.stringify({
-        nombre: nombre,
-        telefono: codigoPais + telefono,
-        intencion: intencion,
-        landing_version: "v1",
-        fecha: new Date().toISOString()
-      })
+      body: JSON.stringify(payload)
     });
-  } catch (error) {
-    console.error("Error guardando en Sheet:", error);
-  }
 
-  // 🔥 2️⃣ ABRIR WHATSAPP
-  const numeroFinal = WHATSAPP_MAGUI;
-  const url = `https://wa.me/${numeroFinal}?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, "_blank");
+    showSuccessModal();
+
+    if (origen === "guia") {
+      triggerGuideDownload();
+    }
+
+    const form = event.target;
+    if (form && typeof form.reset === "function") form.reset();
+    setOrigenFormulario(origen);
+  } catch (err) {
+    console.error("Error enviando formulario:", err);
+    alert("No pudimos enviar tus datos. Intentá nuevamente.");
+  } finally {
+    setButtonLoading(false);
+  }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  setOrigenFormulario("guia");
+});

@@ -1,0 +1,28 @@
+:root {
+  --brand-primary: #C06CF2;
+  --brand-secondary: #F6B4D8;
+  --brand-dark: #5A2C82;
+  --brand-light: #FFF4FA;
+}
+
+.bg-brand {
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+}
+
+.text-brand {
+  color: var(--brand-dark);
+}
+
+.btn-brand {
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+  color: white;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-brand:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
