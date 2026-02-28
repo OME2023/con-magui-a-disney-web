@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiénes Somos | Con Magui a Disney</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPrimary: "#C56F95",
+            brandSecondary: "#E1A9C2",
+            brandAccent: "#C9A24A",
+            brandDark: "#8E6D2A",
+            brandLight: "#FDF8F2",
+            brandSurface: "#F7EEF3",
+            brandText: "#4A3240"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+    body { font-family: "Poppins", sans-serif; }
+    .gradient-text {
+      background: linear-gradient(to right, #c56f95, #c9a24a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-title-fix {
+  line-height: 1.18 !important;
+  padding-bottom: 0.18em;
+  margin-bottom: 1.25rem;
+}
+
+#cert-disney, #cert-universal, #cert-partners {
+  scroll-margin-top: 110px;
+}
+
+  </style>
+</head>
+<body class="bg-brandLight text-brandText">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="index.html">
+          <img src="assets/img/logo-con-magui.png" alt="Con Magui a Disney" class="h-14 md:h-20 w-auto object-contain" />
+        </a>
+      </div>
+
+      <div class="hidden md:flex gap-6 items-center">
+        <a href="index.html#hero" class="text-gray-700 hover:text-brandPrimary transition">Inicio</a>
+        <a href="index.html#quinceaneras" class="text-gray-700 hover:text-brandPrimary transition">Quinceañeras</a>
+        <a href="index.html#servicios" class="text-gray-700 hover:text-brandPrimary transition">Servicios</a>
+        <a href="index.html#faqs" class="text-gray-700 hover:text-brandPrimary transition">FAQs</a>
+        <a href="trabaja-con-nosotros.html" class="text-gray-700 hover:text-brandPrimary transition">Trabajá con Nosotros</a>
+        <a href="index.html#contacto" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition">
+          Contacto
+        </a>
+      </div>
+
+      <button onclick="toggleMenu()" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <a href="index.html#hero" class="block py-2 text-gray-700 hover:text-brandPrimary">Inicio</a>
+      <a href="index.html#quinceaneras" class="block py-2 text-gray-700 hover:text-brandPrimary">Quinceañeras</a>
+      <a href="index.html#servicios" class="block py-2 text-gray-700 hover:text-brandPrimary">Servicios</a>
+      <a href="index.html#faqs" class="block py-2 text-gray-700 hover:text-brandPrimary">FAQs</a>
+      <a href="trabaja-con-nosotros.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Trabajá con Nosotros</a>
+      <a href="index.html#contacto" class="block py-2 text-gray-700 hover:text-brandPrimary">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="inline-block text-sm font-semibold bg-brandSurface text-brandPrimary px-4 py-2 rounded-full mb-8">
+  QUIÉNES SOMOS
+</p>
+
+<h1 class="text-4xl md:text-6xl font-bold gradient-text hero-title-fix">
+  Con Magui a Disney
+</h1>
+
+
+
+      <p class="text-xl text-gray-700">
+        Planificación estratégica, acompañamiento real y experiencias inolvidables para familias y quinceañeras.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sobre mi -->
+<section class="pb-16 px-4 mt-10">
+  <div class="max-w-5xl mx-auto rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden">
+    <img
+      src="assets/img/quienes/fondo.webp"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover blur-sm opacity-35 scale-105"
+      loading="lazy"
+    />
+
+    <!-- capa de lectura -->
+    <div class="absolute inset-0 bg-white/78"></div>
+
+    <!-- contenido -->
+    <div class="relative z-10">
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">💫 Sobre mí</h2>
+
+      <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
+        <p><strong>Fundadora de Con Magui a Disney</strong><br><strong>Creadora de Magic Queens</strong></p>
+
+        <p>En 2016 comenzó algo que no sabía que se convertiría en mi misión.</p>
+        <p>Todo empezó ayudando a amigos, familiares y conocidos a organizar sus viajes a Disney. Me apasionaba investigar, planificar, entender cada detalle. Ver sus fotos después del viaje me hacía sentir parte de algo mucho más grande.</p>
+        <p>Pero la verdadera historia empezó antes.</p>
+
+        <p>Mi primer viaje a Disney como mamá no fue perfecto.</p>
+        <p>Viajé con mi hija de 3 años, llena de ilusión, pero sin asesoramiento, sin estrategia, sin acompañamiento experto.</p>
+        <p>Cometimos errores. Perdimos tiempo valioso. Tomamos decisiones improvisadas. Y muchas veces sentí que no estábamos viviendo el viaje que habíamos soñado.</p>
+
+        <p><strong>Disney no debería sentirse así.</strong><br>Un viaje tan importante no debería depender del azar.</p>
+
+        <p>Esa experiencia fue el punto de inflexión.</p>
+        <p>Decidí que ninguna familia que viajara conmigo volvería a sentir esa incertidumbre.</p>
+        <p>Desde entonces me formé, me capacité, trabajé con proveedores oficiales y convertí esa pasión en profesión.</p>
+
+        <p><strong>Con Magui a Disney nació con un propósito claro:</strong><br>Diseñar viajes estratégicos para que las familias vivan magia real, sin errores ni improvisación.</p>
+        <p>Con planificación. Con acompañamiento. Con conocimiento profundo del destino.</p>
+
+        <p>A lo largo de los años acompañé a cientos de familias en sus viajes a Disney y Universal.</p>
+        <p>Y fue escuchando a muchas mamás que nació una nueva idea: ¿Qué pasaba con el viaje de 15?</p>
+        <p><strong>Así nació Magic Queens.</strong></p>
+        <p>Una experiencia boutique, exclusiva y cuidadosamente diseñada para quinceañeras y sus familias.</p>
+        <p>Magic Queens no es algo separado de Con Magui a Disney. Es su evolución. Es la versión más curada, más selectiva y más estratégica de todo lo aprendido desde 2016.</p>
+
+        <p><strong>Hoy mi misión sigue siendo la misma:</strong><br>Que cada familia viva Disney como lo soñó, pero con la tranquilidad de estar acompañada por alguien que ya recorrió el camino antes.</p>
+
+        <p><strong>Porque la magia existe. Pero cuando se planifica bien, se transforma en recuerdos que duran para siempre.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificaciones -->
+  <section class="pb-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Certificaciones y Alianzas</h2>
+        <p class="text-lg text-gray-700">Trabajamos con proveedores oficiales y marcas líderes del sector.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <h3 class="text-xl font-bold text-brandPrimary mb-2">Disney</h3>
+          <p class="text-gray-600 mb-4">Agente certificada y habilitada para asesoramiento Disney.</p>
+          <a href="#cert-disney" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+  Ver certificado
+</a>
+        </article>
+
+        <article class="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <h3 class="text-xl font-bold text-brandPrimary mb-2">Universal</h3>
+          <p class="text-gray-600 mb-4">Capacitación oficial en planificación de parques y experiencias Universal.</p>
+          <a href="#cert-universal" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+  Ver certificado
+</a>
+        </article>
+
+        <article class="bg-white rounded-2xl p-6 shadow-lg text-center">
+          <h3 class="text-xl font-bold text-brandPrimary mb-2">Assist Card y Partners</h3>
+          <p class="text-gray-600 mb-4">Alianzas activas con proveedores estratégicos para cada viaje.</p>
+          <a href="#cert-partners" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+  Ver respaldos
+</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cert-disney" class="max-w-6xl mx-auto px-4 py-10">
+  <h3 class="text-2xl font-bold text-brandPrimary mb-6">Disney</h3>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Disneyland.webp -->
+     <img src="assets/img/cert/Disneyland.webp" alt="">
+    <!-- Disney Aulani.webp -->
+     <img src="assets/img/cert/Aulani.webp" alt="">
+    <!-- WDW knowledge.webp -->
+     <img src="assets/img/cert/WDW knowledge.webp" alt="">
+    <!-- Aulani.webp -->
+     <img src="assets/img/cert/Aulani.webp" alt="">
+    <!-- Knowledge 2026.webp -->
+     <img src="assets/img/cert/Knowledge 2026.webp" alt="">
+     <img src="assets/img/cert/DCL 2023.webp" alt="">
+     <img src="assets/img/cert/Nat Geo 2023.webp" alt="">
+      <img src="assets/img/cert/2025 CDK Annual Assessment Certificate - US & CA.webp" alt="">
+  </div>
+</section>
+
+<section id="cert-universal" class="max-w-6xl mx-auto px-4 py-10">
+  <h3 class="text-2xl font-bold text-brandPrimary mb-6">Universal</h3>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- universal.webp -->
+     <img src="assets/img/cert/universal.webp" alt="">
+  </div>
+</section>
+
+<!-- 
+<section id="cert-partners" class="max-w-6xl mx-auto px-4 py-10">
+  <h3 class="text-2xl font-bold text-brandPrimary mb-6">Assist Card y Partners</h3>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+  </div>
+</section>
+  -->
+
+
+  <!-- CTA -->
+  <section class="pb-20 px-4">
+    <div class="max-w-4xl mx-auto bg-gradient-to-r from-brandPrimary to-brandAccent rounded-2xl p-8 text-white text-center">
+      <h3 class="text-3xl font-bold mb-4">¿Querés que planifiquemos tu viaje?</h3>
+      <p class="text-lg mb-6 opacity-95">Estoy para ayudarte a hacerlo bien desde el primer paso.</p>
+      <a href="index.html#lead-magnet" class="bg-white text-brandPrimary px-8 py-3 rounded-full font-bold hover:shadow-xl transition inline-block">
+        Empezar ahora
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-12 px-4 text-center">
+    <div class="mb-4 text-2xl font-bold">CON MAGUI A DISNEY</div>
+    <p class="text-gray-400 mb-6">Convirtiendo sueños en experiencias mágicas</p>
+    <p class="text-sm text-gray-500">© 2026 Con Magui a Disney - Todos los derechos reservados</p>
+  </footer>
+
+  <canvas id="pixieTrail" aria-hidden="true"></canvas>
+  <style>
+    #pixieTrail { position: fixed; inset: 0; pointer-events: none; z-index: 40; }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("hidden");
+    }
+
+    (() => {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const isTouch = window.matchMedia("(pointer: coarse)").matches;
+      if (prefersReduced || isTouch) return;
+
+      const canvas = document.getElementById("pixieTrail");
+      const ctx = canvas.getContext("2d");
+      let w = 0, h = 0;
+      let particles = [];
+      let mouse = { x: -9999, y: -9999, moving: false };
+      let lastSpawn = 0;
+      const colors = ["#C9A24A", "#E1A9C2", "#F6E7B8", "#FFFFFF"];
+
+      function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+
+      function spawnTrail(x, y, count = 4) {
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2;
+          const speed = 0.25 + Math.random() * 1.1;
+          particles.push({
+            type: "dust", x, y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed - 0.2,
+            life: 30 + Math.random() * 30,
+            maxLife: 60,
+            size: 1.2 + Math.random() * 2.4,
+            color: colors[(Math.random() * colors.length) | 0]
+          });
+        }
+      }
+
+      function spawnBurst(x, y, count = 28) {
+        for (let i = 0; i < count; i++) {
+          const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.35;
+          const speed = 0.8 + Math.random() * 2.3;
+          particles.push({
+            type: "spark", x, y,
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            life: 26 + Math.random() * 26,
+            maxLife: 52,
+            size: 1.6 + Math.random() * 3.2,
+            color: colors[(Math.random() * colors.length) | 0]
+          });
+        }
+      }
+
+      function drawParticle(p) {
+        const a = p.life / p.maxLife;
+        ctx.globalAlpha = Math.max(0, a) * (p.type === "spark" ? 1 : 0.85);
+        ctx.fillStyle = p.color;
+        ctx.shadowBlur = p.type === "spark" ? 14 : 10;
+        ctx.shadowColor = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      function updateParticle(p) {
+        p.life -= 1;
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.type === "spark") {
+          p.vx *= 0.985; p.vy *= 0.985; p.vy += 0.005;
+        } else {
+          p.vx *= 0.99; p.vy += 0.01;
+        }
+      }
+
+      function tick(now) {
+        ctx.clearRect(0, 0, w, h);
+        if (mouse.moving && now - lastSpawn > 12) {
+          spawnTrail(mouse.x, mouse.y, 4); lastSpawn = now;
+        }
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const p = particles[i];
+          updateParticle(p);
+          if (p.life <= 0) { particles.splice(i, 1); continue; }
+          drawParticle(p);
+        }
+        ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+        requestAnimationFrame(tick);
+      }
+
+      window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.moving = true; });
+      window.addEventListener("mouseleave", () => { mouse.moving = false; });
+      window.addEventListener("click", (e) => {
+        const target = e.target.closest("a, button");
+        if (target) spawnBurst(e.clientX, e.clientY, 38);
+        else spawnBurst(e.clientX, e.clientY, 22);
+      });
+
+      window.addEventListener("resize", resize);
+      resize();
+      requestAnimationFrame(tick);
+    })();
+  </script>
+</body>
+</html>
