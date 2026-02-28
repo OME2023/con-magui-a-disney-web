@@ -70,7 +70,7 @@
           <img
             src="assets/img/logo-con-magui.png"
             alt="Con Magui a Disney"
-            class="h-14 md:h-16 w-auto object-contain"
+            class="h-14 md:h-20 w-auto object-contain"
           />
         </a>
       </div>
@@ -108,43 +108,52 @@
   </nav>
 
   <!-- Hero -->
-  <section id="hero" class="pt-32 pb-20 px-4 text-center">
-    
+<section id="hero" class="pt-32 pb-20 px-4 text-center">
+  <div class="max-w-4xl mx-auto">
+    <img
+      src="assets/img/ppal/fireworks16x9.webp"
+      alt="Castillo Disney con fuegos artificiales"
+      class="w-full rounded-2xl shadow-xl mb-8 object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
 
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-      Tu viaje a Disney sin errores, sin estrés y sin gastar de más
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text leading-tight">
+      <span class="block">Tu viaje a Disney sin errores,</span>
+      <span class="block">sin estrés y sin gastar de más</span>
     </h1>
+  </div>
 
-    <p class="text-xl md:text-2xl text-gray-700 mb-4">
-      Ayudo a familias a planear Disney, Universal y USA con estrategia, para que disfruten cada día sin preocupaciones.
-    </p>
+  <p class="text-xl md:text-2xl text-gray-700 mb-4">
+    Ayudo a familias a planear Disney, Universal y USA con estrategia, para que disfruten cada día sin preocupaciones.
+  </p>
 
-    <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-      Si es tu primer viaje a Disney, evitá los errores más comunes que hacen perder tiempo y dinero. Planeá con una especialista y viajá
-      tranquilo.
-    </p>
+  <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+    Si es tu primer viaje a Disney, evitá los errores más comunes que hacen perder tiempo y dinero. Planeá con una especialista y viajá
+    tranquilo.
+  </p>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a
-        href="#lead-magnet"
-        class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105"
-      >
-        🎁 Descargá la Guía GRATIS
-      </a>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a
+      href="#lead-magnet"
+      class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105"
+    >
+      🎁 Descargá la Guía GRATIS
+    </a>
 
-      <button
-        type="button"
-        onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-        class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
-      >
-        💬 Hablar por WhatsApp
-      </button>
-    </div>
+    <button
+      type="button"
+      onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+      class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
+    >
+      💬 Hablar por WhatsApp
+    </button>
+  </div>
 
-    <p class="text-sm text-gray-500 mt-6">
-      ✔️ Asesoramiento 100% gratuito · ✔️ Pagás lo mismo que solo · ✔️ Soporte personalizado
-    </p>
-  </section>
+  <p class="text-sm text-gray-500 mt-6">
+    ✔️ Asesoramiento 100% gratuito · ✔️ Pagás lo mismo que solo · ✔️ Soporte personalizado
+  </p>
+</section>
 
   <!-- Lead Magnet -->
 <section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-brandSurface to-brandLight">
@@ -335,112 +344,143 @@
 </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-20 px-4">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-4">Mis Servicios Completos</h2>
-      <p class="text-center text-gray-600 mb-12">Todo incluido en mi asesoramiento GRATUITO</p>
+<section id="servicios" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-4">Mis Servicios Completos</h2>
+    <p class="text-center text-gray-600 mb-12">Todo incluido en mi asesoramiento GRATUITO</p>
 
-      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-        <h3 class="text-2xl font-bold mb-4 text-brandPrimary">🏰 Planificación Viajes Disney</h3>
-        <div class="grid md:grid-cols-2 gap-4 text-sm">
-          <div>✅ Itinerario personalizado día por día</div>
-          <div>✅ Reserva hoteles Disney o externos</div>
-          <div>✅ Compra entradas Park Hopper/Genie+</div>
-          <div>✅ Reservas restaurantes temáticos</div>
-          <div>✅ Estrategias evitar filas</div>
-          <div>✅ Lista shows imperdibles</div>
-          <div>✅ Consejos qué llevar</div>
-          <div>✅ Guía digital completa</div>
-        </div>
+    <!-- Disney -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+      <img
+        src="assets/img/ppal/disney.webp"
+        alt="Planificación viajes Disney"
+        class="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
+        loading="lazy"
+      />
+      <h3 class="text-2xl font-bold mb-6 text-brandPrimary text-center">🏰 Planificación Viajes Disney</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>✅ Itinerario personalizado día por día</div>
+        <div>✅ Reserva hoteles Disney o externos</div>
+        <div>✅ Compra entradas Park Hopper/Genie+</div>
+        <div>✅ Reservas restaurantes temáticos</div>
+        <div>✅ Estrategias evitar filas</div>
+        <div>✅ Lista shows imperdibles</div>
+        <div>✅ Consejos qué llevar</div>
+        <div>✅ Guía digital completa</div>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center mb-8">
+      <a href="#lead-magnet" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:bg-brandLight transition">
+        🎁 Es mi primer viaje – Quiero la guía GRATIS
+      </a>
+    </div>
+
+    <!-- Universal -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+      <img
+        src="assets/img/ppal/universal.webp"
+        alt="Viajes Universal Orlando"
+        class="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
+        loading="lazy"
+      />
+      <h3 class="text-2xl font-bold mb-6 text-brandAccent text-center">⚡ Viajes Universal Orlando</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>✅ Universal Studios + Islands of Adventure</div>
+        <div>✅ Mundo Harry Potter (ambos parques)</div>
+        <div>✅ Express Pass para saltar filas</div>
+        <div>✅ Volcano Bay (parque acuático)</div>
+        <div>✅ Mejor momento cada atracción</div>
+        <div>✅ Combinación con Disney</div>
+      </div>
+    </div>
+
+    <!-- Visa -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+      <img
+        src="assets/img/ppal/visa.webp"
+        alt="Asesoría Visa USA"
+        class="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
+        loading="lazy"
+      />
+      <h3 class="text-2xl font-bold mb-6 text-brandPrimary text-center">📄 Asesoría Visa USA</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>✅ Revisión completa perfil</div>
+        <div>✅ Ayuda formulario DS-160</div>
+        <div>✅ Lista documentos necesarios</div>
+        <div>✅ Preparación entrevista consular</div>
+        <div>✅ Tips aumentar aprobación</div>
+        <div>✅ Visa familiar completa</div>
       </div>
 
       <div class="mt-6 text-center">
-        <a href="#lead-magnet" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:bg-brandLight transition">
-          🎁 Es mi primer viaje – Quiero la guía GRATIS
-        </a>
+        <button
+          type="button"
+          onclick="setOrigenFormulario('visa'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="inline-block bg-brandPrimary text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
+        >
+          📄 Quiero asesoría para la Visa
+        </button>
       </div>
 
-      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-        <h3 class="text-2xl font-bold mb-4 text-brandAccent">⚡ Viajes Universal Orlando</h3>
-        <div class="grid md:grid-cols-2 gap-4 text-sm">
-          <div>✅ Universal Studios + Islands of Adventure</div>
-          <div>✅ Mundo Harry Potter (ambos parques)</div>
-          <div>✅ Express Pass para saltar filas</div>
-          <div>✅ Volcano Bay (parque acuático)</div>
-          <div>✅ Mejor momento cada atracción</div>
-          <div>✅ Combinación con Disney</div>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-        <h3 class="text-2xl font-bold mb-4 text-brandPrimary">📄 Asesoría Visa USA</h3>
-        <div class="grid md:grid-cols-2 gap-4 text-sm">
-          <div>✅ Revisión completa perfil</div>
-          <div>✅ Ayuda formulario DS-160</div>
-          <div>✅ Lista documentos necesarios</div>
-          <div>✅ Preparación entrevista consular</div>
-          <div>✅ Tips aumentar aprobación</div>
-          <div>✅ Visa familiar completa</div>
-        </div>
-
-        <div class="mt-6 text-center">
-          <button
-            type="button"
-            onclick="setOrigenFormulario('visa'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-            class="inline-block bg-brandPrimary text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
-          >
-            📄 Quiero asesoría para la Visa
-          </button>
-        </div>
-
-        <div class="mt-4 p-4 bg-brandSurface rounded-lg">
-          <p class="font-bold mb-2">Proceso Visa USA:</p>
-          <ol class="text-sm space-y-1">
-            <li>1️⃣ Completar DS-160 online</li>
-            <li>2️⃣ Pagar tasa $185 USD</li>
-            <li>3️⃣ Agendar entrevista embajada</li>
-            <li>4️⃣ Preparar documentación</li>
-            <li>5️⃣ Asistir a entrevista</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
-        <h3 class="text-2xl font-bold mb-4 text-brandDark">🛡️ Seguros Assist Card</h3>
-        <div class="grid md:grid-cols-2 gap-4 text-sm">
-          <div>✅ Cobertura $30k - $150k USD</div>
-          <div>✅ Asistencia médica 24/7 español</div>
-          <div>✅ Pérdida/retraso equipaje</div>
-          <div>✅ Cancelación viaje</div>
-          <div>✅ Responsabilidad civil</div>
-          <div>✅ Asistencia legal</div>
-          <div>✅ Planes familiares</div>
-          <div>✅ Mejor precio-cobertura</div>
-        </div>
-        <div class="mt-6 text-center">
-  <button
-    type="button"
-    onclick="setOrigenFormulario('seguros'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-    class="inline-block bg-brandAccent text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
-  >
-    🛡️ Quiero asesoría en seguros
-  </button>
-</div>
-
-      </div>
-
-      <div class="bg-gradient-to-r from-brandPrimary to-brandAccent rounded-2xl p-8 text-white text-center">
-        <h3 class="text-3xl font-bold mb-4">💰 ¿Cuánto Cuestan Mis Servicios?</h3>
-        <p class="text-2xl mb-2">¡GRATIS! Así es, CERO COSTO.</p>
-        <p class="text-lg mb-6 opacity-90">
-          Gano comisiones de proveedores. Pagas lo mismo que pagarías solo, pero con mi experiencia profesional sin cargo adicional.
-        </p>
-        <a href="#contacto" class="bg-white text-brandPrimary px-8 py-3 rounded-full font-bold hover:shadow-xl transition inline-block">
-          Empecemos a Planear Gratis →
-        </a>
+      <div class="mt-4 p-4 bg-brandSurface rounded-lg">
+        <p class="font-bold mb-2">Proceso Visa USA:</p>
+        <ol class="text-sm space-y-1">
+          <li>1️⃣ Completar DS-160 online</li>
+          <li>2️⃣ Pagar tasa $185 USD</li>
+          <li>3️⃣ Agendar entrevista embajada</li>
+          <li>4️⃣ Preparar documentación</li>
+          <li>5️⃣ Asistir a entrevista</li>
+        </ol>
       </div>
     </div>
-  </section>
+
+    <!-- Seguros -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+      <div class="w-full h-56 md:h-64 rounded-xl mb-6 bg-black flex items-center justify-center overflow-hidden">
+        <img
+          src="assets/img/ppal/assistcard.webp"
+          alt="Assist Card"
+          class="w-full h-full object-contain p-4"
+          loading="lazy"
+        />
+      </div>
+      <h3 class="text-2xl font-bold mb-6 text-brandDark text-center">🛡️ Seguros Assist Card</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>✅ Cobertura $30k - $150k USD</div>
+        <div>✅ Asistencia médica 24/7 español</div>
+        <div>✅ Pérdida/retraso equipaje</div>
+        <div>✅ Cancelación viaje</div>
+        <div>✅ Responsabilidad civil</div>
+        <div>✅ Asistencia legal</div>
+        <div>✅ Planes familiares</div>
+        <div>✅ Mejor precio-cobertura</div>
+      </div>
+
+      <div class="mt-6 text-center">
+        <button
+          type="button"
+          onclick="setOrigenFormulario('seguros'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="inline-block bg-brandAccent text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
+        >
+          🛡️ Quiero asesoría en seguros
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-brandPrimary to-brandAccent rounded-2xl p-8 text-white text-center">
+      <h3 class="text-3xl font-bold mb-4">💰 ¿Cuánto Cuestan Mis Servicios?</h3>
+      <p class="text-2xl mb-2">¡GRATIS! Así es, CERO COSTO.</p>
+      <p class="text-lg mb-6 opacity-90">
+        Gano comisiones de proveedores. Pagas lo mismo que pagarías solo, pero con mi experiencia profesional sin cargo adicional.
+      </p>
+      <a href="#contacto" class="bg-white text-brandPrimary px-8 py-3 rounded-full font-bold hover:shadow-xl transition inline-block">
+        Empecemos a Planear Gratis →
+      </a>
+    </div>
+  </div>
+</section>
+
 
   <!-- FAQs -->
   <section id="faqs" class="py-20 px-4 bg-white">
