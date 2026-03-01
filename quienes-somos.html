@@ -6,6 +6,10 @@
   <title>Quiénes Somos | Con Magui a Disney</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- estilos compartidos -->
+  <link rel="stylesheet" href="styles/styles.css" />
+
   <script>
     tailwind.config = {
       theme: {
@@ -26,24 +30,17 @@
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
     body { font-family: "Poppins", sans-serif; }
+
     .gradient-text {
       background: linear-gradient(to right, #c56f95, #c9a24a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero-title-fix {
-  line-height: 1.18 !important;
-  padding-bottom: 0.18em;
-  margin-bottom: 1.25rem;
-}
-
-#cert-disney, #cert-universal, #cert-partners {
-  scroll-margin-top: 110px;
-}
-
   </style>
 </head>
+
 <body class="bg-brandLight text-brandText">
 
   <!-- Navigation -->
@@ -66,7 +63,7 @@
         </a>
       </div>
 
-      <button onclick="toggleMenu()" class="md:hidden">
+      <button onclick="toggleMenu()" class="md:hidden" aria-label="Abrir menú">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -84,17 +81,15 @@
   </nav>
 
   <!-- Hero -->
-  <section class="pt-32 pb-12 px-4 text-center">
+  <section class="pt-40 md:pt-44 pb-12 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <p class="inline-block text-sm font-semibold bg-brandSurface text-brandPrimary px-4 py-2 rounded-full mb-8">
-  QUIÉNES SOMOS
-</p>
+        QUIÉNES SOMOS
+      </p>
 
-<h1 class="text-4xl md:text-6xl font-bold gradient-text hero-title-fix">
-  Con Magui a Disney
-</h1>
-
-
+      <h1 class="block w-full text-center text-4xl md:text-6xl font-bold gradient-text leading-[1.24] pb-[0.28em] mb-6">
+        Con Magui a Disney
+      </h1>
 
       <p class="text-xl text-gray-700">
         Planificación estratégica, acompañamiento real y experiencias inolvidables para familias y quinceañeras.
@@ -102,53 +97,53 @@
     </div>
   </section>
 
-  <!-- Sobre mi -->
-<section class="pb-16 px-4 mt-10">
-  <div class="max-w-5xl mx-auto rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden">
-    <img
-      src="assets/img/quienes/fondo.webp"
-      alt=""
-      class="absolute inset-0 w-full h-full object-cover blur-sm opacity-35 scale-105"
-      loading="lazy"
-    />
+  <!-- Sobre mí -->
+  <section class="pb-16 px-4 mt-10">
+    <div class="max-w-5xl mx-auto rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden">
+      <img
+        src="assets/img/quienes/fondo.webp"
+        alt=""
+        class="absolute inset-0 w-full h-full object-cover blur-sm opacity-35 scale-105"
+        loading="lazy"
+      />
 
-    <!-- capa de lectura -->
-    <div class="absolute inset-0 bg-white/78"></div>
+      <!-- capa de lectura -->
+      <div class="absolute inset-0 bg-white/78"></div>
 
-    <!-- contenido -->
-    <div class="relative z-10">
+      <!-- contenido -->
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">💫 Sobre mí</h2>
 
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">💫 Sobre mí</h2>
+        <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
+          <p><strong>Fundadora de Con Magui a Disney</strong><br><strong>Creadora de Magic Queens</strong></p>
 
-      <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
-        <p><strong>Fundadora de Con Magui a Disney</strong><br><strong>Creadora de Magic Queens</strong></p>
+          <p>En 2016 comenzó algo que no sabía que se convertiría en mi misión.</p>
+          <p>Todo empezó ayudando a amigos, familiares y conocidos a organizar sus viajes a Disney. Me apasionaba investigar, planificar, entender cada detalle. Ver sus fotos después del viaje me hacía sentir parte de algo mucho más grande.</p>
+          <p>Pero la verdadera historia empezó antes.</p>
 
-        <p>En 2016 comenzó algo que no sabía que se convertiría en mi misión.</p>
-        <p>Todo empezó ayudando a amigos, familiares y conocidos a organizar sus viajes a Disney. Me apasionaba investigar, planificar, entender cada detalle. Ver sus fotos después del viaje me hacía sentir parte de algo mucho más grande.</p>
-        <p>Pero la verdadera historia empezó antes.</p>
+          <p>Mi primer viaje a Disney como mamá no fue perfecto.</p>
+          <p>Viajé con mi hija de 3 años, llena de ilusión, pero sin asesoramiento, sin estrategia, sin acompañamiento experto.</p>
+          <p>Cometimos errores. Perdimos tiempo valioso. Tomamos decisiones improvisadas. Y muchas veces sentí que no estábamos viviendo el viaje que habíamos soñado.</p>
 
-        <p>Mi primer viaje a Disney como mamá no fue perfecto.</p>
-        <p>Viajé con mi hija de 3 años, llena de ilusión, pero sin asesoramiento, sin estrategia, sin acompañamiento experto.</p>
-        <p>Cometimos errores. Perdimos tiempo valioso. Tomamos decisiones improvisadas. Y muchas veces sentí que no estábamos viviendo el viaje que habíamos soñado.</p>
+          <p><strong>Disney no debería sentirse así.</strong><br>Un viaje tan importante no debería depender del azar.</p>
 
-        <p><strong>Disney no debería sentirse así.</strong><br>Un viaje tan importante no debería depender del azar.</p>
+          <p>Esa experiencia fue el punto de inflexión.</p>
+          <p>Decidí que ninguna familia que viajara conmigo volvería a sentir esa incertidumbre.</p>
+          <p>Desde entonces me formé, me capacité, trabajé con proveedores oficiales y convertí esa pasión en profesión.</p>
 
-        <p>Esa experiencia fue el punto de inflexión.</p>
-        <p>Decidí que ninguna familia que viajara conmigo volvería a sentir esa incertidumbre.</p>
-        <p>Desde entonces me formé, me capacité, trabajé con proveedores oficiales y convertí esa pasión en profesión.</p>
+          <p><strong>Con Magui a Disney nació con un propósito claro:</strong><br>Diseñar viajes estratégicos para que las familias vivan magia real, sin errores ni improvisación.</p>
+          <p>Con planificación. Con acompañamiento. Con conocimiento profundo del destino.</p>
 
-        <p><strong>Con Magui a Disney nació con un propósito claro:</strong><br>Diseñar viajes estratégicos para que las familias vivan magia real, sin errores ni improvisación.</p>
-        <p>Con planificación. Con acompañamiento. Con conocimiento profundo del destino.</p>
+          <p>A lo largo de los años acompañé a cientos de familias en sus viajes a Disney y Universal.</p>
+          <p>Y fue escuchando a muchas mamás que nació una nueva idea: ¿Qué pasaba con el viaje de 15?</p>
+          <p><strong>Así nació Magic Queens.</strong></p>
+          <p>Una experiencia boutique, exclusiva y cuidadosamente diseñada para quinceañeras y sus familias.</p>
+          <p>Magic Queens no es algo separado de Con Magui a Disney. Es su evolución. Es la versión más curada, más selectiva y más estratégica de todo lo aprendido desde 2016.</p>
 
-        <p>A lo largo de los años acompañé a cientos de familias en sus viajes a Disney y Universal.</p>
-        <p>Y fue escuchando a muchas mamás que nació una nueva idea: ¿Qué pasaba con el viaje de 15?</p>
-        <p><strong>Así nació Magic Queens.</strong></p>
-        <p>Una experiencia boutique, exclusiva y cuidadosamente diseñada para quinceañeras y sus familias.</p>
-        <p>Magic Queens no es algo separado de Con Magui a Disney. Es su evolución. Es la versión más curada, más selectiva y más estratégica de todo lo aprendido desde 2016.</p>
+          <p><strong>Hoy mi misión sigue siendo la misma:</strong><br>Que cada familia viva Disney como lo soñó, pero con la tranquilidad de estar acompañada por alguien que ya recorrió el camino antes.</p>
 
-        <p><strong>Hoy mi misión sigue siendo la misma:</strong><br>Que cada familia viva Disney como lo soñó, pero con la tranquilidad de estar acompañada por alguien que ya recorrió el camino antes.</p>
-
-        <p><strong>Porque la magia existe. Pero cuando se planifica bien, se transforma en recuerdos que duran para siempre.</strong></p>
+          <p><strong>Porque la magia existe. Pero cuando se planifica bien, se transforma en recuerdos que duran para siempre.</strong></p>
+        </div>
       </div>
     </div>
   </section>
@@ -165,66 +160,45 @@
         <article class="bg-white rounded-2xl p-6 shadow-lg text-center">
           <h3 class="text-xl font-bold text-brandPrimary mb-2">Disney</h3>
           <p class="text-gray-600 mb-4">Agente certificada y habilitada para asesoramiento Disney.</p>
-          <a href="#cert-disney" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
-  Ver certificado
-</a>
+          <a href="#cert-disney" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">Ver certificado</a>
         </article>
 
         <article class="bg-white rounded-2xl p-6 shadow-lg text-center">
           <h3 class="text-xl font-bold text-brandPrimary mb-2">Universal</h3>
           <p class="text-gray-600 mb-4">Capacitación oficial en planificación de parques y experiencias Universal.</p>
-          <a href="#cert-universal" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
-  Ver certificado
-</a>
+          <a href="#cert-universal" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">Ver certificado</a>
         </article>
 
         <article class="bg-white rounded-2xl p-6 shadow-lg text-center">
           <h3 class="text-xl font-bold text-brandPrimary mb-2">Assist Card y Partners</h3>
           <p class="text-gray-600 mb-4">Alianzas activas con proveedores estratégicos para cada viaje.</p>
-          <a href="#cert-partners" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
-  Ver respaldos
-</a>
+          <a href="#cert-partners" class="inline-block bg-brandSurface text-brandPrimary px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">Ver respaldos</a>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- Certificados Disney -->
   <section id="cert-disney" class="max-w-6xl mx-auto px-4 py-10">
-  <h3 class="text-2xl font-bold text-brandPrimary mb-6">Disney</h3>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Disneyland.webp -->
-     <img src="assets/img/cert/Disneyland.webp" alt="">
-    <!-- Disney Aulani.webp -->
-     <img src="assets/img/cert/Aulani.webp" alt="">
-    <!-- WDW knowledge.webp -->
-     <img src="assets/img/cert/WDW knowledge.webp" alt="">
-    <!-- Aulani.webp -->
-     <img src="assets/img/cert/Aulani.webp" alt="">
-    <!-- Knowledge 2026.webp -->
-     <img src="assets/img/cert/Knowledge 2026.webp" alt="">
-     <img src="assets/img/cert/DCL 2023.webp" alt="">
-     <img src="assets/img/cert/Nat Geo 2023.webp" alt="">
-      <img src="assets/img/cert/2025 CDK Annual Assessment Certificate - US & CA.webp" alt="">
-  </div>
-</section>
+    <h3 class="text-2xl font-bold text-brandPrimary mb-6">Disney</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <img src="assets/img/cert/Disneyland.webp" alt="Disneyland Certificate">
+      <img src="assets/img/cert/Aulani.webp" alt="Aulani Certificate">
+      <img src="assets/img/cert/evolutiontravel_archer.webp" alt="Archer Certificate">
+      <img src="assets/img/cert/Knowledge 2026.webp" alt="Knowledge 2026 Certificate">
+      <img src="assets/img/cert/DCL 2023.webp" alt="DCL 2023 Certificate">
+      <img src="assets/img/cert/Nat Geo 2023.webp" alt="Nat Geo 2023 Certificate">
+    </div>
+  </section>
 
-<section id="cert-universal" class="max-w-6xl mx-auto px-4 py-10">
-  <h3 class="text-2xl font-bold text-brandPrimary mb-6">Universal</h3>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- universal.webp -->
-     <img src="assets/img/cert/universal.webp" alt="">
-  </div>
-</section>
-
-<!-- 
-<section id="cert-partners" class="max-w-6xl mx-auto px-4 py-10">
-  <h3 class="text-2xl font-bold text-brandPrimary mb-6">Assist Card y Partners</h3>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-  </div>
-</section>
-  -->
-
+  <!-- Certificados Universal -->
+  <section id="cert-universal" class="max-w-6xl mx-auto px-4 py-10">
+    <h3 class="text-2xl font-bold text-brandPrimary mb-6">Universal</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <img src="assets/img/cert/universal.webp" alt="Universal Certificate">
+      <img src="assets/img/cert/Universal Hollywood.webp" alt="Universal Hollywood Certificate">
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="pb-20 px-4">
@@ -237,6 +211,132 @@
     </div>
   </section>
 
+  <!-- Partners Oficiales -->
+<section id="cert-partners" class="py-12 px-4">
+  <style>
+    .pf-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .pf-wrap::before,
+    .pf-wrap::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 64px;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .pf-wrap::before { left: 0; background: linear-gradient(to right, #fdf8f2, rgba(253,248,242,0)); }
+    .pf-wrap::after  { right: 0; background: linear-gradient(to left, #fdf8f2, rgba(253,248,242,0)); }
+
+    .pf-row {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 14px !important;
+      width: max-content !important;
+      will-change: transform;
+    }
+    .pf-left  { animation: pfLeft 28s linear infinite; }
+    .pf-right { animation: pfRight 32s linear infinite; }
+
+    .pf-item {
+      width: 132px !important;
+      height: 58px !important;
+      border-radius: 12px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(197,111,149,.16);
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex: 0 0 auto !important;
+      overflow: hidden !important;
+    }
+
+    .pf-item img {
+      max-width: 106px !important;
+      max-height: 30px !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+      flex: 0 0 auto !important;
+    }
+
+    @media (max-width: 768px) {
+      .pf-item { width: 108px !important; height: 50px !important; }
+      .pf-item img { max-width: 88px !important; max-height: 26px !important; }
+      .pf-left { animation-duration: 22s; }
+      .pf-right { animation-duration: 26s; }
+    }
+
+    @keyframes pfLeft {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @keyframes pfRight {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+  </style>
+
+  <div class="max-w-7xl mx-auto rounded-3xl bg-gradient-to-r from-brandSurface/70 via-white to-brandSurface/70 border border-brandSurface shadow-lg p-8 md:p-10">
+    <div class="text-center mb-8">
+      <h3 class="text-2xl md:text-3xl font-bold text-brandPrimary">Partners Oficiales</h3>
+      <p class="text-gray-600 mt-2">Marcas y proveedores con los que trabajamos.</p>
+    </div>
+
+    <div class="pf-wrap space-y-4">
+      <div class="pf-row pf-left">
+        <div class="pf-item"><img src="assets/img/part/Animal Kingdom.png" alt="Animal Kingdom"></div>
+        <div class="pf-item"><img src="assets/img/part/assist-card_.webp" alt="Assist Card"></div>
+        <div class="pf-item"><img src="assets/img/part/Blizzard Beach.png" alt="Blizzard Beach"></div>
+        <div class="pf-item"><img src="assets/img/part/DCL.png" alt="DCL"></div>
+        <div class="pf-item"><img src="assets/img/part/disney_autorizados.avif" alt="Disney autorizados"></div>
+        <div class="pf-item"><img src="assets/img/part/Epcot.png" alt="Epcot"></div>
+        <div class="pf-item"><img src="assets/img/part/epic.png" alt="Epic Universe"></div>
+        <div class="pf-item"><img src="assets/img/part/Holloywood Studios .png" alt="Hollywood Studios"></div>
+        <div class="pf-item"><img src="assets/img/part/island_of_adventure.png" alt="Islands of Adventure"></div>
+
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/Animal Kingdom.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/assist-card_.webp" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/Blizzard Beach.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/DCL.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/disney_autorizados.avif" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/Epcot.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/epic.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/Holloywood Studios .png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/island_of_adventure.png" alt=""></div>
+      </div>
+
+      <div class="pf-row pf-right">
+        <div class="pf-item"><img src="assets/img/part/Magic Kingdom.png" alt="Magic Kingdom"></div>
+        <div class="pf-item"><img src="assets/img/part/Typhoon Lagoon.png" alt="Typhoon Lagoon"></div>
+        <div class="pf-item"><img src="assets/img/part/Universal_Authorized.jpg" alt="Universal Authorized"></div>
+        <div class="pf-item"><img src="assets/img/part/universal_florida.png" alt="Universal Florida"></div>
+        <div class="pf-item"><img src="assets/img/part/universal_orlando.png" alt="Universal Orlando"></div>
+        <div class="pf-item"><img src="assets/img/part/volcano_bay.png" alt="Volcano Bay"></div>
+        <div class="pf-item"><img src="assets/img/part/WDW TMMPOE logo_Eng PMS 2145_1.png" alt="Walt Disney World"></div>
+        <div class="pf-item"><img src="assets/img/part/hola_fly.webp" alt="Holafly"></div>
+        <div class="pf-item"><img src="assets/img/part/archer.webp" alt="Archer"></div>
+
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/Magic Kingdom.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/Typhoon Lagoon.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/Universal_Authorized.jpg" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/universal_florida.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/universal_orlando.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/volcano_bay.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/WDW TMMPOE logo_Eng PMS 2145_1.png" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/hola_fly.webp" alt=""></div>
+        <div class="pf-item" aria-hidden="true"><img src="assets/img/part/archer.webp" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
+
   <footer class="bg-gray-900 text-white py-12 px-4 text-center">
     <div class="mb-4 text-2xl font-bold">CON MAGUI A DISNEY</div>
     <p class="text-gray-400 mb-6">Convirtiendo sueños en experiencias mágicas</p>
@@ -244,9 +344,6 @@
   </footer>
 
   <canvas id="pixieTrail" aria-hidden="true"></canvas>
-  <style>
-    #pixieTrail { position: fixed; inset: 0; pointer-events: none; z-index: 40; }
-  </style>
 
   <script>
     function toggleMenu() {
@@ -267,14 +364,18 @@
       let lastSpawn = 0;
       const colors = ["#C9A24A", "#E1A9C2", "#F6E7B8", "#FFFFFF"];
 
-      function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      }
 
       function spawnTrail(x, y, count = 4) {
         for (let i = 0; i < count; i++) {
           const angle = Math.random() * Math.PI * 2;
           const speed = 0.25 + Math.random() * 1.1;
           particles.push({
-            type: "dust", x, y,
+            type: "dust",
+            x, y,
             vx: Math.cos(angle) * speed,
             vy: Math.sin(angle) * speed - 0.2,
             life: 30 + Math.random() * 30,
@@ -290,7 +391,8 @@
           const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.35;
           const speed = 0.8 + Math.random() * 2.3;
           particles.push({
-            type: "spark", x, y,
+            type: "spark",
+            x, y,
             vx: Math.cos(angle) * speed,
             vy: Math.sin(angle) * speed,
             life: 26 + Math.random() * 26,
@@ -317,29 +419,48 @@
         p.x += p.vx;
         p.y += p.vy;
         if (p.type === "spark") {
-          p.vx *= 0.985; p.vy *= 0.985; p.vy += 0.005;
+          p.vx *= 0.985;
+          p.vy *= 0.985;
+          p.vy += 0.005;
         } else {
-          p.vx *= 0.99; p.vy += 0.01;
+          p.vx *= 0.99;
+          p.vy += 0.01;
         }
       }
 
       function tick(now) {
         ctx.clearRect(0, 0, w, h);
+
         if (mouse.moving && now - lastSpawn > 12) {
-          spawnTrail(mouse.x, mouse.y, 4); lastSpawn = now;
+          spawnTrail(mouse.x, mouse.y, 4);
+          lastSpawn = now;
         }
+
         for (let i = particles.length - 1; i >= 0; i--) {
           const p = particles[i];
           updateParticle(p);
-          if (p.life <= 0) { particles.splice(i, 1); continue; }
+          if (p.life <= 0) {
+            particles.splice(i, 1);
+            continue;
+          }
           drawParticle(p);
         }
-        ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
         requestAnimationFrame(tick);
       }
 
-      window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.moving = true; });
-      window.addEventListener("mouseleave", () => { mouse.moving = false; });
+      window.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.moving = true;
+      });
+
+      window.addEventListener("mouseleave", () => {
+        mouse.moving = false;
+      });
+
       window.addEventListener("click", (e) => {
         const target = e.target.closest("a, button");
         if (target) spawnBurst(e.clientX, e.clientY, 38);

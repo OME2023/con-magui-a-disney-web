@@ -3,6 +3,7 @@
   --dorado-principal: #C9A227;
   --rosa-suave: #F6D6E4;
   --color-texto: #333333;
+  --brand-light: #FDF8F2;
 }
 
 .bg-brand {
@@ -10,11 +11,7 @@
 }
 
 .bg-brand-gradient {
-  background: linear-gradient(
-    135deg,
-    var(--rosa-principal),
-    var(--dorado-principal)
-  );
+  background: linear-gradient(135deg, var(--rosa-principal), var(--dorado-principal));
 }
 
 .text-brand {
@@ -23,13 +20,114 @@
 
 .btn-brand {
   background-color: var(--rosa-principal);
-  color: white;
+  color: #fff;
   border-radius: 999px;
   padding: 12px 28px;
-  font-weight: bold;
+  font-weight: 700;
   transition: all 0.3s ease;
 }
 
 .btn-brand:hover {
   background-color: var(--dorado-principal);
+}
+
+/* Cert anchors offset (menu fijo) */
+#cert-disney,
+#cert-universal,
+#cert-partners {
+  scroll-margin-top: 110px;
+}
+
+/* Pixie trail canvas */
+#pixieTrail {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+}
+
+/* ===== Partners ticker ===== */
+.pflow-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.pflow-wrap::before,
+.pflow-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.pflow-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #fdf8f2, rgba(253, 248, 242, 0));
+}
+
+.pflow-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #fdf8f2, rgba(253, 248, 242, 0));
+}
+
+.pflow-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  will-change: transform;
+  animation: pflowLeft 30s linear infinite;
+}
+
+.pflow-row.reverse {
+  animation-name: pflowRight;
+  animation-duration: 34s;
+}
+
+.pflow-item {
+  width: 132px;
+  height: 58px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(197, 111, 149, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.pflow-item img {
+  max-width: 106px;
+  max-height: 30px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes pflowLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes pflowRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .pflow-item {
+    width: 108px;
+    height: 50px;
+  }
+
+  .pflow-item img {
+    max-width: 88px;
+    max-height: 26px;
+  }
 }
