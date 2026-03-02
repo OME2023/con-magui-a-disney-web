@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
   <title>Magic Queens VIP | By Con Magui a Disney</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/styles.css" />
+
   <script>
     tailwind.config = {
       theme: {
@@ -34,6 +41,44 @@
     }
   </style>
 </head>
+
+<body class="bg-brandLight text-brandText">
+  <header class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="index.html#hero">
+          <img
+            src="assets/img/logo-con-magui.png"
+            alt="Con Magui a Disney"
+            class="h-14 md:h-20 w-auto object-contain"
+          />
+        </a>
+      </div>
+
+      <div class="hidden md:flex gap-6 items-center">
+        <a href="index.html#hero" class="text-gray-700 hover:text-brandPrimary transition">Inicio</a>
+        <a href="quienes-somos.html" class="text-gray-700 hover:text-brandPrimary transition">Quiénes Somos</a>
+        <a href="trabaja-con-nosotros.html" class="text-gray-700 hover:text-brandPrimary transition">Trabajá con Nosotros</a>
+        <a href="#lead-magnet" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition">
+          Solicitar asesoría
+        </a>
+      </div>
+
+      <button type="button" onclick="toggleMenu()" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 bg-white">
+      <a href="index.html#hero" class="block py-2 text-gray-700 hover:text-brandPrimary">Inicio</a>
+      <a href="quienes-somos.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Quiénes Somos</a>
+      <a href="trabaja-con-nosotros.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Trabajá con Nosotros</a>
+      <a href="#lead-magnet" class="block py-2 text-gray-700 hover:text-brandPrimary">Solicitar asesoría</a>
+    </div>
+  </header>
+
 <body class="bg-brandLight text-brandText">
   <header class="bg-white shadow-sm sticky top-0 z-40">
     <div class="flex items-center gap-4">
@@ -47,7 +92,8 @@
   </header>
 
   <!-- Galeria visual -->
-<section class="px-4 pt-8 pb-6">
+<section class="px-4 pt-32 md:pt-36 pb-6">
+
   <div class="max-w-5xl mx-auto">
     <figure class="rounded-3xl overflow-hidden shadow-xl w-fit mx-auto">
       <img
@@ -294,10 +340,40 @@
     </div>
   </section>
 
-  <footer class="bg-gray-900 text-white py-10 px-4 text-center">
-    <p class="mb-2 font-bold">Magic Queens by Con Magui a Disney</p>
-    <p class="text-sm text-gray-400">Servicio VIP para quinceañeras · Cupos limitados</p>
-  </footer>
+  <!-- Footer -->
+  <footer class="bg-black text-white py-12 px-4 text-center">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-3xl md:text-4xl font-extrabold gradient-text mb-3">CON MAGUI A DISNEY</h3>
+    <p class="text-base md:text-lg text-gray-200 mb-6">Convirtiendo sueños en experiencias mágicas</p>
+
+    <p class="text-sm text-gray-400 mb-8">© 2026 Con Magui a Disney · Todos los derechos reservados</p>
+
+    <div class="border-t border-white/20 pt-6">
+      <p class="text-xs uppercase tracking-wider text-gray-400 mb-3">Desarrollado por</p>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 group">
+        <img
+          src="assets/img/it-integral/ItSolutions.png"
+          alt="IT Integral Solutions"
+          class="w-11 h-11 rounded-full object-contain bg-white p-1"
+        />
+        <span class="flex flex-col items-start text-left leading-tight">
+    <span class="text-sm md:text-base font-semibold text-white group-hover:text-brandSecondary transition">
+      IT Integral Solutions
+    </span>
+    <span class="inline-flex items-center gap-2 text-xs md:text-sm text-gray-300 mt-1">
+    <img
+      src="assets/icons/whatsapp.png"
+      alt="WhatsApp"
+      class="w-4 h-4 object-contain"
+    />
+    11 3363-4277
+  </span>
+  </span>
+      </a>
+    </div>
+  </div>
+</footer>
 
   <script src="js/whatsapp.js"></script>
   <script>
@@ -307,5 +383,113 @@
       if (origenEl) origenEl.value = "quince_detalle";
     });
   </script>
+
+<canvas id="pixieTrail" aria-hidden="true"></canvas>
+<style>
+  #pixieTrail{
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 40 !important;
+    display: block !important;
+  }
+</style>
+
+<script>
+(() => {
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isTouch = window.matchMedia("(pointer: coarse)").matches;
+  if (prefersReduced || isTouch) return;
+
+  const canvas = document.getElementById("pixieTrail");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  let w = 0, h = 0;
+  let particles = [];
+  let mouse = { x: -9999, y: -9999, moving: false };
+  let lastSpawn = 0;
+  const colors = ["#C9A24A", "#E1A9C2", "#F6E7B8", "#FFFFFF"];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+
+  function spawnTrail(x, y, count = 4) {
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.25 + Math.random() * 1.1;
+      particles.push({
+        type: "dust", x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 0.2,
+        life: 30 + Math.random() * 30,
+        maxLife: 60,
+        size: 1.2 + Math.random() * 2.4,
+        color: colors[(Math.random() * colors.length) | 0]
+      });
+    }
+  }
+
+  function drawParticle(p) {
+    const a = p.life / p.maxLife;
+    ctx.globalAlpha = Math.max(0, a) * 0.9;
+    ctx.fillStyle = p.color;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = p.color;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function updateParticle(p) {
+    p.life -= 1;
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vx *= 0.99;
+    p.vy += 0.01;
+  }
+
+  function tick(now) {
+    ctx.clearRect(0, 0, w, h);
+    if (mouse.moving && now - lastSpawn > 12) {
+      spawnTrail(mouse.x, mouse.y, 4);
+      lastSpawn = now;
+    }
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      updateParticle(p);
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      drawParticle(p);
+    }
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(tick);
+  }
+
+  window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    mouse.moving = true;
+  });
+
+  window.addEventListener("mouseleave", () => {
+    mouse.moving = false;
+  });
+
+  window.addEventListener("resize", resize);
+  resize();
+  requestAnimationFrame(tick);
+})();
+</script>
+
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    if (menu) menu.classList.toggle("hidden");
+  }
+</script>
 </body>
 </html>

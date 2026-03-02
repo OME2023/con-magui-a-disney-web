@@ -10,6 +10,11 @@
   <!-- estilos compartidos -->
   <link rel="stylesheet" href="styles/styles.css" />
 
+    <!-- íconos -->
+    <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
   <script>
     tailwind.config = {
       theme: {
@@ -40,6 +45,21 @@
     }
   </style>
 </head>
+
+<canvas id="pixieTrail" aria-hidden="true"></canvas>
+<style>
+  #pixieTrail{
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 40 !important;
+    display: block !important;
+  }
+</style>
+
+
 
 <body class="bg-brandLight text-brandText">
 
@@ -337,11 +357,40 @@
   </div>
 </section>
 
-  <footer class="bg-gray-900 text-white py-12 px-4 text-center">
-    <div class="mb-4 text-2xl font-bold">CON MAGUI A DISNEY</div>
-    <p class="text-gray-400 mb-6">Convirtiendo sueños en experiencias mágicas</p>
-    <p class="text-sm text-gray-500">© 2026 Con Magui a Disney - Todos los derechos reservados</p>
-  </footer>
+  <!-- Footer -->
+  <footer class="bg-black text-white py-12 px-4 text-center">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-3xl md:text-4xl font-extrabold gradient-text mb-3">CON MAGUI A DISNEY</h3>
+    <p class="text-base md:text-lg text-gray-200 mb-6">Convirtiendo sueños en experiencias mágicas</p>
+
+    <p class="text-sm text-gray-400 mb-8">© 2026 Con Magui a Disney · Todos los derechos reservados</p>
+
+    <div class="border-t border-white/20 pt-6">
+      <p class="text-xs uppercase tracking-wider text-gray-400 mb-3">Desarrollado por</p>
+
+      <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 group">
+        <img
+          src="assets/img/it-integral/ItSolutions.png"
+          alt="IT Integral Solutions"
+          class="w-11 h-11 rounded-full object-contain bg-white p-1"
+        />
+        <span class="flex flex-col items-start text-left leading-tight">
+    <span class="text-sm md:text-base font-semibold text-white group-hover:text-brandSecondary transition">
+      IT Integral Solutions
+    </span>
+    <span class="inline-flex items-center gap-2 text-xs md:text-sm text-gray-300 mt-1">
+    <img
+      src="assets/icons/whatsapp.png"
+      alt="WhatsApp"
+      class="w-4 h-4 object-contain"
+    />
+    11 3363-4277
+  </span>
+  </span>
+      </a>
+    </div>
+  </div>
+</footer>
 
   <canvas id="pixieTrail" aria-hidden="true"></canvas>
 
