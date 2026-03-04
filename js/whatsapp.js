@@ -74,21 +74,105 @@ const FORM_VARIANTS = {
   },
 };
 
-function setOrigenFormulario(origen = "guia") {
-  const cfg = FORM_VARIANTS[origen] || FORM_VARIANTS.guia;
+function setOrigenFormulario(origen) {
+  const formTitle = document.getElementById("formTitle");
+  const formSubtitle = document.getElementById("formSubtitle");
+  const formButtonText = document.getElementById("formButtonText");
+  const intencion = document.getElementById("intencion");
+  const origenInput = document.getElementById("origen");
 
-  const titleEl = document.getElementById("formTitle");
-  const subtitleEl = document.getElementById("formSubtitle");
-  const buttonTextEl = document.getElementById("formButtonText");
-  const intencionEl = document.getElementById("intencion");
-  const origenEl = document.getElementById("origen");
+  if (origenInput) origenInput.value = origen || "guia";
 
-  if (titleEl) titleEl.textContent = cfg.title;
-  if (subtitleEl) subtitleEl.textContent = cfg.subtitle;
-  if (buttonTextEl) buttonTextEl.textContent = cfg.button;
-  if (intencionEl) intencionEl.value = cfg.tipoConsulta;
-  if (origenEl) origenEl.value = origen;
+  const config = {
+    guia: {
+      title: "Descargá la guía ahora",
+      subtitle: "Completá tus datos y te la envío por WhatsApp",
+      button: "🎁 Quiero la guía GRATIS",
+      intencion: "Guía Disney"
+    },
+    consulta: {
+      title: "Hablemos de tu viaje",
+      subtitle: "Completá tus datos y te contacto por WhatsApp",
+      button: "💬 Quiero hablar por WhatsApp",
+      intencion: "Consulta general"
+    },
+    cotizacion_disney: {
+      title: "Solicitá tu cotización Disney",
+      subtitle: "Completá tus datos y te envío una propuesta personalizada",
+      button: "🏰 Quiero cotización Disney",
+      intencion: "Cotización Disney"
+    },
+    cotizacion_universal: {
+      title: "Solicitá tu cotización Universal",
+      subtitle: "Completá tus datos y te envío una propuesta personalizada",
+      button: "⚡ Quiero cotización Universal",
+      intencion: "Cotización Universal"
+    },
+    cotizacion_combo: {
+      title: "Solicitá tu cotización Disney + Universal",
+      subtitle: "Completá tus datos y te preparo una propuesta combinada",
+      button: "🎯 Quiero cotización combinada",
+      intencion: "Cotización Disney + Universal"
+    },
+    consulta_servicios: {
+      title: "Consulta personalizada",
+      subtitle: "Completá tus datos y te asesoro según tu viaje",
+      button: "✅ Quiero mi asesoría",
+      intencion: "Consulta de servicios"
+    },
+    visa: {
+      title: "Asesoría para Visa USA",
+      subtitle: "Completá tus datos y te contacto para ayudarte con tu visa",
+      button: "📄 Quiero asesoría para visa",
+      intencion: "Asesoría Visa USA"
+    },
+    seguros: {
+      title: "Asesoría en seguros de viaje",
+      subtitle: "Completá tus datos y te ayudo a elegir la mejor cobertura",
+      button: "🛡️ Quiero asesoría en seguros",
+      intencion: "Asesoría Seguros"
+    },
+    quince_info: {
+      title: "Magic Queens VIP: asesoría personalizada",
+      subtitle: "Completá tus datos y te contacto por WhatsApp",
+      button: "👑 Quiero info Magic Queens",
+      intencion: "Quinceañeras VIP - Info general"
+    },
+    quince_essential: {
+      title: "Magic Queen Essential",
+      subtitle: "Completá tus datos y te paso toda la info del programa",
+      button: "👑 Quiero info Essential",
+      intencion: "Quinceañeras - Essential"
+    },
+    quince_deluxe: {
+      title: "Magic Queen Deluxe",
+      subtitle: "Completá tus datos y te paso toda la info del programa",
+      button: "✨ Quiero info Deluxe",
+      intencion: "Quinceañeras - Deluxe"
+    },
+    quince_royale: {
+      title: "Magic Queen Royale",
+      subtitle: "Completá tus datos y te paso toda la info del programa",
+      button: "🚢 Quiero info Royale",
+      intencion: "Quinceañeras - Royale"
+    },
+    quienes: {
+  title: "Planifiquemos tu viaje",
+  subtitle: "Completá tus datos y te contacto por WhatsApp",
+  button: "✨ Quiero empezar ahora",
+  intencion: "Consulta desde Quienes Somos"
+},
+
+  };
+
+  const selected = config[origen] || config.guia;
+
+  if (formTitle) formTitle.textContent = selected.title;
+  if (formSubtitle) formSubtitle.textContent = selected.subtitle;
+  if (formButtonText) formButtonText.textContent = selected.button;
+  if (intencion) intencion.value = selected.intencion;
 }
+
 
 /**************************************************
  * HELPERS
