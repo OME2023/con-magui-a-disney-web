@@ -15,6 +15,10 @@
   gtag('config', 'G-BZQVQR29GB');
 </script>
 
+<meta name="description" content="Asesoría profesional para viajes a Disney y Universal Orlando. Planificación personalizada, reservas, estrategia diaria y acompañamiento antes y durante tu viaje." />
+<link rel="canonical" href="https://www.conmaguiadisney.com/" />
+
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
@@ -66,100 +70,81 @@
       100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
+
+    section[id] {
+  scroll-margin-top: 120px;
+}
+
   </style>
 </head>
 
-<body class="bg-brandLight text-brandText">
-  <!-- Navigation -->
-  <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center">
-        <a href="#hero">
-          <img
-            src="assets/img/logo-con-magui.png"
-            alt="Con Magui a Disney"
-            class="h-14 md:h-20 w-auto object-contain"
-          />
-        </a>
-      </div>
-
-      <div class="hidden md:flex gap-6 items-center">
-        <a href="#hero" class="text-gray-700 hover:text-brandPrimary transition">Inicio</a>
-        <a href="quienes-somos.html" class="text-gray-700 hover:text-brandPrimary transition">Quiénes Somos</a>
-        <a href="#quinceaneras" class="text-gray-700 hover:text-brandPrimary transition">Quinceañeras</a>
-        <a href="#servicios" class="text-gray-700 hover:text-brandPrimary transition">Servicios</a>
-        <a href="#faqs" class="text-gray-700 hover:text-brandPrimary transition">FAQs</a>
-        <a href="trabaja-con-nosotros.html" class="text-gray-700 hover:text-brandPrimary transition">Trabajá con Nosotros</a>
-        <a href="#contacto" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition">Contacto</a>
-      </div>
-
-      <button onclick="toggleMenu()" class="md:hidden">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-
-    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
-      <a href="#hero" class="block py-2 text-gray-700 hover:text-brandPrimary">Inicio</a>
-      <a href="quienes-somos.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Quiénes Somos</a>
-      <a href="#quinceaneras" class="block py-2 text-gray-700 hover:text-brandPrimary">Quinceañeras</a>
-      <a href="#servicios" class="block py-2 text-gray-700 hover:text-brandPrimary">Servicios</a>
-      <a href="#faqs" class="block py-2 text-gray-700 hover:text-brandPrimary">FAQs</a>
-      <a href="trabaja-con-nosotros.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Trabajá con Nosotros</a>
-      <a href="#contacto" class="block py-2 text-gray-700 hover:text-brandPrimary">Contacto</a>
-    </div>
-  </nav>
+  <body data-page="home" class="bg-brandLight text-brandText">
+  <!-- Navigation fija SIN fetch -->
+  <div id="site-nav"></div>
 
   <!-- Hero -->
-  <section id="hero" class="pt-32 pb-20 px-4 text-center">
-    <div class="max-w-4xl mx-auto">
-      <div class="mx-auto w-fit rounded-2xl overflow-hidden shadow-xl mb-8">
-        <img
-          src="assets/img/ppal/cinde.webp"
-          alt="Castillo Disney con fuegos artificiales"
-          class="block w-auto max-w-full h-auto max-h-[48vh]"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
-
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text leading-tight">
-        <span class="block">Tu viaje a Disney sin errores,</span>
-        <span class="block">sin estrés y sin gastar de más</span>
-      </h1>
+<section id="hero" class="pt-32 pb-20 px-4 text-center">
+  <div class="max-w-4xl mx-auto">
+    <div class="mx-auto w-fit rounded-2xl overflow-hidden shadow-xl mb-8">
+      <img
+        src="assets/img/ppal/cinde.webp"
+        alt="Castillo Disney con fuegos artificiales"
+        class="block w-auto max-w-full h-auto max-h-[48vh]"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
 
-    <p class="text-xl md:text-2xl text-gray-700 mb-4">
-      Ayudo a familias a planear Disney, Universal con estrategia, para que disfruten cada día sin preocupaciones.
-    </p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text leading-tight">
+  <span class="block">Asesoría profesional para viajes </span>
+  <span class="block">a Disney y Universal Orlando</span>
+</h1>
 
-    <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-      Si es tu primer viaje a Disney, evitá los errores más comunes que hacen perder tiempo y dinero. Planeá con una especialista y viajá
-      tranquilo.
-    </p>
+  </div>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a
-        href="#lead-magnet"
-        class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105"
-      >
-        🎁 Descargá la Guía GRATIS
-      </a>
+  <p class="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto">
+    Planificación personalizada, estrategia día por día y acompañamiento antes y durante todo tu viaje.
+  </p>
 
-      <button
-        type="button"
-        onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-        class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
-      >
-        💬 Hablar por WhatsApp
-      </button>
+  <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+    Soy Magui Saavedra, travel planner especializada en Disney y Universal. Te ayudo a evitar errores, optimizar presupuesto y vivir un viaje organizado de principio a fin.
+  </p>
+
+  <div class="max-w-4xl mx-auto mb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-gray-700">
+      <p>✅ Itinerario estratégico día por día</p>
+      <p>✅ Entradas, hoteles y reservas clave</p>
+      <p>✅ Estrategias para reducir filas y tiempos muertos</p>
+      <p>✅ Asesoría en visa y seguro de viaje</p>
+      <p>✅ Soporte personalizado antes y durante el viaje</p>
+      <p>✅ Planificación pensada para aprovechar tiempo y presupuesto</p>
     </div>
+  </div>
 
-    <p class="text-sm text-gray-500 mt-6">
-      ✔️ Asesoramiento 100% gratuito · ✔️ Precios oficiales Disney y Universal · ✔️ Soporte personalizado
-    </p>
-  </section>
+  <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <button
+      type="button"
+      onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+      class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105"
+    >
+      Solicitar asesoría personalizada
+    </button>
+
+    <a
+      href="https://wa.me/5491133634277?text=Hola%20Magui%2C%20quiero%20asesor%C3%ADa%20para%20planear%20mi%20viaje."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
+    >
+      Hablar por WhatsApp
+    </a>
+  </div>
+
+  <p class="text-sm text-gray-500 mt-6">
+    ✔️ Asesoramiento 100% gratuito · ✔️ Tarifas oficiales Disney y Universal · ✔️ Soporte personalizado
+  </p>
+</section>
+
 
   <!-- Lead Magnet -->
   <section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-brandSurface to-brandLight">
@@ -421,8 +406,9 @@
     </div>
 
 
-    <!-- Visa -->
-    <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+<!-- Visa -->
+<div id="visas" class="bg-white rounded-2xl shadow-xl p-8 mb-6 scroll-mt-32">
+
       <img
         src="assets/img/ppal/visa.webp"
         alt="Asesoría Visa USA"
@@ -450,7 +436,8 @@
     </div>
 
     <!-- Seguros -->
-    <div class="bg-white rounded-2xl shadow-xl p-8 mb-6">
+<div id="seguros" class="bg-white rounded-2xl shadow-xl p-8 mb-6 scroll-mt-32">
+
       <div class="w-full h-56 md:h-64 rounded-xl mb-6 bg-black flex items-center justify-center overflow-hidden">
         <img
           src="assets/img/ppal/assistcard.webp"
@@ -818,5 +805,9 @@
       requestAnimationFrame(tick);
     })();
   </script>
+
+<script src="js/navbar.js"></script>
+
+
 </body>
 </html>

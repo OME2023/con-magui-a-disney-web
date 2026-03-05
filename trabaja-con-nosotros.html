@@ -55,27 +55,10 @@
   <link rel="icon" href="assets/icons/favicon.ico">
 </head>
 
-<body class="bg-brandLight text-brandText">
+<body data-page="trabaja" lass="bg-brandLight text-brandText">
 
   <!-- Navigation -->
-  <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html">
-        <img src="assets/img/logo-con-magui.png" alt="Con Magui a Disney" class="h-14 md:h-20 w-auto object-contain" />
-      </a>
-
-      <div class="hidden md:flex gap-6 items-center">
-        <a href="index.html#hero" class="text-gray-700 hover:text-brandPrimary transition">Inicio</a>
-        <a href="index.html#quinceaneras" class="text-gray-700 hover:text-brandPrimary transition">Quinceañeras</a>
-        <a href="index.html#servicios" class="text-gray-700 hover:text-brandPrimary transition">Servicios</a>
-        <a href="index.html#faqs" class="text-gray-700 hover:text-brandPrimary transition">FAQs</a>
-        <a href="quienes-somos.html" class="text-gray-700 hover:text-brandPrimary transition">Quiénes Somos</a>
-        <button type="button" id="openModalTop" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition">
-          Postularme
-        </button>
-      </div>
-    </div>
-  </nav>
+  <div id="site-nav"></div>
 
   <!-- Hero -->
   <section class="pt-40 pb-12 px-4 text-center">
@@ -354,6 +337,7 @@
 })();
 </script>
 
+<script src="js/navbar.js"></script>
 
 </body>
 </html>
