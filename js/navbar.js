@@ -55,12 +55,9 @@ const NAVBAR_HTML = `
       <a href="index.html#contacto" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition">Contacto</a>
     </div>
 
-    <button id="mobileMenuButton" type="button" class="md:hidden text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition">
-      <svg id="iconHamburger" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <button id="mobileMenuButton" type="button" class="md:hidden text-gray-700">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-      <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
   </div>
@@ -92,37 +89,17 @@ const NAVBAR_HTML = `
 `;
 
 function initNavbar() {
-  // El HTML ya fue insertado en el DOM — los elementos existen
-  const btn  = document.getElementById("mobileMenuButton");
+  const btn = document.getElementById("mobileMenuButton");
   const menu = document.getElementById("mobileMenu");
-  const iconHamburger = document.getElementById("iconHamburger");
-  const iconClose     = document.getElementById("iconClose");
 
   if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const isHidden = menu.classList.toggle("hidden");
-      // Alternar ícono hamburguesa / X
-      if (iconHamburger && iconClose) {
-        iconHamburger.classList.toggle("hidden", !isHidden);
-        iconClose.classList.toggle("hidden", isHidden);
-      }
-    });
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
   }
 
-  // Cerrar menú al hacer clic en un link móvil
-  document.querySelectorAll(".mobile-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (menu) menu.classList.add("hidden");
-      if (iconHamburger) iconHamburger.classList.remove("hidden");
-      if (iconClose) iconClose.classList.add("hidden");
-    });
-  });
-
-  // Dropdowns móviles
   document.querySelectorAll(".mobile-dd-toggle").forEach((toggle) => {
     toggle.addEventListener("click", () => {
       const targetId = toggle.getAttribute("data-target");
-      const target   = document.getElementById(targetId);
+      const target = document.getElementById(targetId);
       if (target) target.classList.toggle("hidden");
     });
   });
@@ -132,8 +109,8 @@ function markActivePage() {
   let page = document.body.dataset.page;
   if (!page) {
     const p = window.location.pathname;
-    if (p.includes("quienes-somos"))        page = "quienes";
-    else if (p.includes("quinceaneras"))     page = "quince";
+    if (p.includes("quienes-somos")) page = "quienes";
+    else if (p.includes("quinceaneras")) page = "quince";
     else if (p.includes("trabaja-con-nosotros")) page = "trabaja";
     else page = "home";
   }
@@ -148,13 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const mount = document.getElementById("site-nav");
   if (!mount) return;
 
-  // 1. Insertar HTML
   mount.innerHTML = NAVBAR_HTML;
-
-  // 2. Bindear eventos DESPUÉS de insertar el HTML
   initNavbar();
   markActivePage();
 });
 
-// Cargar analytics en todas las páginas
 (function(){ var s=document.createElement('script'); s.src='js/analytics.js'; document.head.appendChild(s); })();
