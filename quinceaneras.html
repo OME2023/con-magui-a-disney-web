@@ -21,7 +21,7 @@
 </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/style.css" />
 
   <script>
     tailwind.config = {
@@ -40,78 +40,6 @@
       }
     };
   </script>
-
- <style>
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap");
-
-  body { font-family: "Poppins", sans-serif; }
-
-  .mq-title {
-    font-family: "Cormorant Garamond", serif;
-    letter-spacing: 0.01em;
-  }
-
-  .mq-bg-main {
-    background: radial-gradient(circle at 18% 28%, #4a3136 0%, #2f232c 48%, #241b22 100%);
-  }
-
-  .mq-bg-soft {
-    background: radial-gradient(circle at 20% 22%, #3f2d37 0%, #2a2028 60%, #231b22 100%);
-  }
-
-  .mq-chip {
-    background: #3b2a33;
-    color: #cf8f99;
-    border: 1px solid rgba(122, 93, 70, 0.4);
-  }
-
-  .mq-card {
-    background: #f5efea;
-    border: 1px solid #eaded4;
-  }
-
-  .mq-text-main { color: #f6efe9; }
-  .mq-text-soft { color: #e8d8cb; }
-  .mq-gold { color: #c9a27f; }
-  .mq-rose { color: #c26f98; }
-
-  /* Navbar logo (Con Magui) */
-.mq-navbar-logo{
-  height: 54px;
-  width: auto;
-  object-fit: contain;
-}
-@media (min-width: 768px){
-  .mq-navbar-logo{ height: 74px; }
-}
-
-/* Hero logo (Magic Queens) */
-.mq-hero-logo-wrap{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 0.75rem auto;
-}
-
-.mq-hero-logo{
-  width: min(560px, 82vw);
-  height: auto;
-  display: block;
-  object-fit: contain;
-  filter: brightness(1.06) contrast(1.05) drop-shadow(0 0 8px rgba(201,162,127,.2));
-}
-
-@media (max-width: 640px){
-  .mq-hero-logo{
-    width: min(420px, 90vw);
-  }
-}
-
-
-
-
-</style>
-
 
 </head>
 
@@ -144,7 +72,7 @@
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="#paquetes" class="px-10 py-4 bg-[#cf8f99] text-white font-semibold tracking-[0.08em] rounded-sm hover:opacity-90 transition">
-        VER LOS COMBOS
+        VER LOS PAQUETES
       </a>
       <button
         type="button"
@@ -222,7 +150,7 @@
             onclick="setOrigenFormulario('quince_info'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
             class="bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transition"
           >
-            👑 Inscripción con cupos limitados
+            Inscripción con cupos limitados
           </button>
 
           <a
@@ -260,59 +188,75 @@
     <div class="max-w-6xl mx-auto">
       <h2 class="mq-title text-5xl font-medium text-center mb-10 text-[#f0d8bd]">Paquetes Magic Queens</h2>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <article class="mq-card rounded-2xl p-6 shadow-lg">
+      <div class="grid md:grid-cols-3 gap-6 items-stretch">
+
+        <!-- Essential -->
+        <article class="mq-card rounded-2xl p-6 shadow-lg flex flex-col">
           <img src="assets/img/quince/mk.webp" alt="Magic Queens Essential" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
-          <h3 class="text-3xl mq-title font-medium mq-rose mb-3">Essential</h3>
-          <p class="text-gray-700 mb-4">Programa base: Miami + Disney + Universal - 12 días.</p>
-          <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <h3 class="text-3xl mq-title font-medium mq-rose mb-1">Essential</h3>
+          <p class="text-xs font-bold tracking-wide mb-3" style="color:#c9a24a;">U$S 5.980 · 12 días · 11 noches</p>
+          <p class="text-gray-700 mb-4">Programa base: Miami + Disney + Universal.</p>
+          <ul class="space-y-2 text-sm text-gray-700 mb-6 flex-1">
             <li>✓ Vuelos y traslados privados</li>
-            <li>✓ 6 noches Disney + 5 noches Universal</li>
-            <li>✓ 7 parques + Park to Park</li>
-            <li>✓ Early Entry + Lightning Lane</li>
-            <li>✓ Comidas y bebidas sin alcohol</li>
-            <li>✓ Memory Maker + Kit VIP + seguro</li>
+            <li>✓ Hotel dentro de Disney + Universal Resort</li>
+            <li>✓ Disney 4 parques + Universal 3 parques</li>
+            <li>✓ Lightning Lane + Memory Maker</li>
+            <li>✓ All inclusive completo</li>
+            <li>✓ Miami Beach Day</li>
           </ul>
-          <button type="button" onclick="setOrigenFormulario('quince_essential'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });" class="w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold">
-            👑 Quiero info Essential
-          </button>
+          <a href="combo-essential-mq.html" class="mt-auto w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold text-center block hover:opacity-90 transition">
+            Ver programa Essential
+          </a>
         </article>
 
-        <article class="mq-card rounded-2xl p-6 shadow-lg">
+        <!-- Deluxe -->
+        <article class="mq-card rounded-2xl p-6 shadow-lg flex flex-col">
           <img src="assets/img/quince/volcanobay.webp" alt="Magic Queens Deluxe" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
-          <h3 class="text-3xl mq-title font-medium mq-rose mb-3">Deluxe</h3>
-          <p class="text-gray-700 mb-4">Todo Essential + experiencias premium Disney - 12 días.</p>
-          <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <h3 class="text-3xl mq-title font-medium mq-rose mb-1">Deluxe</h3>
+          <p class="text-xs font-bold tracking-wide mb-3" style="color:#c9a24a;">U$S 6.235 · 12 días · 11 noches</p>
+          <p class="text-gray-700 mb-4">Todo Essential + experiencias premium Disney.</p>
+          <ul class="space-y-2 text-sm text-gray-700 mb-6 flex-1">
             <li>✓ Incluye todo Essential</li>
             <li>✓ 2 cenas con personajes Disney</li>
-            <li>✓ 1 día parque acuático Disney</li>
-            <li>✓ Experiencia gastronómica y fotos especiales</li>
+            <li>✓ Typhoon Lagoon parque acuático</li>
+            <li>✓ Upgrade gastronómico</li>
           </ul>
-          <button type="button" onclick="setOrigenFormulario('quince_deluxe'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });" class="w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold">
-            ✨ Quiero info Deluxe
-          </button>
+          <a href="combo-deluxe-mq.html" class="mt-auto w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold text-center block hover:opacity-90 transition">
+            Ver programa Deluxe
+          </a>
         </article>
 
-        <article class="mq-card rounded-2xl p-6 shadow-lg">
+        <!-- Royale -->
+        <article class="mq-card rounded-2xl p-6 shadow-lg flex flex-col">
           <img src="assets/img/quince/crucero2.webp" alt="Magic Queens Royale" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
-          <h3 class="text-3xl mq-title font-medium mq-rose mb-3">Royale</h3>
-          <p class="text-gray-700 mb-4">Todo Deluxe + crucero Disney a Bahamas - 16 días.</p>
-          <ul class="space-y-2 text-sm text-gray-700 mb-6">
+          <h3 class="text-3xl mq-title font-medium mq-rose mb-1">Royale</h3>
+          <p class="text-xs font-bold tracking-wide mb-3" style="color:#c9a24a;">U$S 7.460 · 15 días · 14 noches</p>
+          <p class="text-gray-700 mb-4">Todo Deluxe + crucero Disney a Bahamas.</p>
+          <ul class="space-y-2 text-sm text-gray-700 mb-6 flex-1">
             <li>✓ Incluye todo Deluxe</li>
             <li>✓ Crucero Disney 3 noches</li>
             <li>✓ Castaway Cay (isla privada)</li>
-            <li>✓ Comidas ilimitadas y shows a bordo</li>
+            <li>✓ Nassau Bahamas</li>
           </ul>
-          <button type="button" onclick="setOrigenFormulario('quince_royale'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });" class="w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold">
-            🚢 Quiero info Royale
-          </button>
+          <a href="combo-royale-mq.html" class="mt-auto w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold text-center block hover:opacity-90 transition">
+            Ver programa Royale
+          </a>
         </article>
+
       </div>
+
+      <!-- Botón programa general -->
+      <div class="text-center mt-10">
+        <a href="programa-mq.html" class="inline-block border-2 border-[#c9a27f] text-[#f0d8bd] px-10 py-3 rounded-full font-semibold tracking-wide hover:bg-[#c9a27f] hover:text-[#2f232c] transition">
+          ✦ Ver programa completo · Salidas y comparativa de combos
+        </a>
+      </div>
+
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="py-12 px-4 mq-bg-soft">
+  <section id="faqs" class="py-12 px-4 mq-bg-soft">
     <div class="max-w-5xl mx-auto">
       <h2 class="mq-title text-5xl font-medium text-center mb-10 text-[#f0d8bd]">FAQ de familias</h2>
       <div class="space-y-4">
@@ -358,18 +302,18 @@
           <label class="block text-left font-semibold mb-1 text-[#f0d8bd]">WhatsApp</label>
           <div class="flex items-center gap-2">
             <select id="codigoPais" required class="w-24 px-3 py-3 border border-[#7a5d46]/45 rounded-lg bg-[#f5efea] text-[#2f232c] focus:outline-none focus:ring-2 focus:ring-[#c26f98]">
-              <option value="+54">🇦🇷 +54</option>
-              <option value="+598">🇺🇾 +598</option>
-              <option value="+52">🇲🇽 +52</option>
-              <option value="+57">🇨🇴 +57</option>
-              <option value="+1">🇺🇸 +1</option>
+              <option value="+54">AR +54</option>
+              <option value="+598">UY +598</option>
+              <option value="+52">MX +52</option>
+              <option value="+57">CO +57</option>
+              <option value="+1">US +1</option>
             </select>
             <input type="tel" id="telefono" required placeholder="Tu número de WhatsApp" class="flex-1 min-w-0 px-4 py-3 border border-[#7a5d46]/45 rounded-lg bg-[#f5efea] text-[#2f232c] focus:outline-none focus:ring-2 focus:ring-[#c26f98]" />
           </div>
         </div>
 
         <button type="submit" id="botonFormulario" class="w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full text-lg font-semibold hover:shadow-xl transition">
-          <span id="formButtonText">👑 Quiero info Magic Queens</span>
+          <span id="formButtonText">Quiero info Magic Queens</span>
         </button>
       </form>
     </div>
@@ -378,12 +322,45 @@
   <!-- Footer -->
   <footer class="bg-black text-white py-12 px-4 text-center">
     <div class="max-w-5xl mx-auto">
-      <h3 class="text-3xl md:text-4xl font-extrabold mb-3 text-[#cf8f99]">MAGIC QUEENS · BY CON MAGUI A DISNEY</h3>
-      <p class="text-base md:text-lg text-gray-200 mb-6">Servicio boutique premium para quinceañeras</p>
-      <p class="text-sm text-gray-400 mb-8">© 2026 Con Magui a Disney · Todos los derechos reservados</p>
 
-      <div class="border-t border-white/20 pt-6">
-        <p class="text-xs uppercase tracking-wider text-gray-400 mb-3">Desarrollado por</p>
+      <!-- Título -->
+      <h3 style="font-family: 'Cormorant Garamond', serif; letter-spacing: 0.08em;"
+          class="text-4xl md:text-5xl font-bold gradient-text mb-2">CON MAGUI A DISNEY</h3>
+
+      <!-- Subtítulo -->
+      <p style="color: #f0e6d3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.04em;"
+         class="mb-5 italic">Convirtiendo sueños en experiencias mágicas</p>
+
+      <!-- Badges de credenciales -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+        <span style="border: 1px solid #C9A24A55; color: #C9A24A; font-size: 0.72rem; letter-spacing: 0.12em; padding: 6px 14px; border-radius: 4px;">
+          ✦ Disney Authorized Vacation Planner
+        </span>
+        <span style="border: 1px solid #C9A24A55; color: #C9A24A; font-size: 0.72rem; letter-spacing: 0.12em; padding: 6px 14px; border-radius: 4px;">
+          ✦ Universal Preferred Agency
+        </span>
+        <span style="border: 1px solid #C9A24A55; color: #C9A24A; font-size: 0.72rem; letter-spacing: 0.12em; padding: 6px 14px; border-radius: 4px;">
+          ✦ IATA · Archer Travel Group
+        </span>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <a class="social-icon-link" href="https://www.facebook.com/maria.pugliese.3304" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M13.5 8.25V6.5c0-.69.56-1.25 1.25-1.25H16V2h-1.75A4.25 4.25 0 0 0 10 6.25v2H7.5v3.25H10V22h3.5V11.5H16l.5-3.25h-3z"/></svg>
+        </a>
+        <a class="social-icon-link" href="https://instagram.com/conmaguiadisney" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm9.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
+        </a>
+        <a class="social-icon-link" href="https://www.tiktok.com/@conmaguiadisney" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M14.5 3c.26 1.55 1.36 2.88 2.92 3.42.66.23 1.38.34 2.08.33v3.2a7.2 7.2 0 0 1-3.3-.79v6.42A5.58 5.58 0 1 1 10.63 10h.12v3.27a2.33 2.33 0 1 0 2.2 2.31V3h1.55z"/></svg>
+        </a>
+      </div>
+
+      <p class="text-sm mb-8" style="color: #6b6b6b;">© 2026 Con Magui a Disney · Todos los derechos reservados</p>
+
+      <div class="border-t pt-6" style="border-color: #ffffff18;">
+        <p class="text-xs uppercase tracking-wider mb-3" style="color: #555;">Desarrollado por</p>
         <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 group">
           <img src="assets/img/it-integral/ItSolutions.png" alt="IT Integral Solutions" class="w-11 h-11 rounded-full object-contain bg-white p-1" />
           <span class="flex flex-col items-start text-left leading-tight">
@@ -395,35 +372,20 @@
           </span>
         </a>
       </div>
+
     </div>
   </footer>
 
-  <script src="js/whatsapp.js"></script>
+  <script src="js/whatsapp.js?v=20260306-1"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       setOrigenFormulario("quince_info");
       const origenEl = document.getElementById("origen");
       if (origenEl) origenEl.value = "quince_detalle";
     });
-
-    function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      if (menu) menu.classList.toggle("hidden");
-    }
   </script>
 
   <canvas id="pixieTrail" aria-hidden="true"></canvas>
-  <style>
-    #pixieTrail {
-      position: fixed !important;
-      inset: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      pointer-events: none !important;
-      z-index: 40 !important;
-      display: block !important;
-    }
-  </style>
 
   <script>
     (() => {

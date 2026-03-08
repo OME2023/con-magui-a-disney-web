@@ -27,7 +27,6 @@ const NAVBAR_HTML = `
             <a class="menu-link block px-3 py-2 rounded-lg hover:bg-brandSurface" href="index.html#visas">Visas</a>
             <a class="menu-link block px-3 py-2 rounded-lg hover:bg-brandSurface" href="index.html#seguros">Seguros</a>
             <a class="menu-link block px-3 py-2 rounded-lg hover:bg-brandSurface" href="index.html#faqs">FAQs</a>
-            <a class="menu-link block px-3 py-2 rounded-lg hover:bg-brandSurface" href="index.html#contacto">Contacto</a>
           </div>
         </div>
       </div>
@@ -72,7 +71,6 @@ const NAVBAR_HTML = `
       <a class="mobile-link block py-1 text-gray-700" href="index.html#visas">Visas</a>
       <a class="mobile-link block py-1 text-gray-700" href="index.html#seguros">Seguros</a>
       <a class="mobile-link block py-1 text-gray-700" href="index.html#faqs">FAQs</a>
-      <a class="mobile-link block py-1 text-gray-700" href="index.html#contacto">Contacto</a>
     </div>
 
     <button type="button" class="mobile-dd-toggle w-full text-left py-2 font-semibold text-gray-700" data-target="mobileQuinceMenu">Quinceañeras ▾</button>
@@ -123,44 +121,13 @@ function markActivePage() {
   });
 }
 
-function injectNavbarStyles() {
-  if (document.getElementById("navbar-shared-styles")) return;
-
-  const style = document.createElement("style");
-  style.id = "navbar-shared-styles";
-  style.textContent = `
-    .cmad-nav .nav-link,
-    .cmad-nav .menu-link,
-    .cmad-nav .mobile-link,
-    .cmad-nav .mobile-dd-toggle {
-      color: #374151 !important; /* gray-700 */
-    }
-
-    .cmad-nav .nav-link:hover,
-    .cmad-nav .menu-link:hover,
-    .cmad-nav .mobile-link:hover,
-    .cmad-nav .mobile-dd-toggle:hover {
-      color: #C56F95 !important; /* brandPrimary */
-    }
-
-    .cmad-nav .active-nav {
-      color: #C56F95 !important;
-      font-weight: 600 !important;
-    }
-
-    .cmad-nav .menu-panel {
-      background: #ffffff !important;
-    }
-  `;
-  document.head.appendChild(style);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const mount = document.getElementById("site-nav");
   if (!mount) return;
 
   mount.innerHTML = NAVBAR_HTML;
-  injectNavbarStyles();
   initNavbar();
   markActivePage();
 });
+
+(function(){ var s=document.createElement('script'); s.src='js/analytics.js'; document.head.appendChild(s); })();

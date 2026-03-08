@@ -1,133 +1,1204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
 :root {
-  --rosa-principal: #E88BB2;
-  --dorado-principal: #C9A227;
-  --rosa-suave: #F6D6E4;
-  --color-texto: #333333;
-  --brand-light: #FDF8F2;
+  --brand-primary: #c56f95;
+  --brand-secondary: #e1a9c2;
+  --brand-accent: #c9a24a;
+  --brand-dark: #8e6d2a;
+  --brand-light: #fdf8f2;
+  --brand-surface: #f7eef3;
+  --brand-text: #4a3240;
 }
 
-.bg-brand {
-  background-color: var(--rosa-principal);
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-.bg-brand-gradient {
-  background: linear-gradient(135deg, var(--rosa-principal), var(--dorado-principal));
+section[id] {
+  scroll-margin-top: 120px;
 }
 
-.text-brand {
-  color: var(--rosa-principal);
+.gradient-text {
+  background: linear-gradient(to right, var(--brand-primary), var(--brand-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.btn-brand {
-  background-color: var(--rosa-principal);
-  color: #fff;
-  border-radius: 999px;
-  padding: 12px 28px;
+.mq-display,
+.mq-title {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.mq-bg-main {
+  background: radial-gradient(circle at 18% 28%, #4a3136 0%, #2f232c 48%, #241b22 100%);
+}
+
+.mq-bg-soft {
+  background: radial-gradient(circle at 20% 22%, #3f2d37 0%, #2a2028 60%, #231b22 100%);
+}
+
+.mq-chip {
+  background: #3b2a33;
+  color: #cf8f99;
+  border: 1px solid rgba(122, 93, 70, 0.4);
+}
+
+.mq-card {
+  background: #f5efea;
+  border: 1px solid #eaded4;
+}
+
+.mq-text-main {
+  color: #f6efe9;
+}
+
+.mq-text-soft {
+  color: #e8d8cb;
+}
+
+.mq-gold {
+  color: #c9a27f;
+}
+
+.mq-rose {
+  color: #c26f98;
+}
+
+.mq-hero-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0.75rem auto;
+}
+
+.mq-hero-logo {
+  width: min(560px, 82vw);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: brightness(1.06) contrast(1.05) drop-shadow(0 0 8px rgba(201, 162, 127, 0.2));
+}
+
+.brand-chip {
+  border: 1px solid rgba(74, 50, 64, 0.15);
+  border-radius: 9999px;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.35rem 0.85rem;
+}
+
+.brand-chip.soft {
+  background: rgba(197, 111, 149, 0.08);
+  color: var(--brand-primary);
+}
+
+.social-icon-link {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  width: 2.5rem;
+}
+
+.social-icon-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.icon-badge {
+  align-items: center;
+  background: rgba(197, 111, 149, 0.08);
+  border-radius: 9999px;
+  color: var(--brand-primary);
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.section-title {
+  color: var(--brand-text);
+  font-size: 2.25rem;
   font-weight: 700;
-  transition: all 0.3s ease;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.btn-brand:hover {
-  background-color: var(--dorado-principal);
+.section-subtitle {
+  color: #5f6775;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  max-width: 48rem;
+  text-align: center;
 }
 
-/* Cert anchors offset (menu fijo) */
-#cert-disney,
-#cert-universal,
-#cert-partners {
-  scroll-margin-top: 110px;
+.certa-grid img,
+#cert-disney img,
+#cert-universal img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(74, 50, 64, 0.12);
 }
 
-/* Pixie trail canvas */
-#pixieTrail {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 40;
-}
-
-/* ===== Partners ticker ===== */
-.pflow-wrap {
+.pf-wrap {
   position: relative;
   overflow: hidden;
 }
 
-.pflow-wrap::before,
-.pflow-wrap::after {
+.pf-wrap::before,
+.pf-wrap::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 56px;
-  z-index: 3;
+  width: 64px;
+  z-index: 5;
   pointer-events: none;
 }
 
-.pflow-wrap::before {
+.pf-wrap::before {
   left: 0;
   background: linear-gradient(to right, #fdf8f2, rgba(253, 248, 242, 0));
 }
 
-.pflow-wrap::after {
+.pf-wrap::after {
   right: 0;
   background: linear-gradient(to left, #fdf8f2, rgba(253, 248, 242, 0));
 }
 
-.pflow-row {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 14px;
-  width: max-content;
+.pf-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 14px !important;
+  width: max-content !important;
   will-change: transform;
-  animation: pflowLeft 30s linear infinite;
 }
 
-.pflow-row.reverse {
-  animation-name: pflowRight;
-  animation-duration: 34s;
+.pf-left {
+  animation: pfLeft 28s linear infinite;
 }
 
-.pflow-item {
-  width: 132px;
-  height: 58px;
+.pf-right {
+  animation: pfRight 32s linear infinite;
+}
+
+.pf-item {
+  width: 132px !important;
+  height: 58px !important;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(197, 111, 149, 0.14);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  overflow: hidden;
+  border: 1px solid rgba(197, 111, 149, 0.16);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  overflow: hidden !important;
 }
 
-.pflow-item img {
-  max-width: 106px;
-  max-height: 30px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
+.pf-item img {
+  max-width: 106px !important;
+  max-height: 30px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  flex: 0 0 auto !important;
 }
 
-@keyframes pflowLeft {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+#pixieTrail {
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 40;
 }
 
-@keyframes pflowRight {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+.cmad-nav .nav-link,
+.cmad-nav .menu-link,
+.cmad-nav .mobile-link,
+.cmad-nav .mobile-dd-toggle {
+  color: #374151 !important;
+}
+
+.cmad-nav .nav-link:hover,
+.cmad-nav .menu-link:hover,
+.cmad-nav .mobile-link:hover,
+.cmad-nav .mobile-dd-toggle:hover {
+  color: var(--brand-primary) !important;
+}
+
+.cmad-nav .active-nav {
+  color: var(--brand-primary) !important;
+  font-weight: 600 !important;
+}
+
+.cmad-nav .menu-panel {
+  background: #fff;
+}
+
+@keyframes pfLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pfRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 768px) {
-  .pflow-item {
-    width: 108px;
-    height: 50px;
+  .section-title {
+    font-size: 1.9rem;
   }
 
-  .pflow-item img {
-    max-width: 88px;
-    max-height: 26px;
+  .pf-item {
+    width: 108px !important;
+    height: 50px !important;
   }
+
+  .pf-item img {
+    max-width: 88px !important;
+    max-height: 26px !important;
+  }
+
+  .pf-left {
+    animation-duration: 22s;
+  }
+
+  .pf-right {
+    animation-duration: 26s;
+  }
+}
+
+@media (max-width: 640px) {
+  .mq-hero-logo {
+    width: min(420px, 90vw);
+  }
+}
+
+
+.check-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.check-list-item {
+  align-items: flex-start;
+  color: #374151;
+  display: flex;
+  gap: 0.55rem;
+  line-height: 1.45;
+}
+
+.check-list-item::before {
+  color: #22c55e;
+  content: "\2714";
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 0.08rem;
+}
+
+.mq-pack-card {
+  background: linear-gradient(180deg, #f8f1ec 0%, #f3ebe5 100%);
+  border: 1px solid #eddcd1;
+  border-radius: 1.25rem;
+  box-shadow: 0 14px 28px rgba(17, 14, 21, 0.24);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.55rem 1.4rem;
+}
+
+.mq-pack-title {
+  color: #b4638f;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  line-height: 0.92;
+  margin-bottom: 0.5rem;
+}
+
+.mq-pack-days {
+  background: rgba(196, 122, 154, 0.16);
+  border: 1px solid rgba(142, 109, 42, 0.22);
+  border-radius: 9999px;
+  color: #7f5870;
+  display: inline-flex;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.72rem;
+  text-transform: uppercase;
+}
+
+.mq-pack-highlight {
+  color: #2f3d5d;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 0.8rem;
+}
+
+.mq-pack-footnote {
+  color: #4d5a7b;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-top: auto;
+}
+
+.service-grid-three {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #ffffff;
+  border: 1px solid #ece8e4;
+  border-radius: 1rem;
+  box-shadow: 0 10px 24px rgba(37, 27, 34, 0.12);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
+}
+
+.service-title {
+  min-height: 5.4rem;
+}
+
+.service-check-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.service-cta {
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .service-grid-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .mq-pack-title {
+    font-size: 2.5rem;
+  }
+
+  .mq-pack-highlight {
+    font-size: 1.72rem;
+  }
+
+  .service-title {
+    min-height: 0;
+  }
+}
+
+/* Quince cards: estética branding */
+.mq-pack-card {
+  background: #f7f0ec;
+  border: 1px solid #eaded4;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mq-pack-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  line-height: 0.95;
+  font-weight: 500;
+  color: #b86b98;
+  margin-bottom: .8rem;
+}
+
+.mq-pack-days {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #8f6783;
+  background: #ecdde3;
+  border: 1px solid #dcc4cf;
+  border-radius: 999px;
+  padding: .35rem .8rem;
+  margin-bottom: 1rem;
+}
+
+.mq-pack-highlight {
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  line-height: .98;
+  font-weight: 800;
+  color: #2f3d5d;
+  margin-bottom: 1rem;
+}
+
+.mq-pack-footnote {
+  color: #4d5a7b;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-top: auto; /* alinea esta leyenda en todas las cards */
+}
+
+/* Quince cards override: versión VIP premium */
+.mq-pack-card {
+  background: radial-gradient(circle at 18% 18%, #3f2d37 0%, #2f232c 58%, #261d25 100%);
+  border: 1px solid rgba(201, 162, 127, 0.45);
+  border-radius: 1.1rem;
+  box-shadow: 0 14px 28px rgba(12, 9, 15, 0.35);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mq-pack-title {
+  color: #cf8f99;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.0rem, 2.6vw, 3.0rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 0.92;
+  margin-bottom: 0.7rem;
+}
+
+.mq-pack-days {
+  align-self: flex-start;
+  background: rgba(201, 162, 127, 0.12);
+  border: 1px solid rgba(201, 162, 127, 0.45);
+  border-radius: 999px;
+  color: #e8d8cb;
+  display: inline-block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  padding: 0.34rem 0.9rem;
+  text-transform: uppercase;
+}
+
+.mq-pack-highlight {
+  color: #f0d8bd;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 2.2vw, 2.6rem);
+  font-weight: 600;
+  line-height: 0.95;
+  margin-bottom: 1rem;
+}
+
+.mq-pack-footnote {
+  color: #e7d8cc;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .mq-pack-highlight {
+    font-size: clamp(1.55rem, 4.8vw, 2.05rem);
+    line-height: 1;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   servicios-disney-familias.html + servicios-universal-familias.html
+   + servicios-cruceros-disney-familias.html
+   ───────────────────────────────────────────────────────────── */
+
+.park-card {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(74, 50, 64, 0.10);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(197, 111, 149, 0.12);
+}
+
+.park-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(74, 50, 64, 0.15);
+}
+
+.park-card img {
+  width: 100%;
+  height: 195px;
+  object-fit: cover;
+  display: block;
+}
+
+.park-card-body {
+  padding: 1.2rem 1.4rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.park-tag {
+  display: inline-block;
+  font-size: 0.70rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #C56F95;
+  background: rgba(197, 111, 149, 0.10);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.hotel-card {
+  border-radius: 1.1rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(74, 50, 64, 0.09);
+  border: 1px solid rgba(197, 111, 149, 0.12);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.hotel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(74, 50, 64, 0.14);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+}
+
+.hotel-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.2rem 0.72rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-eco    { background: #d1fae5; color: #065f46; }
+.badge-mod    { background: #fef3c7; color: #92400e; }
+.badge-deluxe { background: rgba(197, 111, 149, 0.12); color: #C56F95; }
+
+.include-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(197, 111, 149, 0.13);
+  box-shadow: 0 3px 10px rgba(74, 50, 64, 0.06);
+}
+
+.include-icon {
+  flex-shrink: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 9999px;
+  background: rgba(197, 111, 149, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.divider-magic {
+  text-align: center;
+  color: #C9A24A;
+  font-size: 1.1rem;
+  letter-spacing: 0.6rem;
+  margin: 2.5rem 0 2rem;
+  opacity: 0.45;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, rgba(197, 111, 149, 0.10) 0%, rgba(201, 162, 74, 0.08) 100%);
+  border: 1px solid rgba(197, 111, 149, 0.18);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+/* Solo servicios-universal-familias.html */
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(201, 162, 74, 0.10);
+  border: 1px solid rgba(201, 162, 74, 0.25);
+  border-radius: 999px;
+  color: #8E6D2A;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.8rem;
+  margin-top: 0.6rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   combo-essential-mq.html + combo-deluxe-mq.html +
+   combo-royale-mq.html + programa-mq.html
+   ───────────────────────────────────────────────────────────── */
+
+/* Precio hero badge */
+.mq-price-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #c26f98, #c9a24a);
+  color: #fff;
+  padding: 0.65rem 2rem;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.mq-price-badge span {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Botón volver */
+.mq-back-link {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: #c9a24a;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.2s;
+}
+
+.mq-back-link:hover {
+  opacity: 0.75;
+}
+
+/* Etiqueta de sección */
+.mq-section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: #c9a24a;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Título de sección */
+.mq-section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: #f0d8bd;
+  margin-bottom: 1.5rem;
+}
+
+/* Card oscura genérica para detalle */
+.mq-detail-card {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(122, 93, 70, 0.33);
+  border-radius: 1rem;
+  padding: 1.4rem;
+}
+
+/* Card oscura con borde dorado (extras exclusivos) */
+.mq-detail-card--gold {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(201, 162, 74, 0.33);
+  border-radius: 1rem;
+  padding: 1.4rem;
+}
+
+/* Badge "incluye todo X" */
+.mq-includes-badge {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(201, 162, 74, 0.33);
+  border-radius: 1rem;
+  padding: 1.1rem 1.4rem;
+  text-align: center;
+}
+
+.mq-includes-badge p:first-child {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #c9a24a;
+  margin-bottom: 0.2rem;
+}
+
+.mq-includes-badge p:last-child {
+  font-size: 0.85rem;
+  color: #e8d8cb;
+}
+
+/* Lista de items con ✦ */
+.mq-item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mq-item-list li {
+  font-size: 0.875rem;
+  color: #e8d8cb;
+  line-height: 1.45;
+}
+
+/* Tags de parque / beneficio */
+.mq-park-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: #2d222b;
+  color: #c9a24a;
+  border: 1px solid rgba(122, 93, 70, 0.33);
+  border-radius: 9999px;
+  padding: 0.22rem 0.75rem;
+}
+
+/* Card de ícono centrado (Magic Queens Plus) */
+.mq-icon-card {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(122, 93, 70, 0.33);
+  border-radius: 0.85rem;
+  padding: 1.1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mq-icon-card .mq-icon-emoji {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.mq-icon-card .mq-icon-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #cf8f99;
+  margin-bottom: 0.3rem;
+}
+
+.mq-icon-card .mq-icon-desc {
+  font-size: 0.75rem;
+  color: #e8d8cb;
+  line-height: 1.4;
+}
+
+/* Card de stat numérico (8 reinas, 2 coordinadoras, etc.) */
+.mq-stat-card {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(122, 93, 70, 0.33);
+  border-radius: 0.85rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.mq-stat-card .mq-stat-number {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #cf8f99;
+  margin-bottom: 0.2rem;
+}
+
+.mq-stat-card .mq-stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c9a24a;
+  margin-bottom: 0.2rem;
+}
+
+.mq-stat-card .mq-stat-desc {
+  font-size: 0.73rem;
+  color: #e8d8cb;
+}
+
+/* Box CTA de precio final */
+.mq-cta-box {
+  background: rgba(45, 34, 43, 0.9);
+  border: 1px solid rgba(122, 93, 70, 0.33);
+  border-radius: 1.5rem;
+  padding: 2.2rem;
+  text-align: center;
+}
+
+.mq-cta-price {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: #f0d8bd;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.mq-cta-duration {
+  font-size: 0.875rem;
+  color: #e8d8cb;
+  margin-bottom: 0.3rem;
+}
+
+.mq-cta-conditions {
+  font-size: 0.72rem;
+  color: #c9a24a;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón primario MQ */
+.mq-btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #c26f98, #c9a24a);
+  color: #fff;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.mq-btn-primary:hover {
+  opacity: 0.88;
+}
+
+/* Botón secundario MQ (borde dorado) */
+.mq-btn-outline {
+  display: inline-block;
+  border: 2px solid #c9a27f;
+  color: #f0d8bd;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.mq-btn-outline:hover {
+  background: #c9a27f;
+  color: #2f232c;
+}
+
+/* Tabla comparativa */
+.mq-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.mq-compare-table thead tr {
+  background: #2d222b;
+}
+
+.mq-compare-table thead th {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: #cf8f99;
+  text-align: center;
+}
+
+.mq-compare-table thead th:first-child {
+  text-align: left;
+  color: #c9a24a;
+  min-width: 200px;
+}
+
+.mq-compare-table tbody tr:nth-child(odd) {
+  background: rgba(58, 42, 51, 0.6);
+}
+
+.mq-compare-table tbody tr:nth-child(even) {
+  background: rgba(45, 34, 43, 0.6);
+}
+
+.mq-compare-table tbody tr {
+  border-top: 1px solid rgba(122, 93, 70, 0.2);
+}
+
+.mq-compare-table tbody td {
+  padding: 0.75rem 1.25rem;
+  color: #e8d8cb;
+  text-align: center;
+}
+
+.mq-compare-table tbody td:first-child {
+  text-align: left;
+}
+
+.mq-compare-table tfoot tr {
+  background: #2d222b;
+  border-top: 1px solid rgba(122, 93, 70, 0.4);
+}
+
+.mq-compare-table tfoot td {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-weight: 700;
+  color: #f0d8bd;
+}
+
+.mq-compare-table tfoot td:first-child {
+  text-align: left;
+  color: #c9a24a;
+  font-weight: 600;
+}
+
+/* Check / dash de tabla */
+.mq-check { color: #c9a24a; }
+.mq-dash  { color: rgba(122, 93, 70, 0.6); }
+
+/* Card de salida (Julio 2026, etc.) */
+.mq-salida-card {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(201, 162, 74, 0.33);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  min-width: 140px;
+}
+
+.mq-salida-card .mq-salida-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #c9a24a;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+.mq-salida-card .mq-salida-date {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #f0d8bd;
+}
+
+/* Card de pago/condiciones */
+.mq-conditions-card {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(122, 93, 70, 0.33);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.mq-conditions-card li {
+  font-size: 0.875rem;
+  color: #e8d8cb;
+  line-height: 1.5;
+  padding: 0.25rem 0;
+}
+
+/* Card de programa (link clickeable en programa-mq.html) */
+.mq-program-card {
+  background: rgba(58, 42, 51, 0.6);
+  border: 1px solid rgba(122, 93, 70, 0.33);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mq-program-card:hover {
+  opacity: 0.88;
+  transform: translateY(-3px);
+}
+
+.mq-program-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mq-program-card--featured {
+  border-color: rgba(201, 162, 74, 0.55);
+}
+
+/* Credenciales hero (quinceaneras + combo pages) */
+.mq-credential-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.mq-credential-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: #c9a24a;
+  border: 1px solid rgba(122, 93, 70, 0.5);
+  padding: 0.4rem 1rem;
+}
+
+
+/* ════════════════════════════════════════════
+   MQ — Formulario de Inscripción (inscripcion-mq.html)
+   ════════════════════════════════════════════ */
+
+.mq-form-block {
+  background: rgba(45, 34, 43, 0.75);
+  border: 1px solid rgba(122, 93, 70, 0.28);
+  border-radius: 1.15rem;
+  padding: 1.5rem 1.5rem 1.6rem;
+  margin-bottom: 1.1rem;
+  backdrop-filter: blur(6px);
+}
+
+.mq-form-block--gold {
+  border-color: rgba(201, 162, 74, 0.35);
+}
+
+.mq-block-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.mq-block-num {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #cf8f99, #c9a24a);
+  color: #1e1520;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.7rem;
+  flex-shrink: 0;
+  margin-right: 0.55rem;
+}
+
+.mq-block-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #c9a24a;
+}
+
+.mq-block-desc {
+  font-size: 0.82rem;
+  color: #e8d8cb;
+  margin-bottom: 0.9rem;
+  margin-top: 0.2rem;
+  line-height: 1.55;
+}
+
+.mq-sublabel {
+  font-size: 0.78rem;
+  color: #c9a24a;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-top: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.mq-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 74, 0.3), transparent);
+  margin: 0.4rem 0 0.9rem;
+}
+
+.mq-input,
+.mq-textarea,
+.mq-select {
+  width: 100%;
+  padding: 0.78rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(122, 93, 70, 0.35);
+  background: rgba(58, 42, 51, 0.55);
+  color: #f0d8bd;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: inherit;
+}
+
+.mq-input::placeholder,
+.mq-textarea::placeholder {
+  color: rgba(232, 216, 203, 0.38);
+}
+
+.mq-input:focus,
+.mq-textarea:focus,
+.mq-select:focus {
+  border-color: #c9a24a;
+  background: rgba(58, 42, 51, 0.8);
+}
+
+.mq-textarea {
+  resize: vertical;
+}
+
+.mq-select option {
+  background: #261c24;
+  color: #f0d8bd;
+}
+
+.mq-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(122, 93, 70, 0.28);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  background: rgba(58, 42, 51, 0.4);
+  color: #e8d8cb;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.mq-option:hover {
+  background: rgba(58, 42, 51, 0.75);
+  border-color: rgba(201, 162, 74, 0.5);
+  transform: translateX(2px);
+}
+
+.mq-option input[type="radio"],
+.mq-option input[type="checkbox"] {
+  accent-color: #c9a24a;
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+  margin-top: 0.18rem;
 }

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplicación Magic Queens XV Experience · Con Magui a Disney</title>
+  <meta name="description" content="Completá tu aplicación para Magic Queens XV Experience. Solo 8 cupos por salida." />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZQVQR29GB"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BZQVQR29GB');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/style.css" />
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: {
+        brandPrimary:"#C56F95", brandSecondary:"#E1A9C2", brandAccent:"#C9A24A",
+        brandDark:"#8E6D2A", brandLight:"#FDF8F2", brandSurface:"#F7EEF3", brandText:"#4A3240"
+      }}}
+    };
+  </script>
+  <style>
+    /* Variables de página — complementan style.css */
+    :root {
+      --mq-bg:      #1e1520;
+      --mq-bg-soft: #261c24;
+    }
+    body { background: var(--mq-bg); color: #e8d8cb; }
+    .star-divider {
+      text-align: center;
+      color: rgba(201,162,74,0.4);
+      letter-spacing: 1rem;
+      font-size: 0.65rem;
+      margin: 0.5rem 0 1.2rem;
+    }
+    #statusMsg {
+      font-size: 0.875rem;
+      padding: 0.7rem 1rem;
+      border-radius: 0.6rem;
+      text-align: center;
+      display: none;
+    }
+    #statusMsg.error   { background: rgba(220,50,50,0.15); color: #ff9999; border: 1px solid rgba(220,50,50,0.3); display:block; }
+    #statusMsg.success { background: rgba(100,200,100,0.12); color: #90e090; border: 1px solid rgba(100,200,100,0.3); display:block; }
+  </style>
+</head>
+
+<body data-page="quince">
+  <div id="site-nav"></div>
+
+  <!-- ══ HERO ══ -->
+  <section class="pt-32 md:pt-36 pb-10 px-4 text-center" style="background:var(--mq-bg);">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-xs tracking-[0.35em] mb-5" style="color:var(--mq-gold);">MAGIC QUEENS · XV EXPERIENCE · TEMPORADA 2026/2027</p>
+      <img src="assets/img/quince/logomq.png" alt="Magic Queens" class="mq-hero-logo mx-auto mb-6" style="max-height:88px;" />
+      <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.2rem); color:var(--mq-soft); font-weight:600; line-height:1.15;" class="mb-4">
+        Formulario de Aplicación
+      </h1>
+      <p class="text-sm leading-relaxed mb-6" style="color:var(--mq-text); max-width:520px; margin-left:auto; margin-right:auto;">
+        Completá este formulario para que nuestro equipo evalúe la compatibilidad del grupo y la disponibilidad de plazas. Debido al formato boutique de Magic Queens — <strong style="color:var(--mq-gold);">solo 8 participantes por edición</strong> — los grupos se confirman de manera personalizada.
+      </p>
+      <div class="flex flex-wrap justify-center gap-2 text-xs tracking-[0.1em]" style="color:var(--mq-gold);">
+        <span style="border:1px solid rgba(201,162,74,0.3); padding:5px 13px; border-radius:4px;">✦ 8 cupos por salida</span>
+        <span style="border:1px solid rgba(201,162,74,0.3); padding:5px 13px; border-radius:4px;">✦ 2 coordinadoras exclusivas</span>
+        <span style="border:1px solid rgba(201,162,74,0.3); padding:5px 13px; border-radius:4px;">✦ Julio 2026 · Feb 2027 · Julio 2027</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FORMULARIO ══ -->
+  <section class="py-10 px-4" style="background:var(--mq-bg-soft);">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- ── Badge combo preseleccionado ── -->
+      <div id="comboBadge" class="hidden text-center mb-5">
+        <p class="text-xs tracking-[0.2em] mb-2" style="color:rgba(201,162,74,0.6);">COMBO SELECCIONADO</p>
+        <span id="comboLabel" style="background:linear-gradient(135deg,rgba(207,143,153,0.2),rgba(201,162,74,0.2)); border:1px solid rgba(201,162,74,0.45); color:#f0d8bd; font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; padding:0.5rem 1.8rem; border-radius:2rem; display:inline-block; letter-spacing:0.06em;"></span>
+        <p class="text-xs mt-2" style="color:rgba(232,216,203,0.5);">Podés completar igual el formulario sin combo seleccionado.</p>
+      </div>
+
+      <!-- ── Datos de contacto (fuera del form, se sincronizan) ── -->
+      <div class="mq-form-block mq-form-block--gold mb-5">
+        <div class="mq-block-header">
+          <span class="mq-block-num">★</span>
+          <span class="mq-block-title">Datos de contacto</span>
+        </div>
+        <p class="mq-block-desc">Para poder comunicarnos con vos una vez revisada la aplicación.</p>
+        <div class="mq-divider"></div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <input id="nombre_contacto" type="text" required placeholder="Tu nombre completo (mamá o papá)" class="mq-input" />
+          <input id="nombre_quinceañera" type="text" required placeholder="Nombre de la quinceañera" class="mq-input" />
+          <input id="email_contacto" type="email" required placeholder="Email de contacto" class="mq-input" />
+          <input id="whatsapp_contacto" type="tel" required placeholder="WhatsApp (con código de área)" class="mq-input" />
+          <input id="ciudad_contacto" type="text" placeholder="Ciudad / Provincia" class="mq-input" />
+          <input id="fecha_cumple" type="text" placeholder="Fecha de cumpleaños · ej: 15/08/2026" class="mq-input" />
+        </div>
+      </div>
+
+      <div class="star-divider">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+      <!-- ══ FORM (campos que van al mail) ══ -->
+      <form id="mqForm" novalidate>
+
+        <!-- Hidden Web3Forms -->
+        <input type="hidden" name="access_key" value="761fcc37-7b6b-429c-815e-55a99439c473" />
+        <input type="hidden" name="subject" value="✦ Nueva aplicación Magic Queens XV Experience" />
+        <input type="hidden" name="from_name" value="Magic Queens – Formulario Web" />
+        <!-- Datos de contacto sincronizados -->
+        <input type="hidden" id="h_nombre"     name="01_nombre_contacto" />
+        <input type="hidden" id="h_quinceañera" name="02_nombre_quinceañera" />
+        <input type="hidden" id="h_email"       name="03_email" />
+        <input type="hidden" id="h_whatsapp"    name="04_whatsapp" />
+        <input type="hidden" id="h_ciudad"      name="05_ciudad" />
+        <input type="hidden" id="h_fecha"       name="06_fecha_cumpleanos" />
+        <input type="hidden" id="h_combo"       name="00_combo_interes" />
+
+        <!-- BLOQUE 1 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">1</span>
+            <span class="mq-block-title">Inversión del viaje</span>
+          </div>
+          <p class="mq-block-desc">¿Este nivel de experiencia se encuentra dentro de sus posibilidades?</p>
+          <div class="mq-divider"></div>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="07_inversion" value="Sí, estamos evaluando seriamente este tipo de viaje" required /> Sí, estamos evaluando seriamente este tipo de viaje</label>
+            <label class="mq-option"><input type="radio" name="07_inversion" value="Queremos conocer más detalles antes de decidir" /> Queremos conocer más detalles antes de decidir</label>
+            <label class="mq-option"><input type="radio" name="07_inversion" value="Estamos comparando diferentes opciones" /> Estamos comparando diferentes opciones</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 2 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">2</span>
+            <span class="mq-block-title">Dinámica del grupo de amigas</span>
+          </div>
+          <div class="mq-divider"></div>
+          <p class="mq-sublabel">¿Cómo se formó el grupo?</p>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="08_grupo" value="Somos amigas del colegio" required /> Somos amigas del colegio</label>
+            <label class="mq-option"><input type="radio" name="08_grupo" value="Somos amigas de diferentes colegios" /> Somos amigas de diferentes colegios</label>
+            <label class="mq-option"><input type="radio" name="08_grupo" value="Somos primas / familia" /> Somos primas / familia</label>
+            <label class="mq-option"><input type="radio" name="08_grupo" value="Somos amigas cercanas de muchos años" /> Somos amigas cercanas de muchos años</label>
+          </div>
+          <p class="mq-sublabel">¿Desde cuándo son amigas?</p>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="09_tiempo_amistad" value="Más de 5 años" required /> Más de 5 años</label>
+            <label class="mq-option"><input type="radio" name="09_tiempo_amistad" value="3 a 5 años" /> 3 a 5 años</label>
+            <label class="mq-option"><input type="radio" name="09_tiempo_amistad" value="Menos de 3 años" /> Menos de 3 años</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 3 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">3</span>
+            <span class="mq-block-title">Personalidad de la quinceañera</span>
+          </div>
+          <p class="mq-block-desc">¿Cómo describirías a tu hija? (podés elegir más de una)</p>
+          <div class="mq-divider"></div>
+          <div class="grid sm:grid-cols-2 gap-2">
+            <label class="mq-option"><input type="checkbox" name="10_personalidad" value="Sociable" /> Sociable</label>
+            <label class="mq-option"><input type="checkbox" name="10_personalidad" value="Líder natural" /> Líder natural</label>
+            <label class="mq-option"><input type="checkbox" name="10_personalidad" value="Reservada al principio" /> Reservada al principio</label>
+            <label class="mq-option"><input type="checkbox" name="10_personalidad" value="Muy independiente" /> Muy independiente</label>
+            <label class="mq-option"><input type="checkbox" name="10_personalidad" value="Sensible / emocional" /> Sensible / emocional</label>
+            <label class="mq-option"><input type="checkbox" name="10_personalidad" value="Aventurera" /> Aventurera</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 4 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">4</span>
+            <span class="mq-block-title">Expectativas del viaje</span>
+          </div>
+          <p class="mq-block-desc">¿Qué es lo que más le entusiasma? (podés elegir más de una)</p>
+          <div class="mq-divider"></div>
+          <div class="grid sm:grid-cols-2 gap-2">
+            <label class="mq-option"><input type="checkbox" name="11_expectativas" value="Disney y parques" /> Disney y parques</label>
+            <label class="mq-option"><input type="checkbox" name="11_expectativas" value="Viajar con amigas" /> Viajar con amigas</label>
+            <label class="mq-option"><input type="checkbox" name="11_expectativas" value="La experiencia internacional" /> La experiencia internacional</label>
+            <label class="mq-option"><input type="checkbox" name="11_expectativas" value="Conocer otras chicas" /> Conocer otras chicas</label>
+            <label class="mq-option"><input type="checkbox" name="11_expectativas" value="El crucero" /> El crucero</label>
+            <label class="mq-option"><input type="checkbox" name="11_expectativas" value="Vivir algo único por sus 15" /> Vivir algo único por sus 15</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 5 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">5</span>
+            <span class="mq-block-title">Seguridad del viaje</span>
+          </div>
+          <p class="mq-block-desc">¿Cómo se sentirían con un viaje internacional donde su hija esté acompañada por coordinadoras especializadas durante 12–16 días?</p>
+          <div class="mq-divider"></div>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="12_seguridad" value="Muy seguros" required /> Muy seguros</label>
+            <label class="mq-option"><input type="radio" name="12_seguridad" value="Interesados pero con preguntas" /> Interesados pero con preguntas</label>
+            <label class="mq-option"><input type="radio" name="12_seguridad" value="Queremos entender bien cómo funciona" /> Queremos entender bien cómo funciona</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 6 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">6</span>
+            <span class="mq-block-title">Decisión familiar</span>
+          </div>
+          <div class="mq-divider"></div>
+          <p class="mq-sublabel">¿Quién tomaría la decisión final?</p>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="13_decision" value="Madre" required /> Madre</label>
+            <label class="mq-option"><input type="radio" name="13_decision" value="Padre" /> Padre</label>
+            <label class="mq-option"><input type="radio" name="13_decision" value="Ambos padres" /> Ambos padres</label>
+            <label class="mq-option"><input type="radio" name="13_decision" value="Decisión familiar conjunta" /> Decisión familiar conjunta</label>
+          </div>
+          <p class="mq-sublabel">¿Cuándo les gustaría decidir?</p>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="14_tiempo_decision" value="En las próximas semanas" required /> En las próximas semanas</label>
+            <label class="mq-option"><input type="radio" name="14_tiempo_decision" value="En los próximos meses" /> En los próximos meses</label>
+            <label class="mq-option"><input type="radio" name="14_tiempo_decision" value="Solo estamos explorando" /> Solo estamos explorando</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 7 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">7</span>
+            <span class="mq-block-title">Compromiso del grupo</span>
+          </div>
+          <p class="mq-block-desc">Si hubiera disponibilidad para su grupo de amigas, ¿estarían interesadas en avanzar con la reserva?</p>
+          <div class="mq-divider"></div>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="15_compromiso" value="Sí, queremos asegurar lugar" required /> Sí, queremos asegurar lugar</label>
+            <label class="mq-option"><input type="radio" name="15_compromiso" value="Queremos tener primero una reunión informativa" /> Queremos tener primero una reunión informativa</label>
+            <label class="mq-option"><input type="radio" name="15_compromiso" value="Solo queremos recibir información" /> Solo queremos recibir información</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 8 -->
+        <div class="mq-form-block mq-form-block--gold">
+          <div class="mq-block-header">
+            <span class="mq-block-num">8</span>
+            <span class="mq-block-title">Pregunta especial ✦</span>
+          </div>
+          <p class="mq-block-desc">¿Por qué sienten que este viaje sería especial para este grupo de amigas?</p>
+          <div class="mq-divider"></div>
+          <textarea name="16_por_que_especial" rows="4" placeholder="Contanos con tus palabras..." class="mq-textarea"></textarea>
+        </div>
+
+        <!-- BLOQUE 9 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">9</span>
+            <span class="mq-block-title">Documentación</span>
+          </div>
+          <p class="mq-block-desc">¿La quinceañera tiene pasaporte?</p>
+          <div class="mq-divider"></div>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="17_pasaporte" value="Sí" required /> Sí</label>
+            <label class="mq-option"><input type="radio" name="17_pasaporte" value="No" /> No</label>
+            <label class="mq-option"><input type="radio" name="17_pasaporte" value="Está en trámite" /> Está en trámite</label>
+          </div>
+        </div>
+
+        <!-- BLOQUE 10 -->
+        <div class="mq-form-block">
+          <div class="mq-block-header">
+            <span class="mq-block-num">10</span>
+            <span class="mq-block-title">Canal de contacto preferido</span>
+          </div>
+          <p class="mq-block-desc">¿Cómo preferirían que nuestro equipo se comunique con ustedes?</p>
+          <div class="mq-divider"></div>
+          <div class="space-y-2">
+            <label class="mq-option"><input type="radio" name="18_contacto" value="Llamada telefónica" required /> Llamada telefónica</label>
+            <label class="mq-option"><input type="radio" name="18_contacto" value="WhatsApp" /> WhatsApp</label>
+            <label class="mq-option"><input type="radio" name="18_contacto" value="Videollamada informativa" /> Videollamada informativa</label>
+          </div>
+        </div>
+
+        <!-- BONUS -->
+        <div class="mq-form-block mq-form-block--gold">
+          <div class="mq-block-header">
+            <span class="mq-block-num">✦</span>
+            <span class="mq-block-title">Identidad del grupo</span>
+          </div>
+          <p class="mq-block-desc">¿Qué palabra describe mejor a su grupo de amigas?</p>
+          <div class="mq-divider"></div>
+          <div class="grid sm:grid-cols-2 gap-2">
+            <label class="mq-option"><input type="radio" name="19_identidad" value="Aventureras" /> Aventureras</label>
+            <label class="mq-option"><input type="radio" name="19_identidad" value="Soñadoras" /> Soñadoras</label>
+            <label class="mq-option"><input type="radio" name="19_identidad" value="Divertidas" /> Divertidas</label>
+            <label class="mq-option"><input type="radio" name="19_identidad" value="Curiosas" /> Curiosas</label>
+            <label class="mq-option"><input type="radio" name="19_identidad" value="Muy unidas" /> Muy unidas</label>
+          </div>
+        </div>
+
+        <!-- Nota legal -->
+        <div class="mq-form-block text-center" style="padding:1.2rem 1.5rem;">
+          <p class="text-sm leading-relaxed" style="color:var(--mq-text);">
+            Debido al formato boutique de Magic Queens (<strong style="color:var(--mq-gold);">solo 8 participantes por edición</strong>), los grupos se confirman una vez evaluada la compatibilidad del grupo de amigas y la disponibilidad del programa.<br><br>
+            <span style="color:var(--mq-gold);">Nuestro equipo se comunicará con vos dentro de las 48hs hábiles de recibida la aplicación.</span>
+          </p>
+        </div>
+
+        <!-- Mensaje de estado -->
+        <div id="statusMsg" class="mb-4"></div>
+
+        <!-- Botón enviar -->
+        <div class="text-center pb-10">
+          <button id="submitBtn" type="submit" class="mq-btn-primary px-14 py-4 text-base">
+            Enviar aplicación &nbsp;✦
+          </button>
+        </div>
+
+      </form>
+
+      <!-- ══ ÉXITO ══ -->
+      <div id="formSuccess" class="hidden mq-form-block mq-form-block--gold text-center py-12 mb-10">
+        <div class="text-5xl mb-4">👑</div>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:var(--mq-soft);" class="mb-3">¡Aplicación recibida!</p>
+        <p class="text-sm mb-2" style="color:var(--mq-text);">Gracias por postularte a Magic Queens XV Experience.</p>
+        <p class="text-sm mb-6" style="color:var(--mq-gold);">Nuestro equipo revisará tu aplicación y se comunicará con vos dentro de las 48hs hábiles.</p>
+        <a href="quinceaneras.html" class="mq-btn-outline inline-block px-10 py-3">← Volver a Magic Queens</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="bg-black text-white py-12 px-4 text-center">
+    <div class="max-w-5xl mx-auto">
+      <h3 style="font-family:'Cormorant Garamond',serif;letter-spacing:0.08em;" class="text-4xl md:text-5xl font-bold gradient-text mb-2">CON MAGUI A DISNEY</h3>
+      <p style="color:#f0e6d3;font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:0.04em;" class="mb-5 italic">Convirtiendo sueños en experiencias mágicas</p>
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
+        <span style="border:1px solid #C9A24A55;color:#C9A24A;font-size:0.72rem;letter-spacing:0.12em;padding:6px 14px;border-radius:4px;">✦ Disney Authorized Vacation Planner</span>
+        <span style="border:1px solid #C9A24A55;color:#C9A24A;font-size:0.72rem;letter-spacing:0.12em;padding:6px 14px;border-radius:4px;">✦ Universal Preferred Agency</span>
+        <span style="border:1px solid #C9A24A55;color:#C9A24A;font-size:0.72rem;letter-spacing:0.12em;padding:6px 14px;border-radius:4px;">✦ IATA · Archer Travel Group</span>
+      </div>
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <a class="social-icon-link" href="https://www.facebook.com/maria.pugliese.3304" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M13.5 8.25V6.5c0-.69.56-1.25 1.25-1.25H16V2h-1.75A4.25 4.25 0 0 0 10 6.25v2H7.5v3.25H10V22h3.5V11.5H16l.5-3.25h-3z"/></svg>
+        </a>
+        <a class="social-icon-link" href="https://instagram.com/conmaguiadisney" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm9.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
+        </a>
+        <a class="social-icon-link" href="https://www.tiktok.com/@conmaguiadisney" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M14.5 3c.26 1.55 1.36 2.88 2.92 3.42.66.23 1.38.34 2.08.33v3.2a7.2 7.2 0 0 1-3.3-.79v6.42A5.58 5.58 0 1 1 10.63 10h.12v3.27a2.33 2.33 0 1 0 2.2 2.31V3h1.55z"/></svg>
+        </a>
+      </div>
+      <p class="text-sm mb-8" style="color:#6b6b6b;">© 2026 Con Magui a Disney · Todos los derechos reservados</p>
+      <div class="border-t pt-6" style="border-color:#ffffff18;">
+        <p class="text-xs uppercase tracking-wider mb-3" style="color:#555;">Desarrollado por</p>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 group">
+          <img src="assets/img/it-integral/ItSolutions.png" alt="IT Integral Solutions" class="w-11 h-11 rounded-full object-contain bg-white p-1" />
+          <span class="flex flex-col items-start text-left leading-tight">
+            <span class="text-sm md:text-base font-semibold text-white group-hover:text-brandSecondary transition">IT Integral Solutions</span>
+            <span class="inline-flex items-center gap-2 text-xs md:text-sm text-gray-300 mt-1">
+              <img src="assets/icons/whatsapp.png" alt="WhatsApp" class="w-4 h-4 object-contain" />
+              11 3363-4277
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <canvas id="pixieTrail" aria-hidden="true"></canvas>
+
+  <!-- ══ LÓGICA COMBO DESDE URL ══ -->
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const combo  = params.get('combo');
+      if (!combo) return;
+      // Mostrar badge
+      const badge = document.getElementById('comboBadge');
+      const label = document.getElementById('comboLabel');
+      if (badge && label) {
+        label.textContent = 'Magic Queens ' + combo;
+        badge.classList.remove('hidden');
+      }
+      // Guardar en hidden field cuando el DOM esté listo
+      document.addEventListener('DOMContentLoaded', function() {
+        const hCombo = document.getElementById('h_combo');
+        if (hCombo) hCombo.value = combo;
+      });
+    })();
+  </script>
+
+  <!-- ══ LÓGICA DEL FORMULARIO ══ -->
+  <script>
+    document.getElementById('mqForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const btn       = document.getElementById('submitBtn');
+      const statusMsg = document.getElementById('statusMsg');
+
+      // Limpiar estado previo
+      statusMsg.className = '';
+      statusMsg.textContent = '';
+
+      // Tomar datos de contacto
+      const nombre      = document.getElementById('nombre_contacto').value.trim();
+      const quinceañera = document.getElementById('nombre_quinceañera').value.trim();
+      const email       = document.getElementById('email_contacto').value.trim();
+      const whatsapp    = document.getElementById('whatsapp_contacto').value.trim();
+
+      // Validar contacto
+      if (!nombre || !quinceañera || !email || !whatsapp) {
+        statusMsg.textContent = 'Por favor completá los datos de contacto (nombre, quinceañera, email y WhatsApp) antes de enviar.';
+        statusMsg.className = 'error';
+        document.querySelector('.mq-form-block').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      // Sincronizar en campos hidden
+      document.getElementById('h_nombre').value      = nombre;
+      document.getElementById('h_quinceañera').value  = quinceañera;
+      document.getElementById('h_email').value        = email;
+      document.getElementById('h_whatsapp').value     = whatsapp;
+      document.getElementById('h_ciudad').value       = document.getElementById('ciudad_contacto').value.trim();
+      document.getElementById('h_fecha').value        = document.getElementById('fecha_cumple').value.trim();
+      document.getElementById('h_combo').value        = new URLSearchParams(window.location.search).get('combo') || 'No especificado';
+
+      // Consolidar checkboxes múltiples en un solo valor
+      ['10_personalidad', '11_expectativas'].forEach(name => {
+        const checked = [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(el => el.value);
+        // Eliminar inputs sueltos y poner uno solo
+        document.querySelectorAll(`input[name="${name}"]`).forEach(el => el.removeAttribute('name'));
+        const hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = name;
+        hidden.value = checked.length ? checked.join(', ') : '(ninguna)';
+        this.appendChild(hidden);
+      });
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      try {
+        const res  = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(this)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          this.classList.add('hidden');
+          document.getElementById('formSuccess').classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          throw new Error(data.message || 'Error al enviar');
+        }
+      } catch (err) {
+        statusMsg.textContent = 'Ocurrió un error al enviar la aplicación. Por favor intentá nuevamente.';
+        statusMsg.className = 'error';
+        btn.disabled = false;
+        btn.textContent = 'Enviar aplicación ✦';
+      }
+    });
+  </script>
+
+  <!-- Pixie trail -->
+  <script>
+    (() => {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const isTouch = window.matchMedia("(pointer: coarse)").matches;
+      if (prefersReduced || isTouch) return;
+      const canvas = document.getElementById("pixieTrail");
+      if (!canvas) return;
+      canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;";
+      const ctx = canvas.getContext("2d");
+      let w = 0, h = 0, particles = [], mouse = { x:-9999, y:-9999, moving:false }, lastSpawn = 0;
+      const colors = ["#C9A24A","#E1A9C2","#F6E7B8","#FFFFFF"];
+      function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
+      function spawnTrail(x, y, count = 4) {
+        for (let i = 0; i < count; i++) {
+          const angle = Math.random() * Math.PI * 2, speed = 0.25 + Math.random() * 1.1;
+          particles.push({ x, y, vx: Math.cos(angle)*speed, vy: Math.sin(angle)*speed-0.2, life: 30+Math.random()*30, maxLife: 60, size: 1.2+Math.random()*2.4, color: colors[(Math.random()*colors.length)|0] });
+        }
+      }
+      function tick(now) {
+        ctx.clearRect(0, 0, w, h);
+        if (mouse.moving && now - lastSpawn > 12) { spawnTrail(mouse.x, mouse.y, 4); lastSpawn = now; }
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const p = particles[i];
+          p.life -= 1; p.x += p.vx; p.y += p.vy; p.vx *= 0.99; p.vy += 0.01;
+          if (p.life <= 0) { particles.splice(i, 1); continue; }
+          const a = p.life / p.maxLife;
+          ctx.globalAlpha = Math.max(0, a) * 0.9;
+          ctx.fillStyle = p.color; ctx.shadowBlur = 10; ctx.shadowColor = p.color;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+        }
+        ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+        requestAnimationFrame(tick);
+      }
+      window.addEventListener("mousemove", e => { mouse.x = e.clientX; mouse.y = e.clientY; mouse.moving = true; });
+      window.addEventListener("mouseleave", () => { mouse.moving = false; });
+      window.addEventListener("resize", resize); resize(); requestAnimationFrame(tick);
+    })();
+  </script>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/whatsapp.js"></script>
+</body>
+</html>
