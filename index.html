@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Con Magui a Disney | Travel Planner Especializada</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZQVQR29GB"></script>
@@ -20,15 +18,10 @@
 <meta name="description" content="Asesoría profesional para viajes a Disney y Universal Orlando. Planificación personalizada, reservas, estrategia diaria y acompañamiento antes y durante tu viaje." />
 <link rel="canonical" href="https://www.conmaguiadisney.com/" />
 
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Con Magui a Disney | Asesoría profesional" />
-<meta property="og:description" content="Asesoría profesional para viajes a Disney y Universal Orlando. Planificación personalizada y acompañamiento antes y durante tu viaje." />
-<meta property="og:url" content="https://www.conmaguiadisney.com/" />
-<meta property="og:image" content="https://www.conmaguiadisney.com/assets/img/ppal/cinde.webp" />
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
   <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
@@ -51,23 +44,43 @@
     };
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Con Magui a Disney",
-    "url": "https://www.conmaguiadisney.com/",
-    "sameAs": [
-      "https://www.facebook.com/maria.pugliese.3304",
-      "https://instagram.com/conmaguiadisney",
-      "https://www.tiktok.com/@conmaguiadisney"
-    ]
-  }
-  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+    :root {
+      --brand-primary: #c56f95;
+      --brand-secondary: #c9a24a;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,
+      100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    section[id] {
+  scroll-margin-top: 120px;
+}
+
+  </style>
 </head>
 
   <body data-page="home" class="bg-brandLight text-brandText">
-  <!-- Navigation -->
+  <!-- Navigation fija SIN fetch -->
   <div id="site-nav"></div>
 
   <!-- Hero -->
@@ -113,17 +126,15 @@
     <button
       type="button"
       onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-      data-cta="hero_asesoria"
       class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105"
     >
       Solicitar asesoría personalizada
     </button>
 
     <a
-      href="https://wa.me/5491133634277?text=Hola%20Magui%2C%20quiero%20asesor%C3%ADa%20para%20planear%20mi%20viaje."
+      href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20asesor%C3%ADa%20para%20planear%20mi%20viaje."
       target="_blank"
       rel="noopener noreferrer"
-      data-cta="hero_whatsapp"
       class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
     >
       Hablar por WhatsApp
@@ -131,9 +142,74 @@
   </div>
 
   <p class="text-sm text-gray-500 mt-6">
-    Asesoramiento 100% gratuito · Tarifas oficiales Disney y Universal · Soporte personalizado
+    ✔️ Asesoramiento 100% gratuito · ✔️ Tarifas oficiales Disney y Universal · ✔️ Soporte personalizado
   </p>
 </section>
+
+
+  <!-- Lead Magnet -->
+  <section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-brandSurface to-brandLight">
+    <div class="max-w-5xl mx-auto w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6 text-brandPrimary">🎁 Guía GRATIS para viajar a Disney por primera vez</h2>
+          <p class="text-lg text-gray-700 mb-4">
+            Si es tu primer viaje a Disney, esta guía puede ahorrarte <strong>mucho dinero, tiempo y frustraciones</strong>.
+          </p>
+          <p class="text-gray-600 mb-6">
+            Descubrí los errores más comunes que cometen las familias al planear su viaje y cómo evitarlos antes de comprar nada.
+          </p>
+          <ul class="space-y-3 text-gray-700 mb-6">
+            <li>✅ Elegir mal fechas y pagar de más</li>
+            <li>✅ Comprar entradas incorrectas</li>
+            <li>✅ Hacer filas eternas sin estrategia</li>
+            <li>✅ Elegir mal el hotel</li>
+            <li>✅ Pensar que un agente sale más caro</li>
+          </ul>
+          <p class="text-sm text-gray-500">✔️ Gratis · ✔️ Sin spam · ✔️ Hecha para familias reales</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full">
+          <h3 id="formTitle" class="text-2xl font-bold mb-4 text-center">Descargá la guía ahora</h3>
+          <p id="formSubtitle" class="text-center text-gray-600 mb-6">Completá tus datos y te la envío por WhatsApp</p>
+
+          <form onsubmit="enviarFormularioGeneral(event)">
+            <input type="hidden" id="intencion" value="Guía Disney" />
+            <input type="hidden" id="origen" value="guia" />
+
+            <div class="mb-4">
+              <input type="text" id="nombre" placeholder="Tu Nombre y Apellido" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary" />
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-left font-semibold mb-1">WhatsApp</label>
+              <div class="flex items-center gap-2">
+                <select id="codigoPais" required class="w-24 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+                  <option value="+54">🇦🇷 +54</option>
+                  <option value="+598">🇺🇾 +598</option>
+                  <option value="+52">🇲🇽 +52</option>
+                  <option value="+57">🇨🇴 +57</option>
+                  <option value="+1">🇺🇸 +1</option>
+                </select>
+
+                <input type="tel" id="telefono" required placeholder="Tu número de WhatsApp" class="flex-1 min-w-0 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary" />
+              </div>
+            </div>
+
+            <button type="submit" id="botonFormulario" class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full text-lg font-semibold hover:shadow-xl transition transform hover:scale-105">
+              <span id="formButtonText">🎁 Quiero la guía GRATIS</span>
+            </button>
+          </form>
+
+          <p class="text-xs text-gray-400 text-center mt-4">
+            Al enviar aceptás recibir info por WhatsApp.
+            <br />
+            No compartimos tus datos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Quinceaneras VIP -->
 <section id="quinceaneras" class="py-24 px-4 bg-[radial-gradient(circle_at_20%_25%,#4a3136_0%,#2f232c_45%,#251c22_100%)]">
@@ -155,41 +231,89 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 mb-10">
-      <article class="mq-pack-card">
-        <h3 class="mq-pack-title">Magic Queen Essential</h3>
-        <p class="mq-pack-days">12 días · 11 noches</p>
-        <p class="mq-pack-highlight">Programa base VIP: Miami + Disney + Universal.</p>
-        <p class="mq-pack-footnote">Incluye coordinación dedicada y logística completa del viaje.</p>
+      <article class="bg-[#f5efea] rounded-2xl p-6 shadow-xl border border-[#eaded4]">
+        <h3 class="text-[2.05rem] leading-tight text-[#b4638f] mb-3" style="font-family:'Cormorant Garamond',serif;">
+          Magic Queen Essential
+        </h3>
+        <p class="text-[#465065] mb-4">Programa base VIP: Miami + Disney + Universal.</p>
+        <ul class="text-sm text-[#465065] space-y-2 mb-6">
+          <li>✓ 7 parques temáticos</li>
+          <li>✓ Early Entry + Lightning Lane</li>
+          <li>✓ Comidas y bebidas sin alcohol</li>
+          <li>✓ Memory Maker + Kit VIP</li>
+        </ul>
+        <button
+          type="button"
+          onclick="setOrigenFormulario('quince_essential'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
+        >
+          👑 Quiero info Essential
+        </button>
       </article>
 
-      <article class="mq-pack-card">
-        <h3 class="mq-pack-title">Magic Queen Deluxe</h3>
-        <p class="mq-pack-days">12 días · 11 noches</p>
-        <p class="mq-pack-highlight">Todo Essential, experiencia comida con personajes y parques acuáticos.</p>
-        <p class="mq-pack-footnote">Pensado para sumar experiencias especiales sin perder comodidad.</p>
+      <article class="bg-[#f5efea] rounded-2xl p-6 shadow-xl border border-[#eaded4]">
+        <h3 class="text-[2.05rem] leading-tight text-[#b4638f] mb-3" style="font-family:'Cormorant Garamond',serif;">
+          Magic Queen Deluxe
+        </h3>
+        <p class="text-[#465065] mb-4">Todo Essential + experiencias premium Disney.</p>
+        <ul class="text-sm text-[#465065] space-y-2 mb-6">
+          <li>✓ 2 cenas con personajes</li>
+          <li>✓ 1 día parque acuático Disney</li>
+          <li>✓ Beneficios VIP completos</li>
+          <li>✓ Coordinación personalizada</li>
+        </ul>
+        <button
+          type="button"
+          onclick="setOrigenFormulario('quince_deluxe'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
+        >
+          ✨ Quiero info Deluxe
+        </button>
       </article>
 
-      <article class="mq-pack-card">
-        <h3 class="mq-pack-title">Magic Queen Royale</h3>
-        <p class="mq-pack-days">16 días · 15 noches</p>
-        <p class="mq-pack-highlight">Todo Deluxe + crucero Disney a Bahamas a isla privada Castaway Cay.</p>
-        <p class="mq-pack-footnote">La opción más completa para una experiencia premium total.</p>
+      <article class="bg-[#f5efea] rounded-2xl p-6 shadow-xl border border-[#eaded4]">
+        <h3 class="text-[2.05rem] leading-tight text-[#b4638f] mb-3" style="font-family:'Cormorant Garamond',serif;">
+          Magic Queen Royale
+        </h3>
+        <p class="text-[#465065] mb-4">Todo Deluxe + crucero Disney a Bahamas.</p>
+        <ul class="text-sm text-[#465065] space-y-2 mb-6">
+          <li>✓ Disney Cruise Line (3 noches)</li>
+          <li>✓ Castaway Cay (isla privada)</li>
+          <li>✓ Shows y experiencias a bordo</li>
+          <li>✓ Versión más completa del programa</li>
+        </ul>
+        <button
+          type="button"
+          onclick="setOrigenFormulario('quince_royale'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="w-full bg-gradient-to-r from-[#c26f98] to-[#c9a24a] text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
+        >
+          🚢 Quiero info Royale
+        </button>
       </article>
     </div>
 
     <div class="bg-[radial-gradient(circle_at_30%_20%,#4a3136_0%,#2f232c_55%,#241b22_100%)] rounded-2xl p-8 text-white text-center border border-[#8d6a4b]/45 shadow-xl">
-      <h3 class="mq-display text-4xl md:text-5xl leading-tight mb-3 text-[#f0d8bd]">
+      <h3 class="text-4xl md:text-5xl leading-tight mb-3 text-[#f0d8bd]" style="font-family:'Cormorant Garamond',serif;">
         Servicio VIP real, no viaje masivo
       </h3>
       <p class="text-lg opacity-95 mb-6 text-[#e8d8cb]">
         Máximo 8 reinas por grupo, 2 coordinadoras 24/7, daily report para familias y acompañamiento total.
       </p>
-      <a
-        href="quinceaneras.html"
-        class="inline-block border-2 border-[#c9a27f] text-[#f0d8bd] px-8 py-3 rounded-full font-bold hover:bg-[#c9a27f] hover:text-[#2f232c] transition"
-      >
-        Ver programa completo
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          type="button"
+          onclick="setOrigenFormulario('quince_info'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="bg-[#cf8f99] text-white px-8 py-3 rounded-full font-bold hover:opacity-90 transition"
+        >
+          💬 Quiero asesoría VIP
+        </button>
+        <a
+          href="quinceaneras.html"
+          class="border-2 border-[#c9a27f] text-[#f0d8bd] px-8 py-3 rounded-full font-bold hover:bg-[#c9a27f] hover:text-[#2f232c] transition"
+        >
+          Ver programa completo
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -199,97 +323,87 @@
   <!-- Servicios -->
 <section id="servicios" class="py-20 px-4">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-4">Servicios Disney y Universal para familias</h2>
+    <h2 class="text-4xl font-bold text-center mb-4">Servicios Disney y Universal</h2>
     <p class="text-center text-gray-600 mb-12">Podés contratar ambos servicios juntos o por separado.</p>
 
-    <div class="service-grid-three mb-10">
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
       <!-- Disney -->
-      <article class="service-card">
+      <article class="bg-white rounded-2xl shadow-xl p-8">
         <img
           src="assets/img/ppal/disney.webp"
           alt="Planificación viajes Disney"
           class="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
           loading="lazy"
         />
-        <h3 class="service-title text-2xl font-bold mb-4 text-brandPrimary text-center">Planificación de viajes Disney</h3>
-        <div class="service-check-list check-list text-sm text-gray-700">
-          <div class="check-list-item">Itinerario personalizado día por día</div>
-          <div class="check-list-item">Reserva de hoteles Disney o externos</div>
-          <div class="check-list-item">Compra de entradas Park Hopper / Genie+</div>
-          <div class="check-list-item">Reservas en restaurantes temáticos</div>
-          <div class="check-list-item">Estrategias para evitar filas</div>
-          <div class="check-list-item">Guía digital completa + soporte</div>
+        <h3 class="text-2xl font-bold mb-4 text-brandPrimary text-center">🏰 Planificación Viajes Disney</h3>
+        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700 mb-6">
+          <div>✅ Itinerario personalizado día por día</div>
+          <div>✅ Reserva de hoteles Disney o externos</div>
+          <div>✅ Compra de entradas Park Hopper / Genie+</div>
+          <div>✅ Reservas en restaurantes temáticos</div>
+          <div>✅ Estrategias para evitar filas</div>
+          <div>✅ Guía digital completa + soporte</div>
         </div>
-        <a
-          href="servicios-disney-familias.html"
-          data-cta="servicios_disney_info"
-          class="service-cta block text-center w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
+        <button
+          type="button"
+          onclick="setOrigenFormulario('cotizacion_disney'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
         >
-          Conocé más sobre Disney
-        </a>
+          Solicitar cotización Disney
+        </button>
       </article>
 
       <!-- Universal -->
-      <article class="service-card">
+      <article class="bg-white rounded-2xl shadow-xl p-8">
         <img
           src="assets/img/ppal/universal.webp"
           alt="Viajes Universal Orlando"
           class="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
           loading="lazy"
         />
-        <h3 class="service-title text-2xl font-bold mb-4 text-brandAccent text-center">Viajes Universal Orlando</h3>
-        <div class="service-check-list check-list text-sm text-gray-700">
-          <div class="check-list-item">Universal Studios + Islands of Adventure + Epic Universe</div>
-          <div class="check-list-item">Mundo Harry Potter (ambos parques)</div>
-          <div class="check-list-item">Express Pass para saltar filas</div>
-          <div class="check-list-item">Volcano Bay (parque acuático)</div>
-          <div class="check-list-item">Combinación inteligente con Disney</div>
-          <div class="check-list-item">Plan diario + recomendaciones clave</div>
+        <h3 class="text-2xl font-bold mb-4 text-brandAccent text-center">⚡ Viajes Universal Orlando</h3>
+        <div class="grid grid-cols-1 gap-3 text-sm text-gray-700 mb-6">
+          <div>✅ Universal Studios + Islands of Adventure + Epic Universe</div>
+          <div>✅ Mundo Harry Potter (ambos parques)</div>
+          <div>✅ Express Pass para saltar filas</div>
+          <div>✅ Volcano Bay (parque acuático)</div>
+          <div>✅ Combinación inteligente con Disney</div>
+          <div>✅ Plan diario + recomendaciones clave</div>
         </div>
-        <a
-          href="servicios-universal-familias.html"
-          data-cta="servicios_universal_info"
-          class="service-cta block text-center w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
+        <button
+          type="button"
+          onclick="setOrigenFormulario('cotizacion_universal'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
         >
-          Conocé más sobre Universal
-        </a>
-      </article>
-
-      <!-- Cruceros Disney -->
-      <article class="service-card">
-        <img
-          src="assets/img/quince/crucero2.webp"
-          alt="Crucero Disney a Bahamas"
-          class="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
-          loading="lazy"
-        />
-        <h3 class="service-title text-2xl font-bold mb-4 text-brandDark text-center">Cruceros Disney a Bahamas</h3>
-        <div class="service-check-list check-list text-sm text-gray-700">
-          <div class="check-list-item">Itinerario de 3 noches con escala en Nassau</div>
-          <div class="check-list-item">Día completo en isla privada Castaway Cay</div>
-          <div class="check-list-item">Comidas incluidas y entretenimiento a bordo</div>
-          <div class="check-list-item">Shows nocturnos y encuentros con personajes Disney</div>
-          <div class="check-list-item">Asistencia para reservas, cabina y documentación</div>
-          <div class="check-list-item">Ideal para sumar al viaje Disney + Universal</div>
-        </div>
-        <a
-          href="servicios-cruceros-disney-familias.html"
-          data-cta="servicios_cruceros_info"
-          class="service-cta block text-center w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
-        >
-          Conocé más sobre Cruceros Disney
-        </a>
+          Solicitar cotización Universal
+        </button>
       </article>
     </div>
-
+    
 <!-- Costos + CTA -->
     <div class="bg-gradient-to-r from-brandPrimary to-brandAccent rounded-2xl p-8 text-white text-center mb-8">
-      <h3 class="text-3xl font-bold mb-4">¿Cuánto cuestan mis servicios?</h3>
+      <h3 class="text-3xl font-bold mb-4">💰 ¿Cuánto cuestan mis servicios?</h3>
       <p class="text-2xl mb-2">¡GRATIS! Así es, CERO COSTO.</p>
       <p class="text-lg mb-6 opacity-95 max-w-4xl mx-auto">
         Gano comisiones de proveedores oficiales. Pagás lo mismo que pagarías por tu cuenta,
         pero con estrategia profesional, planificación y acompañamiento personalizado.
       </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          type="button"
+          onclick="setOrigenFormulario('cotizacion_combo'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="bg-white text-brandPrimary px-8 py-3 rounded-full font-bold hover:shadow-xl transition"
+        >
+          Solicitar cotización Disney + Universal
+        </button>
+        <button
+          type="button"
+          onclick="setOrigenFormulario('consulta_servicios'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-brandPrimary transition"
+        >
+          Quiero una consulta personalizada
+        </button>
+      </div>
     </div>
 
 
@@ -302,14 +416,23 @@
         class="w-full h-56 md:h-64 object-cover rounded-xl mb-6"
         loading="lazy"
       />
-      <h3 class="text-2xl font-bold mb-6 text-brandPrimary text-center">Asesoría Visa USA</h3>
-      <div class="check-list md:grid-cols-2 gap-4 text-sm">
-        <div class="check-list-item">Revisión completa perfil</div>
-        <div class="check-list-item">Gestión formulario DS-160</div>
-        <div class="check-list-item">Lista documentos necesarios</div>
-        <div class="check-list-item">Preparación entrevista consular</div>
-        <div class="check-list-item">Tips aumentar aprobación</div>
-        <div class="check-list-item">Visa familiar completa</div>
+      <h3 class="text-2xl font-bold mb-6 text-brandPrimary text-center">📄 Asesoría Visa USA</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>✅ Revisión completa perfil</div>
+        <div>✅ Gestión formulario DS-160</div>
+        <div>✅ Lista documentos necesarios</div>
+        <div>✅ Preparación entrevista consular</div>
+        <div>✅ Tips aumentar aprobación</div>
+        <div>✅ Visa familiar completa</div>
+      </div>
+      <div class="mt-6 text-center">
+        <button
+          type="button"
+          onclick="setOrigenFormulario('visa'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="inline-block bg-brandPrimary text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
+        >
+          📄 Quiero asesoría para la Visa
+        </button>
       </div>
     </div>
 
@@ -324,16 +447,25 @@
           loading="lazy"
         />
       </div>
-      <h3 class="text-2xl font-bold mb-6 text-brandDark text-center">Seguros Assist Card</h3>
-      <div class="check-list md:grid-cols-2 gap-4 text-sm">
-        <div class="check-list-item">Cobertura hasta $3.000.000 USD</div>
-        <div class="check-list-item">Asistencia médica 24/7 español</div>
-        <div class="check-list-item">Pérdida/retraso equipaje</div>
-        <div class="check-list-item">Cancelación viaje</div>
-        <div class="check-list-item">Responsabilidad civil</div>
-        <div class="check-list-item">Asistencia legal</div>
-        <div class="check-list-item">Planes familiares</div>
-        <div class="check-list-item">Mejor precio-cobertura</div>
+      <h3 class="text-2xl font-bold mb-6 text-brandDark text-center">🛡️ Seguros Assist Card</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>✅ Cobertura hasta $3.000.000 USD</div>
+        <div>✅ Asistencia médica 24/7 español</div>
+        <div>✅ Pérdida/retraso equipaje</div>
+        <div>✅ Cancelación viaje</div>
+        <div>✅ Responsabilidad civil</div>
+        <div>✅ Asistencia legal</div>
+        <div>✅ Planes familiares</div>
+        <div>✅ Mejor precio-cobertura</div>
+      </div>
+      <div class="mt-6 text-center">
+        <button
+          type="button"
+          onclick="setOrigenFormulario('seguros'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="inline-block bg-brandAccent text-white px-6 py-3 rounded-full font-semibold hover:bg-brandDark transition"
+        >
+          🛡️ Quiero asesoría en seguros
+        </button>
       </div>
     </div>
   </div>
@@ -380,14 +512,24 @@
           <summary class="font-bold text-lg">¿Conviene hotel dentro de Disney?</summary>
           <p class="mt-3 text-gray-700">Ventajas: transporte gratis a solo 5 minutos de los parques principales, Early Entry (30 min antes), inmersión a la magia desde el primer día. Te ayudo a elegir.</p>
         </details>
-
-        <details class="bg-brandSurface rounded-lg p-6 cursor-pointer">
-          <summary class="font-bold text-lg">¿Cómo saber que tu reserva es real?</summary>
-          <p class="mt-3 text-gray-700">Muy simple: las reservas quedan a tu nombre, recibís número de confirmación oficial y podés verlo en la app My Disney Experience. Eso significa que tu reserva está directamente con Disney.</p>
-        </details>
       </div>
     </div>
 
+    <div class="mt-12 text-center">
+      <p class="text-lg font-semibold mb-4">¿Seguís con dudas sobre tu viaje?</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#lead-magnet" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full font-semibold">
+          🎁 Descargá la guía GRATIS
+        </a>
+        <button
+          type="button"
+          onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+          class="bg-white border-2 border-brandPrimary text-brandPrimary px-8 py-4 rounded-full font-semibold"
+        >
+          💬 Hablar por WhatsApp
+        </button>
+      </div>
+    </div>
   </section>
 
   <!-- Testimonios -->
@@ -396,17 +538,17 @@
       <h2 class="text-4xl font-bold text-center mb-12">Lo Que Dicen Mis Clientes</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3" aria-label="Calificación cinco estrellas">★★★★★</div>
+          <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
           <p class="text-gray-700 italic mb-4">"Magui hizo que nuestro viaje a Disney fuera PERFECTO. Cada detalle pensado, nos ahorró tiempo y dinero!"</p>
           <p class="font-bold text-brandPrimary">- Familia González</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3" aria-label="Calificación cinco estrellas">★★★★★</div>
+          <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
           <p class="text-gray-700 italic mb-4">"La asesoría para visa fue clave. Nos aprobaron a toda la familia. Súper profesional."</p>
           <p class="font-bold text-brandPrimary">- Carolina M.</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3" aria-label="Calificación cinco estrellas">★★★★★</div>
+          <div class="text-yellow-400 mb-3">⭐⭐⭐⭐⭐</div>
           <p class="text-gray-700 italic mb-4">"Nuestro crucero por Caribe fue increíble. Mejor cabina y excursiones perfectas!"</p>
           <p class="font-bold text-brandPrimary">- Rodrigo y Ana</p>
         </div>
@@ -414,17 +556,37 @@
     </div>
 
     <div class="mt-12 text-center">
-      <p class="text-lg font-semibold mb-4">Vos también podés vivir un viaje así</p>
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=Con+Magui+a+Disney"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block bg-brandAccent hover:bg-brandDark text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl"
+      <p class="text-lg font-semibold mb-4">Vos también podés vivir un viaje así ✨</p>
+      <button
+        type="button"
+        onclick="setOrigenFormulario('cotizacion'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
+        class="bg-brandAccent hover:bg-brandDark text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl"
       >
-        Ver y dejar reseña en Google
-      </a>
+        💬 Quiero planear mi viaje
+      </button>
     </div>
   </section>
+
+  <!-- Sobre Mi -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="w-32 h-32 bg-gradient-to-br from-brandPrimary to-brandAccent rounded-full mx-auto mb-6 flex items-center justify-center">
+        <span class="text-6xl">👸</span>
+      </div>
+      <h2 class="text-4xl font-bold mb-4">¡Hola! Soy Magui Saavedra</h2>
+      <p class="text-lg text-gray-700 mb-4">
+        Travel Planner especializada en convertir tus sueños de viaje en experiencias inolvidables. Mi pasión es que cada familia viva la
+        magia de Disney y viaje sin preocupaciones.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        <div class="bg-brandSurface p-4 rounded-lg"><div class="text-3xl mb-2">❤️</div><div class="font-bold">+100 Familias</div></div>
+        <div class="bg-brandSurface p-4 rounded-lg"><div class="text-3xl mb-2">⭐</div><div class="font-bold">Certificada</div></div>
+        <div class="bg-brandSurface p-4 rounded-lg"><div class="text-3xl mb-2">🌍</div><div class="font-bold">Argentina</div></div>
+        <div class="bg-brandSurface p-4 rounded-lg"><div class="text-3xl mb-2">🕐</div><div class="font-bold">24/7 Soporte</div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contacto -->
   <section id="contacto" class="py-20 px-4 bg-gradient-to-br from-brandPrimary to-brandAccent text-white">
     <div class="max-w-4xl mx-auto text-center">
@@ -435,105 +597,24 @@
         <h3 class="text-2xl font-bold mb-6">Elegí cómo querés que te acompañe</h3>
 
         <a
-  href="https://wa.me/5491133634277?text=Hola%20Magui%2C%20quiero%20asesor%C3%ADa%20para%20planear%20mi%20viaje."
+  href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20asesor%C3%ADa%20para%20planear%20mi%20viaje."
   target="_blank"
   rel="noopener noreferrer"
-  data-cta="contacto_whatsapp"
   class="inline-block bg-brandAccent hover:bg-brandDark text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8"
 >
-  Escribirme por WhatsApp
+  💬 Escribirme por WhatsApp
 </a>
 
-        <div class="grid md:grid-cols-2 gap-4 mt-8">
-          <a href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true" target="_blank" data-cta="contacto_videollamada" class="flex items-center justify-center gap-2 bg-brandPrimary text-white px-6 py-3 rounded-full hover:bg-brandDark transition">
-            Agendar videollamada
+        <div class="grid md:grid-cols-3 gap-4 mt-8">
+          <a href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true" target="_blank" class="flex items-center justify-center gap-2 bg-brandPrimary text-white px-6 py-3 rounded-full hover:bg-brandDark transition">
+            <span>🎥</span> Agendar videollamada
           </a>
-          <a href="/cdn-cgi/l/email-protection#ed808c8a9884c39e8c8c9b88899f8cad8a808c8481c38e8280" data-cta="contacto_email" class="flex items-center justify-center gap-2 bg-brandDark text-white px-6 py-3 rounded-full hover:opacity-90 transition">
-            Email
+          <a href="mailto:magui.saavedra@gmail.com" class="flex items-center justify-center gap-2 bg-brandDark text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+            <span>✉️</span> Email
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- Lead Magnet -->
-  <section id="lead-magnet" class="py-20 px-4 bg-gradient-to-br from-brandSurface to-brandLight">
-    <div class="max-w-5xl mx-auto w-full">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-4xl font-bold mb-6 text-brandPrimary">Guía gratuita para viajar a Disney por primera vez</h2>
-          <p class="text-lg text-gray-700 mb-4">
-            Si es tu primer viaje a Disney, esta guía puede ahorrarte <strong>mucho dinero, tiempo y frustraciones</strong>.
-          </p>
-          <p class="text-gray-600 mb-6">
-            Descubrí los errores más comunes que cometen las familias al planear su viaje y cómo evitarlos antes de comprar nada.
-          </p>
-          <ul class="space-y-3 text-gray-700 mb-6">
-            <li>✅ Elegir mal fechas y pagar de más</li>
-            <li>✅ Comprar entradas incorrectas</li>
-            <li>✅ Hacer filas eternas sin estrategia</li>
-            <li>✅ Elegir mal el hotel</li>
-            <li>✅ Pensar que un agente sale más caro</li>
-          </ul>
-          <p class="text-sm text-gray-500">✅ Gratis · ✅ Sin spam · ✅ Hecha para familias reales</p>
-        </div>
-
-        <div class="bg-white rounded-2xl shadow-xl p-8 w-full">
-          <h3 id="formTitle" class="text-2xl font-bold mb-4 text-center">Descargá la guía ahora</h3>
-          <p id="formSubtitle" class="text-center text-gray-600 mb-6">Completá tus datos y te la envío por WhatsApp</p>
-
-          <form onsubmit="enviarFormularioGeneral(event)">
-            <input type="hidden" id="intencion" value="Guía Disney" />
-            <input type="hidden" id="origen" value="guia" />
-
-            <div class="mb-4">
-              <label class="block text-left font-semibold mb-1">Tipo de asesoría</label>
-              <select id="motivoConsulta" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary">
-                <option value="Guía Disney">Guía Disney</option>
-                <option value="Asesoría Disney y Universal">Asesoría Disney y Universal</option>
-                <option value="Asesoría Visa USA">Asesoría Visa USA</option>
-                <option value="Asesoría Seguros de viaje">Asesoría Seguros de viaje</option>
-                <option value="Programa Quinceañeras">Programa Quinceañeras</option>
-              </select>
-            </div>
-
-            <div class="mb-4">
-              <input type="text" id="nombre" placeholder="Tu nombre y apellido" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary" />
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-left font-semibold mb-1">WhatsApp</label>
-              <div class="flex items-center gap-2">
-                <select id="codigoPais" required class="w-24 px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary">
-                  <option value="+54">AR +54</option>
-                  <option value="+598">UY +598</option>
-                  <option value="+52">MX +52</option>
-                  <option value="+57">CO +57</option>
-                  <option value="+1">US +1</option>
-                </select>
-
-                <input type="tel" id="telefono" required placeholder="Tu número de WhatsApp" class="flex-1 min-w-0 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary" />
-              </div>
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-left font-semibold mb-1">Contame qué necesitás</label>
-              <textarea id="detalleConsulta" rows="4" placeholder="Ejemplo: fechas estimadas, cantidad de personas, parques de interés y dudas puntuales." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandPrimary"></textarea>
-            </div>
-
-            <button type="submit" id="botonFormulario" data-cta="form_submit" class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full text-lg font-semibold hover:shadow-xl transition transform hover:scale-105">
-              <span id="formButtonText">Quiero la guía gratuita</span>
-            </button>
-          </form>
-
-          <p class="text-xs text-gray-400 text-center mt-4">
-            Al enviar aceptás recibir info por WhatsApp.
-            <br />
-            No compartimos tus datos.
-          </p>
+          <a href="https://instagram.com/conmaguiadisney" target="_blank" class="flex items-center justify-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-3 rounded-full hover:shadow-lg transition">
+            <span>📸</span> Instagram
+          </a>
         </div>
       </div>
     </div>
@@ -542,45 +623,12 @@
   <!-- Footer -->
   <footer class="bg-black text-white py-12 px-4 text-center">
     <div class="max-w-5xl mx-auto">
+      <h3 class="text-3xl md:text-4xl font-extrabold gradient-text mb-3">CON MAGUI A DISNEY</h3>
+      <p class="text-base md:text-lg text-gray-200 mb-6">Convirtiendo sueños en experiencias mágicas</p>
+      <p class="text-sm text-gray-400 mb-8">© 2026 Con Magui a Disney · Todos los derechos reservados</p>
 
-      <!-- Título -->
-      <h3 style="font-family: 'Cormorant Garamond', serif; letter-spacing: 0.08em;"
-          class="text-4xl md:text-5xl font-bold gradient-text mb-2">CON MAGUI A DISNEY</h3>
-
-      <!-- Subtítulo -->
-      <p style="color: #f0e6d3; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.04em;"
-         class="mb-5 italic">Convirtiendo sueños en experiencias mágicas</p>
-
-      <!-- Badges de credenciales -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-6">
-        <span style="border: 1px solid #C9A24A55; color: #C9A24A; font-size: 0.72rem; letter-spacing: 0.12em; padding: 6px 14px; border-radius: 4px;">
-          ✦ Disney Authorized Vacation Planner
-        </span>
-        <span style="border: 1px solid #C9A24A55; color: #C9A24A; font-size: 0.72rem; letter-spacing: 0.12em; padding: 6px 14px; border-radius: 4px;">
-          ✦ Universal Preferred Agency
-        </span>
-        <span style="border: 1px solid #C9A24A55; color: #C9A24A; font-size: 0.72rem; letter-spacing: 0.12em; padding: 6px 14px; border-radius: 4px;">
-          ✦ IATA · Archer Travel Group
-        </span>
-      </div>
-
-      <!-- Redes sociales -->
-      <div class="flex items-center justify-center gap-3 mb-6">
-        <a class="social-icon-link" href="https://www.facebook.com/maria.pugliese.3304" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M13.5 8.25V6.5c0-.69.56-1.25 1.25-1.25H16V2h-1.75A4.25 4.25 0 0 0 10 6.25v2H7.5v3.25H10V22h3.5V11.5H16l.5-3.25h-3z"/></svg>
-        </a>
-        <a class="social-icon-link" href="https://instagram.com/conmaguiadisney" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm9.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg>
-        </a>
-        <a class="social-icon-link" href="https://www.tiktok.com/@conmaguiadisney" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5 w-5 fill-current text-white"><path d="M14.5 3c.26 1.55 1.36 2.88 2.92 3.42.66.23 1.38.34 2.08.33v3.2a7.2 7.2 0 0 1-3.3-.79v6.42A5.58 5.58 0 1 1 10.63 10h.12v3.27a2.33 2.33 0 1 0 2.2 2.31V3h1.55z"/></svg>
-        </a>
-      </div>
-
-      <p class="text-sm mb-8" style="color: #6b6b6b;">© 2026 Con Magui a Disney · Todos los derechos reservados</p>
-
-      <div class="border-t pt-6" style="border-color: #ffffff18;">
-        <p class="text-xs uppercase tracking-wider mb-3" style="color: #555;">Desarrollado por</p>
+      <div class="border-t border-white/20 pt-6">
+        <p class="text-xs uppercase tracking-wider text-gray-400 mb-3">Desarrollado por</p>
         <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 group">
           <img src="assets/img/it-integral/ItSolutions.png" alt="IT Integral Solutions" class="w-11 h-11 rounded-full object-contain bg-white p-1" />
           <span class="flex flex-col items-start text-left leading-tight">
@@ -592,13 +640,13 @@
           </span>
         </a>
       </div>
-
     </div>
   </footer>
 
   <!-- WhatsApp Flotante -->
   <a
-    href="#contacto"
+    href="javascript:void(0)"
+    onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
     class="fixed bottom-6 right-6 bg-brandAccent text-white p-4 rounded-full shadow-2xl hover:bg-brandDark transition transform hover:scale-110 z-50 animate-pulse"
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8 fill-current">
@@ -606,9 +654,17 @@
     </svg>
   </a>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/whatsapp.js?v=20260306-1"></script>
+  <script src="js/whatsapp.js"></script>
 
   <canvas id="pixieTrail" aria-hidden="true"></canvas>
+  <style>
+    #pixieTrail {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 40;
+    }
+  </style>
 
   <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -622,6 +678,10 @@
 
 
   <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      if (menu) menu.classList.toggle("hidden");
+    }
 
     (() => {
       const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -741,4 +801,16 @@
         else spawnBurst(e.clientX, e.clientY, 22);
       });
 
-      window.addEventLi
+      window.addEventListener("resize", resize);
+      resize();
+      requestAnimationFrame(tick);
+    })();
+  </script>
+
+<script src="js/navbar.js"></script>
+
+
+</body>
+</html>
+
+
