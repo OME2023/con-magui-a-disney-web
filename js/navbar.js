@@ -55,9 +55,19 @@ const NAVBAR_HTML = `
       <a href="index.html#contacto" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition">Contacto</a>
     </div>
 
-    <button id="mobileMenuButton" type="button" class="md:hidden text-gray-700">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <button
+      id="mobileMenuButton"
+      type="button"
+      class="md:hidden text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <svg id="iconHamburger" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
   </div>
@@ -91,18 +101,44 @@ const NAVBAR_HTML = `
 function initNavbar() {
   const btn = document.getElementById("mobileMenuButton");
   const menu = document.getElementById("mobileMenu");
+  const iconHamburger = document.getElementById("iconHamburger");
+  const iconClose = document.getElementById("iconClose");
+
+  function setMenuState(open) {
+    if (!menu || !btn) return;
+    menu.classList.toggle("hidden", !open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (iconHamburger && iconClose) {
+      iconHamburger.classList.toggle("hidden", open);
+      iconClose.classList.toggle("hidden", !open);
+    }
+  }
 
   if (btn && menu) {
-    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+    btn.addEventListener("click", () => {
+      const isOpen = menu.classList.contains("hidden");
+      setMenuState(isOpen);
+    });
   }
+
+  document.querySelectorAll(".mobile-link").forEach((link) => {
+    link.addEventListener("click", () => setMenuState(false));
+  });
 
   document.querySelectorAll(".mobile-dd-toggle").forEach((toggle) => {
     toggle.addEventListener("click", () => {
       const targetId = toggle.getAttribute("data-target");
+      if (!targetId) return;
       const target = document.getElementById(targetId);
       if (target) target.classList.toggle("hidden");
     });
   });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) setMenuState(false);
+  });
+
+  setMenuState(false);
 }
 
 function markActivePage() {
@@ -121,13 +157,23 @@ function markActivePage() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function bootNavbar() {
   const mount = document.getElementById("site-nav");
   if (!mount) return;
-
   mount.innerHTML = NAVBAR_HTML;
   initNavbar();
   markActivePage();
-});
+}
 
-(function(){ var s=document.createElement('script'); s.src='js/analytics.js'; document.head.appendChild(s); })();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", bootNavbar);
+} else {
+  bootNavbar();
+}
+
+// Cargar analytics en todas las páginas
+(function () {
+  var s = document.createElement("script");
+  s.src = "js/analytics.js";
+  document.head.appendChild(s);
+})();
