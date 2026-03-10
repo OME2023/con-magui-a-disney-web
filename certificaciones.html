@@ -36,38 +36,7 @@
 </head>
 <body class="bg-brandLight text-brandText">
 
-  <!-- Navigation -->
-  <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center">
-        <a href="index.html">
-          <img src="assets/img/logo-con-magui.png" alt="Con Magui a Disney" class="h-14 md:h-20 w-auto object-contain" />
-        </a>
-      </div>
-
-      <div class="hidden md:flex gap-6 items-center">
-        <a href="index.html#hero" class="text-gray-700 hover:text-brandPrimary transition">Inicio</a>
-        <a href="quienes-somos.html" class="text-gray-700 hover:text-brandPrimary transition">Quiénes Somos</a>
-        <a href="quinceaneras.html" class="text-gray-700 hover:text-brandPrimary transition">Quinceañeras</a>
-        <a href="trabaja-con-nosotros.html" class="text-gray-700 hover:text-brandPrimary transition">Trabajá con Nosotros</a>
-        <a href="index.html#contacto" class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full hover:shadow-lg transition">Contacto</a>
-      </div>
-
-      <button onclick="toggleMenu()" class="md:hidden">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-
-    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
-      <a href="index.html#hero" class="block py-2 text-gray-700 hover:text-brandPrimary">Inicio</a>
-      <a href="quienes-somos.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Quiénes Somos</a>
-      <a href="quinceaneras.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Quinceañeras</a>
-      <a href="trabaja-con-nosotros.html" class="block py-2 text-gray-700 hover:text-brandPrimary">Trabajá con Nosotros</a>
-      <a href="index.html#contacto" class="block py-2 text-gray-700 hover:text-brandPrimary">Contacto</a>
-    </div>
-  </nav>
+  <div id="site-nav"></div>
 
   <!-- Hero -->
   <section class="pt-32 pb-10 px-4 text-center">
@@ -287,7 +256,7 @@
       requestAnimationFrame(tick);
     })();
   </script>
-  <script src="js/analytics.js"></script>
   <script src="js/footer.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
 </html>
