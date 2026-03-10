@@ -4,7 +4,6 @@
  * Se carga una vez desde navbar.js o desde cada HTML.
  *
  * Eventos rastreados:
- *  - whatsapp_click       → clic en botón/link de WhatsApp
  *  - instagram_click      → clic en ícono de Instagram
  *  - facebook_click       → clic en ícono de Facebook
  *  - tiktok_click         → clic en ícono de TikTok
@@ -27,19 +26,6 @@
   // ── Helper: página actual ────────────────────────────────────────────────
   function getPage() {
     return window.location.pathname.split("/").pop() || "index.html";
-  }
-
-  // ── 1. WhatsApp ──────────────────────────────────────────────────────────
-  // Cubre: botón flotante (whatsapp.js), links de footer, cualquier href con wa.me
-  function bindWhatsApp() {
-    document.addEventListener("click", function (e) {
-      const el = e.target.closest("a[href*='wa.me'], a[href*='whatsapp'], [data-track='whatsapp'], #whatsappBtn, .whatsapp-btn");
-      if (!el) return;
-      track("whatsapp_click", {
-        page: getPage(),
-        label: el.getAttribute("aria-label") || el.innerText?.trim().slice(0, 60) || "whatsapp"
-      });
-    });
   }
 
   // ── 2. Redes sociales (Instagram, Facebook, TikTok) ─────────────────────
@@ -169,7 +155,6 @@
 
   // ── Init ─────────────────────────────────────────────────────────────────
   function init() {
-    bindWhatsApp();
     bindSocials();
     bindCotizar();
     bindInscripcion();
