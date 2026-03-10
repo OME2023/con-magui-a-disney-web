@@ -184,3 +184,20 @@
   }
 
 })();
+
+// Mido clicks de Whatsapp en general
+
+document.addEventListener("click", function (e) {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  if (link.href && link.href.includes("wa.me")) {
+    if (typeof gtag === "function") {
+      gtag("event", "click_whatsapp", {
+        event_category: "contacto",
+        event_label: link.href,
+        transport_type: "beacon"
+      });
+    }
+  }
+});
