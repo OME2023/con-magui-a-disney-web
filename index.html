@@ -85,56 +85,108 @@
       />
     </div>
 
-    <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text leading-tight">
-  <span class="block">Asesoría profesional para viajes </span>
-  <span class="block">a Disney y Universal Orlando</span>
-</h1>
+    <h1 class="text-4xl md:text-5xl font-bold mb-5 gradient-text leading-tight">
+      <span class="block">Planificamos tu viaje a Disney</span>
+      <span class="block">y Universal sin estrés ✨</span>
+    </h1>
 
   </div>
 
-  <p class="text-xl md:text-2xl text-gray-700 mb-4 max-w-4xl mx-auto">
-    Planificación personalizada, estrategia día por día y acompañamiento antes y durante todo tu viaje.
+  <p class="text-xl md:text-2xl text-gray-700 mb-4 max-w-3xl mx-auto">
+    Te ayudamos paso a paso para que ahorres tiempo, evites errores y disfrutes cada parque al máximo.
   </p>
 
-  <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-    Soy Magui Saavedra, travel planner especializada en Disney y Universal. Te ayudo a evitar errores, optimizar presupuesto y vivir un viaje organizado de principio a fin.
+  <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+    Soy Magui Saavedra, travel planner especializada en Disney y Universal. Mi asesoría es <strong>100% gratuita</strong> — ganó comisiones de los mismos proveedores que usarías vos.
   </p>
 
-  <div class="max-w-4xl mx-auto mb-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-gray-700">
-      <p>✅ Itinerario estratégico día por día</p>
-      <p>✅ Entradas, hoteles y reservas clave</p>
-      <p>✅ Estrategias para reducir filas y tiempos muertos</p>
-      <p>✅ Asesoría en visa y seguro de viaje</p>
-      <p>✅ Soporte personalizado antes y durante el viaje</p>
-      <p>✅ Planificación pensada para aprovechar tiempo y presupuesto</p>
-    </div>
-  </div>
-
-  <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <button
-      type="button"
-      onclick="setOrigenFormulario('consulta'); document.getElementById('lead-magnet').scrollIntoView({ behavior: 'smooth' });"
-      data-cta="hero_asesoria"
-      class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105"
-    >
-      Solicitar asesoría personalizada
-    </button>
-
+  <!-- CTA Principal: WhatsApp -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
     <a
-      href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20asesor%C3%ADa%20para%20planear%20mi%20viaje."
+      href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
       target="_blank"
       rel="noopener noreferrer"
       data-cta="hero_whatsapp"
+      onclick="if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'hero_cta_principal',transport_type:'beacon'});"
+      class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105 flex items-center justify-center gap-2"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
+      👉 Planificar mi viaje por WhatsApp
+    </a>
+
+    <button
+      type="button"
+      onclick="document.getElementById('confianza').scrollIntoView({ behavior: 'smooth' });"
+      data-cta="hero_ver_como"
       class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
     >
-      Hablar por WhatsApp
-    </a>
+      Ver cómo te ayudamos
+    </button>
   </div>
 
-  <p class="text-sm text-gray-500 mt-6">
+  <!-- Microcopy urgencia suave -->
+  <p class="text-sm text-brandPrimary font-semibold mt-2 mb-2">
+    📅 Empezá a planificar con tiempo para conseguir mejores opciones
+  </p>
+  <p class="text-sm text-gray-500">
     Asesoramiento 100% gratuito · Tarifas oficiales Disney y Universal · Soporte personalizado
   </p>
+</section>
+
+  <!-- ═══════════════════════════════════════════════
+       BLOQUE DE CONFIANZA — nueva sección post-hero
+       ═══════════════════════════════════════════════ -->
+<section id="confianza" class="py-16 px-4 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-center text-sm uppercase tracking-[0.18em] text-brandPrimary font-semibold mb-3">Por qué elegir Con Magui a Disney</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10" style="color: var(--brand-text);">Viajás tranquilo porque nosotros nos ocupamos de todo</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
+      <div class="bg-brandSurface rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">🏰</div>
+        <p class="font-bold text-brandPrimary mb-2">Especialistas en Disney y Universal</p>
+        <p class="text-sm text-gray-600">Solo hacemos esto. Conocemos cada parque, hotel, restaurante y estrategia mejor que nadie.</p>
+      </div>
+      <div class="bg-brandSurface rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">🧭</div>
+        <p class="font-bold text-brandPrimary mb-2">Asesoramiento personalizado</p>
+        <p class="text-sm text-gray-600">Cada familia es diferente. Diseñamos el viaje según tus fechas, presupuesto y quiénes viajan.</p>
+      </div>
+      <div class="bg-brandSurface rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">💬</div>
+        <p class="font-bold text-brandPrimary mb-2">Atención directa con Magui</p>
+        <p class="text-sm text-gray-600">No hay intermediarios. Hablás directamente con la especialista, por WhatsApp, antes y durante el viaje.</p>
+      </div>
+      <div class="bg-brandSurface rounded-2xl p-6 text-center">
+        <div class="text-3xl mb-3">👨‍👩‍👧‍👦</div>
+        <p class="font-bold text-brandPrimary mb-2">Experta en viajes en familia</p>
+        <p class="text-sm text-gray-600">Sabemos lo que necesitan los chicos, los papás y el presupuesto para que todos la pasen increíble.</p>
+      </div>
+    </div>
+
+    <!-- Credenciales -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <span class="text-xs font-semibold border border-brandPrimary text-brandPrimary px-4 py-2 rounded-full">✦ Disney Authorized Vacation Planner</span>
+      <span class="text-xs font-semibold border border-brandAccent text-brandAccent px-4 py-2 rounded-full">✦ Universal Preferred Agency</span>
+      <span class="text-xs font-semibold border border-gray-400 text-gray-600 px-4 py-2 rounded-full">✦ IATA · Archer Travel Group</span>
+    </div>
+
+    <!-- Micro-CTA #1 -->
+    <div class="bg-gradient-to-r from-brandSurface to-brandLight rounded-2xl p-6 text-center border border-brandSecondary">
+      <p class="text-lg font-semibold text-brandText mb-4">¿Querés que te ayudemos con tu viaje?</p>
+      <a
+        href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cta="confianza_whatsapp"
+        onclick="if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'confianza_microcta',transport_type:'beacon'});"
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
+        💬 Escribinos ahora por WhatsApp
+      </a>
+    </div>
+  </div>
 </section>
 
   <!-- Quinceaneras VIP -->
@@ -227,7 +279,7 @@
           data-cta="servicios_disney_info"
           class="service-cta block text-center w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
         >
-          Conocé más sobre Disney
+          Planificar mi viaje a Disney
         </a>
       </article>
 
@@ -253,7 +305,7 @@
           data-cta="servicios_universal_info"
           class="service-cta block text-center w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
         >
-          Conocé más sobre Universal
+          Planificar mi viaje a Universal
         </a>
       </article>
 
@@ -279,7 +331,7 @@
           data-cta="servicios_cruceros_info"
           class="service-cta block text-center w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-xl transition"
         >
-          Conocé más sobre Cruceros Disney
+          Quiero información de Cruceros Disney
         </a>
       </article>
     </div>
@@ -317,7 +369,6 @@
 
     <!-- Seguros -->
 <div id="seguros" class="bg-white rounded-2xl shadow-xl p-8 mb-6 scroll-mt-32">
-
       <div class="w-full h-56 md:h-64 rounded-xl mb-6 bg-black flex items-center justify-center overflow-hidden">
         <img
           src="assets/img/ppal/assistcard.webp"
@@ -326,8 +377,8 @@
           loading="lazy"
         />
       </div>
-      <h3 class="text-2xl font-bold mb-6 text-brandDark text-center">Seguros Assist Card</h3>
-      <div class="check-list md:grid-cols-2 gap-4 text-sm">
+      <h3 class="text-2xl font-bold mb-4 text-brandDark text-center">Seguros Assist Card</h3>
+      <div class="check-list md:grid-cols-2 gap-4 text-sm mb-6">
         <div class="check-list-item">Cobertura hasta $3.000.000 USD</div>
         <div class="check-list-item">Asistencia médica 24/7 español</div>
         <div class="check-list-item">Pérdida/retraso equipaje</div>
@@ -337,12 +388,623 @@
         <div class="check-list-item">Planes familiares</div>
         <div class="check-list-item">Mejor precio-cobertura</div>
       </div>
+
+      <!-- Botón cotizador (temporalmente oculto hasta activación de credenciales) -->
+      <!-- <div class="text-center mt-2">
+        <button
+          id="btnAbrirCotizador"
+          type="button"
+          onclick="acCotizador.abrir()"
+          class="inline-flex items-center gap-2 bg-gradient-to-r from-brandDark to-brandAccent text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition transform hover:scale-105"
+        >
+          🛡️ Cotizá tu seguro online
+        </button>
+        <p class="text-xs text-gray-400 mt-2">Cotización instantánea · Powered by Assist Card</p>
+      </div> -->
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════════════════════════════════════
+     MODAL COTIZADOR ASSIST CARD
+     ═══════════════════════════════════════════════════════════ -->
+<div id="acModal" class="hidden fixed inset-0 z-[9998] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Cotizador de seguro">
+  <!-- Backdrop -->
+  <div id="acBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="acCotizador.cerrar()"></div>
+
+  <!-- Panel -->
+  <div class="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col" style="max-height: 92vh;">
+
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-brandDark to-brandAccent px-6 py-5 flex items-center justify-between flex-shrink-0">
+      <div>
+        <p class="text-xs text-white/70 uppercase tracking-widest mb-0.5">Powered by Assist Card</p>
+        <h2 class="text-xl font-bold text-white">Cotizá tu seguro de viaje</h2>
+      </div>
+      <button onclick="acCotizador.cerrar()" class="text-white/80 hover:text-white transition p-1 rounded-lg hover:bg-white/10" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Steps indicator -->
+    <div class="flex items-center gap-0 px-6 py-4 bg-brandLight border-b border-brandSurface flex-shrink-0">
+      <div class="ac-step-dot active" id="dot1">1</div>
+      <div class="ac-step-line" id="line1"></div>
+      <div class="ac-step-dot" id="dot2">2</div>
+      <div class="ac-step-line" id="line2"></div>
+      <div class="ac-step-dot" id="dot3">3</div>
+      <div class="ml-auto text-xs text-gray-500" id="acStepLabel">Viaje</div>
+    </div>
+
+    <!-- Contenido scrollable -->
+    <div class="overflow-y-auto flex-1 px-6 py-6">
+
+      <!-- PASO 1: Datos del viaje -->
+      <div id="acPaso1">
+        <h3 class="font-bold text-brandText mb-4">¿A dónde y cuándo viajás?</h3>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Destino</label>
+            <select id="acDestino" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-gray-700 bg-white">
+              <option value="">Seleccioná un destino</option>
+              <option value="1">🇺🇸 América del Norte (USA, Canadá, México)</option>
+              <option value="2">🌍 Europa</option>
+              <option value="3">🏝️ América Central y Caribe</option>
+              <option value="4">🌎 América del Sur</option>
+              <option value="5">🌍 África</option>
+              <option value="6">🌏 Asia</option>
+              <option value="7">🦘 Oceanía</option>
+              <option value="8">🏠 Doméstico (dentro del país)</option>
+              <option value="11">🕌 Medio Oriente</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Fecha de salida</label>
+              <input type="date" id="acFechaDesde" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-gray-700" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Fecha de regreso</label>
+              <input type="date" id="acFechaHasta" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-gray-700" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-2">Viajeros <span class="font-normal text-gray-400">(agregá uno por vez)</span></label>
+            <div id="acViajerosLista" class="space-y-2 mb-3"></div>
+            <button type="button" onclick="acCotizador.agregarViajero()" class="flex items-center gap-2 text-sm text-brandPrimary font-semibold hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              Agregar viajero
+            </button>
+          </div>
+        </div>
+
+        <div id="acError1" class="hidden mt-4 text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3"></div>
+
+        <button type="button" onclick="acCotizador.cotizar()" id="acBtnCotizar"
+          class="mt-6 w-full bg-gradient-to-r from-brandDark to-brandAccent text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition transform hover:scale-[1.02]">
+          Ver precios de seguros →
+        </button>
+      </div>
+
+      <!-- PASO 2: Resultados de cotización -->
+      <div id="acPaso2" class="hidden">
+        <button onclick="acCotizador.irPaso(1)" class="flex items-center gap-1 text-sm text-gray-500 hover:text-brandPrimary mb-4 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Modificar viaje
+        </button>
+        <h3 class="font-bold text-brandText mb-1">Planes disponibles</h3>
+        <p class="text-sm text-gray-500 mb-4" id="acResumenViaje"></p>
+
+        <!-- Loading -->
+        <div id="acLoading" class="text-center py-10">
+          <div class="inline-block w-10 h-10 border-4 border-brandSurface border-t-brandAccent rounded-full animate-spin mb-3"></div>
+          <p class="text-sm text-gray-500">Buscando los mejores planes…</p>
+        </div>
+
+        <!-- Cards de planes -->
+        <div id="acPlanes" class="space-y-3"></div>
+        <div id="acError2" class="hidden text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3"></div>
+      </div>
+
+      <!-- PASO 3: Datos del pasajero principal -->
+      <div id="acPaso3" class="hidden">
+        <button onclick="acCotizador.irPaso(2)" class="flex items-center gap-1 text-sm text-gray-500 hover:text-brandPrimary mb-4 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Cambiar plan
+        </button>
+
+        <div class="bg-brandSurface rounded-xl px-4 py-3 mb-5 flex items-center justify-between">
+          <div>
+            <p class="text-xs text-gray-500 uppercase tracking-wider">Plan seleccionado</p>
+            <p class="font-bold text-brandText" id="acPlanSeleccionadoNombre"></p>
+          </div>
+          <p class="text-xl font-bold text-brandAccent" id="acPlanSeleccionadoPrecio"></p>
+        </div>
+
+        <h3 class="font-bold text-brandText mb-4">Datos del viajero principal</h3>
+
+        <div class="space-y-3">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Nombre</label>
+              <input type="text" id="acNombre" placeholder="Juan" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Apellido</label>
+              <input type="text" id="acApellido" placeholder="Pérez" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">Email</label>
+            <input type="email" id="acEmail" placeholder="juan@email.com" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">Teléfono</label>
+            <input type="tel" id="acTelefono" placeholder="1112345678" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Nro. documento</label>
+              <input type="text" id="acDocumento" placeholder="DNI o Pasaporte" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Fecha de nacimiento</label>
+              <input type="date" id="acFechaNac" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Calle</label>
+              <input type="text" id="acCalle" placeholder="Av. Corrientes" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Número</label>
+              <input type="text" id="acNumero" placeholder="1234" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">CP</label>
+              <input type="text" id="acCP" placeholder="1043" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Ciudad</label>
+              <input type="text" id="acCiudad" placeholder="Buenos Aires" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1">Provincia</label>
+              <input type="text" id="acProvincia" placeholder="CABA" class="w-full px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandAccent text-sm" />
+            </div>
+          </div>
+        </div>
+
+        <div id="acError3" class="hidden mt-4 text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3"></div>
+
+        <button type="button" onclick="acCotizador.generarLinkPago()" id="acBtnPagar"
+          class="mt-6 w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl transition transform hover:scale-[1.02]">
+          Ir a pagar →
+        </button>
+
+        <p class="text-xs text-center text-gray-400 mt-3">🔒 Pago procesado de forma segura por Assist Card</p>
+      </div>
+
+    </div><!-- fin scrollable -->
+  </div><!-- fin panel -->
+</div><!-- fin modal -->
+
+<!-- ── Estilos del cotizador ─────────────────────────────────────────────── -->
+<style>
+  .ac-step-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; font-weight: 700;
+    background: #e5e7eb; color: #9ca3af;
+    flex-shrink: 0; transition: all 0.3s ease;
+  }
+  .ac-step-dot.active {
+    background: linear-gradient(135deg, var(--brand-dark), var(--brand-accent));
+    color: #fff;
+    box-shadow: 0 0 0 3px rgba(201,162,74,0.25);
+  }
+  .ac-step-dot.done {
+    background: #22c55e; color: #fff;
+  }
+  .ac-step-line {
+    flex: 1; height: 2px;
+    background: #e5e7eb; transition: background 0.3s ease;
+    margin: 0 4px;
+  }
+  .ac-step-line.done { background: #22c55e; }
+
+  .ac-plan-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 16px; padding: 1rem 1.2rem;
+    cursor: pointer; transition: all 0.2s ease;
+    background: #fff;
+  }
+  .ac-plan-card:hover { border-color: var(--brand-accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .ac-plan-card.selected { border-color: var(--brand-accent); background: #fffbf0; box-shadow: 0 0 0 3px rgba(201,162,74,0.2); }
+
+  .ac-viajero-row {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--brand-surface); border-radius: 10px; padding: 8px 12px;
+    font-size: 0.875rem;
+  }
+  .ac-viajero-row button { margin-left: auto; color: #ef4444; font-size: 1rem; line-height: 1; }
+</style>
+
+<!-- ── JavaScript del cotizador ──────────────────────────────────────────── -->
+<script>
+(function () {
+  "use strict";
+
+  // ⚠️ REEMPLAZAR con la URL real de tu Cloudflare Worker tras el deploy
+  const WORKER_URL = "https://ac-cotizador.oscar-falon.workers.dev";
+
+  // Estado interno
+  const state = {
+    paso: 1,
+    viajeros: [],          // [{ birthDate: "1985/03/15" }]
+    cotizacion: null,      // response completo de /cotizar
+    planSeleccionado: null // { counterCode, productCode, rateCode, nombre, precio }
+  };
+
+  // ── Helpers de fecha ────────────────────────────────────────────────────
+  function inputToAC(dateStr) {
+    // input type=date devuelve YYYY-MM-DD → AC necesita YYYY/MM/DD
+    return dateStr ? dateStr.replace(/-/g, "/") : "";
+  }
+
+  function formatFecha(dateStr) {
+    // Para mostrar al usuario: YYYY-MM-DD → DD/MM/YYYY
+    if (!dateStr) return "";
+    const [y, m, d] = dateStr.split("-");
+    return `${d}/${m}/${y}`;
+  }
+
+  function hoy() {
+    return new Date().toISOString().split("T")[0];
+  }
+
+  // ── UI helpers ──────────────────────────────────────────────────────────
+  function showError(id, msg) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.toggle("hidden", !msg);
+  }
+
+  function setLoading(btnId, loading, textoOriginal) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.disabled = loading;
+    btn.textContent = loading ? "Procesando…" : textoOriginal;
+    btn.classList.toggle("opacity-70", loading);
+  }
+
+  // ── Steps ───────────────────────────────────────────────────────────────
+  function actualizarSteps(paso) {
+    const labels = ["Viaje", "Planes", "Datos"];
+    document.getElementById("acStepLabel").textContent = labels[paso - 1];
+
+    [1, 2, 3].forEach(i => {
+      const dot = document.getElementById("dot" + i);
+      dot.classList.remove("active", "done");
+      if (i < paso) dot.classList.add("done");
+      else if (i === paso) dot.classList.add("active");
+    });
+    [1, 2].forEach(i => {
+      const line = document.getElementById("line" + i);
+      line.classList.toggle("done", i < paso);
+    });
+
+    document.getElementById("acPaso1").classList.toggle("hidden", paso !== 1);
+    document.getElementById("acPaso2").classList.toggle("hidden", paso !== 2);
+    document.getElementById("acPaso3").classList.toggle("hidden", paso !== 3);
+  }
+
+  // ── Viajeros ────────────────────────────────────────────────────────────
+  function renderViajeros() {
+    const lista = document.getElementById("acViajerosLista");
+    if (!lista) return;
+    if (!state.viajeros.length) {
+      lista.innerHTML = '<p class="text-sm text-gray-400 italic">Ningún viajero agregado aún.</p>';
+      return;
+    }
+    lista.innerHTML = state.viajeros.map((v, i) => `
+      <div class="ac-viajero-row">
+        <span>👤 Viajero ${i + 1} — Fecha de nac.: <strong>${formatFecha(v.birthDateInput)}</strong></span>
+        <button type="button" onclick="acCotizador.quitarViajero(${i})" aria-label="Quitar viajero">✕</button>
+      </div>
+    `).join("");
+  }
+
+  // ── Render planes ───────────────────────────────────────────────────────
+  function renderPlanes(planes) {
+    const cont = document.getElementById("acPlanes");
+    document.getElementById("acLoading").classList.add("hidden");
+
+    if (!planes || !planes.length) {
+      cont.innerHTML = '<p class="text-sm text-gray-500 text-center py-6">No se encontraron planes para los datos ingresados.</p>';
+      return;
+    }
+
+    cont.innerHTML = planes.map((p, i) => {
+      // Adapt según estructura real del response — ajustar si la API devuelve distinto
+      const nombre = p.productName || p.ProductName || p.name || `Plan ${i + 1}`;
+      const precio = p.totalAmount || p.TotalAmount || p.price || "—";
+      const moneda = p.currency || p.Currency || "ARS";
+      const cobertura = p.medicalCoverage || p.MedicalCoverage || "";
+
+      return `
+        <div class="ac-plan-card" onclick="acCotizador.seleccionarPlan(${i})" id="plan-${i}">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1">
+              <p class="font-bold text-brandText">${nombre}</p>
+              ${cobertura ? `<p class="text-xs text-gray-500 mt-0.5">Cobertura médica: ${cobertura}</p>` : ""}
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-xl font-bold text-brandAccent">${moneda} ${Number(precio).toLocaleString("es-AR")}</p>
+              <p class="text-xs text-gray-400">total</p>
+            </div>
+          </div>
+          <div class="mt-3 flex justify-end">
+            <span class="text-xs font-semibold text-brandDark bg-brandSurface px-3 py-1 rounded-full">Seleccionar →</span>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // ── API calls ───────────────────────────────────────────────────────────
+  async function callWorker(endpoint, body) {
+    const res = await fetch(`${WORKER_URL}${endpoint}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || `Error ${res.status}`);
+    return data;
+  }
+
+  // ── Objeto público ──────────────────────────────────────────────────────
+  window.acCotizador = {
+
+    abrir() {
+      // Setear fecha mínima de hoy
+      const fechaDesde = document.getElementById("acFechaDesde");
+      const fechaHasta = document.getElementById("acFechaHasta");
+      if (fechaDesde) fechaDesde.min = hoy();
+      if (fechaHasta) fechaHasta.min = hoy();
+
+      // Agregar primer viajero automáticamente si está vacío
+      if (!state.viajeros.length) this.agregarViajero();
+
+      document.getElementById("acModal").classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+      this.irPaso(1);
+
+      // Tracking GA4
+      if (typeof gtag === "function") gtag("event", "cotizador_abierto", { event_category: "seguros" });
+    },
+
+    cerrar() {
+      document.getElementById("acModal").classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+    },
+
+    irPaso(n) {
+      state.paso = n;
+      actualizarSteps(n);
+    },
+
+    agregarViajero() {
+      const fecha = prompt("Fecha de nacimiento del viajero (DD/MM/AAAA):");
+      if (!fecha) return;
+      const partes = fecha.split("/");
+      if (partes.length !== 3) { alert("Formato incorrecto. Usá DD/MM/AAAA"); return; }
+      const [d, m, y] = partes;
+      if (!d || !m || !y || y.length !== 4) { alert("Fecha inválida."); return; }
+      const birthDateInput = `${y}-${m.padStart(2,"0")}-${d.padStart(2,"0")}`;
+      const birthDateAC   = `${y}/${m.padStart(2,"0")}/${d.padStart(2,"0")}`;
+      state.viajeros.push({ birthDateInput, birthDateAC, countryCode: "AR" });
+      renderViajeros();
+    },
+
+    quitarViajero(i) {
+      state.viajeros.splice(i, 1);
+      renderViajeros();
+    },
+
+    async cotizar() {
+      showError("acError1", "");
+
+      const destino    = document.getElementById("acDestino").value;
+      const fechaDesde = document.getElementById("acFechaDesde").value;
+      const fechaHasta = document.getElementById("acFechaHasta").value;
+
+      if (!destino)    return showError("acError1", "Seleccioná un destino.");
+      if (!fechaDesde) return showError("acError1", "Ingresá la fecha de salida.");
+      if (!fechaHasta) return showError("acError1", "Ingresá la fecha de regreso.");
+      if (fechaHasta <= fechaDesde) return showError("acError1", "La fecha de regreso debe ser posterior a la salida.");
+      if (!state.viajeros.length) return showError("acError1", "Agregá al menos un viajero.");
+
+      setLoading("acBtnCotizar", true, "Ver precios de seguros →");
+      this.irPaso(2);
+
+      // Resumen visible
+      const destinoNombre = document.getElementById("acDestino").selectedOptions[0].text;
+      document.getElementById("acResumenViaje").textContent =
+        `${destinoNombre} · ${formatFecha(fechaDesde)} → ${formatFecha(fechaHasta)} · ${state.viajeros.length} viajero(s)`;
+
+      try {
+        const data = await callWorker("/cotizar", {
+          beginDate:       inputToAC(fechaDesde),
+          endDate:         inputToAC(fechaHasta),
+          destinationCode: destino,
+          passengers:      state.viajeros.map(v => ({
+            birthDate:   v.birthDateAC,
+            countryCode: v.countryCode
+          }))
+        });
+
+        state.cotizacion = data;
+
+        // La API puede devolver el array en distintas formas
+        const planes = Array.isArray(data) ? data :
+                       data.quotes || data.Quotes || data.products || data.Products || [];
+        renderPlanes(planes);
+
+        if (typeof gtag === "function") gtag("event", "cotizacion_exitosa", { event_category: "seguros", destino: destinoNombre });
+
+      } catch (err) {
+        document.getElementById("acLoading").classList.add("hidden");
+        showError("acError2", `No pudimos obtener los precios: ${err.message}. Intentá de nuevo o escribinos por WhatsApp.`);
+      } finally {
+        setLoading("acBtnCotizar", false, "Ver precios de seguros →");
+      }
+    },
+
+    seleccionarPlan(i) {
+      // Desmarcar todos
+      document.querySelectorAll(".ac-plan-card").forEach(c => c.classList.remove("selected"));
+      document.getElementById("plan-" + i)?.classList.add("selected");
+
+      const planes = Array.isArray(state.cotizacion) ? state.cotizacion :
+                     state.cotizacion?.quotes || state.cotizacion?.Quotes ||
+                     state.cotizacion?.products || state.cotizacion?.Products || [];
+      const plan = planes[i];
+      if (!plan) return;
+
+      state.planSeleccionado = {
+        counterCode: plan.counterCode || plan.CounterCode || plan.counter_code,
+        productCode: plan.productCode || plan.ProductCode || plan.product_code,
+        rateCode:    plan.rateCode    || plan.RateCode    || plan.rate_code,
+        nombre:      plan.productName || plan.ProductName || plan.name || `Plan ${i + 1}`,
+        precio:      `${plan.currency || "ARS"} ${Number(plan.totalAmount || plan.price || 0).toLocaleString("es-AR")}`
+      };
+
+      // Pre-fill fecha de nac del primer viajero en paso 3
+      if (state.viajeros[0]) {
+        const fnInput = document.getElementById("acFechaNac");
+        if (fnInput) fnInput.value = state.viajeros[0].birthDateInput;
+      }
+
+      document.getElementById("acPlanSeleccionadoNombre").textContent = state.planSeleccionado.nombre;
+      document.getElementById("acPlanSeleccionadoPrecio").textContent = state.planSeleccionado.precio;
+
+      setTimeout(() => this.irPaso(3), 180);
+    },
+
+    async generarLinkPago() {
+      showError("acError3", "");
+
+      const campos = {
+        nombre:    document.getElementById("acNombre")?.value.trim(),
+        apellido:  document.getElementById("acApellido")?.value.trim(),
+        email:     document.getElementById("acEmail")?.value.trim(),
+        telefono:  document.getElementById("acTelefono")?.value.trim(),
+        documento: document.getElementById("acDocumento")?.value.trim(),
+        fechaNac:  document.getElementById("acFechaNac")?.value,
+        calle:     document.getElementById("acCalle")?.value.trim(),
+        numero:    document.getElementById("acNumero")?.value.trim(),
+        cp:        document.getElementById("acCP")?.value.trim(),
+        ciudad:    document.getElementById("acCiudad")?.value.trim(),
+        provincia: document.getElementById("acProvincia")?.value.trim(),
+      };
+
+      const requeridos = ["nombre","apellido","email","telefono","documento","fechaNac","calle","numero","cp","ciudad","provincia"];
+      for (const k of requeridos) {
+        if (!campos[k]) return showError("acError3", "Por favor completá todos los campos.");
+      }
+
+      if (!campos.email.includes("@")) return showError("acError3", "El email no es válido.");
+
+      if (!state.planSeleccionado) return showError("acError3", "No hay un plan seleccionado.");
+
+      setLoading("acBtnPagar", true, "Ir a pagar →");
+
+      try {
+        const fechaDesde = document.getElementById("acFechaDesde").value;
+        const fechaHasta = document.getElementById("acFechaHasta").value;
+        const destino    = document.getElementById("acDestino").value;
+
+        const data = await callWorker("/link-pago", {
+          counterCode:     state.planSeleccionado.counterCode,
+          productCode:     state.planSeleccionado.productCode,
+          rateCode:        state.planSeleccionado.rateCode,
+          beginDate:       inputToAC(fechaDesde),
+          endDate:         inputToAC(fechaHasta),
+          destinationCode: destino,
+          passenger: {
+            nombre:        campos.nombre,
+            apellido:      campos.apellido,
+            email:         campos.email,
+            telefono:      campos.telefono,
+            documentNumber: campos.documento,
+            documentType:  1,
+            birthDate:     inputToAC(campos.fechaNac),
+            calle:         campos.calle,
+            numero:        campos.numero,
+            codigoPostal:  campos.cp,
+            ciudad:        campos.ciudad,
+            provincia:     campos.provincia,
+          }
+        });
+
+        if (typeof gtag === "function") gtag("event", "link_pago_generado", { event_category: "seguros", plan: state.planSeleccionado.nombre });
+
+        const url = data.paymentUrl || data.PaymentUrl || data.payment_url;
+        if (url) {
+          window.open(url, "_blank", "noopener,noreferrer");
+          this.cerrar();
+        } else {
+          showError("acError3", "No pudimos generar el link de pago. Intentá de nuevo o contactanos por WhatsApp.");
+        }
+
+      } catch (err) {
+        showError("acError3", `Error: ${err.message}. Podés contactarnos por WhatsApp para completar la compra.`);
+      } finally {
+        setLoading("acBtnPagar", false, "Ir a pagar →");
+      }
+    }
+
+  }; // fin acCotizador
+
+  // Cerrar con Escape
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") acCotizador.cerrar();
+  });
+
+  // Inicializar viajeros vacíos
+  renderViajeros();
+
+})();
+</script>
+
 
   <!-- FAQs -->
+  <!-- Micro-CTA #2 — entre Servicios y FAQs -->
+  <div class="py-10 px-4 bg-white text-center">
+    <p class="text-lg font-semibold text-brandText mb-4">¿Todavía tenés dudas sobre cómo funciona? 👇</p>
+    <a
+      href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20tengo%20dudas%20sobre%20mi%20viaje%20y%20quiero%20asesoramiento."
+      target="_blank"
+      rel="noopener noreferrer"
+      data-cta="servicios_mid_whatsapp"
+      onclick="if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'mid_page_microcta',transport_type:'beacon'});"
+      class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
+      💬 Hablar por WhatsApp con Magui
+    </a>
+  </div>
+
   <section id="faqs" class="py-20 px-4 bg-white">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
@@ -393,65 +1055,88 @@
   </section>
 
   <!-- Testimonios -->
-  <section class="py-20 px-4">
+  <section class="py-20 px-4 bg-brandSurface">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12">Lo Que Dicen Mis Clientes</h2>
+      <p class="text-center text-sm uppercase tracking-[0.18em] text-brandPrimary font-semibold mb-3">Lo que dicen las familias</p>
+      <h2 class="text-4xl font-bold text-center mb-3" style="color: var(--brand-text);">Familias que viajaron con nosotros</h2>
+      <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Cada viaje es diferente. Lo que comparten todos: la tranquilidad de ir con todo organizado.</p>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3" aria-label="Calificación cinco estrellas">★★★★★</div>
-          <p class="text-gray-700 italic mb-4">"Magui hizo que nuestro viaje a Disney fuera PERFECTO. Cada detalle pensado, nos ahorró tiempo y dinero!"</p>
-          <p class="font-bold text-brandPrimary">- Familia González</p>
+          <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+          <p class="text-gray-700 italic mb-4">"Llegamos a Disney sabiendo exactamente qué hacer cada día. Magui nos ahorró horas de investigación y evitamos filas eternas. ¡La experiencia fue increíble!"</p>
+          <p class="font-bold text-brandPrimary">— Familia González</p>
+          <p class="text-xs text-gray-400 mt-1">Viajaron con 2 nenes · Disney + Universal</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3" aria-label="Calificación cinco estrellas">★★★★★</div>
-          <p class="text-gray-700 italic mb-4">"La asesoría para visa fue clave. Nos aprobaron a toda la familia. Súper profesional."</p>
-          <p class="font-bold text-brandPrimary">- Carolina M.</p>
+          <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+          <p class="text-gray-700 italic mb-4">"La asesoría para la visa fue clave. Nos aprobaron a toda la familia y Magui estuvo pendiente en cada paso. Una tranquilidad enorme poder contar con alguien así."</p>
+          <p class="font-bold text-brandPrimary">— Carolina M.</p>
+          <p class="text-xs text-gray-400 mt-1">Visa + viaje familiar completo</p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3" aria-label="Calificación cinco estrellas">★★★★★</div>
-          <p class="text-gray-700 italic mb-4">"Nuestro crucero por Caribe fue increíble. Mejor cabina y excursiones perfectas!"</p>
-          <p class="font-bold text-brandPrimary">- Rodrigo y Ana</p>
+          <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+          <p class="text-gray-700 italic mb-4">"Pensamos que organizar solos iba a ser más barato, pero Magui nos planificó todo SIN costo extra y con una organización que jamás hubiéramos logrado. Volvemos seguro."</p>
+          <p class="font-bold text-brandPrimary">— Rodrigo y Ana</p>
+          <p class="text-xs text-gray-400 mt-1">Disney World + Crucero a Bahamas</p>
         </div>
+      </div>
+
+      <div class="mt-10 text-center">
+        <a
+          href="https://g.page/r/CYai6EbHwdsmEAI/review"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-brandAccent hover:bg-brandDark text-white px-8 py-3 rounded-full font-semibold shadow-lg transition"
+        >
+          Ver todas las reseñas en Google ⭐
+        </a>
       </div>
     </div>
 
-    <div class="mt-12 text-center">
-      <p class="text-lg font-semibold mb-4">Vos también podés vivir un viaje así</p>
+    <!-- Micro-CTA #3 — post testimonios -->
+    <div class="max-w-2xl mx-auto mt-12 text-center">
+      <p class="text-xl font-bold text-brandText mb-2">Vos también podés vivir un viaje así 🎉</p>
+      <p class="text-gray-600 mb-6">Escribinos y te ayudamos a empezar a planificar hoy mismo.</p>
       <a
-        href="https://g.page/r/CYai6EbHwdsmEAI/review"
+        href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-block bg-brandAccent hover:bg-brandDark text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl"
+        data-cta="testimonios_whatsapp"
+        onclick="if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'post_testimonios_cta',transport_type:'beacon'});"
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-9 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105"
       >
-        Ver y dejar reseña en Google
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
+        💬 Te ayudamos a planificar tu viaje — Escribinos ahora
       </a>
     </div>
   </section>
   <!-- Contacto -->
   <section id="contacto" class="py-20 px-4 bg-gradient-to-br from-brandPrimary to-brandAccent text-white">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-4">¿Lista para tu Aventura Mágica?</h2>
-      <p class="text-xl mb-12">Contactame ahora y empecemos a planear el viaje de tus sueños</p>
+      <h2 class="text-4xl font-bold mb-4">¿Listo para planificar tu viaje mágico?</h2>
+      <p class="text-xl mb-12">Escribinos ahora y te ayudamos paso a paso — sin costo, sin compromiso</p>
 
       <div class="bg-white rounded-2xl p-8 text-gray-800 shadow-xl">
         <h3 class="text-2xl font-bold mb-6">Elegí cómo querés que te acompañe</h3>
 
         <a
-  href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20asesor%C3%ADa%20para%20planear%20mi%20viaje."
-  target="_blank"
-  rel="noopener noreferrer"
-  data-cta="contacto_whatsapp"
-  class="inline-block bg-brandAccent hover:bg-brandDark text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8"
->
-  Escribirme por WhatsApp
-</a>
+          href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cta="contacto_whatsapp"
+          onclick="if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'contacto_section_cta',transport_type:'beacon'});"
+          class="inline-flex items-center gap-3 bg-brandAccent hover:bg-brandDark text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
+          💬 Hablar por WhatsApp ahora
+        </a>
 
         <div class="grid md:grid-cols-2 gap-4 mt-8">
           <a href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true" target="_blank" data-cta="contacto_videollamada" class="flex items-center justify-center gap-2 bg-brandPrimary text-white px-6 py-3 rounded-full hover:bg-brandDark transition">
-            Agendar videollamada
+            📅 Agendar videollamada
           </a>
           <a href="#" id="btnEmail" data-cta="contacto_email" class="flex items-center justify-center gap-2 bg-brandDark text-white px-6 py-3 rounded-full hover:opacity-90 transition">
-            Email
+            ✉️ Enviar un email
           </a>
         </div>
       </div>
@@ -543,14 +1228,19 @@
 
   <div id="site-footer"></div>
 
-  <!-- WhatsApp Flotante -->
+  <!-- WhatsApp Flotante mejorado -->
   <a
-    href="#contacto"
-    class="fixed bottom-6 right-6 bg-brandAccent text-white p-4 rounded-full shadow-2xl hover:bg-brandDark transition transform hover:scale-110 z-50 animate-pulse"
+    href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
+    target="_blank"
+    rel="noopener noreferrer"
+    data-cta="flotante_whatsapp"
+    onclick="if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'boton_flotante',transport_type:'beacon'});"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl hover:bg-[#1ebe5d] transition transform hover:scale-105"
+    style="max-width: 90vw;"
+    aria-label="Planificar viaje por WhatsApp"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8 fill-current">
-      <path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z" />
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
+    <span class="text-sm font-semibold leading-tight hidden sm:block">💬 Planificar mi viaje</span>
   </a>
 
   <script src="js/whatsapp.js?v=20260306-1"></script>
