@@ -170,19 +170,22 @@
 
 })();
 
-// Mido clicks de Whatsapp en general
+// ── 8. Click WhatsApp — tracking global con anti-duplicados ─────────────
+// Captura TODOS los links wa.me y api.whatsapp.com del sitio,
+// incluyendo botones flotantes generados dinámicamente por whatsapp.js.
+// Usa dataset.waTracked para garantizar un único disparo por click.
 
 document.addEventListener("click", function (e) {
-  const link = e.target.closest("a");
+  const link = e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
   if (!link) return;
+  if (link.dataset.waTracked) return; // evitar doble disparo
+  link.dataset.waTracked = "1";
 
-  if (link.href && link.href.includes("wa.me")) {
-    if (typeof gtag === "function") {
-      gtag("event", "click_whatsapp", {
-        event_category: "contacto",
-        event_label: link.href,
-        transport_type: "beacon"
-      });
-    }
+  if (typeof gtag === "function") {
+    gtag("event", "click_whatsapp", {
+      event_category: "conversion",
+      event_label: link.dataset.cta || link.dataset.label || "whatsapp_click",
+      transport_type: "beacon"
+    });
   }
-});
+}, true); // capture:true → se ejecuta antes de que el link navegue

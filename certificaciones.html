@@ -258,5 +258,17 @@
   </script>
   <script src="js/footer.js"></script>
   <script src="js/navbar.js"></script>
+
+  <!-- WhatsApp Tracking GA4 — analytics.js centraliza el listener -->
+  <script>
+    function trackWhatsApp(label) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', {
+          event_category: 'conversion',
+          event_label: label || 'whatsapp_click'
+        });
+      }
+    }
+  </script>
 </body>
 </html>
