@@ -72,10 +72,17 @@
   <!-- Navigation -->
   <div id="site-nav"></div>
 
-  <!-- Hero -->
-<section id="hero" class="pt-32 pb-20 px-4 text-center">
-  <div class="max-w-4xl mx-auto">
-    <div class="mx-auto w-fit rounded-2xl overflow-hidden shadow-xl mb-8">
+  <!-- Hero — CRO optimizado -->
+<section id="hero" class="pt-28 pb-10 px-4 text-center bg-brandLight">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- TÍTULO PRINCIPAL -->
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text leading-tight">
+      Planificamos tu viaje a Disney<br class="hidden sm:block"/> y Universal sin estrés ✨
+    </h1>
+
+    <!-- VIDEO — cuando esté el de YouTube reemplazar por el embed -->
+    <div class="mx-auto w-fit rounded-2xl overflow-hidden shadow-xl mb-6">
       <video
         src="assets/vid/video.mp4"
         class="block w-auto max-w-full h-auto max-h-[48vh]"
@@ -87,53 +94,143 @@
       ></video>
     </div>
 
-    <h1 class="text-4xl md:text-5xl font-bold mb-5 gradient-text leading-tight">
-      <span class="block">Planificamos tu viaje a Disney</span>
-      <span class="block">y Universal sin estrés ✨</span>
-    </h1>
+    <!-- BLOQUE DE CONVERSIÓN — debajo del video, dentro del hero -->
+    <p class="text-lg md:text-xl font-semibold text-brandText mb-5 leading-snug">
+      Hablá directamente con Magui y empezá a<br class="hidden sm:block"/> planificar tu viaje hoy
+    </p>
 
-  </div>
-
-  <p class="text-xl md:text-2xl text-gray-700 mb-4 max-w-3xl mx-auto">
-    Te ayudamos paso a paso para que ahorres tiempo, evites errores y disfrutes cada parque al máximo.
-  </p>
-
-  <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-    Soy Magui Saavedra, travel planner especializada en Disney y Universal. Mi asesoría es <strong>100% gratuita</strong> — ganó comisiones de los mismos proveedores que usarías vos.
-  </p>
-
-  <!-- CTA Principal: WhatsApp -->
-  <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
     <a
       href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
       target="_blank"
       rel="noopener noreferrer"
       data-cta="hero_whatsapp"
       onclick="this.dataset.waTracked='1'; if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'hero_cta_principal',transport_type:'beacon'});"
-      class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition transform hover:scale-105 flex items-center justify-center gap-2"
+      class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition transform hover:scale-105 w-full sm:w-auto"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
-      👉 Planificar mi viaje por WhatsApp
+      Hablar con Magui por WhatsApp ahora
     </a>
 
-    <button
-      type="button"
-      onclick="document.getElementById('confianza').scrollIntoView({ behavior: 'smooth' });"
-      data-cta="hero_ver_como"
-      class="bg-white hover:bg-gray-50 text-brandPrimary px-8 py-4 rounded-full text-lg font-semibold border-2 border-brandPrimary shadow-lg transition"
-    >
-      Ver cómo te ayudamos
-    </button>
+    <!-- REDUCCIÓN DE FRICCIÓN -->
+    <p class="text-sm text-gray-500 mt-3 mb-8">
+      ✔ Sin compromiso &nbsp;·&nbsp; ✔ Respuesta en el día &nbsp;·&nbsp; ✔ Asesoría gratuita
+    </p>
+
+    <!-- COPY REFORZADO -->
+    <p class="text-lg text-gray-600 mb-2 max-w-2xl mx-auto">
+      Te ayudamos paso a paso para que ahorres tiempo, evites errores y disfrutes al máximo.
+    </p>
+    <p class="text-base text-gray-500 mb-1">
+      Atención personalizada por Magui, especialista en Disney y Universal.
+    </p>
+    <p class="text-base text-gray-500 mb-6">
+      Asesoría 100% gratuita — trabajamos con los mismos proveedores que usarías vos.
+    </p>
+
+    <!-- MICROCOPY EMPUJE -->
+    <p class="text-sm text-brandPrimary font-semibold">
+      Te respondemos personalmente para ayudarte a organizar tu viaje
+    </p>
+    <p class="text-sm text-gray-400 mt-1">
+      📅 Empezá a planificar con tiempo para conseguir mejores opciones
+    </p>
+
   </div>
 
-  <!-- Microcopy urgencia suave -->
-  <p class="text-sm text-brandPrimary font-semibold mt-2 mb-2">
-    📅 Empezá a planificar con tiempo para conseguir mejores opciones
-  </p>
-  <p class="text-sm text-gray-500">
-    Asesoramiento 100% gratuito · Tarifas oficiales Disney y Universal · Soporte personalizado
-  </p>
+  <!-- HUMANIZACIÓN — Hola soy Magui -->
+  <div class="max-w-2xl mx-auto mt-10 bg-white border border-brandSecondary rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-5 text-left shadow-md">
+    <img
+      src="assets/img/magui.webp"
+      alt="Magui Saavedra — Travel Planner Disney y Universal"
+      class="w-20 h-20 rounded-full object-cover flex-shrink-0 shadow-md border-2 border-brandPrimary"
+      loading="eager"
+    />
+    <div>
+      <p class="font-bold text-brandPrimary text-lg mb-1">Hola, soy Magui 👋</p>
+      <p class="text-gray-600 text-base leading-relaxed">
+        Soy especialista en viajes a Disney y Universal y voy a acompañarte personalmente en todo el proceso para que tu viaje sea perfecto.
+      </p>
+    </div>
+  </div>
+
 </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECCIÓN PROMOCIONES DESTACADAS — visible al ingresar
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="promociones" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-sm uppercase tracking-[0.18em] text-brandPrimary font-semibold mb-3">Ofertas especiales</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-3" style="color: var(--brand-text);">Promociones Destacadas</h2>
+      <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Las mejores ofertas del momento para tu viaje a Disney y Universal. ¡No te las pierdas!</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+        <!-- Promo 1: Tickets 4 Park Magic -->
+        <article class="bg-brandSurface rounded-2xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="h-52 overflow-hidden">
+            <img src="assets/img/promos/4day.jpg" alt="Tickets 4 Park Magic Disney"
+              class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Tickets 4 Park Magic: Hasta U$S 150 de descuento</h3>
+            <p class="text-sm text-gray-500 mb-4 flex-1">Para visitar los 4 Parques Disney</p>
+            <a href="promo-tickets-4park.html" target="_blank" rel="noopener noreferrer"
+              data-cta="promo_tickets_4park"
+              onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'tickets_4park_magic'});"
+              class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
+              Ver Oferta
+            </a>
+          </div>
+        </article>
+
+        <!-- Promo 2: Comidas Gratis Disney -->
+        <article class="bg-brandSurface rounded-2xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="h-52 overflow-hidden">
+            <img src="assets/img/promos/dining.jpg" alt="Comidas Gratis en Disney"
+              class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Comidas Gratis en Disney entre Julio y Diciembre de 2026</h3>
+            <p class="text-sm text-gray-500 mb-4 flex-1">La promo más codiciada</p>
+            <a href="promo-comidas-disney.html" target="_blank" rel="noopener noreferrer"
+              data-cta="promo_comidas_disney"
+              onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'comidas_gratis_disney'});"
+              class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
+              Ver Oferta
+            </a>
+          </div>
+        </article>
+
+        <!-- Promo 3: Hoteles Universal -->
+        <article class="bg-brandSurface rounded-2xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="h-52 overflow-hidden">
+            <img src="assets/img/promos/universal.webp" alt="Hoteles Universal Selectos"
+              class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Hoteles Universal Selectos: Hasta U$S 300 en créditos de comida</h3>
+            <p class="text-sm text-gray-500 mb-4 flex-1">Promo Genial en Universal Orlando</p>
+            <a href="promo-hoteles-universal.html" target="_blank" rel="noopener noreferrer"
+              data-cta="promo_hoteles_universal"
+              onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'hoteles_universal'});"
+              class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
+              Ver Oferta
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center">
+        <a href="promociones.html"
+          onclick="if(typeof gtag==='function') gtag('event','click_ver_todas_promos',{event_category:'promociones',event_label:'link_ver_todas'});"
+          class="text-brandPrimary font-bold underline underline-offset-4 hover:text-brandDark transition text-lg">
+          Ver todas las Promociones →
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════════
        BLOQUE DE CONFIANZA — nueva sección post-hero
@@ -175,18 +272,20 @@
 
     <!-- Micro-CTA #1 -->
     <div class="bg-gradient-to-r from-brandSurface to-brandLight rounded-2xl p-6 text-center border border-brandSecondary">
-      <p class="text-lg font-semibold text-brandText mb-4">¿Querés que te ayudemos con tu viaje?</p>
+      <p class="text-sm text-gray-500 mb-2">Te respondemos personalmente para ayudarte a organizar tu viaje</p>
+      <p class="text-lg font-semibold text-brandText mb-4">¿Querés que Magui te ayude con tu viaje?</p>
       <a
         href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
         target="_blank"
         rel="noopener noreferrer"
         data-cta="confianza_whatsapp"
         onclick="this.dataset.waTracked='1'; if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'confianza_microcta',transport_type:'beacon'});"
-        class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105"
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-lg transition transform hover:scale-105"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
-        💬 Escribinos ahora por WhatsApp
+        Hablar con Magui por WhatsApp ahora
       </a>
+      <p class="text-xs text-gray-400 mt-3">✔ Sin compromiso &nbsp;·&nbsp; ✔ Respuesta en el día &nbsp;·&nbsp; ✔ Asesoría gratuita</p>
     </div>
   </div>
 </section>
@@ -391,18 +490,15 @@
         <div class="check-list-item">Mejor precio-cobertura</div>
       </div>
 
-      <!-- Botón cotizador (temporalmente oculto hasta activación de credenciales) -->
-      <!-- <div class="text-center mt-2">
-        <button
-          id="btnAbrirCotizador"
-          type="button"
-          onclick="acCotizador.abrir()"
-          class="inline-flex items-center gap-2 bg-gradient-to-r from-brandDark to-brandAccent text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition transform hover:scale-105"
-        >
+      <!-- Botón cotizador OCULTO — descomentar cuando esté confirmado con el proveedor:
+      <div class="text-center mt-2">
+        <button id="btnAbrirCotizador" type="button" onclick="acCotizador.abrir()"
+          class="inline-flex items-center gap-2 bg-gradient-to-r from-brandDark to-brandAccent text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition transform hover:scale-105">
           🛡️ Cotizá tu seguro online
         </button>
         <p class="text-xs text-gray-400 mt-2">Cotización instantánea · Powered by Assist Card</p>
-      </div> -->
+      </div>
+      -->
     </div>
   </div>
 </section>
@@ -668,6 +764,18 @@
     return `${d}/${m}/${y}`;
   }
 
+  function ageToBirthDate(age) {
+    const today = new Date();
+    const birth = new Date(today.getFullYear() - age, today.getMonth(), today.getDate());
+    const y = birth.getFullYear();
+    const m = String(birth.getMonth() + 1).padStart(2, "0");
+    const d = String(birth.getDate()).padStart(2, "0");
+    return {
+      input: `${y}-${m}-${d}`,
+      ac: `${y}/${m}/${d}`,
+    };
+  }
+
   function hoy() {
     return new Date().toISOString().split("T")[0];
   }
@@ -719,7 +827,7 @@
     }
     lista.innerHTML = state.viajeros.map((v, i) => `
       <div class="ac-viajero-row">
-        <span>👤 Viajero ${i + 1} — Fecha de nac.: <strong>${formatFecha(v.birthDateInput)}</strong></span>
+        <span>👤 Viajero ${i + 1} — Edad: <strong>${v.age} años</strong></span>
         <button type="button" onclick="acCotizador.quitarViajero(${i})" aria-label="Quitar viajero">✕</button>
       </div>
     `).join("");
@@ -738,9 +846,20 @@
     cont.innerHTML = planes.map((p, i) => {
       // Adapt según estructura real del response — ajustar si la API devuelve distinto
       const nombre = p.productName || p.ProductName || p.name || `Plan ${i + 1}`;
-      const precio = p.totalAmount || p.TotalAmount || p.price || "—";
-      const moneda = p.currency || p.Currency || "ARS";
-      const cobertura = p.medicalCoverage || p.MedicalCoverage || "";
+      const precio =
+        p.localAmount?.total ??
+        p.amount?.total ??
+        p.totalAmount ??
+        p.TotalAmount ??
+        p.price ??
+        "—";
+      const moneda =
+        p.localAmount?.currency ||
+        p.amount?.currency ||
+        p.currency ||
+        p.Currency ||
+        "ARS";
+      const cobertura = p.rateCaption || p.medicalCoverage || p.MedicalCoverage || "";
 
       return `
         <div class="ac-plan-card" onclick="acCotizador.seleccionarPlan(${i})" id="plan-${i}">
@@ -806,15 +925,20 @@
     },
 
     agregarViajero() {
-      const fecha = prompt("Fecha de nacimiento del viajero (DD/MM/AAAA):");
-      if (!fecha) return;
-      const partes = fecha.split("/");
-      if (partes.length !== 3) { alert("Formato incorrecto. Usá DD/MM/AAAA"); return; }
-      const [d, m, y] = partes;
-      if (!d || !m || !y || y.length !== 4) { alert("Fecha inválida."); return; }
-      const birthDateInput = `${y}-${m.padStart(2,"0")}-${d.padStart(2,"0")}`;
-      const birthDateAC   = `${y}/${m.padStart(2,"0")}/${d.padStart(2,"0")}`;
-      state.viajeros.push({ birthDateInput, birthDateAC, countryCode: "AR" });
+      const edadStr = prompt("Edad del viajero (en años):");
+      if (!edadStr) return;
+      const age = Number.parseInt(edadStr, 10);
+      if (!Number.isInteger(age) || age < 0 || age > 120) {
+        alert("Edad inválida. Ingresá un número entre 0 y 120.");
+        return;
+      }
+      const birthDate = ageToBirthDate(age);
+      state.viajeros.push({
+        age,
+        birthDateInput: birthDate.input,
+        birthDateAC: birthDate.ac,
+        countryCode: "AR"
+      });
       renderViajeros();
     },
 
@@ -859,7 +983,7 @@
 
         // La API puede devolver el array en distintas formas
         const planes = Array.isArray(data) ? data :
-                       data.quotes || data.Quotes || data.products || data.Products || [];
+                       data.quotedProducts || data.quotes || data.Quotes || data.products || data.Products || [];
         renderPlanes(planes);
 
         if (typeof gtag === "function") gtag("event", "cotizacion_exitosa", { event_category: "seguros", destino: destinoNombre });
@@ -878,6 +1002,7 @@
       document.getElementById("plan-" + i)?.classList.add("selected");
 
       const planes = Array.isArray(state.cotizacion) ? state.cotizacion :
+                     state.cotizacion?.quotedProducts ||
                      state.cotizacion?.quotes || state.cotizacion?.Quotes ||
                      state.cotizacion?.products || state.cotizacion?.Products || [];
       const plan = planes[i];
@@ -887,8 +1012,10 @@
         counterCode: plan.counterCode || plan.CounterCode || plan.counter_code,
         productCode: plan.productCode || plan.ProductCode || plan.product_code,
         rateCode:    plan.rateCode    || plan.RateCode    || plan.rate_code,
+        currency:    plan.localAmount?.currency || plan.amount?.currency || plan.currency || "ARS",
+        amount:      Number(plan.localAmount?.total ?? plan.amount?.total ?? plan.totalAmount ?? plan.price ?? 0),
         nombre:      plan.productName || plan.ProductName || plan.name || `Plan ${i + 1}`,
-        precio:      `${plan.currency || "ARS"} ${Number(plan.totalAmount || plan.price || 0).toLocaleString("es-AR")}`
+        precio:      `${plan.localAmount?.currency || plan.amount?.currency || plan.currency || "ARS"} ${Number(plan.localAmount?.total ?? plan.amount?.total ?? plan.totalAmount ?? plan.price ?? 0).toLocaleString("es-AR")}`
       };
 
       // Pre-fill fecha de nac del primer viajero en paso 3
@@ -940,6 +1067,8 @@
           counterCode:     state.planSeleccionado.counterCode,
           productCode:     state.planSeleccionado.productCode,
           rateCode:        state.planSeleccionado.rateCode,
+          paymentCurrency: state.planSeleccionado.currency,
+          paymentAmount:   state.planSeleccionado.amount,
           beginDate:       inputToAC(fechaDesde),
           endDate:         inputToAC(fechaHasta),
           destinationCode: destino,
@@ -993,18 +1122,20 @@
   <!-- FAQs -->
   <!-- Micro-CTA #2 — entre Servicios y FAQs -->
   <div class="py-10 px-4 bg-white text-center">
-    <p class="text-lg font-semibold text-brandText mb-4">¿Todavía tenés dudas sobre cómo funciona? 👇</p>
+    <p class="text-sm text-gray-500 mb-2">Te respondemos personalmente para ayudarte a organizar tu viaje</p>
+    <p class="text-lg font-semibold text-brandText mb-4">¿Tenés dudas? Magui te las responde ahora 👇</p>
     <a
       href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20tengo%20dudas%20sobre%20mi%20viaje%20y%20quiero%20asesoramiento."
       target="_blank"
       rel="noopener noreferrer"
       data-cta="servicios_mid_whatsapp"
       onclick="this.dataset.waTracked='1'; if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'mid_page_microcta',transport_type:'beacon'});"
-      class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105"
+      class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-lg transition transform hover:scale-105"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
-      💬 Hablar por WhatsApp con Magui
+      Quiero que me ayuden con mi viaje
     </a>
+    <p class="text-xs text-gray-400 mt-3">✔ Sin compromiso &nbsp;·&nbsp; ✔ Respuesta en el día &nbsp;·&nbsp; ✔ Asesoría gratuita</p>
   </div>
 
   <section id="faqs" class="py-20 px-4 bg-white">
@@ -1104,7 +1235,8 @@
     <!-- Micro-CTA #3 — post testimonios -->
     <div class="max-w-2xl mx-auto mt-12 text-center">
       <p class="text-xl font-bold text-brandText mb-2">Vos también podés vivir un viaje así 🎉</p>
-      <p class="text-gray-600 mb-6">Escribinos y te ayudamos a empezar a planificar hoy mismo.</p>
+      <p class="text-sm text-gray-500 mb-2">Te respondemos personalmente para ayudarte a organizar tu viaje</p>
+      <p class="text-gray-600 mb-5">Escribinos y empezamos a planificar tu viaje hoy mismo.</p>
       <a
         href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
         target="_blank"
@@ -1114,8 +1246,9 @@
         class="inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-9 py-4 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
-        💬 Te ayudamos a planificar tu viaje — Escribinos ahora
+        Hablar con Magui por WhatsApp ahora
       </a>
+      <p class="text-xs text-gray-400 mt-3">✔ Sin compromiso &nbsp;·&nbsp; ✔ Respuesta en el día &nbsp;·&nbsp; ✔ Asesoría gratuita</p>
     </div>
   </section>
   <!-- Contacto -->
@@ -1125,7 +1258,8 @@
       <p class="text-xl mb-12">Escribinos ahora y te ayudamos paso a paso — sin costo, sin compromiso</p>
 
       <div class="bg-white rounded-2xl p-8 text-gray-800 shadow-xl">
-        <h3 class="text-2xl font-bold mb-6">Elegí cómo querés que te acompañe</h3>
+        <p class="text-sm text-gray-500 mb-2">Te respondemos personalmente para ayudarte a organizar tu viaje</p>
+        <h3 class="text-2xl font-bold mb-5">Elegí cómo querés que te acompañe Magui</h3>
 
         <a
           href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
@@ -1133,17 +1267,20 @@
           rel="noopener noreferrer"
           data-cta="contacto_whatsapp"
           onclick="this.dataset.waTracked='1'; if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'contacto_section_cta',transport_type:'beacon'});"
-          class="inline-flex items-center gap-3 bg-brandAccent hover:bg-brandDark text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-8"
+          class="inline-flex items-center gap-3 bg-brandAccent hover:bg-brandDark text-white px-12 py-4 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition transform hover:scale-105 mb-3"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
-          💬 Hablar por WhatsApp ahora
+          Hablar con Magui por WhatsApp ahora
         </a>
+        <p class="text-xs text-gray-400 mb-6">✔ Sin compromiso &nbsp;·&nbsp; ✔ Respuesta en el día &nbsp;·&nbsp; ✔ Asesoría gratuita</p>
 
-        <div class="grid md:grid-cols-2 gap-4 mt-8">
-          <a href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true" target="_blank" data-cta="contacto_videollamada" class="flex items-center justify-center gap-2 bg-brandPrimary text-white px-6 py-3 rounded-full hover:bg-brandDark transition">
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true" target="_blank" data-cta="contacto_videollamada"
+            onclick="if(typeof gtag==='function') gtag('event','click_videollamada',{event_category:'contacto',event_label:'contacto_section'});"
+            class="flex items-center justify-center gap-2 bg-brandPrimary text-white px-6 py-3 rounded-full hover:bg-brandDark transition font-semibold">
             📅 Agendar videollamada
           </a>
-          <a href="#" id="btnEmail" data-cta="contacto_email" class="flex items-center justify-center gap-2 bg-brandDark text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+          <a href="#" id="btnEmail" data-cta="contacto_email" class="flex items-center justify-center gap-2 bg-brandDark text-white px-6 py-3 rounded-full hover:opacity-90 transition font-semibold">
             ✉️ Enviar un email
           </a>
         </div>
@@ -1236,19 +1373,20 @@
 
   <div id="site-footer"></div>
 
-  <!-- WhatsApp Flotante mejorado -->
+  <!-- WhatsApp Flotante — siempre visible, mobile-first -->
   <a
     href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20planificar%20mi%20viaje%20a%20Disney%20y%20Universal."
     target="_blank"
     rel="noopener noreferrer"
     data-cta="flotante_whatsapp"
     onclick="this.dataset.waTracked='1'; if(typeof gtag==='function') gtag('event','click_whatsapp',{event_category:'contacto',event_label:'boton_flotante',transport_type:'beacon'});"
-    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-[#25D366] text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl hover:bg-[#1ebe5d] transition transform hover:scale-105"
-    style="max-width: 90vw;"
-    aria-label="Planificar viaje por WhatsApp"
+    class="fixed bottom-5 right-4 z-50 flex items-center gap-2 bg-[#25D366] text-white pl-4 pr-5 py-3.5 rounded-full shadow-2xl hover:bg-[#1ebe5d] transition transform hover:scale-105 active:scale-95"
+    style="max-width: 92vw; box-shadow: 0 4px 20px rgba(37,211,102,0.45);"
+    aria-label="Hablar con Magui por WhatsApp"
   >
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-6 h-6 fill-current flex-shrink-0"><path d="M16 0C7.164 0 0 7.164 0 16c0 2.82.736 5.477 2.01 7.82L0 32l8.34-2.19A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.09c-2.54 0-4.92-.73-6.94-1.98l-.5-.3-4.95 1.3 1.32-4.82-.33-.5A13.08 13.08 0 012.91 16C2.91 8.82 8.82 2.91 16 2.91S29.09 8.82 29.09 16 23.18 29.09 16 29.09z"/></svg>
-    <span class="text-sm font-semibold leading-tight hidden sm:block">💬 Planificar mi viaje</span>
+    <!-- Texto visible en mobile Y desktop -->
+    <span class="text-sm font-bold leading-tight">Hablar con Magui</span>
   </a>
 
   <script src="js/whatsapp.js?v=20260306-1"></script>
