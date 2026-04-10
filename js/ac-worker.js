@@ -165,6 +165,9 @@ async function acFetch(env, path, body) {
 }
 // ── Endpoint: /cotizar ────────────────────────────────────────────────────
 // Input: { beginDate, endDate, destinationCode, passengers: [{birthDate, countryCode}] }
+// NOTA: El "Tipo de viaje" (Emisivo/Receptivo/Doméstico) está implícito en el destinationCode:
+//   Códigos 01-07, 11 = Emisivo (viajes al exterior desde Argentina)
+//   Código 08 = Doméstico  |  Código 09 = Receptivo
 // Output: array de planes con precio
 async function handleCotizar(env, input) {
   const { beginDate, endDate, passengers } = input;
@@ -177,7 +180,6 @@ async function handleCotizar(env, input) {
     beginDate,   // formato YYYY/MM/DD
     endDate,     // formato YYYY/MM/DD
     itinerary,
-    paymentMethod: "CreditCard",
     language: "es",
     passengers: passengers.map((p) => ({
       countryCode: p.countryCode || "AR",
