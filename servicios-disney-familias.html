@@ -64,6 +64,20 @@
         <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
           Organizo cada etapa del viaje a Walt Disney World: selección de parques, hoteles por categoría, reservas clave y estrategia diaria para aprovechar tiempo y presupuesto.
         </p>
+        <!-- Banner guía gratuita -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-brandSurface to-brandLight border border-brandPrimary/20 rounded-2xl px-6 py-5 mb-6 shadow-sm max-w-2xl mx-auto w-full">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl flex-shrink-0">🎉</span>
+            <p class="text-base font-semibold text-brandText text-left">¿Es tu primer viaje a Disney? <span class="text-brandPrimary">¡Descargá la guía Gratis!</span></p>
+          </div>
+          <button
+            onclick="descargarGuiaDirecta()"
+            data-cta="banner_descarga_directa_disney"
+            class="flex-shrink-0 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition whitespace-nowrap shadow-md cursor-pointer">
+            Descargar guía gratis →
+          </button>
+        </div>
+
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="http://tass.itintegraltech.com/public/cmd/datos"
              class="bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-semibold hover:opacity-90 transition"
@@ -297,6 +311,7 @@
 
   <script src="js/footer.js"></script>
   <script src="js/navbar.js"></script>
+  <script src="js/whatsapp.js?v=20260413-1"></script>
 <div id="site-footer"></div>
 
   <!-- WhatsApp Tracking GA4 — analytics.js centraliza el listener -->
