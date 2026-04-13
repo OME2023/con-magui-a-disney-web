@@ -256,6 +256,14 @@ ${NAVBAR_STYLES}
         <span class="nav-label">Trabajá con Nosotros</span>
       </a>
 
+      <!-- CTA Cotiza Ahora -->
+      <a href="http://tass.itintegraltech.com/public/cmd/datos"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-cta inline-flex items-center gap-2 bg-gradient-to-r from-brandAccent to-brandPrimary text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+        Cotiza Ahora
+      </a>
+
       <!-- CTA Contacto -->
       <a href="index.html#contacto"
         class="nav-cta inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
@@ -307,6 +315,9 @@ ${NAVBAR_STYLES}
     </a>
     <a data-nav="trabaja" href="trabaja-con-nosotros.html" class="mobile-link flex items-center gap-2 py-2.5 text-gray-700 font-medium">
       ${ICONS.star} Trabajá con Nosotros
+    </a>
+    <a href="http://tass.itintegraltech.com/public/cmd/datos" target="_blank" rel="noopener noreferrer" class="mobile-link flex items-center gap-2 py-2.5 text-brandAccent font-semibold">
+      Cotiza Ahora
     </a>
     <a href="index.html#contacto" class="mobile-link flex items-center gap-2 py-2.5 text-brandPrimary font-semibold">
       ${ICONS.sparkle} Contacto

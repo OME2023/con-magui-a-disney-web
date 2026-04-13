@@ -264,5 +264,44 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+async function descargarGuiaDirecta() {
+  // Registra descarga anónima en el Sheet (sin datos personales)
+  const payload = {
+    nombre: "Anónimo - desde la web",
+    whatsapp: "sin datos",
+    telefono: "sin datos",
+    email: "",
+    destino: "",
+    fecha_desde: "",
+    fecha_hasta: "",
+    tipo_de_consulta: "Guía Disney",
+    intencion: "Descarga Anónima - Banner",
+    mensaje: "Descarga directa desde banner (sin formulario)",
+    origen: "descarga_directa_banner",
+    landing_version: "v2",
+    fecha: getArgentinaLocalDateTimeString(),
+    fecha_iso: getArgentinaIsoWithOffset()
+  };
+
+  try {
+    fetch(WEBAPP_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(payload)
+    });
+    trackEvent("file_download", {
+      file_name: "guia_disney_primer_viaje.pdf",
+      form_origin: "descarga_directa_banner"
+    });
+  } catch (e) {
+    // No bloquear la descarga si falla el log
+    console.warn("Log anónimo no pudo enviarse:", e);
+  }
+
+  // Descarga directa del PDF
+  triggerGuideDownload();
+}
+
 window.setOrigenFormulario = setOrigenFormulario;
 window.enviarFormularioGeneral = enviarFormularioGeneral;
+window.descargarGuiaDirecta = descargarGuiaDirecta;
