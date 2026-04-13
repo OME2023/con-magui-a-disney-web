@@ -289,9 +289,18 @@ async function descargarGuiaDirecta() {
       mode: "no-cors",
       body: JSON.stringify(payload)
     });
+    // Evento GA4 estándar para descarga de archivos
     trackEvent("file_download", {
+      file_extension: "pdf",
       file_name: "guia_disney_primer_viaje.pdf",
+      file_url: GUIDE_PDF_URL,
+      link_text: "Descargar guía gratis",
       form_origin: "descarga_directa_banner"
+    });
+    // Evento personalizado adicional para filtrar fácil en GA4
+    trackEvent("descarga_guia_directa", {
+      page: window.location.pathname.split("/").pop() || "index.html",
+      origen: "banner_sin_formulario"
     });
   } catch (e) {
     // No bloquear la descarga si falla el log

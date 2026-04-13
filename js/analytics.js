@@ -50,7 +50,8 @@
   // Detecta por texto del botón o clase/atributo específico
   const COTIZAR_KEYWORDS = [
     "cotiz", "consult", "contacta", "contacto", "reserva", "quiero saber",
-    "más información", "mas informacion", "hablemos", "escribinos"
+    "más información", "mas informacion", "hablemos", "escribinos",
+    "descargar", "descarg", "guía", "guia", "quiero la guía", "quiero la guia"
   ];
 
   function isCotizarBtn(el) {

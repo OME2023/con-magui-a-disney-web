@@ -408,8 +408,23 @@ if (document.readyState === "loading") {
   bootNavbar();
 }
 
-// Analytics en todas las páginas
+// GA4 + Analytics en todas las páginas
+// Inyecta gtag solo si la página no lo cargó directamente (evita duplicados)
 (function () {
+  if (!window._cmadGtagLoaded) {
+    window._cmadGtagLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== "function") {
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", "G-BZQVQR29GB");
+      var gScript = document.createElement("script");
+      gScript.async = true;
+      gScript.src = "https://www.googletagmanager.com/gtag/js?id=G-BZQVQR29GB";
+      document.head.appendChild(gScript);
+    }
+  }
+
   var s = document.createElement("script");
   s.src = "js/analytics.js";
   document.head.appendChild(s);
