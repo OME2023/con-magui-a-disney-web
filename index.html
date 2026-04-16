@@ -156,8 +156,57 @@
   <section id="promociones" class="py-16 px-4 bg-white">
     <div class="max-w-6xl mx-auto">
       <p class="text-center text-sm uppercase tracking-[0.18em] text-brandPrimary font-semibold mb-3">Ofertas especiales</p>
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-3" style="color: var(--brand-text);">Promociones Destacadas</h2>
-      <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Las mejores ofertas del momento para tu viaje a Disney y Universal. ¡No te las pierdas!</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-3" style="color: var(--brand-text);">Novedades y Promociones Destacadas</h2>
+      <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Las mejores novedades y ofertas del momento para tu viaje a Disney y Universal. ¡No te las pierdas!</p>
+
+      <!-- Novedad destacada 2027 -->
+      <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-stretch">
+          <a
+            href="novedad-paquetes-disney-2027.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block relative min-h-[260px] md:min-h-[360px] bg-brandText"
+            onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'paquetes_disney_2027_banner'});"
+            aria-label="Ver novedad de paquetes Disney 2027"
+          >
+            <video
+              class="absolute inset-0 w-full h-full object-cover"
+              src="assets/img/promos/2027-banner.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <div class="absolute inset-0 bg-gradient-to-r from-brandText/55 via-brandText/20 to-transparent"></div>
+            <div class="absolute left-6 bottom-6 right-6 md:left-8 md:bottom-8">
+              <span class="inline-flex items-center bg-white/90 text-brandPrimary text-xs font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-full shadow">
+                Novedad 2027
+              </span>
+            </div>
+          </a>
+
+          <div class="p-7 md:p-10 flex flex-col justify-center">
+            <p class="text-xs uppercase tracking-[0.22em] text-brandPrimary font-bold mb-3">Walt Disney World Resort</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-brandText leading-tight mb-4">
+              Ya se pueden planificar paquetes Disney 2027
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Hoteles, tickets y nuevas opciones de planes de comidas para viajar a Walt Disney World hasta el 31 de octubre de 2027.
+            </p>
+            <a
+              href="novedad-paquetes-disney-2027.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'paquetes_disney_2027_cta'});"
+              class="inline-flex justify-center items-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-lg transition transform hover:scale-[1.02]"
+            >
+              Solicitá más info
+            </a>
+          </div>
+        </div>
+      </article>
 
       <!-- Carrusel wrapper -->
       <div class="relative" id="promoCarousel">
