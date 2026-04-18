@@ -69,6 +69,18 @@ const NAVBAR_STYLES = `
     transform: scale(1.06) rotate(-3deg);
   }
 
+  /* CTA robustos aunque una página no tenga la config extendida de Tailwind */
+  .cmad-nav .nav-cta {
+    background: linear-gradient(135deg, #C9A24A 0%, #C56F95 100%) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 28px rgba(201,162,74,0.22);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.18);
+  }
+  .cmad-nav .nav-cta:hover {
+    box-shadow: 0 14px 36px rgba(197,111,149,0.34);
+  }
+
   /* Dropdown panel — animación suave */
   .nav-dropdown {
     position: relative;
@@ -226,6 +238,15 @@ ${NAVBAR_STYLES}
         </div>
       </div>
 
+      <!-- Guía online -->
+      <a data-nav="guia" href="guia-primer-viaje-disney.html"
+        data-cta="nav_guia_primer_viaje"
+        onclick="if(typeof gtag==='function') gtag('event','click_guia_online',{event_category:'navegacion',event_label:'navbar_desktop',transport_type:'beacon'});"
+        class="nav-link inline-flex items-center gap-2 text-gray-700 hover:text-brandPrimary transition font-medium">
+        <span aria-hidden="true" class="text-base leading-none">🎁</span>
+        <span class="nav-label">Guía Gratis</span>
+      </a>
+
       <!-- Quinceañeras (con dropdown) -->
       <div class="nav-dropdown">
         <button type="button" data-nav="quince"
@@ -299,6 +320,13 @@ ${NAVBAR_STYLES}
       <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="index.html#faqs"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="#C56F95"/><path d="M10 6.5c-1 0-2 .8-2 1.8h1.5c0-.4.2-.5.5-.5.4 0 .6.2.6.5 0 .3-.2.5-.8.9C9.2 9.6 9 10.1 9 10.8h1.5c0-.4.1-.6.7-1 .7-.5 1.3-1 1.3-2 0-1.1-.9-1.8-2.5-1.8v-.5z" fill="white"/><circle cx="10" cy="13.5" r="0.8" fill="white"/></svg>FAQs</a>
       <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="index.html#promociones"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><path d="M3 10l1-7h12l1 7H3z" fill="#C9A24A"/><path d="M3 10v7h14v-7" stroke="#C56F95" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 17v-4h4v4" fill="#E1A9C2"/></svg>Promociones</a>
     </div>
+
+    <a data-nav="guia" href="guia-primer-viaje-disney.html"
+      data-cta="nav_guia_primer_viaje_mobile"
+      onclick="if(typeof gtag==='function') gtag('event','click_guia_online',{event_category:'navegacion',event_label:'navbar_mobile',transport_type:'beacon'});"
+      class="mobile-link flex items-center gap-2 py-2.5 text-gray-700 font-medium border-t border-gray-100">
+      🎁 Guía Gratis
+    </a>
 
     <button type="button" class="mobile-dd-toggle w-full text-left py-2.5 font-semibold text-gray-700 flex items-center gap-2" data-target="mobileQuinceMenu">
       ${ICONS.crown} Quinceañeras ▾
@@ -384,6 +412,7 @@ function markActivePage() {
     if (p.includes("quienes-somos"))        page = "quienes";
     else if (p.includes("quinceaneras"))     page = "quince";
     else if (p.includes("trabaja-con-nos")) page = "trabaja";
+    else if (p.includes("guia-primer-viaje-disney")) page = "guia";
     else                                     page = "home";
   }
   document.querySelectorAll(`[data-nav="${page}"]`).forEach(el => {

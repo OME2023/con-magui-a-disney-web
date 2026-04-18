@@ -508,14 +508,15 @@
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-brandSurface to-brandLight border border-brandPrimary/20 rounded-2xl px-6 py-5 mb-8 shadow-sm">
       <div class="flex items-center gap-3">
         <span class="text-3xl flex-shrink-0">🎉</span>
-        <p class="text-base font-semibold text-brandText">¿Es tu primer viaje a Disney? <span class="text-brandPrimary">¡Descargá la guía Gratis!</span></p>
+        <p class="text-base font-semibold text-brandText">¿Es tu primer viaje a Disney? <span class="text-brandPrimary">¡Mira la guía Gratis!</span></p>
       </div>
-      <button
-         onclick="descargarGuiaDirecta()"
-         data-cta="banner_descarga_directa"
+      <a
+         href="guia-primer-viaje-disney.html"
+         onclick="if(typeof gtag==='function') gtag('event','click_guia_online',{event_category:'guia',event_label:'home_confianza_banner',transport_type:'beacon'});"
+         data-cta="banner_guia_online_home"
          class="flex-shrink-0 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition whitespace-nowrap shadow-md cursor-pointer">
-        Descargar guía gratis →
-      </button>
+        Ver guía online →
+      </a>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
