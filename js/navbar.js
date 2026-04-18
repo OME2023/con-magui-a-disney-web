@@ -80,10 +80,21 @@ const NAVBAR_STYLES = `
   .cmad-nav .nav-cta:hover {
     box-shadow: 0 14px 36px rgba(197,111,149,0.34);
   }
+  .cmad-nav .nav-guide-link {
+    display: inline-flex !important;
+  }
 
   /* Dropdown panel — animación suave */
   .nav-dropdown {
     position: relative;
+  }
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 100%;
+    height: 18px;
   }
   .nav-dropdown-panel {
     position: absolute;
@@ -101,7 +112,8 @@ const NAVBAR_STYLES = `
     transition: opacity 0.22s ease, transform 0.22s ease;
   }
   .nav-dropdown:hover .nav-dropdown-panel,
-  .nav-dropdown:focus-within .nav-dropdown-panel {
+  .nav-dropdown:focus-within .nav-dropdown-panel,
+  .nav-dropdown.dropdown-open .nav-dropdown-panel {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
@@ -235,6 +247,7 @@ ${NAVBAR_STYLES}
           <a class="menu-link" href="index.html#seguros"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><path d="M10 2L4 5v5c0 3.5 2.5 6.5 6 7.5 3.5-1 6-4 6-7.5V5l-6-3z" fill="#C9A24A"/><path d="M7.5 10l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Seguros</a>
           <a class="menu-link" href="index.html#faqs"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="#C56F95"/><path d="M10 6.5c-1 0-2 .8-2 1.8h1.5c0-.4.2-.5.5-.5.4 0 .6.2.6.5 0 .3-.2.5-.8.9C9.2 9.6 9 10.1 9 10.8h1.5c0-.4.1-.6.7-1 .7-.5 1.3-1 1.3-2 0-1.1-.9-1.8-2.5-1.8v-.5z" fill="white"/><circle cx="10" cy="13.5" r="0.8" fill="white"/></svg>FAQs</a>
           <a class="menu-link" href="index.html#promociones"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><path d="M3 10l1-7h12l1 7H3z" fill="#C9A24A"/><path d="M3 10v7h14v-7" stroke="#C56F95" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 17v-4h4v4" fill="#E1A9C2"/><path d="M10 3v3M7 4l1.5 2.5M13 4l-1.5 2.5" stroke="#C56F95" stroke-width="1.2" stroke-linecap="round"/></svg>Promociones</a>
+          <a class="menu-link" href="guia-primer-viaje-disney.html" data-cta="nav_dropdown_guia_online" onclick="if(typeof gtag==='function') gtag('event','click_guia_online',{event_category:'navegacion',event_label:'dropdown_disney_universal',transport_type:'beacon'});"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><rect x="4" y="3" width="12" height="14" rx="2" fill="#E1A9C2"/><path d="M7 7h6M7 10h6M7 13h4" stroke="#C56F95" stroke-width="1.3" stroke-linecap="round"/></svg>Guía online gratis</a>
         </div>
       </div>
 
@@ -242,9 +255,9 @@ ${NAVBAR_STYLES}
       <a data-nav="guia" href="guia-primer-viaje-disney.html"
         data-cta="nav_guia_primer_viaje"
         onclick="if(typeof gtag==='function') gtag('event','click_guia_online',{event_category:'navegacion',event_label:'navbar_desktop',transport_type:'beacon'});"
-        class="nav-link inline-flex items-center gap-2 text-gray-700 hover:text-brandPrimary transition font-medium">
+        class="nav-link nav-guide-link inline-flex items-center gap-2 text-gray-700 hover:text-brandPrimary transition font-medium">
         <span aria-hidden="true" class="text-base leading-none">🎁</span>
-        <span class="nav-label">Guía Gratis</span>
+        <span class="nav-label">Guía Online</span>
       </a>
 
       <!-- Quinceañeras (con dropdown) -->
@@ -325,7 +338,7 @@ ${NAVBAR_STYLES}
       data-cta="nav_guia_primer_viaje_mobile"
       onclick="if(typeof gtag==='function') gtag('event','click_guia_online',{event_category:'navegacion',event_label:'navbar_mobile',transport_type:'beacon'});"
       class="mobile-link flex items-center gap-2 py-2.5 text-gray-700 font-medium border-t border-gray-100">
-      🎁 Guía Gratis
+      🎁 Guía Online
     </a>
 
     <button type="button" class="mobile-dd-toggle w-full text-left py-2.5 font-semibold text-gray-700 flex items-center gap-2" data-target="mobileQuinceMenu">
@@ -381,6 +394,30 @@ function initNavbar() {
       if (target) target.classList.toggle("hidden");
     });
   });
+
+  document.querySelectorAll(".nav-dropdown").forEach(dropdown => {
+    let closeTimer;
+    const setOpen = open => {
+      clearTimeout(closeTimer);
+      if (open) {
+        dropdown.classList.add("dropdown-open");
+        return;
+      }
+      closeTimer = setTimeout(() => dropdown.classList.remove("dropdown-open"), 450);
+    };
+
+    dropdown.addEventListener("pointerenter", () => setOpen(true));
+    dropdown.addEventListener("pointerleave", () => setOpen(false));
+    dropdown.addEventListener("focusin", () => setOpen(true));
+    dropdown.addEventListener("focusout", () => setOpen(false));
+    dropdown.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        clearTimeout(closeTimer);
+        dropdown.classList.remove("dropdown-open");
+      });
+    });
+  });
+
   window.addEventListener("resize", () => { if (window.innerWidth >= 768) setMenuState(false); });
   setMenuState(false);
 }
