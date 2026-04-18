@@ -87,18 +87,12 @@ const NAVBAR_STYLES = `
   /* Dropdown panel — animación suave */
   .nav-dropdown {
     position: relative;
-  }
-  .nav-dropdown::after {
-    content: '';
-    position: absolute;
-    left: -10px;
-    right: -10px;
-    top: 100%;
-    height: 18px;
+    padding-bottom: 18px;
+    margin-bottom: -18px;
   }
   .nav-dropdown-panel {
     position: absolute;
-    left: 0; top: calc(100% + 10px);
+    left: 0; top: calc(100% - 2px);
     min-width: 220px;
     z-index: 10000;
     background: #fff;
@@ -109,7 +103,7 @@ const NAVBAR_STYLES = `
     opacity: 0;
     transform: translateY(10px) scale(0.97);
     pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease;
+    transition: opacity 0.18s ease, transform 0.18s ease;
   }
   .nav-dropdown:hover .nav-dropdown-panel,
   .nav-dropdown:focus-within .nav-dropdown-panel,
@@ -403,11 +397,11 @@ function initNavbar() {
         dropdown.classList.add("dropdown-open");
         return;
       }
-      closeTimer = setTimeout(() => dropdown.classList.remove("dropdown-open"), 450);
+      closeTimer = setTimeout(() => dropdown.classList.remove("dropdown-open"), 900);
     };
 
-    dropdown.addEventListener("pointerenter", () => setOpen(true));
-    dropdown.addEventListener("pointerleave", () => setOpen(false));
+    dropdown.addEventListener("mouseenter", () => setOpen(true));
+    dropdown.addEventListener("mouseleave", () => setOpen(false));
     dropdown.addEventListener("focusin", () => setOpen(true));
     dropdown.addEventListener("focusout", () => setOpen(false));
     dropdown.querySelectorAll("a").forEach(link => {
