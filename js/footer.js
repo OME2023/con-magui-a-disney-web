@@ -6,8 +6,7 @@ const FOOTER_HTML = `
         <img src="assets/img/logo-con-magui.png" alt="Con Magui a Disney" class="cmd-footer__logo" />
 
         <p class="cmd-footer__tagline">
-          Convirtiendo sueños<br />
-          en experiencias <span>mágicas</span>
+          Convirtiendo sueños en experiencias <span>mágicas</span>
         </p>
 
         <div class="cmd-footer__badges">
@@ -35,12 +34,12 @@ const FOOTER_HTML = `
       <section class="cmd-footer__dev" aria-label="IT Integral Solutions">
         <p class="cmd-footer__dev-title">DESARROLLADO POR</p>
 
-        <a href="https://www.itintegraltech.com" target="_blank" rel="noopener noreferrer" class="cmd-footer__it-link"
-           onclick="if(typeof gtag==='function') gtag('event','it_integral_click',{page:window.location.pathname.split('/').pop()||'index.html'});">
-          <img src="assets/img/it-integral/logo-horizontal-1200px.png" alt="IT Integral Solutions" class="cmd-footer__it-logo" />
-        </a>
-
         <div class="cmd-footer__contact-wrap">
+          <a href="https://www.itintegraltech.com" target="_blank" rel="noopener noreferrer" class="cmd-footer__it-link"
+             onclick="if(typeof gtag==='function') gtag('event','it_integral_click',{page:window.location.pathname.split('/').pop()||'index.html'});">
+            <img src="assets/img/it-integral/logo-horizontal-1200px.png" alt="IT Integral Solutions" class="cmd-footer__it-logo" />
+          </a>
+
           <a class="cmd-footer__contact" href="https://www.itintegraltech.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio web IT Integral">
             <span class="cmd-footer__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2zm6.93 9h-3.09a15.94 15.94 0 0 0-1.1-5A8.04 8.04 0 0 1 18.93 11zM12 4.07A14.11 14.11 0 0 1 13.9 11h-3.8A14.11 14.11 0 0 1 12 4.07zM9.26 6a15.94 15.94 0 0 0-1.1 5H5.07A8.04 8.04 0 0 1 9.26 6zM5.07 13h3.09a15.94 15.94 0 0 0 1.1 5A8.04 8.04 0 0 1 5.07 13zM12 19.93A14.11 14.11 0 0 1 10.1 13h3.8A14.11 14.11 0 0 1 12 19.93zM14.74 18a15.94 15.94 0 0 0 1.1-5h3.09A8.04 8.04 0 0 1 14.74 18z"/></svg>
@@ -68,52 +67,43 @@ const FOOTER_HTML = `
     #site-footer .cmd-footer {
       background: #060607;
       color: #f4f4f5;
-      padding: 56px 20px 24px;
+      padding: 40px 20px 20px;
       position: relative;
       overflow: hidden;
       border-top: 1px solid #ffffff12;
     }
     #site-footer .cmd-footer__container {
-      max-width: 1200px;
+      max-width: 1140px;
       margin: 0 auto;
     }
     #site-footer .cmd-footer__main {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
-      gap: 44px;
-      align-items: stretch;
-      padding-bottom: 36px;
-    }
-    #site-footer .cmd-footer__brand,
-    #site-footer .cmd-footer__dev {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
+      gap: 0;
       text-align: center;
+      padding-bottom: 14px;
+    }
+    #site-footer .cmd-footer__brand,
+    #site-footer .cmd-footer__dev {
+      width: 100%;
       min-width: 0;
     }
-    #site-footer .cmd-footer__brand {
-      padding-right: 28px;
-      border-right: 1px solid #ffffff1a;
-    }
-    #site-footer .cmd-footer__dev {
-      padding-left: 28px;
-    }
     #site-footer .cmd-footer__logo {
-      width: min(470px, 95%);
+      width: min(260px, 82vw);
       height: auto;
       object-fit: contain;
-      margin-bottom: 14px;
-      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+      margin-bottom: 12px;
+      filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.35));
     }
     #site-footer .cmd-footer__tagline {
-      margin: 0 0 24px;
+      margin: 0 0 18px;
       color: #f5f4f8;
       font-family: "Cormorant Garamond", serif;
       font-style: italic;
-      font-size: clamp(1.65rem, 2.2vw, 2.35rem);
-      line-height: 1.14;
+      font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+      line-height: 1.2;
       letter-spacing: 0.01em;
     }
     #site-footer .cmd-footer__tagline span {
@@ -123,8 +113,8 @@ const FOOTER_HTML = `
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 8px;
+      margin-bottom: 18px;
     }
     #site-footer .cmd-badge {
       display: inline-flex;
@@ -132,10 +122,10 @@ const FOOTER_HTML = `
       justify-content: center;
       border: 1px solid #c9a24a99;
       border-radius: 8px;
-      padding: 10px 14px;
+      padding: 6px 12px;
       color: #d9b35f;
       background: #0d0d0f;
-      font-size: 0.98rem;
+      font-size: 13px;
       line-height: 1.25;
       font-weight: 600;
       letter-spacing: 0.01em;
@@ -144,11 +134,12 @@ const FOOTER_HTML = `
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 14px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
     #site-footer .cmd-footer__social-link {
-      width: 48px;
-      height: 48px;
+      width: 34px;
+      height: 34px;
       border-radius: 999px;
       border: 1px solid #c9a24a99;
       display: inline-flex;
@@ -159,8 +150,8 @@ const FOOTER_HTML = `
       transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
     #site-footer .cmd-footer__social-link svg {
-      width: 24px;
-      height: 24px;
+      width: 16px;
+      height: 16px;
       fill: currentColor;
     }
     #site-footer .cmd-footer__social-link:hover {
@@ -169,59 +160,71 @@ const FOOTER_HTML = `
       box-shadow: 0 10px 22px rgba(240, 103, 166, 0.18);
     }
     #site-footer .cmd-footer__dev-title {
-      margin: 0 0 18px;
+      margin: 0 0 10px;
       color: #f067a6;
-      font-size: 1.08rem;
+      font-size: 12px;
       line-height: 1.2;
       text-transform: uppercase;
-      letter-spacing: 0.24em;
+      letter-spacing: 0.22em;
       font-weight: 700;
+      opacity: 0.85;
     }
     #site-footer .cmd-footer__it-link {
       display: inline-flex;
       text-decoration: none;
-      margin-bottom: 20px;
+      margin: 0;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
     }
     #site-footer .cmd-footer__it-logo {
-      width: min(365px, 96%);
+      width: min(120px, 36vw);
       height: auto;
       object-fit: contain;
     }
     #site-footer .cmd-footer__contact-wrap {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 20px;
       width: 100%;
-      max-width: 420px;
+      max-width: 100%;
+      margin-top: 0;
+      opacity: 0.7;
+      font-size: 14px;
     }
     #site-footer .cmd-footer__contact {
-      width: 100%;
-      min-height: 56px;
-      padding: 10px 14px;
-      border-top: 1px solid #f067a6;
-      border-bottom: 1px solid #f067a6;
+      width: auto;
+      min-height: 34px;
+      padding: 0;
+      border-top: 0;
+      border-bottom: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 8px;
       color: #f4f4f5;
       text-decoration: none;
-      font-size: clamp(1.1rem, 1.65vw, 1.3rem);
+      font-size: 14px;
       font-weight: 500;
       text-align: center;
       transition: color .2s ease, border-color .2s ease;
+      white-space: nowrap;
+    }
+    #site-footer .cmd-footer__it-link + .cmd-footer__contact,
+    #site-footer .cmd-footer__contact + .cmd-footer__contact {
+      border-left: 1px solid #ffffff2a;
+      padding-left: 16px;
     }
     #site-footer .cmd-footer__contact:hover {
       color: #f067a6;
-      border-color: #d9b35f;
     }
     #site-footer .cmd-footer__icon {
-      width: 40px;
-      height: 40px;
+      width: 20px;
+      height: 20px;
       border-radius: 999px;
-      border: 1px solid #c9a24a99;
+      border: 0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -229,42 +232,31 @@ const FOOTER_HTML = `
       color: #d9b35f;
     }
     #site-footer .cmd-footer__icon svg {
-      width: 23px;
-      height: 23px;
+      width: 18px;
+      height: 18px;
       fill: currentColor;
     }
     #site-footer .cmd-footer__bottom {
       border-top: 1px solid #f067a6;
-      margin-top: 4px;
-      padding-top: 18px;
+      margin-top: 16px;
+      padding-top: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 14px 28px;
+      gap: 8px 18px;
       flex-wrap: wrap;
+      opacity: 0.6;
     }
     #site-footer .cmd-footer__bottom p {
       margin: 0;
       color: #f8f8fa;
-      font-size: 1.02rem;
+      font-size: 12px;
       letter-spacing: 0.01em;
     }
     @media (max-width: 1024px) {
-      #site-footer .cmd-footer {
-        padding-top: 48px;
-      }
       #site-footer .cmd-footer__main {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      #site-footer .cmd-footer__brand {
-        border-right: 0;
-        border-bottom: 1px solid #ffffff1a;
-        padding-right: 0;
-        padding-bottom: 28px;
-      }
-      #site-footer .cmd-footer__dev {
-        padding-left: 0;
+        gap: 8px;
+        padding-bottom: 8px;
       }
       #site-footer .cmd-footer__bottom {
         justify-content: center;
@@ -275,32 +267,27 @@ const FOOTER_HTML = `
     }
     @media (max-width: 640px) {
       #site-footer .cmd-footer {
-        padding: 42px 14px 20px;
+        padding: 34px 14px 18px;
       }
       #site-footer .cmd-footer__tagline {
-        font-size: clamp(1.4rem, 7vw, 1.95rem);
+        font-size: 20px;
+        line-height: 1.22;
+      }
+      #site-footer .cmd-footer__contact-wrap {
+        flex-direction: column;
+        gap: 10px;
+        opacity: 0.85;
+      }
+      #site-footer .cmd-footer__it-link + .cmd-footer__contact,
+      #site-footer .cmd-footer__contact + .cmd-footer__contact {
+        border-left: 0;
+        padding-left: 0;
       }
       #site-footer .cmd-badge {
-        width: 100%;
-        max-width: 350px;
-      }
-      #site-footer .cmd-footer__social-link {
-        width: 44px;
-        height: 44px;
-      }
-      #site-footer .cmd-footer__contact {
-        font-size: 1.05rem;
-      }
-      #site-footer .cmd-footer__icon {
-        width: 36px;
-        height: 36px;
-      }
-      #site-footer .cmd-footer__icon svg {
-        width: 20px;
-        height: 20px;
+        max-width: 100%;
       }
       #site-footer .cmd-footer__bottom p {
-        font-size: 0.95rem;
+        font-size: 11px;
       }
     }
   </style>
