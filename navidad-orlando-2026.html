@@ -1154,6 +1154,15 @@ body::before{
 #site-nav,#site-footer{position:relative;z-index:1200}
 .hero-bg{background-image:url('assets/img/navidad/magic_kingdom_at_christmas.webp') !important}
 .hero-bg{z-index:1}
+.hero-bg-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:1;
+  filter:saturate(1.12) brightness(0.74);
+}
 .hero-glow{
   z-index:2;
   animation:heroGlowPulse 6.5s ease-in-out infinite alternate;
@@ -1327,6 +1336,10 @@ body::before{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <source src="assets/img/navidad/navidad.mov" type="video/quicktime" />
+    <source src="assets/img/navidad/navidad.mov" />
+  </video>
   <canvas id="christmas-fireworks" aria-hidden="true"></canvas>
   <div class="hero-glow"></div>
   <div class="hero-overlay"></div>
