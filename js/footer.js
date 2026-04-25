@@ -90,10 +90,22 @@ const FOOTER_HTML = `
       width: 100%;
       min-width: 0;
     }
+    #site-footer .cmd-footer__brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
     #site-footer .cmd-footer__logo {
-      width: min(260px, 82vw);
+      width: min(280px, 84vw);
       height: auto;
       object-fit: contain;
+      object-position: center;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateX(-6%);
       margin-bottom: 12px;
       filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.35));
     }
@@ -178,7 +190,7 @@ const FOOTER_HTML = `
       justify-content: center;
     }
     #site-footer .cmd-footer__it-logo {
-      width: min(120px, 36vw);
+      width: min(156px, 48vw);
       height: auto;
       object-fit: contain;
     }
