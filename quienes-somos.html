@@ -83,6 +83,35 @@
     </div>
   </section>
 
+  <!-- Video presentación -->
+  <section class="pb-8 px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="rounded-3xl bg-gradient-to-b from-white to-brandSurface/40 border border-brandSurface shadow-lg p-4 md:p-5">
+        <div class="text-center mb-3 md:mb-4">
+          <p class="text-sm uppercase tracking-[0.16em] text-brandPrimary font-semibold mb-2">Conocé más</p>
+          <h3 class="text-2xl md:text-3xl font-bold text-brandText">
+            Descubrí por qué tantas familias<br>
+            eligen viajar con Magui
+          </h3>
+        </div>
+        <div class="relative w-full max-w-[250px] sm:max-w-[270px] md:max-w-[290px] mx-auto overflow-hidden rounded-[20px] bg-black shadow-xl" style="aspect-ratio:9/16;">
+          <iframe
+            id="quienesVideoPlayer"
+            class="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/7hBAOV6CpL8?si=AWeeEtyxuognH9tz&enablejsapi=1&rel=0&modestbranding=1"
+            title="Presentación de Con Magui a Disney en YouTube"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+            data-cta="quienes_video_presentacion">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Sobre mí -->
   <section class="pb-16 px-4 mt-4">
     <div class="max-w-5xl mx-auto rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden">
@@ -292,6 +321,50 @@
         });
       }
     }
+  </script>
+  <script>
+    (function initQuienesVideoAnalytics() {
+      const iframe = document.getElementById('quienesVideoPlayer');
+      if (!iframe) return;
+
+      function trackVideoPlay() {
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'video_play', {
+          event_category: 'quienes_somos',
+          event_label: 'youtube_presentacion_quienes_somos',
+          video_title: 'Descubri por que tantas familias eligen viajar con Magui',
+          transport_type: 'beacon'
+        });
+      }
+
+      const pushYouTubeTracking = (player) => {
+        let wasPlaying = false;
+        player.addEventListener('onStateChange', (event) => {
+          if (event.data === YT.PlayerState.PLAYING && !wasPlaying) {
+            wasPlaying = true;
+            trackVideoPlay();
+          }
+          if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+            wasPlaying = false;
+          }
+        });
+      };
+
+      window.onYouTubeIframeAPIReady = function () {
+        const player = new YT.Player('quienesVideoPlayer');
+        pushYouTubeTracking(player);
+      };
+
+      if (window.YT && window.YT.Player) {
+        window.onYouTubeIframeAPIReady();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.async = true;
+      document.head.appendChild(script);
+    })();
   </script>
 </body>
 </html>
