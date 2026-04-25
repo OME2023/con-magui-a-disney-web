@@ -203,15 +203,18 @@ body::before{
   align-items:center;
   justify-content:center;
   color:var(--dorado-bright);
-  margin-bottom:1.25rem;
-  padding:0.55rem 1.25rem;
-  border:1px solid rgba(228,201,138,0.45);
+  margin-bottom:1.6rem;
+  padding:0.72rem 1.85rem;
+  border:1px solid rgba(228,201,138,0.58);
   border-radius:999px;
-  background:rgba(11,8,18,0.48);
+  background:rgba(11,8,18,0.64);
   box-shadow:0 10px 30px rgba(0,0,0,0.28);
   font-weight:700;
-  letter-spacing:0.28em;
+  font-size:clamp(1.1rem,1.6vw,1.6rem);
+  letter-spacing:0.24em;
   text-transform:uppercase;
+  line-height:1;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
 }
 .hero-title{
   font-size:clamp(3.5rem,11vw,9rem);
@@ -1209,7 +1212,7 @@ body::before{
   margin-top:0.52rem;
   letter-spacing:0.36em;
 }
-.hero-content{padding-top:19rem}
+.hero-content{padding-top:20rem}
 .magic-card.magic-card-large .magic-card-img{
   background-position:center;
   background-size:cover;
@@ -1248,13 +1251,30 @@ body::before{
     top:34%;
   }
   .hero-brand{
-    top:9.4rem;
+    top:9.8rem;
   }
-  .hero-content{padding-top:16rem}
+  .hero-brand img{
+    width:min(215px,52vw);
+  }
+  .hero-brand-sub{
+    display:none;
+  }
+  .hero-content{padding-top:17.2rem}
   .hero-eyebrow{
-    font-size:0.72rem;
-    letter-spacing:0.22em;
-    margin-bottom:1.5rem;
+    display:block;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+    padding:0;
+    margin-bottom:1rem;
+    font-size:clamp(1.7rem,6vw,3.15rem);
+    letter-spacing:0.09em;
+    line-height:0.93;
+  }
+  .hero-title{
+    font-size:clamp(3rem,11.5vw,5.6rem);
+    line-height:0.9;
   }
 }
 @media(max-width:600px){
@@ -1272,22 +1292,30 @@ body::before{
     top:36%;
   }
   .hero-brand{
-    top:8.1rem;
+    top:8.7rem;
   }
   .hero-brand img{
-    width:min(220px,68vw);
-  }
-  .hero-brand-sub{
-    letter-spacing:0.24em;
+    width:min(205px,66vw);
   }
   .hero-content{
-    padding-top:13.4rem;
+    padding-top:16.1rem;
+    padding-left:1.1rem;
+    padding-right:1.1rem;
   }
   .hero-eyebrow{
-    font-size:0.66rem;
-    letter-spacing:0.16em;
-    padding:0.5rem 0.95rem;
-    margin-bottom:1.35rem;
+    font-size:clamp(2rem,10.6vw,3.55rem);
+    letter-spacing:0.05em;
+    margin-bottom:0.85rem;
+  }
+  .hero-title{
+    font-size:clamp(2.65rem,14.5vw,4.35rem);
+    line-height:0.9;
+    margin-bottom:0.6rem;
+  }
+  .hero-sub{
+    font-size:clamp(1.05rem,6.8vw,1.55rem);
+    margin-top:1.35rem;
+    line-height:1.2;
   }
 }
 </style>
@@ -1310,7 +1338,7 @@ body::before{
   </div>
 
   <div class="hero-content">
-    <div class="eyebrow hero-eyebrow">Viaje Grupal · Diciembre 2026</div>
+    <div class="eyebrow hero-eyebrow">VIAJE GRUPAL · DICIEMBRE 2026</div>
     <h1 class="display hero-title">
       Navidad
       <span class="it">en Orlando</span>
