@@ -342,7 +342,27 @@ body::before{
   line-height:1.6;
   font-weight:400;
 }
-
+.intro-short{
+  margin:1.8rem auto 0;
+  max-width:340px;
+}
+.intro-short-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:9/16;
+  border-radius:22px;
+  overflow:hidden;
+  background:#05050a;
+  border:1px solid rgba(201,169,110,.25);
+  box-shadow:0 18px 38px rgba(22,14,22,.14);
+}
+.intro-short-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
 /* ============ MAGIC GALLERY ============ */
 .magic{
   background:linear-gradient(180deg,var(--crema) 0%,var(--crema-warm) 100%);
@@ -1341,6 +1361,10 @@ body::before{
     font-size:clamp(3.8rem,9vw,6.5rem);
     top:60%;
   }
+  .intro-short{
+    max-width:300px;
+    margin-top:1.6rem;
+  }
 }
 @media(max-width:600px){
   .magic-grid{
@@ -1385,6 +1409,10 @@ body::before{
   .hero-loop-transition__star{
     font-size:clamp(3.4rem,13vw,5.2rem);
     top:61%;
+  }
+  .intro-short{
+    max-width:260px;
+    margin-top:1.3rem;
   }
 }
 </style>
@@ -1460,6 +1488,21 @@ body::before{
     <p class="intro-text">
       Diciembre en Orlando es ese momento. Cuando Disney y Universal se transforman, cuando el clima es perfecto, cuando cada parque estrena una versión que solo existe 30 días al año. Yo y mi equipo te llevamos de la mano durante 12 noches para que vos solo te ocupes de vivir la magia.
     </p>
+    <div class="intro-short reveal">
+      <div class="intro-short-frame">
+        <iframe
+          id="navidadIntroShortVideo"
+          src="https://www.youtube.com/embed/RrMZIbnhVZM?si=QLq5FLTQeoa7ujLq&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          title="Short Navidad Disney Orlando"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+          data-cta="navidad_2026_intro_short"
+          onclick="if(typeof gtag==='function') gtag('event','click_navidad_cta',{event_category:'navidad_2026',event_label:'intro_short_video',transport_type:'beacon'});">
+        </iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2030,6 +2073,63 @@ createSnow();
       heroVideo.play().catch(() => {});
     }
   });
+})();
+
+// Tracking de reproducciones del short embebido (GA4)
+(() => {
+  const iframe = document.getElementById('navidadIntroShortVideo');
+  if (!iframe) return;
+
+  let player = null;
+  let trackedCurrentPlayback = false;
+
+  const sendPlayEvent = () => {
+    if (typeof gtag !== 'function') return;
+    gtag('event', 'video_play', {
+      event_category: 'navidad_2026',
+      event_label: 'intro_short_reproduccion',
+      video_title: 'short_navidad_momento_real',
+      transport_type: 'beacon'
+    });
+  };
+
+  const onStateChange = (event) => {
+    if (!window.YT || !YT.PlayerState) return;
+    if (event.data === YT.PlayerState.PLAYING) {
+      if (!trackedCurrentPlayback) {
+        sendPlayEvent();
+        trackedCurrentPlayback = true;
+      }
+      return;
+    }
+    if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.CUED) {
+      trackedCurrentPlayback = false;
+    }
+  };
+
+  const initPlayer = () => {
+    if (!window.YT || typeof YT.Player !== 'function' || player) return;
+    player = new YT.Player('navidadIntroShortVideo', {
+      events: { onStateChange }
+    });
+  };
+
+  if (window.YT && typeof YT.Player === 'function') {
+    initPlayer();
+    return;
+  }
+
+  const previousReady = window.onYouTubeIframeAPIReady;
+  window.onYouTubeIframeAPIReady = () => {
+    if (typeof previousReady === 'function') previousReady();
+    initPlayer();
+  };
+
+  if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+    const ytScript = document.createElement('script');
+    ytScript.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(ytScript);
+  }
 })();
 
 // GA4 específico de la landing Navidad Orlando 2026
