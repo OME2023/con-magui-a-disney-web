@@ -54,7 +54,126 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Novedad: Paquetes Disney 2027 -->
-        
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="relative h-52 overflow-hidden bg-brandText">
+            <video
+              src="assets/img/promos/2027-banner.mp4"
+              class="w-full h-full object-cover"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+            <div class="absolute top-3 left-3">
+              <span class="bg-brandPrimary text-white text-xs font-bold px-3 py-1 rounded-full">Novedad 2027</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="text-xs text-brandAccent font-semibold uppercase tracking-wider mb-2">Disney World</p>
+            <h2 class="text-xl font-bold text-brandText mb-2 leading-snug">Paquetes vacacionales Disney 2027 ya disponibles</h2>
+            <p class="text-sm text-gray-500 mb-2 flex-1">Hoteles, tickets y nuevas opciones de planes de comidas para viajar hasta el 31 de octubre de 2027.</p>
+            <p class="text-xs text-gray-400 mb-4">Planificación anticipada 2027</p>
+            <a
+              href="novedad-paquetes-disney-2027.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'paquetes_disney_2027_listado'});"
+              class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition"
+            >
+              Solicitá más info
+            </a>
+          </div>
+        </article>
+
+        <!-- Novedad: Navidad en Disney 2026 / 2027 -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="relative h-52 overflow-hidden">
+            <img
+              src="assets/img/navidad/mk-xmas.webp"
+              alt="Navidad en Disney 2026 / 2027"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute top-3 left-3">
+              <span class="bg-brandPrimary text-white text-xs font-bold px-3 py-1 rounded-full">🎄 Navidad</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="text-xs text-brandAccent font-semibold uppercase tracking-wider mb-2">Disney World</p>
+            <h2 class="text-xl font-bold text-brandText mb-2 leading-snug">🎄 Viaje Grupal 2026</h2>
+            <p class="text-sm text-gray-500 mb-2">Una experiencia mágica que tu familia va a recordar toda la vida.</p>
+            <ul class="text-sm text-gray-500 mb-4 space-y-1 list-disc pl-5">
+              <li>Grupos acompañados paso a paso</li>
+              <li>Beneficios exclusivos por ser agencia certificada</li>
+              <li>Cupos limitados (se agotan todos los años)</li>
+            </ul>
+            <a
+              href="navidad-orlando-2026.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'navidad_disney_2026_2027_listado'});"
+              class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition"
+            >
+              👉 Quiero mi lugar
+            </a>
+          </div>
+        </article>
+
+        <!-- Promo 1: Tickets 4 Park Magic -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="relative h-52 overflow-hidden">
+            <img
+              src="assets/img/promos/4day.jpg"
+              alt="Tickets 4 Park Magic Disney"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute top-3 left-3">
+              <span class="bg-brandPrimary text-white text-xs font-bold px-3 py-1 rounded-full">🔥 Más popular</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="text-xs text-brandAccent font-semibold uppercase tracking-wider mb-2">Disney World</p>
+            <h2 class="text-xl font-bold text-brandText mb-2 leading-snug">Tickets 4 Park Magic: Hasta U$S 150 de descuento</h2>
+            <p class="text-sm text-gray-500 mb-2 flex-1">Para visitar los 4 Parques Disney. Incluye Magic Kingdom, EPCOT, Hollywood Studios y Animal Kingdom.</p>
+            <p class="text-xs text-gray-400 mb-4">⏰ Promo por tiempo limitado</p>
+            <a
+              href="promo-tickets-4park.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition"
+            >
+              Ver Oferta y Cotizar
+            </a>
+          </div>
+        </article>
+
+        <!-- Promo 2: Comidas Gratis Disney -->
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="relative h-52 overflow-hidden">
+            <img
+              src="assets/img/promos/dining.jpg"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute top-3 left-3">
+              <span class="bg-brandAccent text-white text-xs font-bold px-3 py-1 rounded-full">⭐ La más codiciada</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <p class="text-xs text-brandAccent font-semibold uppercase tracking-wider mb-2">Disney World</p>
+            <p class="text-sm text-gray-500 mb-2 flex-1">Plan de comidas incluido en la estadía. Desayunos, almuerzos y cenas en restaurantes Disney sin costo extra.</p>
+            <p class="text-xs text-gray-400 mb-4">📅 Vigente para viajes Jul–Dic 2026</p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition"
+            >
+              Ver Oferta
+            </a>
+          </div>
+        </article>
 
         <!-- Promo 3: Hoteles Universal -->
         <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition transform hover:-translate-y-1">

@@ -167,6 +167,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="block relative min-h-[260px] md:min-h-[360px] bg-brandText"
+            onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'paquetes_disney_2027_banner'});"
             aria-label="Ver novedad de paquetes Disney 2027"
           >
             <video
@@ -198,6 +199,7 @@
               href="novedad-paquetes-disney-2027.html"
               target="_blank"
               rel="noopener noreferrer"
+              onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'paquetes_disney_2027_cta'});"
               class="inline-flex justify-center items-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-lg transition transform hover:scale-[1.02]"
             >
               Solicitá más info
@@ -214,6 +216,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="block relative min-h-[260px] md:min-h-[360px] bg-brandText"
+            onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'navidad_disney_2026_2027_banner'});"
             aria-label="Ver landing Navidad en Disney 2026 / 2027"
           >
             <img
@@ -247,6 +250,7 @@
               href="navidad-orlando-2026.html"
               target="_blank"
               rel="noopener noreferrer"
+              onclick="if(typeof gtag==='function') gtag('event','click_novedad',{event_category:'promociones',event_label:'navidad_disney_2026_2027_cta'});"
               class="inline-flex justify-center items-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-lg transition transform hover:scale-[1.02]"
             >
               👉 Quiero mi lugar
@@ -277,11 +281,27 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Tickets 4 Park Magic: Hasta U$S 150 de descuento</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">Para visitar los 4 Parques Disney</p>
                 <a href="promo-tickets-4park.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'tickets_4park_magic'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
               </div>
-            </article><!-- Card 3: Hoteles Universal -->
+            </article>
+
+            <!-- Card 2: Comidas Gratis Disney -->
+            <article class="promo-card bg-brandSurface rounded-2xl shadow-md overflow-hidden flex flex-col flex-shrink-0 hover:shadow-xl transition transform hover:-translate-y-1">
+              <div class="h-52 overflow-hidden">
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="text-sm text-gray-500 mb-4 flex-1">La promo más codiciada</p>
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'comidas_gratis_disney'});"
+                  class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
+                  Ver Oferta
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3: Hoteles Universal -->
             <article class="promo-card bg-brandSurface rounded-2xl shadow-md overflow-hidden flex flex-col flex-shrink-0 hover:shadow-xl transition transform hover:-translate-y-1">
               <div class="h-52 overflow-hidden">
                 <img src="assets/img/promos/universal.webp" alt="Hoteles Universal Selectos" class="w-full h-full object-cover" loading="lazy" />
@@ -290,6 +310,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Hoteles Universal Selectos: Hasta U$S 300 en créditos de comida</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">Promo Genial en Universal Orlando</p>
                 <a href="promo-hoteles-universal.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'hoteles_universal'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -305,6 +326,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Hasta 30% de descuento en Hoteles Disney — Fin de verano y otoño 2026</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">Llegadas del 30 jul al 3 oct 2026</p>
                 <a href="promo-descuento-hoteles-disney.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'descuento_hoteles_disney'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -320,6 +342,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Halloween Horror Nights: Vacation Package con hasta U$S 200 de ahorro</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">Viaje: 27 ago – 1 nov 2026</p>
                 <a href="promo-halloween-horror-nights.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'halloween_horror_nights'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -335,6 +358,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Paquete Harry Potter™: 3 Parques, desayunos y hasta U$S 200 de ahorro</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">6 noches · Epic Universe + Studios + Islands of Adventure</p>
                 <a href="promo-harry-potter.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'harry_potter_package'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -350,6 +374,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Oferta Disney+ Perks: Hoteles Disney desde U$S 99/noche — Verano 2026</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">Viaje: 21 jun – 15 ago 2026 · Mínimo 2 noches</p>
                 <a href="promo-disney-plus-resorts.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'disney_plus_perks'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -365,6 +390,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Tickets Después de las 14:00 hs: Precio especial en Disney World</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">2 o 3 días · Sin reserva de parque · Inicio: 26 may – 29 jul 2026</p>
                 <a href="promo-tickets-tarde.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'tickets_tarde_14hs'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -383,6 +409,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Mickey's Not-So-Scary Halloween Party 2026: fechas y entradas</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">Evento especial en Magic Kingdom del 7 de agosto al 31 de octubre de 2026.</p>
                 <a href="promo-mickey-halloween-2026.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'mickey_halloween_party_2026'});"
                   class="block text-center bg-gradient-to-r from-orange-700 to-brandPrimary text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -401,6 +428,7 @@
                 <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">Niños navegan al 50% — Juntos en el Mar</h3>
                 <p class="text-sm text-gray-500 mb-4 flex-1">Hasta 3 niños al 50% con 2 adultos en tarifa completa · Reservas hasta el 14 jun 2026</p>
                 <a href="promo-crucero-disney-ninos.html" target="_blank" rel="noopener noreferrer"
+                  onclick="if(typeof gtag==='function') gtag('event','click_promo',{event_category:'promociones',event_label:'crucero_disney_ninos_50'});"
                   class="block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition">
                   Ver Oferta
                 </a>
@@ -423,6 +451,7 @@
 
       <div class="text-center mt-8">
         <a href="promociones.html"
+          onclick="if(typeof gtag==='function') gtag('event','click_ver_todas_promos',{event_category:'promociones',event_label:'link_ver_todas'});"
           class="text-brandPrimary font-bold underline underline-offset-4 hover:text-brandDark transition text-lg">
           Ver todas las Promociones →
         </a>
@@ -631,6 +660,7 @@
       </div>
       <a
          href="guia-primer-viaje-disney.html"
+         onclick="if(typeof gtag==='function') gtag('event','click_guia_online',{event_category:'guia',event_label:'home_confianza_banner',transport_type:'beacon'});"
          data-cta="banner_guia_online_home"
          class="flex-shrink-0 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition whitespace-nowrap shadow-md cursor-pointer">
         Ver guía online →
@@ -1673,6 +1703,7 @@
 
         <div class="grid md:grid-cols-2 gap-4">
           <a href="https://shop.beacons.ai/maguiagentedisney/bddf03df-3295-4401-a602-f04ae2151562?pageViewSource=lib_view&referrer=https%3A%2F%2Fbeacons.ai%2Fmaguiagentedisney&show_back_button=true" target="_blank" data-cta="contacto_videollamada"
+            onclick="if(typeof gtag==='function') gtag('event','click_videollamada',{event_category:'contacto',event_label:'contacto_section'});"
             class="flex items-center justify-center gap-2 bg-brandPrimary text-white px-6 py-3 rounded-full hover:bg-brandDark transition font-semibold">
             📅 Agendar videollamada
           </a>
