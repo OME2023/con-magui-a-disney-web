@@ -1607,31 +1607,67 @@
       <p class="text-center text-sm uppercase tracking-[0.18em] text-brandPrimary font-semibold mb-3">Lo que dicen las familias</p>
       <h2 class="text-4xl font-bold text-center mb-3" style="color: var(--brand-text);">Familias que viajaron con nosotros</h2>
       <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Cada viaje es diferente. Lo que comparten todos: la tranquilidad de ir con todo organizado.</p>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
-          <p class="text-gray-700 italic mb-4">"Al principio dudábamos en contratar una asesora de viajes porque pensábamos: 'No, seguro nos va a salir más caro'. Pero la verdad es que fue todo lo contrario. Era nuestro primer viaje y Magui nos ayudó a organizar todo según lo que realmente teníamos en el bolsillo, sin vendernos cosas innecesarias. Y lo mejor, no desaparece después de venderte el viaje. Gracias Magui por hacer que nuestro primer viaje sea tan lindo y tan fluido! ✈️🌴❤️"</p>
-          <p class="font-bold text-brandPrimary">— Lilian Rosana Villalba</p>
-          <p class="text-xs text-gray-400 mt-1">Reseña en Google</p>
+      <div class="relative" id="reviewsCarousel">
+        <button id="reviewsPrev" aria-label="Anterior reseña"
+          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white border border-gray-200 shadow-lg rounded-full w-10 h-10 flex items-center justify-center text-brandPrimary hover:bg-brandSurface transition hidden md:flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+
+        <div class="overflow-hidden">
+          <div id="reviewsTrack" class="flex transition-transform duration-500 ease-in-out gap-8" style="will-change: transform;">
+            <article class="review-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col flex-shrink-0">
+              <div class="relative review-photo h-56 overflow-hidden">
+                <img src="assets/img/testimonios/andrea_villagra.png" alt="Familia viajera en Disney frente al castillo" class="w-full h-full object-cover" loading="lazy" onerror="this.parentElement.style.display='none';" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+                <p class="text-gray-700 italic mb-4" style="display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;">"Magui, no queríamos dejar de agradecerte por todo lo que hiciste por nosotros. Nuestro viaje a Disney fue realmente soñado, y en gran parte fue gracias a vos. Todo estaba tan bien organizado que nosotros solo tuvimos que dedicarnos a disfrutar. Gracias por tu dedicación y por estar en cada detalle."</p>
+                <p class="font-bold text-brandPrimary">— Andrea Vilagra</p>
+                <p class="text-xs text-gray-400 mt-1">Reseña en Google · Hace 1 mes</p>
+              </div>
+            </article>
+
+            <article class="review-card bg-white rounded-2xl shadow-lg p-6 flex flex-col flex-shrink-0">
+              <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+              <p class="text-gray-700 italic mb-4" style="display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;">"Al principio dudábamos en contratar una asesora porque pensábamos que iba a salir más caro. Fue al revés: Magui nos ayudó a organizar todo según nuestro presupuesto real, sin vendernos cosas innecesarias. Gracias por hacer que nuestro primer viaje sea tan lindo y fluido."</p>
+              <p class="font-bold text-brandPrimary mt-auto">— Lilian Rosana Villalba</p>
+              <p class="text-xs text-gray-400 mt-1">Reseña en Google</p>
+            </article>
+
+            <article class="review-card bg-white rounded-2xl shadow-lg p-6 flex flex-col flex-shrink-0">
+              <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+              <p class="text-gray-700 italic mb-4" style="display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;">"Excelente experiencia. Viajamos la última semana de enero y la pasamos espectacular. Quiero destacar especialmente la labor de Magui, que nos acompañó en todo momento durante el proceso. Es una profesional de diez, súper recomendable."</p>
+              <p class="font-bold text-brandPrimary mt-auto">— Daniel Becerra</p>
+              <p class="text-xs text-gray-400 mt-1">Reseña en Google</p>
+            </article>
+
+            <article class="review-card bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col flex-shrink-0">
+              <div class="relative review-photo h-56 overflow-hidden">
+                <img src="assets/img/testimonios/karen_zuzunaga.png" alt="Viajera disfrutando su experiencia en Disney" class="w-full h-full object-cover object-bottom" style="object-position:center 78%;" loading="lazy" onerror="this.parentElement.style.display='none';" />
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+                <p class="text-gray-700 italic mb-4" style="display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;">"Magui fue nuestra hada madrina en ese hermoso viaje. Una excelente experiencia, una persona muy atenta y colaboradora. Disfrutamos muchísimo gracias a su asesoría. Gracias Magui, mucho éxito siempre."</p>
+                <p class="font-bold text-brandPrimary mt-auto">— Karen Zuzunaga</p>
+                <p class="text-xs text-gray-400 mt-1">Reseña en Google</p>
+              </div>
+            </article>
+
+            <article class="review-card bg-white rounded-2xl shadow-lg p-6 flex flex-col flex-shrink-0">
+              <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
+              <p class="text-gray-700 italic mb-4" style="display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;">"La mejor decisión fue planificar nuestro viaje a Universal Orlando Resort y Disney con Magui. Su experiencia y conocimiento hicieron que el viaje fuera perfecto. Totalmente recomendable para quienes quieren viajar a Orlando sin complicaciones."</p>
+              <p class="font-bold text-brandPrimary mt-auto">— Leonardo Marano</p>
+              <p class="text-xs text-gray-400 mt-1">Reseña en Google · Local Guide</p>
+            </article>
+          </div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
-          <p class="text-gray-700 italic mb-4">"Excelente experiencia!!!! Viajamos a Brasil la última semana de enero y la pasamos espectacular. Quiero destacar especialmente la labor de Magui, que nos acompañó en todo momento durante el proceso. Es una profesional de diez: destaco su amabilidad y cordialidad. Se nota mucho cuando se trabaja con dedicación y amor a lo que hace. Super recomendable!"</p>
-          <p class="font-bold text-brandPrimary">— Daniel Becerra</p>
-          <p class="text-xs text-gray-400 mt-1">Reseña en Google</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
-          <p class="text-gray-700 italic mb-4">"Magui fue nuestra hada madrina en ese hermoso viaje que hicimos! Una excelente experiencia, una persona muy atenta y colaboradora. Disfrutamos muchísimo gracias a su asesoría!!! Gracias Magui mucho éxito siempre…."</p>
-          <p class="font-bold text-brandPrimary">— Karen Zuzunaga</p>
-          <p class="text-xs text-gray-400 mt-1">Reseña en Google</p>
-        </div>
-        <div class="bg-white rounded-xl p-6 shadow-lg">
-          <div class="text-yellow-500 mb-3 text-lg" aria-label="Calificación cinco estrellas">★★★★★</div>
-          <p class="text-gray-700 italic mb-4">"La mejor decisión fue planificar nuestro viaje a Universal Orlando Resort y Disney con Magui. Su experiencia y conocimiento hicieron que el viaje fuera perfecto. Totalmente recomendable para quienes quieren viajar a Orlando sin complicaciones."</p>
-          <p class="font-bold text-brandPrimary">— Leonardo Marano</p>
-          <p class="text-xs text-gray-400 mt-1">Reseña en Google · Local Guide</p>
-        </div>
+
+        <button id="reviewsNext" aria-label="Siguiente reseña"
+          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white border border-gray-200 shadow-lg rounded-full w-10 h-10 flex items-center justify-center text-brandPrimary hover:bg-brandSurface transition hidden md:flex">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+
+        <div id="reviewsDots" class="flex justify-center gap-2 mt-6"></div>
       </div>
 
       <div class="mt-10 text-center">
@@ -1665,6 +1701,187 @@
       <p class="text-xs text-gray-400 mt-3">✔ Sin compromiso &nbsp;·&nbsp; ✔ Respuesta en el día &nbsp;·&nbsp; ✔ Asesoría gratuita</p>
     </div>
   </section>
+
+  <script>
+  (function() {
+    const AUTO_MS = 5000;
+    const GAP = 32;
+    let current = 0;
+    let renderIndex = 0;
+    let autoTimer = null;
+    let visibleCount = 2;
+    let maxIndex = 0;
+    let isResetting = false;
+
+    const track = document.getElementById('reviewsTrack');
+    const dotsEl = document.getElementById('reviewsDots');
+    const btnPrev = document.getElementById('reviewsPrev');
+    const btnNext = document.getElementById('reviewsNext');
+    const carousel = document.getElementById('reviewsCarousel');
+    if (!track || !dotsEl || !btnPrev || !btnNext || !carousel) return;
+
+    const originalCards = Array.from(track.querySelectorAll('.review-card')).map((card) => card.cloneNode(true));
+    const TOTAL = originalCards.length;
+
+    function getVisibleCount() {
+      return window.innerWidth < 768 ? 1 : 2;
+    }
+
+    function getMaxIndex(visible = visibleCount) {
+      return Math.max(0, TOTAL - visible);
+    }
+
+    function getCardWidth() {
+      const containerWidth = track.parentElement.offsetWidth;
+      return (containerWidth - GAP * (visibleCount - 1)) / visibleCount;
+    }
+
+    function getAllCards() {
+      return track.querySelectorAll('.review-card');
+    }
+
+    function rebuildTrack() {
+      const tail = originalCards.slice(-visibleCount).map((c) => c.cloneNode(true));
+      const head = originalCards.slice(0, visibleCount).map((c) => c.cloneNode(true));
+      const all = [...tail, ...originalCards.map((c) => c.cloneNode(true)), ...head];
+      track.innerHTML = '';
+      all.forEach((card) => track.appendChild(card));
+    }
+
+    function setCardWidths() {
+      const w = getCardWidth();
+      getAllCards().forEach((c) => {
+        c.style.width = w + 'px';
+      });
+    }
+
+    function buildDots() {
+      dotsEl.innerHTML = '';
+      const count = maxIndex + 1;
+      for (let i = 0; i < count; i += 1) {
+        const d = document.createElement('button');
+        d.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' +
+          (i === current ? 'bg-brandPrimary scale-125' : 'bg-gray-300 hover:bg-brandSecondary');
+        d.setAttribute('aria-label', 'Ir a reseña ' + (i + 1));
+        d.addEventListener('click', () => { goTo(i); resetTimer(); });
+        dotsEl.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      const dotBtns = dotsEl.querySelectorAll('button');
+      dotBtns.forEach((d, i) => {
+        d.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' +
+          (i === current ? 'bg-brandPrimary scale-125' : 'bg-gray-300 hover:bg-brandSecondary');
+      });
+    }
+
+    function applyTransform(index, animated = true) {
+      const cardW = getCardWidth();
+      track.style.transition = animated ? 'transform 500ms ease-in-out' : 'none';
+      track.style.transform = 'translateX(-' + (index * (cardW + GAP)) + 'px)';
+    }
+
+    function goTo(index, animated = true) {
+      current = Math.max(0, Math.min(index, maxIndex));
+      renderIndex = current + visibleCount;
+      applyTransform(renderIndex, animated);
+      updateDots();
+    }
+
+    function next() {
+      if (isResetting) return;
+      if (current < maxIndex) {
+        current += 1;
+        renderIndex += 1;
+        applyTransform(renderIndex, true);
+      } else {
+        current = 0;
+        renderIndex += 1;
+        applyTransform(renderIndex, true);
+      }
+      updateDots();
+    }
+
+    function prev() {
+      if (isResetting) return;
+      if (current > 0) {
+        current -= 1;
+        renderIndex -= 1;
+        applyTransform(renderIndex, true);
+      } else {
+        current = maxIndex;
+        renderIndex -= 1;
+        applyTransform(renderIndex, true);
+      }
+      updateDots();
+    }
+
+    function startTimer() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, AUTO_MS);
+    }
+
+    function resetTimer() {
+      clearInterval(autoTimer);
+      startTimer();
+    }
+
+    btnNext.addEventListener('click', () => { next(); resetTimer(); });
+    btnPrev.addEventListener('click', () => { prev(); resetTimer(); });
+
+    track.addEventListener('transitionend', () => {
+      if (renderIndex === TOTAL + visibleCount) {
+        isResetting = true;
+        renderIndex = visibleCount;
+        applyTransform(renderIndex, false);
+        requestAnimationFrame(() => { isResetting = false; });
+      } else if (renderIndex === visibleCount - 1) {
+        isResetting = true;
+        renderIndex = maxIndex + visibleCount;
+        applyTransform(renderIndex, false);
+        requestAnimationFrame(() => { isResetting = false; });
+      }
+    });
+
+    carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carousel.addEventListener('mouseleave', () => startTimer());
+
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetTimer(); }
+    }, { passive: true });
+
+    function init() {
+      visibleCount = getVisibleCount();
+      maxIndex = getMaxIndex(visibleCount);
+      rebuildTrack();
+      setCardWidths();
+      buildDots();
+      goTo(current, false);
+    }
+
+    window.addEventListener('resize', () => {
+      const newVisible = getVisibleCount();
+      if (newVisible !== visibleCount) {
+        current = 0;
+        init();
+      } else {
+        setCardWidths();
+        goTo(current, false);
+      }
+    });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => { init(); startTimer(); });
+    } else {
+      init();
+      startTimer();
+    }
+  })();
+  </script>
   <!-- Contacto -->
   <section id="contacto" class="py-20 px-4 bg-gradient-to-br from-brandPrimary to-brandAccent text-white">
     <div class="max-w-4xl mx-auto text-center">
