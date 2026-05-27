@@ -33,7 +33,7 @@ Automatizar la publicación del banner de Assist Card desde una carpeta de entra
 
 ## Criterios de estado en banner-proceso.txt
 - `OK`: archivo publicado correctamente.
-- `SKIP`: el archivo tenía el mismo contenido que el banner ya publicado.
+- `ERROR`: fallo de ejecución (ver logs técnicos).
 
 ## Comandos de operación
 Iniciar loop:
@@ -57,3 +57,5 @@ cd "/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com
 - No usar carpetas `procesados` ni `banner-history`.
 - Mantener un solo banner activo (`assistcard-auto.jpg`).
 - Mantener historial visible solo en `banner-inbox/` con máximo de 5 archivos.
+- Publicación obligatoria por ingreso: cada archivo nuevo en `inbox-banner` se publica y se registra, aunque el contenido esté repetido.
+- La validación de contenido/fechas no forma parte del proceso técnico; la responsabilidad es procesar, publicar, versionar y auditar.
