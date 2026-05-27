@@ -3,6 +3,3 @@ Thumbs.db
 .env
 *.bundle
 *.bundle
-
-# autosync runtime
-.banner_autosync_state
