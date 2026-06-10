@@ -13,6 +13,15 @@ TMP_RENDER="/tmp/assistcard-auto-next.jpg"
 mkdir -p "$ARCHIVE_DIR"
 touch "$LOG_FILE"
 
+prepend_log_line() {
+  local line="$1"
+  local tmp_log
+  tmp_log="$(mktemp)"
+  printf '%s\n' "$line" > "$tmp_log"
+  cat "$LOG_FILE" >> "$tmp_log"
+  mv "$tmp_log" "$LOG_FILE"
+}
+
 latest_file="$(find "$SOURCE_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.avif" \) -print0 | xargs -0 ls -1t 2>/dev/null | head -n1 || true)"
 [ -n "${latest_file:-}" ] || exit 0
 
@@ -44,4 +53,4 @@ git push origin main
 
 # Solo borramos el origen si la publicación fue exitosa
 rm -f "$latest_file" "$TMP_RENDER"
-echo "[$(date '+%F %T')] OK   | archivo: $latest_name | publicado: assets/img/ppal/assistcard-auto.jpg | backup: banner-inbox/$(basename "$archive_path")" >> "$LOG_FILE"
+prepend_log_line "[$(date '+%F %T')] OK   | archivo: $latest_name | publicado: assets/img/ppal/assistcard-auto.jpg | backup: banner-inbox/$(basename "$archive_path")"
