@@ -20,8 +20,7 @@ Automatizar la publicación del banner de Assist Card desde una carpeta de entra
 ## Scripts y ejecución
 - Script principal (versionado):
 `scripts/banner_process_once.sh`
-- Loop en segundo plano (local):
-`~/.local/conmagui/conmagui-banner-loop.sh`
+- Loop en segundo plano: lo maneja `launchd` directamente llamando al script versionado.
 - Intervalo del loop: cada `60` segundos.
 
 ## Logs
@@ -39,12 +38,13 @@ Automatizar la publicación del banner de Assist Card desde una carpeta de entra
 ## Comandos de operación
 Iniciar loop:
 ```bash
-nohup /bin/bash ~/.local/conmagui/conmagui-banner-loop.sh > ~/Library/Logs/conmagui-banner-loop.out.log 2> ~/Library/Logs/conmagui-banner-loop.err.log < /dev/null &
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.conmagui.banner-autosync.plist
+launchctl kickstart -k gui/$(id -u)/com.conmagui.banner-autosync
 ```
 
 Detener loop:
 ```bash
-pkill -f conmagui-banner-loop.sh
+launchctl bootout gui/$(id -u)/com.conmagui.banner-autosync
 ```
 
 Procesar una vez manual:
