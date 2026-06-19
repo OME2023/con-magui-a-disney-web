@@ -253,7 +253,11 @@
         const pais = inputs[2]?.value || '';
         const tel = inputs[3]?.value?.trim() || '';
         const extra = idx === 0 ? 'Titular' : `Acompañante ${idx}`;
-        const phoneLine = idx === 0 ? '' : `${pais} ${tel}`.trim();
+        const rawDigits = `${pais} ${tel}`.replace(/[^\d]/g, '');
+        const clickablePhone = rawDigits ? `https://wa.me/${rawDigits}` : '';
+        const phoneLine = idx === 0
+          ? (clickablePhone ? `Teléfono clickeable: ${clickablePhone}` : '')
+          : (clickablePhone ? `Teléfono clickeable: ${clickablePhone}` : `${pais} ${tel}`.trim());
         return [
           `${extra}: ${nombre}`,
           `Fecha de nacimiento: ${fn}`,
@@ -274,12 +278,15 @@
       if (!destino || !titular || !telefono) return;
 
       const passengers = buildPassengerLines();
+      const titularDigits = `${pais} ${telefono}`.replace(/[^\d]/g, '');
+      const titularLink = titularDigits ? `https://wa.me/${titularDigits}` : '';
       const waText = [
         'Hola Magui, quiero cotizar un seguro Assist Card.',
         '',
         `Destino: ${destino}`,
         `Titular: ${titular}`,
         `Teléfono titular: ${pais} ${telefono}`.trim(),
+        titularLink ? `Responder al titular: ${titularLink}` : null,
         email ? `Email: ${email}` : null,
         '',
         'Pasajeros:',
