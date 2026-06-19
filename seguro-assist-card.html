@@ -50,7 +50,6 @@
       <p class="text-xl text-pink-100 max-w-3xl mx-auto mb-2">
         Completá tus datos, agregá a todos los viajeros y enviá la solicitud por WhatsApp a Magui.
       </p>
-      <p class="text-sm text-pink-100">La imagen se actualiza automáticamente con el banner vigente de la campaña.</p>
     </div>
   </section>
 
@@ -90,11 +89,17 @@
           </div>
 
           <div class="p-6">
-            <div id="acSuccess" class="hidden mb-5 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+            <div id="acSuccess" class="hidden fixed left-1/2 top-24 z-[9999] w-[min(92vw,720px)] -translate-x-1/2 rounded-2xl border border-green-200 bg-green-50 px-5 py-4 text-base text-green-800 shadow-2xl">
               Gracias. La información fue enviada correctamente. En breve vas a recibir la cotización con el detalle de cobertura.
             </div>
 
             <form id="acQuoteForm" class="space-y-4">
+              <div class="flex justify-between gap-3">
+                <button type="button" data-back-link class="inline-flex items-center justify-center rounded-full border border-brandAccent px-5 py-3 text-sm font-semibold text-brandDark hover:bg-brandSurface transition">
+                  Volver
+                </button>
+              </div>
+
               <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-1">Destino</label>
                 <input id="destino" required type="text" placeholder="Ej. Orlando, Miami, Europa" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
@@ -141,9 +146,15 @@
                 <textarea id="comentarios" rows="4" placeholder="Fechas tentativas, ciudad de salida, necesidades especiales..." class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary resize-none"></textarea>
               </div>
 
-              <button type="submit" class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3.5 rounded-xl font-bold hover:shadow-lg transition">
+              <button type="submit" class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3.5 rounded-full font-bold hover:shadow-lg transition">
                 Enviar cotización por WhatsApp
               </button>
+
+              <div class="pt-2">
+                <button type="button" data-back-link class="inline-flex items-center justify-center rounded-full border border-brandAccent px-5 py-3 text-sm font-semibold text-brandDark hover:bg-brandSurface transition">
+                  Volver
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -285,12 +296,31 @@
         });
       }
 
-      window.open(`https://wa.me/${whatsappMagui}?text=${encodeURIComponent(waText)}`, '_blank', 'noopener,noreferrer');
+      const encoded = encodeURIComponent(waText);
+      const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const directUrl = mobile
+        ? `whatsapp://send?phone=${whatsappMagui}&text=${encoded}`
+        : `https://wa.me/${whatsappMagui}?text=${encoded}`;
+
+      window.location.href = directUrl;
       success.classList.remove('hidden');
       success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      window.setTimeout(() => success.classList.add('hidden'), 7000);
       form.reset();
       renderPassengers(1);
       renderRemoveHandlers();
+    });
+
+    document.querySelectorAll('[data-back-link]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        try {
+          if (window.opener && !window.opener.closed) {
+            window.close();
+            return;
+          }
+        } catch (e) {}
+        window.location.href = 'index.html';
+      });
     });
 
     renderPassengers(1);
