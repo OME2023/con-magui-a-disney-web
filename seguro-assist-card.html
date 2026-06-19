@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotiza tu seguro y viaja tranquilo | Con Magui a Disney</title>
+  <meta name="description" content="Cotizá tu seguro Assist Card por WhatsApp, con asistencia personalizada para tu viaje y el detalle de cada pasajero." />
+  <link rel="canonical" href="https://www.conmaguiadisney.com/seguro-assist-card.html" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZQVQR29GB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZQVQR29GB');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPrimary: "#C56F95",
+            brandSecondary: "#E1A9C2",
+            brandAccent: "#C9A24A",
+            brandDark: "#8E6D2A",
+            brandLight: "#FDF8F2",
+            brandSurface: "#F7EEF3",
+            brandText: "#4A3240"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .passenger-card { border: 1px solid rgba(229,231,235,.95); box-shadow: 0 8px 20px rgba(74,50,64,.06); }
+  </style>
+</head>
+<body data-page="promo" class="bg-brandLight text-brandText">
+
+  <div id="site-nav"></div>
+
+  <section class="pt-32 pb-10 px-4 bg-gradient-to-br from-brandDark to-brandPrimary text-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="inline-block bg-white/15 text-white text-sm font-bold px-4 py-1.5 rounded-full mb-4">🛡️ Seguros Assist Card</div>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Cotiza tu seguro y viaja tranquilo</h1>
+      <p class="text-xl text-pink-100 max-w-3xl mx-auto mb-2">
+        Completá tus datos, agregá a todos los viajeros y enviá la solicitud por WhatsApp a Magui.
+      </p>
+      <p class="text-sm text-pink-100">La imagen se actualiza automáticamente con el banner vigente de la campaña.</p>
+    </div>
+  </section>
+
+  <section class="py-12 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-7">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div class="p-4 sm:p-6">
+            <img
+              src="assets/img/ppal/assistcard-auto.jpg"
+              alt="Banner Assist Card vigente"
+              class="w-full rounded-2xl object-cover"
+              loading="eager"
+            />
+          </div>
+          <div class="px-6 pb-8">
+            <h2 class="text-2xl font-bold text-brandDark text-center mb-6">Seguros Assist Card</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
+              <div class="check-list-item">Cobertura hasta $3.000.000 USD</div>
+              <div class="check-list-item">Asistencia médica 24/7 español</div>
+              <div class="check-list-item">Pérdida/retraso equipaje</div>
+              <div class="check-list-item">Cancelación viaje</div>
+              <div class="check-list-item">Responsabilidad civil</div>
+              <div class="check-list-item">Asistencia legal</div>
+              <div class="check-list-item">Planes familiares</div>
+              <div class="check-list-item">Mejor precio-cobertura</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden sticky top-28">
+          <div class="bg-gradient-to-r from-brandDark to-brandAccent px-6 py-5">
+            <h2 class="text-xl font-bold text-white">Quiero cotizar mi seguro</h2>
+            <p class="text-white/80 text-sm mt-1">Te respondemos por WhatsApp con la propuesta</p>
+          </div>
+
+          <div class="p-6">
+            <div id="acSuccess" class="hidden mb-5 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">
+              Gracias. La información fue enviada correctamente. En breve vas a recibir la cotización con el detalle de cobertura.
+            </div>
+
+            <form id="acQuoteForm" class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Destino</label>
+                <input id="destino" required type="text" placeholder="Ej. Orlando, Miami, Europa" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Titular de la póliza</label>
+                <input id="titular" required type="text" placeholder="Nombre y apellido" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Teléfono</label>
+                <div class="grid grid-cols-12 gap-2">
+                  <select id="pais" class="col-span-4 px-3 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary bg-white">
+                    <option value="+54 9">🇦🇷 +54 9 AR</option>
+                    <option value="+56 9">🇨🇱 +56 9 CL</option>
+                    <option value="+57">🇨🇴 +57 CO</option>
+                    <option value="+51">🇵🇪 +51 PE</option>
+                    <option value="+591">🇧🇴 +591 BO</option>
+                    <option value="+598 9">🇺🇾 +598 9 UY</option>
+                    <option value="+595">🇵🇾 +595 PY</option>
+                    <option value="+52 1">🇲🇽 +52 1 MX</option>
+                    <option value="+1">🇺🇸/🇨🇦 +1 USA/CAN</option>
+                  </select>
+                  <input id="telefono" required type="tel" placeholder="11 12345678" class="col-span-8 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Email opcional</label>
+                <input id="email" type="email" placeholder="tu@email.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <label class="block text-sm font-semibold text-gray-700">Pasajeros</label>
+                  <button type="button" id="addPassenger" class="text-sm font-semibold text-brandPrimary hover:underline">+ Agregar pasajero</button>
+                </div>
+                <div id="passengers" class="space-y-3"></div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Comentarios adicionales</label>
+                <textarea id="comentarios" rows="4" placeholder="Fechas tentativas, ciudad de salida, necesidades especiales..." class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3.5 rounded-xl font-bold hover:shadow-lg transition">
+                Enviar cotización por WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script>
+    const whatsappMagui = '5493834319891';
+    const passengersEl = document.getElementById('passengers');
+    const form = document.getElementById('acQuoteForm');
+    const success = document.getElementById('acSuccess');
+    const addPassengerBtn = document.getElementById('addPassenger');
+
+    const countryCodes = [
+      { value: '+54', label: '🇦🇷 +54 AR' },
+      { value: '+56', label: '🇨🇱 +56 CL' },
+      { value: '+57', label: '🇨🇴 +57 CO' },
+      { value: '+51', label: '🇵🇪 +51 PE' },
+      { value: '+591', label: '🇧🇴 +591 BO' },
+      { value: '+598', label: '🇺🇾 +598 UY' },
+      { value: '+595', label: '🇵🇾 +595 PY' },
+      { value: '+52', label: '🇲🇽 +52 MX' },
+      { value: '+1', label: '🇺🇸/🇨🇦 +1 USA/CAN' }
+    ];
+
+    function passengerMarkup(index) {
+      const options = countryCodes.map((c) => `<option value="${c.value}">${c.label}</option>`).join('');
+      return `
+        <div class="passenger-card rounded-2xl p-4 bg-brandLight">
+          <div class="flex items-center justify-between mb-3">
+            <p class="font-semibold text-brandText">Pasajero ${index + 1}</p>
+            ${index === 0 ? '<span class="text-xs font-semibold text-brandPrimary">Titular</span>' : '<button type="button" class="text-sm font-semibold text-red-500 hover:underline" data-remove-passenger>Quitar</button>'}
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-2">
+            <input type="text" required name="pasajero_nombre" placeholder="Nombre y apellido" class="sm:col-span-7 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+            <input type="date" required name="pasajero_fn" class="sm:col-span-5 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+          </div>
+          ${index === 0 ? '' : `
+            <div class="grid grid-cols-12 gap-2 mt-2">
+              <select name="pasajero_pais" class="col-span-4 px-3 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary bg-white">${options}</select>
+              <input type="tel" name="pasajero_tel" placeholder="Teléfono (opcional)" class="col-span-8 px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary">
+            </div>
+          `}
+        </div>
+      `;
+    }
+
+    function renderPassengers(count = 1) {
+      passengersEl.innerHTML = Array.from({ length: count }, (_, i) => passengerMarkup(i)).join('');
+      passengersEl.querySelectorAll('[data-remove-passenger]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const cards = Array.from(passengersEl.children);
+          if (cards.length > 1) {
+            btn.closest('.passenger-card').remove();
+            renumberPassengers();
+          }
+        });
+      });
+    }
+
+    function renumberPassengers() {
+      Array.from(passengersEl.children).forEach((card, idx) => {
+        const title = card.querySelector('p.font-semibold');
+        if (title) title.textContent = `Pasajero ${idx + 1}`;
+        const badge = card.querySelector('.text-brandPrimary');
+        if (badge) badge.textContent = idx === 0 ? 'Titular' : '';
+      });
+    }
+
+    addPassengerBtn.addEventListener('click', () => {
+      const index = passengersEl.children.length;
+      passengersEl.insertAdjacentHTML('beforeend', passengerMarkup(index));
+      renderRemoveHandlers();
+      renumberPassengers();
+    });
+
+    function renderRemoveHandlers() {
+      passengersEl.querySelectorAll('[data-remove-passenger]').forEach((btn) => {
+        btn.onclick = () => {
+          btn.closest('.passenger-card').remove();
+          renumberPassengers();
+        };
+      });
+    }
+
+    function buildPassengerLines() {
+      return Array.from(passengersEl.querySelectorAll('.passenger-card')).map((card, idx) => {
+        const inputs = card.querySelectorAll('input, select');
+        const nombre = inputs[0]?.value?.trim() || '';
+        const fn = inputs[1]?.value || '';
+        const pais = inputs[2]?.value || '';
+        const tel = inputs[3]?.value?.trim() || '';
+        const extra = idx === 0 ? 'Titular' : `Acompañante ${idx}`;
+        const phoneLine = idx === 0 ? '' : `${pais} ${tel}`.trim();
+        return [
+          `${extra}: ${nombre}`,
+          `Fecha de nacimiento: ${fn}`,
+          phoneLine ? `Teléfono: ${phoneLine}` : null
+        ].filter(Boolean).join(' | ');
+      });
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const destino = document.getElementById('destino').value.trim();
+      const titular = document.getElementById('titular').value.trim();
+      const pais = document.getElementById('pais').value;
+      const telefono = document.getElementById('telefono').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const comentarios = document.getElementById('comentarios').value.trim();
+
+      if (!destino || !titular || !telefono) return;
+
+      const passengers = buildPassengerLines();
+      const waText = [
+        'Hola Magui, quiero cotizar un seguro Assist Card.',
+        '',
+        `Destino: ${destino}`,
+        `Titular: ${titular}`,
+        `Teléfono titular: ${pais} ${telefono}`.trim(),
+        email ? `Email: ${email}` : null,
+        '',
+        'Pasajeros:',
+        ...passengers.map((line) => `- ${line}`),
+        comentarios ? ['', `Comentarios: ${comentarios}`] : null
+      ].flat().filter(Boolean).join('\n');
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'form_submit', {
+          event_category: 'seguros',
+          event_label: 'assistcard_quote_form',
+          travelers: passengers.length,
+          has_email: email ? 'yes' : 'no'
+        });
+      }
+
+      window.open(`https://wa.me/${whatsappMagui}?text=${encodeURIComponent(waText)}`, '_blank', 'noopener,noreferrer');
+      success.classList.remove('hidden');
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      form.reset();
+      renderPassengers(1);
+      renderRemoveHandlers();
+    });
+
+    renderPassengers(1);
+  </script>
+</body>
+</html>
