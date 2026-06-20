@@ -25,11 +25,11 @@ Automatizar la publicación del banner de Assist Card desde una carpeta de entra
 
 ## Logs
 - Proceso operativo (visible para negocio):
-`/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com/Mi unidad/entornos/Promos con Magui a Disney/banner-proceso.txt`
+`/private/tmp/conmagui/banner-proceso.txt`
 - La entrada más reciente se escribe arriba, para ver el estado actual sin bajar al final del archivo.
 - Logs técnicos del loop:
-`~/Library/Logs/conmagui-banner-loop.out.log`
-`~/Library/Logs/conmagui-banner-loop.err.log`
+`/private/tmp/conmagui/banner-loop.out.log`
+`/private/tmp/conmagui/banner-loop.err.log`
 
 ## Criterios de estado en banner-proceso.txt
 - `OK`: archivo publicado correctamente.
@@ -38,13 +38,12 @@ Automatizar la publicación del banner de Assist Card desde una carpeta de entra
 ## Comandos de operación
 Iniciar loop:
 ```bash
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.conmagui.banner-autosync.plist
-launchctl kickstart -k gui/$(id -u)/com.conmagui.banner-autosync
+nohup /private/tmp/conmagui/banner_loop.sh > /private/tmp/conmagui/banner-loop.out.log 2> /private/tmp/conmagui/banner-loop.err.log &
 ```
 
 Detener loop:
 ```bash
-launchctl bootout gui/$(id -u)/com.conmagui.banner-autosync
+pkill -f /private/tmp/conmagui/banner_loop.sh
 ```
 
 Procesar una vez manual:
@@ -60,3 +59,4 @@ cd "/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com
 - Mantener historial visible solo en `banner-inbox/` con máximo de 5 archivos.
 - Publicación obligatoria por ingreso: cada archivo nuevo en `inbox-banner` se publica y se registra, aunque el contenido esté repetido.
 - La validación de contenido/fechas no forma parte del proceso técnico; la responsabilidad es procesar, publicar, versionar y auditar.
+- La automatización real vive fuera del árbol de Google Drive para evitar bloqueos de sincronización.
