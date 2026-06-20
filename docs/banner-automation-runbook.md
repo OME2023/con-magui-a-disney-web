@@ -25,7 +25,7 @@ Automatizar la publicación del banner de Assist Card desde una carpeta de entra
 
 ## Logs
 - Proceso operativo (visible para negocio):
-`/private/tmp/conmagui/banner-proceso.txt`
+`/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com/Mi unidad/entornos/Promos con Magui a Disney/banner-proceso.txt`
 - La entrada más reciente se escribe arriba, para ver el estado actual sin bajar al final del archivo.
 - Logs técnicos del loop:
 `/private/tmp/conmagui/banner-loop.out.log`

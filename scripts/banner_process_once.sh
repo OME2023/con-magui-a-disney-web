@@ -1,16 +1,15 @@
 #!/bin/bash
 set -euo pipefail
 
-REPO_DIR="/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com/Mi unidad/It Solutions/Proyectos web/con-magui-a-disney-web"
+REPO_DIR="/private/tmp/conmagui/worktree/con-magui-a-disney-web"
 SOURCE_DIR="/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com/Mi unidad/entornos/Promos con Magui a Disney/inbox-banner"
-CONTROL_DIR="/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com/Mi unidad/entornos/Promos con Magui a Disney"
+LOG_FILE="/Users/oscar/Library/CloudStorage/GoogleDrive-it.integral.solution@gmail.com/Mi unidad/entornos/Promos con Magui a Disney/banner-proceso.txt"
 ARCHIVE_DIR="$REPO_DIR/banner-inbox"
 PUBLISHED_PATH="$REPO_DIR/assets/img/ppal/assistcard-auto.jpg"
 MAX_ARCHIVE=5
-LOG_FILE="$CONTROL_DIR/banner-proceso.txt"
 TMP_RENDER="/private/tmp/conmagui/assistcard-auto-next.jpg"
 
-mkdir -p "$ARCHIVE_DIR"
+mkdir -p "$ARCHIVE_DIR" "$(dirname "$LOG_FILE")"
 touch "$LOG_FILE"
 
 prepend_log_line() {
