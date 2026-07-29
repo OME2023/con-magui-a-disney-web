@@ -205,6 +205,12 @@ const ICONS = {
     <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#C56F95" stroke-width="2" stroke-linecap="round"/>
     <circle cx="12" cy="12" r="3" fill="#C56F95"/>
   </svg>`,
+  // Acceso portal viajero
+  portal: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="5" width="14" height="14" rx="2.5" fill="#C56F95"/>
+    <path d="M10 9l3 3-3 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 12H21" stroke="#C9A24A" stroke-width="2" stroke-linecap="round"/>
+  </svg>`,
 };
 
 /* ─── HTML del navbar ────────────────────────────────────────────────────── */
@@ -284,6 +290,15 @@ ${NAVBAR_STYLES}
         <span class="nav-label">Trabajá con Nosotros</span>
       </a>
 
+      <!-- CTA Portal del viajero -->
+      <a href="https://tass.itintegraltech.com/traveler/login?agency=cmd"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-cta inline-flex items-center gap-2 bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+        ${ICONS.portal}
+        Portal del viajero
+      </a>
+
       <!-- CTA Cotiza Ahora -->
       <a href="http://tass.itintegraltech.com/public/cmd/datos"
         target="_blank"
@@ -350,6 +365,9 @@ ${NAVBAR_STYLES}
     </a>
     <a data-nav="trabaja" href="trabaja-con-nosotros.html" class="mobile-link flex items-center gap-2 py-2.5 text-gray-700 font-medium">
       ${ICONS.star} Trabajá con Nosotros
+    </a>
+    <a href="https://tass.itintegraltech.com/traveler/login?agency=cmd" target="_blank" rel="noopener noreferrer" class="mobile-link flex items-center gap-2 py-2.5 text-brandPrimary font-semibold">
+      ${ICONS.portal} Portal del viajero
     </a>
     <a href="http://tass.itintegraltech.com/public/cmd/datos" target="_blank" rel="noopener noreferrer" class="mobile-link flex items-center gap-2 py-2.5 text-brandAccent font-semibold">
       Cotiza Ahora
