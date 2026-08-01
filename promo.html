@@ -36,6 +36,24 @@
   </script>
   <script src="assets/js/public-config.js"></script>
   <style>
+    .promo-title-hero {
+      font-size: clamp(2.25rem, 5vw, 4.25rem);
+      line-height: 1.03;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+    .promo-title-standard {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .promo-title-compact {
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
     .promo-rich-body {
       font-size: 1.08rem;
       line-height: 1.9;
@@ -243,6 +261,8 @@
         const detail = item.detail || {};
         const title = detail.title || card.title || 'Promoción';
         const body = detail.body || card.summary || '';
+        const titleStyle = ['hero', 'standard', 'compact'].includes(detail.title_style) ? detail.title_style : 'hero';
+        const titleColor = detail.title_color || '#C56F95';
         document.title = (detail.seo_title || title) + ' | Con Magui a Disney';
         const meta = document.querySelector('meta[name="description"]');
         if (meta) meta.setAttribute('content', detail.meta_description || body.slice(0, 150) || 'Promoción especial de Con Magui a Disney.');
@@ -250,7 +270,7 @@
           <section class="pb-10">
             <div class="max-w-5xl mx-auto text-center">
               <p class="text-xs uppercase tracking-[0.22em] text-brandPrimary font-bold mb-3">Promoción especial</p>
-              <h1 class="text-3xl md:text-5xl font-bold text-brandText leading-tight mb-4">${escapeHtml(title)}</h1>
+              <h1 class="promo-title-${escapeHtml(titleStyle)} text-brandText mb-4" style="color:${escapeHtml(titleColor)};">${escapeHtml(title)}</h1>
               ${card.validity_text ? `<p class="text-gray-600 text-lg">${escapeHtml(card.validity_text)}</p>` : ''}
             </div>
           </section>
