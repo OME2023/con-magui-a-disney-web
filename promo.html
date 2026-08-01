@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promoción | Con Magui a Disney</title>
+  <meta name="description" content="Promoción especial de Con Magui a Disney." />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZQVQR29GB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BZQVQR29GB');
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandPrimary: "#C56F95",
+            brandSecondary: "#E1A9C2",
+            brandAccent: "#C9A24A",
+            brandDark: "#8E6D2A",
+            brandLight: "#FDF8F2",
+            brandSurface: "#F7EEF3",
+            brandText: "#4A3240"
+          }
+        }
+      }
+    };
+  </script>
+  <script src="assets/js/public-config.js"></script>
+</head>
+<body data-page="promo-dinamica" class="bg-brandLight text-brandText">
+  <div id="site-nav"></div>
+
+  <main id="promoRoot" class="pt-32 pb-14 px-4">
+    <section class="max-w-5xl mx-auto bg-white rounded-[2rem] shadow-xl border border-brandSecondary/30 p-8 text-center">
+      <div class="animate-pulse text-brandPrimary font-bold">Cargando promoción...</div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/whatsapp.js?v=20260306-1"></script>
+  <script>
+    (function () {
+      const root = document.getElementById('promoRoot');
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug') || '';
+      const endpointBase = window.PUBLIC_PROMOTIONS_API_URL || '';
+
+      function escapeHtml(value) {
+        return String(value || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      }
+
+      function fieldHtml(field) {
+        const required = field.required ? 'required' : '';
+        const common = `name="${escapeHtml(field.key)}" id="lead_${escapeHtml(field.key)}" ${required} placeholder="${escapeHtml(field.placeholder || '')}" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPrimary text-gray-700 bg-white"`;
+        if (field.type === 'textarea') {
+          return `<textarea rows="4" ${common}></textarea>`;
+        }
+        return `<input type="${escapeHtml(field.type || 'text')}" ${common}>`;
+      }
+
+      function mediaHtml(item) {
+        const detail = item.detail || {};
+        const mediaUrl = detail.primary_media_url || (item.card && item.card.media_url) || '';
+        const title = detail.title || (item.card && item.card.title) || 'Promoción';
+        if (!mediaUrl) return '';
+        const isVideo = mediaUrl.toLowerCase().match(/\.(mp4|webm|mov)(\?|$)/);
+        if (isVideo) {
+          return `<video src="${escapeHtml(mediaUrl)}" class="w-full rounded-2xl shadow-lg mb-8 bg-white" autoplay muted loop playsinline controls></video>`;
+        }
+        return `<img src="${escapeHtml(mediaUrl)}" alt="${escapeHtml(title)}" class="w-full rounded-2xl shadow-lg mb-8 object-cover bg-white" loading="eager">`;
+      }
+
+      function renderLeadForm(item) {
+        const form = item.lead_form || {};
+        if (form.enabled === false) return '';
+        const fields = Array.isArray(form.fields) ? form.fields : [];
+        const title = form.title || 'Solicitá esta promo';
+        const summary = form.summary || 'Completá tus datos y te contactamos con una propuesta personalizada.';
+        const submitLabel = form.submit_label || 'Solicitar cotización';
+        return `
+          <aside class="bg-white rounded-3xl shadow-2xl overflow-hidden sticky top-28">
+            <div class="bg-gradient-to-r from-brandPrimary to-brandAccent px-6 py-5">
+              <h2 class="text-xl font-bold text-white">${escapeHtml(title)}</h2>
+              <p class="text-white/85 text-sm mt-1">${escapeHtml(summary)}</p>
+            </div>
+            <form id="promoLeadForm" class="p-6 space-y-4">
+              ${fields.map(field => `
+                <label class="block">
+                  <span class="block text-sm font-semibold text-gray-700 mb-1">${escapeHtml(field.label)}${field.required ? ' *' : ''}</span>
+                  ${fieldHtml(field)}
+                </label>
+              `).join('')}
+              <div id="leadError" class="hidden text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3"></div>
+              <button type="submit" class="w-full bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3.5 rounded-xl font-bold hover:shadow-lg transition">
+                ${escapeHtml(submitLabel)}
+              </button>
+            </form>
+          </aside>
+        `;
+      }
+
+      function renderPage(item) {
+        const card = item.card || {};
+        const detail = item.detail || {};
+        const title = detail.title || card.title || 'Promoción';
+        const body = detail.body || card.summary || '';
+        document.title = (detail.seo_title || title) + ' | Con Magui a Disney';
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute('content', detail.meta_description || body.slice(0, 150) || 'Promoción especial de Con Magui a Disney.');
+        root.innerHTML = `
+          <section class="pb-10">
+            <div class="max-w-5xl mx-auto text-center">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandPrimary font-bold mb-3">Promoción especial</p>
+              <h1 class="text-3xl md:text-5xl font-bold text-brandText leading-tight mb-4">${escapeHtml(title)}</h1>
+              ${card.validity_text ? `<p class="text-gray-600 text-lg">${escapeHtml(card.validity_text)}</p>` : ''}
+            </div>
+          </section>
+          <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <article class="lg:col-span-8">
+              ${mediaHtml(item)}
+              <div class="bg-white rounded-3xl shadow-md border border-brandSecondary/30 p-7 md:p-9">
+                <div style="text-align:${escapeHtml(detail.body_alignment || 'left')};color:${escapeHtml(detail.body_color || '#4A3240')};white-space:pre-wrap;line-height:1.7;" class="text-lg">${escapeHtml(body)}</div>
+                ${detail.secondary_media_url ? `<img src="${escapeHtml(detail.secondary_media_url)}" alt="${escapeHtml(title)}" class="w-full rounded-2xl shadow mt-8 object-cover bg-white" loading="lazy">` : ''}
+              </div>
+            </article>
+            <div class="lg:col-span-4">${renderLeadForm(item)}</div>
+          </section>
+        `;
+        bindLeadForm(item);
+      }
+
+      function bindLeadForm(item) {
+        const form = document.getElementById('promoLeadForm');
+        if (!form) return;
+        const error = document.getElementById('leadError');
+        const leadForm = item.lead_form || {};
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          const data = new FormData(form);
+          const values = {};
+          for (const [key, value] of data.entries()) values[key] = String(value || '').trim();
+          if (!values.name || !values.whatsapp) {
+            if (error) {
+              error.textContent = 'Por favor completá nombre y WhatsApp para que podamos contactarte.';
+              error.classList.remove('hidden');
+            }
+            return;
+          }
+          if (error) error.classList.add('hidden');
+          const lines = [
+            (leadForm.message && leadForm.message.intro) || `Hola Magui! Me interesa la promo *${item.card && item.card.title ? item.card.title : item.slug}*.`,
+            '',
+            `Promo: ${item.card && item.card.title ? item.card.title : item.slug}`,
+            `Origen: ${item.slug}`,
+            values.travel_month ? `Fecha/mes tentativo: ${values.travel_month}` : null,
+            values.travelers ? `Viajeros: ${values.travelers}` : null,
+            values.preferred_hotel ? `Hotel de preferencia: ${values.preferred_hotel}` : null,
+            values.arrival_date ? `Fecha de llegada: ${values.arrival_date}` : null,
+            values.nights ? `Noches: ${values.nights}` : null,
+            values.ticket_start_date ? `Inicio tickets: ${values.ticket_start_date}` : null,
+            values.adults ? `Adultos/mayores: ${values.adults}` : null,
+            values.children ? `Menores: ${values.children}` : null,
+            '',
+            `Nombre: ${values.name}`,
+            `WhatsApp: ${values.whatsapp}`,
+            values.email ? `Email: ${values.email}` : null,
+            values.message ? `Consulta: ${values.message}` : null
+          ].filter(Boolean);
+          if (typeof gtag === 'function') {
+            const ga4 = leadForm.ga4 || {};
+            gtag(ga4.event_name || 'generate_lead', {
+              event_category: ga4.event_category || 'promo',
+              event_label: ga4.event_label || `${item.slug}_lead_form`,
+              transport_type: 'beacon'
+            });
+          }
+          const phone = leadForm.whatsapp_phone || '5493834319891';
+          window.open(`https://wa.me/${phone}?text=${encodeURIComponent(lines.join('\\n'))}`, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      async function loadPromo() {
+        if (!slug || !endpointBase) {
+          root.innerHTML = '<section class="max-w-4xl mx-auto bg-white rounded-3xl shadow p-8 text-center"><h1 class="text-2xl font-bold text-brandPrimary mb-3">Promo no encontrada</h1><p class="text-gray-600">Volvé a promociones y elegí una oferta activa.</p></section>';
+          return;
+        }
+        try {
+          const response = await fetch(endpointBase.replace(/\/$/, '') + '/' + encodeURIComponent(slug), { cache: 'no-store' });
+          if (!response.ok) throw new Error('promo_not_found');
+          const payload = await response.json();
+          if (!payload.ok || !payload.item) throw new Error('invalid_payload');
+          renderPage(payload.item);
+        } catch (error) {
+          root.innerHTML = '<section class="max-w-4xl mx-auto bg-white rounded-3xl shadow p-8 text-center"><h1 class="text-2xl font-bold text-brandPrimary mb-3">No pudimos cargar esta promo</h1><p class="text-gray-600">Probá nuevamente o escribinos por WhatsApp para pedir más información.</p></section>';
+        }
+      }
+
+      loadPromo();
+    })();
+  </script>
+</body>
+</html>

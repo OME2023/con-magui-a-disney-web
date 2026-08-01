@@ -476,7 +476,7 @@
     }
 
     function promoHref(item) {
-      return (item && item.cta && item.cta.url) || (item && item.slug ? item.slug + '.html' : 'promociones.html');
+      return (item && item.cta && item.cta.url) || (item && item.slug ? 'promo.html?slug=' + encodeURIComponent(item.slug) : 'promociones.html');
     }
 
     function promoGa4Attrs(item, overrideLabel) {
