@@ -54,6 +54,9 @@
       font-weight: 800;
       letter-spacing: -0.02em;
     }
+    .promo-title-left { text-align: left; }
+    .promo-title-center { text-align: center; }
+    .promo-title-right { text-align: right; }
     .promo-rich-body {
       font-size: 1.08rem;
       line-height: 1.9;
@@ -262,6 +265,7 @@
         const title = detail.title || card.title || 'Promoción';
         const body = detail.body || card.summary || '';
         const titleStyle = ['hero', 'standard', 'compact'].includes(detail.title_style) ? detail.title_style : 'hero';
+        const titleAlignment = ['left', 'center', 'right'].includes(detail.title_alignment) ? detail.title_alignment : 'left';
         const titleColor = detail.title_color || '#C56F95';
         document.title = (detail.seo_title || title) + ' | Con Magui a Disney';
         const meta = document.querySelector('meta[name="description"]');
@@ -270,7 +274,7 @@
           <section class="pb-10">
             <div class="max-w-5xl mx-auto text-center">
               <p class="text-xs uppercase tracking-[0.22em] text-brandPrimary font-bold mb-3">Promoción especial</p>
-              <h1 class="promo-title-${escapeHtml(titleStyle)} text-brandText mb-4" style="color:${escapeHtml(titleColor)};">${escapeHtml(title)}</h1>
+              <h1 class="promo-title-${escapeHtml(titleStyle)} promo-title-${escapeHtml(titleAlignment)} text-brandText mb-4" style="color:${escapeHtml(titleColor)};">${escapeHtml(title)}</h1>
               ${card.validity_text ? `<p class="text-gray-600 text-lg">${escapeHtml(card.validity_text)}</p>` : ''}
             </div>
           </section>
