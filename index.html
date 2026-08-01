@@ -443,15 +443,186 @@
     const dotsEl = document.getElementById('promoDots');
     const btnPrev = document.getElementById('promoPrev');
     const btnNext = document.getElementById('promoNext');
-    const originalCards = Array.from(track.querySelectorAll('.promo-card')).map(card => card.cloneNode(true));
-    const TOTAL = originalCards.length;
+    let originalCards = [];
+    let TOTAL = 0;
+
+    const legacyFeaturedMeta = {
+      'novedad-paquetes-disney-2027': {
+        eyebrow: 'Walt Disney World Resort',
+        badge: 'Novedad 2027',
+        ctaLabel: 'Solicitá más info',
+        ctaEventLabel: 'paquetes_disney_2027_cta'
+      },
+      'navidad-orlando-2026': {
+        eyebrow: 'Disney World · Temporada Especial',
+        badge: 'Navidad en Disney',
+        ctaLabel: '👉 Quiero mi lugar',
+        ctaEventLabel: 'navidad_disney_2026_2027_cta',
+        bullets: [
+          'Grupos acompañados paso a paso',
+          'Beneficios exclusivos por ser agencia certificada',
+          'Cupos limitados (se agotan todos los años)'
+        ]
+      }
+    };
+
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function promoHref(item) {
+      return (item && item.cta && item.cta.url) || (item && item.slug ? item.slug + '.html' : 'promociones.html');
+    }
+
+    function promoGa4Attrs(item, overrideLabel) {
+      const ga4 = (item && item.ga4) || {};
+      const eventName = ga4.event_name || (item && item.display_type === 'featured' ? 'click_novedad' : 'click_promo');
+      const eventLabel = overrideLabel || ga4.event_label || (item && item.slug) || 'promo';
+      return 'data-promo-ga4="1" data-ga4-event="' + escapeHtml(eventName) + '" data-ga4-label="' + escapeHtml(eventLabel) + '"';
+    }
+
+    function mediaMarkup(item, classes, alt, lazy) {
+      const card = (item && item.card) || {};
+      const mediaUrl = card.media_url || '';
+      const mediaType = card.media_type || 'image';
+      if (!mediaUrl) return '<div class="' + classes + '"></div>';
+      if (mediaType === 'video') {
+        return '<video class="' + classes + '" src="' + escapeHtml(mediaUrl) + '" autoplay muted loop playsinline preload="metadata"></video>';
+      }
+      return '<img class="' + classes + '" src="' + escapeHtml(mediaUrl) + '" alt="' + escapeHtml(alt || card.title || 'Promoción') + '"' + (lazy ? ' loading="lazy"' : '') + ' />';
+    }
+
+    function renderFeatured(item) {
+      const card = item.card || {};
+      const meta = legacyFeaturedMeta[item.slug] || {};
+      const href = promoHref(item);
+      const ctaLabel = meta.ctaLabel || (item.cta && item.cta.label) || 'Ver Oferta';
+      const bullets = Array.isArray(meta.bullets) ? meta.bullets : [];
+      return `
+        <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40">
+          <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-stretch">
+            <a
+              href="${escapeHtml(href)}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block relative min-h-[260px] md:min-h-[360px] bg-brandText"
+              ${promoGa4Attrs(item)}
+              aria-label="${escapeHtml(card.title || 'Ver promoción')}"
+            >
+              ${mediaMarkup(item, 'absolute inset-0 w-full h-full object-cover', card.title, true)}
+              <div class="absolute inset-0 bg-gradient-to-r from-brandText/55 via-brandText/20 to-transparent"></div>
+              <div class="absolute left-6 bottom-6 right-6 md:left-8 md:bottom-8">
+                <span class="inline-flex items-center bg-white/90 text-brandPrimary text-xs font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-full shadow">
+                  ${escapeHtml(meta.badge || 'Novedad')}
+                </span>
+              </div>
+            </a>
+
+            <div class="p-7 md:p-10 flex flex-col justify-center">
+              <p class="text-xs uppercase tracking-[0.22em] text-brandPrimary font-bold mb-3">${escapeHtml(meta.eyebrow || 'Promoción destacada')}</p>
+              <h3 class="text-2xl md:text-3xl font-bold text-brandText leading-tight mb-4">
+                ${escapeHtml(card.title)}
+              </h3>
+              <p class="text-gray-600 ${bullets.length ? 'mb-4' : 'mb-6'}">
+                ${escapeHtml(card.summary)}
+              </p>
+              ${bullets.length ? '<ul class="text-sm text-gray-600 space-y-2 mb-6 list-disc pl-5">' + bullets.map(item => '<li>' + escapeHtml(item) + '</li>').join('') + '</ul>' : ''}
+              <a
+                href="${escapeHtml(href)}"
+                target="_blank"
+                rel="noopener noreferrer"
+                ${promoGa4Attrs(item, meta.ctaEventLabel)}
+                class="inline-flex justify-center items-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white px-8 py-3.5 rounded-full font-bold hover:shadow-lg transition transform hover:scale-[1.02]"
+              >
+                ${escapeHtml(ctaLabel)}
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderPromoCard(item) {
+      const card = item.card || {};
+      const isHalloween = item.slug === 'promo-mickey-halloween-2026';
+      const href = promoHref(item);
+      const buttonClass = isHalloween
+        ? 'block text-center bg-gradient-to-r from-orange-700 to-brandPrimary text-white py-3 rounded-full font-semibold hover:shadow-lg transition'
+        : 'block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition';
+      return `
+        <article class="promo-card bg-brandSurface rounded-2xl shadow-md overflow-hidden flex flex-col flex-shrink-0 hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="h-52 overflow-hidden ${isHalloween ? 'relative' : ''}">
+            ${mediaMarkup(item, 'w-full h-full object-cover', card.title, true)}
+            ${isHalloween ? '<div class="absolute top-3 left-3"><span class="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">🎃 Disney Halloween</span></div>' : ''}
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-brandPrimary mb-2 leading-snug">${escapeHtml(card.title)}</h3>
+            <p class="text-sm text-gray-500 mb-4 flex-1">${escapeHtml(card.summary || card.validity_text || '')}</p>
+            <a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer"
+              ${promoGa4Attrs(item)}
+              class="${buttonClass}">
+              ${escapeHtml((item.cta && item.cta.label) || 'Ver Oferta')}
+            </a>
+          </div>
+        </article>
+      `;
+    }
+
+    function refreshOriginalCards() {
+      originalCards = Array.from(track.querySelectorAll('.promo-card')).map(card => card.cloneNode(true));
+      TOTAL = originalCards.length;
+    }
+
+    async function loadPromosFromTass() {
+      const endpoint = window.PUBLIC_PROMOTIONS_API_URL;
+      if (!endpoint || !track) return false;
+      try {
+        const response = await fetch(endpoint, { cache: 'no-store' });
+        if (!response.ok) return false;
+        const payload = await response.json();
+        const featured = Array.isArray(payload.featured) ? payload.featured : [];
+        const carouselItems = Array.isArray(payload.carousel) ? payload.carousel : [];
+        if (!featured.length && !carouselItems.length) return false;
+
+        const promoShell = document.querySelector('#promociones .max-w-6xl');
+        if (promoShell && featured.length) {
+          const currentFeatured = Array.from(promoShell.children).filter(el => el.tagName === 'ARTICLE').slice(0, 2);
+          currentFeatured.forEach((el, idx) => {
+            if (featured[idx]) {
+              el.outerHTML = renderFeatured(featured[idx]);
+            }
+          });
+        }
+        if (carouselItems.length) {
+          track.innerHTML = carouselItems.map(renderPromoCard).join('');
+        }
+        return true;
+      } catch (error) {
+        console.warn('[promociones] fallback legacy por error al leer TASS', error);
+        return false;
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      const el = event.target.closest('[data-promo-ga4]');
+      if (!el || typeof gtag !== 'function') return;
+      gtag('event', el.dataset.ga4Event || 'click_promo', {
+        event_category: 'promociones',
+        event_label: el.dataset.ga4Label || 'promo'
+      });
+    });
 
     function getVisibleCount() {
       return window.innerWidth < 768 ? 1 : 3;
     }
 
     function getMaxIndex(visible = visibleCount) {
-      return TOTAL - visible;
+      return Math.max(0, TOTAL - visible);
     }
 
     // Calcular el ancho de cada card dinámicamente
@@ -584,6 +755,8 @@
 
     // Init y resize
     function init() {
+      refreshOriginalCards();
+      if (!TOTAL) return;
       visibleCount = getVisibleCount();
       maxIndex = getMaxIndex(visibleCount);
       rebuildTrack();
@@ -604,11 +777,17 @@
     });
 
     // Esperar a que el DOM esté listo
+    function bootPromos() {
+      loadPromosFromTass().finally(() => {
+        init();
+        if (TOTAL) startTimer();
+      });
+    }
+
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => { init(); startTimer(); });
+      document.addEventListener('DOMContentLoaded', bootPromos);
     } else {
-      init();
-      startTimer();
+      bootPromos();
     }
   })();
   </script>
