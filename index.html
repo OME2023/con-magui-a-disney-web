@@ -476,7 +476,10 @@
     }
 
     function promoHref(item) {
-      return (item && item.cta && item.cta.url) || (item && item.slug ? 'promo.html?slug=' + encodeURIComponent(item.slug) : 'promociones.html');
+      if (item && item.slug) {
+        return 'promo.html?slug=' + encodeURIComponent(item.slug);
+      }
+      return (item && item.cta && item.cta.url) || 'promociones.html';
     }
 
     function promoGa4Attrs(item, overrideLabel) {
