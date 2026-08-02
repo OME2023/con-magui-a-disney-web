@@ -127,14 +127,22 @@
         const cleaned = String(line || '').trim();
         if (!cleaned) return false;
         if (/^[•\-\*·]/.test(cleaned) || /^\d+[\.\)]\s+/.test(cleaned)) return false;
-        if (cleaned.length > 72) return false;
-        if (/[.!?]$/.test(cleaned) && !/[?:]$/.test(cleaned)) return false;
-        const words = cleaned.split(/\s+/).filter(Boolean).length;
+        const normalized = cleaned
+          .replace(/\*\*(.+?)\*\*/g, '$1')
+          .replace(/__(.+?)__/g, '$1')
+          .replace(/\+\+(.+?)\+\+/g, '$1')
+          .replace(/\*(.+?)\*/g, '$1')
+          .trim();
+        const headingText = normalized.replace(/^[¿¡"'\-–—\s]+/, '');
+        if (!headingText) return false;
+        if (headingText.length > 72) return false;
+        if (/[.!?]$/.test(headingText) && !/[?:]$/.test(headingText)) return false;
+        const words = headingText.split(/\s+/).filter(Boolean).length;
         if (words > 10) return false;
-        if (!/^[A-ZÁÉÍÓÚÑ¿¡]/.test(cleaned)) return false;
+        if (!/^[A-ZÁÉÍÓÚÑ¿¡]/.test(headingText)) return false;
         if (!nextLine) return true;
         if (isBulletLine(nextLine)) return true;
-        if (/^[A-ZÁÉÍÓÚÑ¿¡].{0,60}[?:]$/.test(cleaned)) return true;
+        if (/^[A-ZÁÉÍÓÚÑ¿¡].{0,60}[?:]$/.test(headingText)) return true;
         return words <= 6;
       }
 
