@@ -110,14 +110,35 @@
       const slug = params.get('slug') || '';
       const endpointBase = window.PUBLIC_PROMOTIONS_API_URL || '';
 
-      function escapeHtml(value) {
-        return String(value || '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
-      }
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function sanitizeInlineHtml(text) {
+      const value = String(text || '');
+      const tokens = [
+        ['<strong>', '__TAG_STRONG_OPEN__'],
+        ['</strong>', '__TAG_STRONG_CLOSE__'],
+        ['<em>', '__TAG_EM_OPEN__'],
+        ['</em>', '__TAG_EM_CLOSE__'],
+        ['<u>', '__TAG_U_OPEN__'],
+        ['</u>', '__TAG_U_CLOSE__']
+      ];
+      let output = value;
+      tokens.forEach(([tag, token]) => {
+        output = output.replace(new RegExp(tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), token);
+      });
+      output = escapeHtml(output);
+      tokens.forEach(([tag, token]) => {
+        output = output.replaceAll(token, tag).replaceAll(token.toLowerCase(), tag);
+      });
+      return output;
+    }
 
       function isBulletLine(line) {
         return /^([•\-\*·]\s*|\d+[\.\)]\s*)/.test(line);
@@ -127,12 +148,7 @@
         const cleaned = String(line || '').trim();
         if (!cleaned) return false;
         if (/^[•\-\*·]/.test(cleaned) || /^\d+[\.\)]\s+/.test(cleaned)) return false;
-        const normalized = cleaned
-          .replace(/\*\*(.+?)\*\*/g, '$1')
-          .replace(/__(.+?)__/g, '$1')
-          .replace(/\+\+(.+?)\+\+/g, '$1')
-          .replace(/\*(.+?)\*/g, '$1')
-          .trim();
+        const normalized = cleaned.replace(/<\/?[^>]+>/g, '').trim();
         const headingText = normalized.replace(/^[¿¡"'\-–—\s]+/, '');
         if (!headingText) return false;
         if (headingText.length > 72) return false;
@@ -147,11 +163,7 @@
       }
 
       function formatInline(text) {
-        return escapeHtml(text)
-          .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-          .replace(/__(.+?)__/g, '<strong>$1</strong>')
-          .replace(/\*(.+?)\*/g, '<em>$1</em>')
-          .replace(/\+\+(.+?)\+\+/g, '<u>$1</u>');
+        return sanitizeInlineHtml(text);
       }
 
       function renderRichText(rawText) {
