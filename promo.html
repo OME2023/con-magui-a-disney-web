@@ -372,7 +372,7 @@
         if (meta) meta.setAttribute('content', detail.meta_description || stripHtml(body).slice(0, 150) || 'Promoción especial de Con Magui a Disney.');
         root.innerHTML = `
           <section class="pb-10">
-            <div class="max-w-5xl mx-auto" style="text-align:${escapeHtml(titleAlignment)};">
+            <div class="max-w-7xl mx-auto" style="text-align:${escapeHtml(titleAlignment)};">
               <p class="text-xs uppercase tracking-[0.22em] text-brandPrimary font-bold mb-3">Promoción especial</p>
               <h1 class="promo-title-${escapeHtml(titleStyle)} promo-title-${escapeHtml(titleAlignment)} text-brandText mb-4" style="color:${escapeHtml(titleColor)};">${formatInline(title)}</h1>
               ${card.validity_text ? `<p class="text-lg" style="color:${escapeHtml(detail.body_color || '#4A3240')};">${escapeHtml(card.validity_text)}</p>` : ''}
