@@ -96,23 +96,11 @@
       color: #c96b95;
     }
     .promo-lead-panel {
-      position: fixed;
-      right: clamp(1rem, 4vw, 3rem);
-      top: 9rem;
-      width: min(100%, 26rem);
-      max-height: calc(100dvh - 10rem);
+      position: sticky;
+      top: 7rem;
+      align-self: flex-start;
+      max-height: calc(100vh - 8.5rem);
       overflow-y: auto;
-      z-index: 20;
-    }
-    @media (max-width: 1279px) {
-      .promo-lead-panel {
-        position: static;
-        right: auto;
-        top: auto;
-        width: 100%;
-        max-height: none;
-        overflow: visible;
-      }
     }
   </style>
 </head>
@@ -397,7 +385,7 @@
               ${card.validity_text ? `<p class="text-lg" style="color:${escapeHtml(detail.body_color || '#4A3240')};">${escapeHtml(card.validity_text)}</p>` : ''}
             </div>
           </section>
-          <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start lg:pr-[28rem]">
+          <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             <article class="lg:col-span-8">
               ${mediaHtml(item)}
               <div class="bg-white rounded-3xl shadow-md border border-brandSecondary/30 p-7 md:p-9">
