@@ -36,6 +36,9 @@
   </script>
   <script src="assets/js/public-config.js"></script>
   <style>
+    :root {
+      --promo-lead-top: 7rem;
+    }
     .promo-title-hero {
       font-size: clamp(2.25rem, 5vw, 4.25rem);
       line-height: 1.03;
@@ -97,9 +100,9 @@
     }
     .promo-lead-panel {
       position: sticky;
-      top: 7rem;
+      top: var(--promo-lead-top, 7rem);
       align-self: flex-start;
-      max-height: calc(100vh - 8.5rem);
+      max-height: calc(100vh - var(--promo-lead-top, 7rem) - 1rem);
       overflow-y: auto;
     }
   </style>
@@ -378,7 +381,7 @@
         const meta = document.querySelector('meta[name="description"]');
         if (meta) meta.setAttribute('content', detail.meta_description || stripHtml(body).slice(0, 150) || 'Promoción especial de Con Magui a Disney.');
         root.innerHTML = `
-          <section class="pb-10">
+          <section class="pb-10" data-promo-hero-title>
             <div class="max-w-7xl mx-auto" style="text-align:${escapeHtml(titleAlignment)};">
               <p class="text-xs uppercase tracking-[0.22em] text-brandPrimary font-bold mb-3">Promoción especial</p>
               <h1 class="promo-title-${escapeHtml(titleStyle)} promo-title-${escapeHtml(titleAlignment)} text-brandText mb-4" style="color:${escapeHtml(titleColor)};">${formatInline(title)}</h1>
@@ -396,7 +399,17 @@
             <div class="lg:col-span-4">${renderLeadForm(item)}</div>
           </section>
         `;
+        updatePromoLeadOffset();
+        window.addEventListener('resize', updatePromoLeadOffset, { passive: true });
         bindLeadForm(item);
+      }
+
+      function updatePromoLeadOffset() {
+        const hero = document.querySelector('[data-promo-hero-title]');
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        const offset = Math.max(112, Math.round(rect.bottom + 24));
+        document.documentElement.style.setProperty('--promo-lead-top', `${offset}px`);
       }
 
       function bindLeadForm(item) {
