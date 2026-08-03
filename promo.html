@@ -325,7 +325,7 @@
         if (isVideo) {
           return `<video src="${escapeHtml(mediaUrl)}" class="w-full rounded-2xl shadow-lg mb-8 bg-white" autoplay muted loop playsinline controls></video>`;
         }
-        return `<img src="${escapeHtml(mediaUrl)}" alt="${escapeHtml(title)}" class="w-full rounded-2xl shadow-lg mb-8 object-cover bg-white" loading="eager">`;
+        return `<img src="${escapeHtml(mediaUrl)}" alt="${escapeHtml(title)}" class="w-full rounded-2xl shadow-lg mb-8 object-cover bg-white" loading="eager" onerror="this.closest('article')?.querySelector('.promo-secondary-media-fallback')?.remove(); this.remove();">`;
       }
 
       function renderLeadForm(item) {
@@ -383,7 +383,7 @@
               ${mediaHtml(item)}
               <div class="bg-white rounded-3xl shadow-md border border-brandSecondary/30 p-7 md:p-9">
                 <div class="promo-rich-body" style="text-align:${escapeHtml(detail.body_alignment || 'left')};color:${escapeHtml(detail.body_color || '#4A3240')};--promo-subtitle-color:${escapeHtml(subtitleColor)};--promo-subtitle-align:${escapeHtml(subtitleAlignment)};">${renderRichText(body)}</div>
-                ${detail.secondary_media_url ? `<img src="${escapeHtml(detail.secondary_media_url)}" alt="${escapeHtml(title)}" class="w-full rounded-2xl shadow mt-8 object-cover bg-white" loading="lazy">` : ''}
+                ${detail.secondary_media_url ? `<div class="promo-secondary-media-fallback"><img src="${escapeHtml(detail.secondary_media_url)}" alt="${escapeHtml(title)}" class="w-full rounded-2xl shadow mt-8 object-cover bg-white" loading="lazy" onerror="this.closest('.promo-secondary-media-fallback')?.remove();"></div>` : ''}
               </div>
             </article>
             <div class="lg:col-span-4">${renderLeadForm(item)}</div>
