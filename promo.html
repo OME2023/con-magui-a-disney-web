@@ -39,37 +39,45 @@
     .promo-title-hero {
       font-size: clamp(2.25rem, 5vw, 4.25rem);
       line-height: 1.03;
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: -0.04em;
     }
     .promo-title-standard {
       font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1.08;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: -0.03em;
     }
     .promo-title-compact {
       font-size: clamp(1.45rem, 3vw, 2.2rem);
       line-height: 1.12;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: -0.02em;
+    }
+    .promo-title-hero strong,
+    .promo-title-standard strong,
+    .promo-title-compact strong,
+    .promo-title-hero b,
+    .promo-title-standard b,
+    .promo-title-compact b {
+      font-weight: 900;
     }
     .promo-title-left { text-align: left; }
     .promo-title-center { text-align: center; }
     .promo-title-right { text-align: right; }
     .promo-rich-body {
       font-size: 1.08rem;
-      line-height: 1.9;
+      line-height: 1.64;
       letter-spacing: -0.01em;
       font-weight: 500;
       --promo-subtitle-color: inherit;
       --promo-subtitle-align: left;
     }
     .promo-body-paragraph {
-      margin: 0 0 1rem;
+      margin: 0 0 0.8rem;
     }
     .promo-body-heading {
-      margin: 1.5rem 0 0.75rem;
+      margin: 1.1rem 0 0.55rem;
       font-size: 1.35rem;
       line-height: 1.2;
       font-weight: 800;
@@ -77,7 +85,7 @@
       text-align: var(--promo-subtitle-align, left);
     }
     .promo-body-list {
-      margin: 0 0 1.1rem;
+      margin: 0 0 0.95rem;
       padding-left: 1.35rem;
       list-style: disc;
     }
@@ -110,6 +118,18 @@
       const slug = params.get('slug') || '';
       const endpointBase = window.PUBLIC_PROMOTIONS_API_URL || '';
 
+    function decodeHtmlEntities(value) {
+      const textarea = document.createElement('textarea');
+      textarea.innerHTML = String(value || '');
+      return textarea.value;
+    }
+
+    function stripHtml(value) {
+      return decodeHtmlEntities(String(value || '').replace(/<[^>]*>/g, ' '))
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
     function escapeHtml(value) {
       return String(value || '')
         .replace(/&/g, '&amp;')
@@ -120,24 +140,72 @@
     }
 
     function sanitizeInlineHtml(text) {
-      const value = String(text || '');
-      const tokens = [
-        ['<strong>', '__TAG_STRONG_OPEN__'],
-        ['</strong>', '__TAG_STRONG_CLOSE__'],
-        ['<em>', '__TAG_EM_OPEN__'],
-        ['</em>', '__TAG_EM_CLOSE__'],
-        ['<u>', '__TAG_U_OPEN__'],
-        ['</u>', '__TAG_U_CLOSE__']
-      ];
-      let output = value;
-      tokens.forEach(([tag, token]) => {
-        output = output.replace(new RegExp(tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), token);
-      });
-      output = escapeHtml(output);
-      tokens.forEach(([tag, token]) => {
-        output = output.replaceAll(token, tag).replaceAll(token.toLowerCase(), tag);
-      });
-      return output;
+      const template = document.createElement('template');
+      template.innerHTML = decodeHtmlEntities(text);
+      const inlineTags = new Set(['STRONG', 'B', 'EM', 'I', 'U']);
+      const walk = (node) => {
+        if (!node) return '';
+        if (node.nodeType === Node.TEXT_NODE) {
+          return escapeHtml(node.textContent || '');
+        }
+        if (node.nodeType !== Node.ELEMENT_NODE) {
+          return '';
+        }
+        const tag = node.tagName.toUpperCase();
+        if (tag === 'BR') return '<br>';
+        if (inlineTags.has(tag)) {
+          const normalizedTag = tag === 'B' ? 'strong' : tag === 'I' ? 'em' : tag.toLowerCase();
+          return `<${normalizedTag}>${Array.from(node.childNodes).map(walk).join('')}</${normalizedTag}>`;
+        }
+        if (tag === 'LI') {
+          return `<li>${Array.from(node.childNodes).map(walk).join('')}</li>`;
+        }
+        if (tag === 'UL' || tag === 'OL') {
+          return `<${tag.toLowerCase()}>${Array.from(node.children).map(walk).join('')}</${tag.toLowerCase()}>`;
+        }
+        if (tag === 'P' || tag === 'DIV' || tag === 'SPAN') {
+          return Array.from(node.childNodes).map(walk).join(tag === 'DIV' || tag === 'P' ? '<br>' : '');
+        }
+        return Array.from(node.childNodes).map(walk).join('');
+      };
+      return Array.from(template.content.childNodes).map(walk).join('');
+    }
+
+    function renderRichNode(node) {
+      if (!node) return '';
+      if (node.nodeType === Node.TEXT_NODE) {
+        return escapeHtml(node.textContent || '');
+      }
+      if (node.nodeType !== Node.ELEMENT_NODE) {
+        return '';
+      }
+      const tag = node.tagName.toUpperCase();
+      if (tag === 'BR') return '<br>';
+      if (tag === 'STRONG' || tag === 'B' || tag === 'EM' || tag === 'I' || tag === 'U') {
+        const normalizedTag = tag === 'B' ? 'strong' : tag === 'I' ? 'em' : tag.toLowerCase();
+        return `<${normalizedTag}>${Array.from(node.childNodes).map(renderRichNode).join('')}</${normalizedTag}>`;
+      }
+      if (tag === 'LI') {
+        return `<li>${Array.from(node.childNodes).map(renderRichNode).join('')}</li>`;
+      }
+      if (tag === 'UL' || tag === 'OL') {
+        return `<${tag.toLowerCase()} class="promo-body-list">${Array.from(node.children).map(renderRichNode).join('')}</${tag.toLowerCase()}>`;
+      }
+      if (tag === 'H1' || tag === 'H2' || tag === 'H3' || tag === 'H4' || tag === 'H5' || tag === 'H6') {
+        return `<h3 class="promo-body-heading">${Array.from(node.childNodes).map(renderRichNode).join('')}</h3>`;
+      }
+      if (tag === 'P' || tag === 'DIV') {
+        const content = Array.from(node.childNodes).map(renderRichNode).join('');
+        const plain = node.textContent.replace(/\s+/g, ' ').trim();
+        if (isHeadingLine(plain, '')) {
+          return `<h3 class="promo-body-heading">${content.replace(/<br>/g, ' ')}</h3>`;
+        }
+        return `<p class="promo-body-paragraph">${content}</p>`;
+      }
+      if (tag === 'SPAN') {
+        return Array.from(node.childNodes).map(renderRichNode).join('');
+      }
+      return Array.from(node.childNodes).map(renderRichNode).join('');
     }
 
       function isBulletLine(line) {
@@ -163,12 +231,17 @@
       }
 
       function formatInline(text) {
-        return sanitizeInlineHtml(text);
+        return sanitizeInlineHtml(decodeHtmlEntities(text));
       }
 
       function renderRichText(rawText) {
-        const text = String(rawText || '').replace(/\r\n/g, '\n').trim();
+        const text = decodeHtmlEntities(rawText).replace(/\r\n/g, '\n').trim();
         if (!text) return '';
+        if (/[<][a-z!/]/i.test(text)) {
+          const template = document.createElement('template');
+          template.innerHTML = text;
+          return Array.from(template.content.childNodes).map(renderRichNode).join('');
+        }
         const lines = text.split('\n');
         const blocks = [];
         let paragraph = [];
@@ -287,16 +360,16 @@
       function renderPage(item) {
         const card = item.card || {};
         const detail = item.detail || {};
-        const title = detail.title || card.title || 'Promoción';
-        const body = detail.body || card.summary || '';
+        const title = detail.title_html || detail.title || card.title || 'Promoción';
+        const body = detail.body_html || detail.body || card.summary || '';
         const titleStyle = ['hero', 'standard', 'compact'].includes(detail.title_style) ? detail.title_style : 'hero';
         const titleAlignment = ['left', 'center', 'right'].includes(detail.title_alignment) ? detail.title_alignment : 'left';
         const titleColor = detail.title_color || '#C56F95';
         const subtitleColor = detail.subtitle_color || detail.body_color || '#4A3240';
         const subtitleAlignment = ['left', 'center', 'right'].includes(detail.subtitle_alignment) ? detail.subtitle_alignment : (detail.body_alignment || 'left');
-        document.title = (detail.seo_title || title) + ' | Con Magui a Disney';
+        document.title = (detail.seo_title || stripHtml(title) || 'Promoción') + ' | Con Magui a Disney';
         const meta = document.querySelector('meta[name="description"]');
-        if (meta) meta.setAttribute('content', detail.meta_description || body.slice(0, 150) || 'Promoción especial de Con Magui a Disney.');
+        if (meta) meta.setAttribute('content', detail.meta_description || stripHtml(body).slice(0, 150) || 'Promoción especial de Con Magui a Disney.');
         root.innerHTML = `
           <section class="pb-10">
             <div class="max-w-5xl mx-auto text-center">
