@@ -95,6 +95,20 @@
     .promo-body-list li::marker {
       color: #c96b95;
     }
+    .promo-lead-panel {
+      position: sticky;
+      top: 7rem;
+      align-self: flex-start;
+      max-height: calc(100vh - 8.5rem);
+      overflow-y: auto;
+    }
+    @media (max-width: 1023px) {
+      .promo-lead-panel {
+        position: static;
+        max-height: none;
+        overflow: visible;
+      }
+    }
   </style>
 </head>
 <body data-page="promo-dinamica" class="bg-brandLight text-brandText">
@@ -336,7 +350,7 @@
         const summary = form.summary || 'Completá tus datos y te contactamos con una propuesta personalizada.';
         const submitLabel = form.submit_label || 'Solicitar cotización';
         return `
-          <aside class="bg-white rounded-3xl shadow-2xl overflow-hidden sticky top-28">
+          <aside class="promo-lead-panel bg-white rounded-3xl shadow-2xl overflow-hidden">
             <div class="bg-gradient-to-r from-brandPrimary to-brandAccent px-6 py-5">
               <h2 class="text-xl font-bold text-white">${escapeHtml(title)}</h2>
               <p class="text-white/85 text-sm mt-1">${escapeHtml(summary)}</p>
