@@ -399,17 +399,7 @@
             <div class="lg:col-span-4">${renderLeadForm(item)}</div>
           </section>
         `;
-        updatePromoLeadOffset();
-        window.addEventListener('resize', updatePromoLeadOffset, { passive: true });
         bindLeadForm(item);
-      }
-
-      function updatePromoLeadOffset() {
-        const hero = document.querySelector('[data-promo-hero-title]');
-        if (!hero) return;
-        const rect = hero.getBoundingClientRect();
-        const offset = Math.max(112, Math.round(rect.bottom + 24));
-        document.documentElement.style.setProperty('--promo-lead-top', `${offset}px`);
       }
 
       function bindLeadForm(item) {
