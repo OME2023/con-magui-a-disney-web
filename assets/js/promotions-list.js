@@ -1,5 +1,5 @@
 (function () {
-  const grid = document.getElementById('tassPromotionsGrid');
+  const grid = document.getElementById('promotionsGrid');
   const endpoint = window.PUBLIC_PROMOTIONS_API_URL;
   if (!grid || !endpoint) return;
 
@@ -90,8 +90,7 @@
       const items = (Array.isArray(payload.items) ? payload.items : [])
         .filter((item) => item && item.slug && !known.has(item.slug));
       if (!items.length) return;
-      grid.innerHTML = items.map(renderCard).join('');
-      grid.hidden = false;
+      grid.insertAdjacentHTML('beforeend', items.map(renderCard).join(''));
     })
     .catch((error) => console.warn('[promociones] no se pudieron sumar publicaciones de TASS', error));
 })();
