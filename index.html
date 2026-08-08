@@ -567,8 +567,8 @@
         : 'block text-center bg-gradient-to-r from-brandPrimary to-brandAccent text-white py-3 rounded-full font-semibold hover:shadow-lg transition';
       return `
         <article class="promo-card bg-brandSurface rounded-2xl shadow-md overflow-hidden flex flex-col flex-shrink-0 hover:shadow-xl transition transform hover:-translate-y-1">
-          <div class="h-52 overflow-hidden ${isHalloween ? 'relative' : ''}">
-            ${mediaMarkup(item, 'w-full h-full object-cover', card.title, true)}
+          <div class="h-52 overflow-hidden bg-[#f8efe8] ${isHalloween ? 'relative' : ''}">
+            ${mediaMarkup(item, 'w-full h-full object-contain', card.title, true)}
             ${isHalloween ? '<div class="absolute top-3 left-3"><span class="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">🎃 Disney Halloween</span></div>' : ''}
           </div>
           <div class="p-6 flex flex-col flex-1">
