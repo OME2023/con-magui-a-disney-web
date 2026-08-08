@@ -263,12 +263,14 @@
         </div>
 
         </article>
-        <!-- SOLD OUT overlay — fuera del overflow:hidden -->
-        <img
-          src="assets/img/ppal/sold-out-neon.gif"
-          alt="Sold Out"
-          style="position:absolute;top:45%;left:30%;transform:translate(-50%,-50%) rotate(-18deg);width:380px;z-index:9999;pointer-events:none;"
-        />
+        <!-- SOLD OUT overlay — neón CSS -->
+        <div style="position:absolute;top:42%;left:30%;transform:translate(-50%,-50%) rotate(-18deg);z-index:10;pointer-events:none;text-align:center;line-height:1;">
+          <div style="font-family:'Arial Black',sans-serif;font-size:3.8rem;font-weight:900;letter-spacing:.08em;color:#ff1a1a;text-shadow:0 0 6px #fff,0 0 12px #fff,0 0 25px #ff1a1a,0 0 50px #ff1a1a,0 0 80px #ff1a1a,0 0 110px #ff1a1a;animation:neon-flicker 2.5s infinite;border:4px solid #ff1a1a;border-radius:12px;padding:10px 28px;box-shadow:0 0 18px #ff1a1a,inset 0 0 18px rgba(255,26,26,.15);">SOLD</div>
+          <div style="font-family:'Arial Black',sans-serif;font-size:3.8rem;font-weight:900;letter-spacing:.08em;color:#ff1a1a;text-shadow:0 0 6px #fff,0 0 12px #fff,0 0 25px #ff1a1a,0 0 50px #ff1a1a,0 0 80px #ff1a1a,0 0 110px #ff1a1a;animation:neon-flicker 2.5s infinite .4s;border:4px solid #ff1a1a;border-radius:12px;padding:10px 28px;margin-top:6px;box-shadow:0 0 18px #ff1a1a,inset 0 0 18px rgba(255,26,26,.15);">OUT</div>
+        </div>
+        <style>
+          @keyframes neon-flicker{0%,18%,22%,25%,53%,57%,100%{text-shadow:0 0 6px #fff,0 0 12px #fff,0 0 25px #ff1a1a,0 0 50px #ff1a1a,0 0 80px #ff1a1a,0 0 110px #ff1a1a;box-shadow:0 0 18px #ff1a1a,inset 0 0 18px rgba(255,26,26,.15);}20%,24%,55%{text-shadow:none;box-shadow:none;}}
+        </style>
       </div>
 
       <!-- Carrusel wrapper -->
