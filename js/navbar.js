@@ -189,6 +189,13 @@ const ICONS = {
     <circle cx="5.5" cy="8" r="1" fill="#C9A24A"/>
     <circle cx="18.5" cy="8" r="1" fill="#C9A24A"/>
   </svg>`,
+  // Grupo / viajes grupales
+  group: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="3" fill="#C56F95"/>
+    <circle cx="16" cy="8" r="3" fill="#C9A24A"/>
+    <path d="M3.5 20c0-2.8 2.7-5 6-5s6 2.2 6 5H3.5z" fill="#C56F95"/>
+    <path d="M12.5 20c0-2.8 2.1-5 4.7-5 2.6 0 4.8 2.2 4.8 5h-9.5z" fill="#C9A24A"/>
+  </svg>`,
   // Personas / quiénes somos
   people: `<svg class="nav-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="9" cy="7" r="3" fill="#C56F95"/>
@@ -276,6 +283,21 @@ ${NAVBAR_STYLES}
         </div>
       </div>
 
+      <!-- Viajes grupales -->
+      <div class="nav-dropdown">
+        <button type="button" data-nav="grupal"
+          class="nav-link inline-flex items-center gap-2 text-gray-700 hover:text-brandPrimary transition font-medium">
+          ${ICONS.group}
+          <span class="nav-label">Viajes grupales</span>
+          <svg class="w-3 h-3 opacity-50 mt-0.5" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="nav-dropdown-panel">
+          <a class="menu-link" href="grupal-juntas.html#grupo"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="2.5" fill="#C56F95"/><circle cx="13" cy="7" r="2.5" fill="#C9A24A"/><path d="M3.5 16.5c0-2.3 2-4 4.5-4s4.5 1.7 4.5 4H3.5z" fill="#C56F95"/><path d="M10.5 16.5c0-2.3 1.7-4 4-4s4 1.7 4 4h-8z" fill="#C9A24A"/></svg>Programa grupal</a>
+          <a class="menu-link" href="grupal-juntas.html#inversion"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.4H17l-4.4 3.2 1.7 5.4L10 13.1 5.7 16 7.4 10.6 3 7.4h5.2z" fill="#C9A24A"/></svg>Inversión</a>
+          <a class="menu-link" href="grupal-juntas.html#preguntas"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="#C56F95"/><path d="M10 6.5c-1 0-2 .8-2 1.8h1.5c0-.4.2-.5.5-.5.4 0 .6.2.6.5 0 .3-.2.5-.8.9C9.2 9.6 9 10.1 9 10.8h1.5c0-.4.1-.6.7-1 .7-.5 1.3-1 1.3-2 0-1.1-.9-1.8-2.5-1.8v-.5z" fill="white"/><circle cx="10" cy="13.5" r="0.8" fill="white"/></svg>Preguntas frecuentes</a>
+        </div>
+      </div>
+
       <!-- Quiénes Somos -->
       <a data-nav="quienes" href="quienes-somos.html"
         class="nav-link inline-flex items-center gap-2 text-gray-700 hover:text-brandPrimary transition font-medium">
@@ -358,6 +380,15 @@ ${NAVBAR_STYLES}
       <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="quinceaneras.html#paquetes"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><rect x="3" y="8" width="14" height="10" rx="1.5" fill="#C56F95"/><path d="M7 8V6a3 3 0 016 0v2" stroke="#C9A24A" stroke-width="1.5" stroke-linecap="round"/></svg>Paquetes</a>
       <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="quinceaneras.html#faqs"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="#C56F95"/><path d="M10 6.5c-1 0-2 .8-2 1.8h1.5c0-.4.2-.5.5-.5.4 0 .6.2.6.5 0 .3-.2.5-.8.9C9.2 9.6 9 10.1 9 10.8h1.5c0-.4.1-.6.7-1 .7-.5 1.3-1 1.3-2 0-1.1-.9-1.8-2.5-1.8v-.5z" fill="white"/><circle cx="10" cy="13.5" r="0.8" fill="white"/></svg>FAQs</a>
       <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="quinceaneras.html#lead-magnet"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><rect x="4" y="3" width="12" height="14" rx="2" fill="#E1A9C2"/><path d="M7 7h6M7 10h6M7 13h4" stroke="#C56F95" stroke-width="1.3" stroke-linecap="round"/></svg>Inscripción</a>
+    </div>
+
+    <button type="button" class="mobile-dd-toggle w-full text-left py-2.5 font-semibold text-gray-700 flex items-center gap-2" data-target="mobileGroupMenu">
+      ${ICONS.group} Viajes grupales ▾
+    </button>
+    <div id="mobileGroupMenu" class="hidden pl-4 pb-2 space-y-1">
+      <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="grupal-juntas.html#grupo"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="2.5" fill="#C56F95"/><circle cx="13" cy="7" r="2.5" fill="#C9A24A"/><path d="M3.5 16.5c0-2.3 2-4 4.5-4s4.5 1.7 4.5 4H3.5z" fill="#C56F95"/><path d="M10.5 16.5c0-2.3 1.7-4 4-4s4 1.7 4 4h-8z" fill="#C9A24A"/></svg>Programa grupal</a>
+      <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="grupal-juntas.html#inversion"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.4H17l-4.4 3.2 1.7 5.4L10 13.1 5.7 16 7.4 10.6 3 7.4h5.2z" fill="#C9A24A"/></svg>Inversión</a>
+      <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="grupal-juntas.html#preguntas"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="#C56F95"/><path d="M10 6.5c-1 0-2 .8-2 1.8h1.5c0-.4.2-.5.5-.5.4 0 .6.2.6.5 0 .3-.2.5-.8.9C9.2 9.6 9 10.1 9 10.8h1.5c0-.4.1-.6.7-1 .7-.5 1.3-1 1.3-2 0-1.1-.9-1.8-2.5-1.8v-.5z" fill="white"/><circle cx="10" cy="13.5" r="0.8" fill="white"/></svg>Preguntas frecuentes</a>
     </div>
 
     <a data-nav="quienes" href="quienes-somos.html" class="mobile-link flex items-center gap-2 py-2.5 text-gray-700 font-medium border-t border-gray-100">
@@ -460,6 +491,7 @@ function markActivePage() {
     const p = window.location.pathname;
     if (p.includes("quienes-somos"))        page = "quienes";
     else if (p.includes("quinceaneras"))     page = "quince";
+    else if (p.includes("grupal-juntas"))    page = "grupal";
     else if (p.includes("trabaja-con-nos")) page = "trabaja";
     else if (p.includes("guia-primer-viaje-disney")) page = "guia";
     else                                     page = "home";

@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Con Magui a Disney | Travel Planner Especializada</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   
   <!-- Google tag (gtag.js) -->
@@ -31,6 +30,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles/style.css" />
+
   <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/icons/favicon-96x96.png">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
@@ -67,6 +67,7 @@
     ]
   }
   </script>
+
 </head>
 
   <body data-page="home" class="bg-brandLight text-brandText">
@@ -874,10 +875,54 @@
       <p class="text-xs text-gray-400 mt-3">✔ Sin compromiso &nbsp;·&nbsp; ✔ Respuesta en el día &nbsp;·&nbsp; ✔ Asesoría gratuita</p>
     </div>
   </div>
-</section>
+  </section>
+
+  <!-- Viajes grupales -->
+<!-- Viajes Grupales -->
+<style>
+.vg-section{position:relative;padding:130px 0 100px;min-height:820px;display:flex;align-items:center;overflow:hidden;isolation:isolate;}
+.vg-section .vg-bg{position:absolute;inset:0;z-index:-2;}
+.vg-section .vg-bg img{width:100%;height:100%;object-fit:cover;object-position:58% 72%;}
+.vg-section::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(880px 700px at 27% 46%,rgba(252,245,238,.97) 0%,rgba(252,245,238,.88) 30%,rgba(252,245,238,.55) 54%,rgba(252,245,238,.15) 74%,transparent 88%),linear-gradient(180deg,rgba(252,245,238,.22) 0%,rgba(252,245,238,.06) 40%,rgba(252,245,238,.18) 100%);}
+.vg-section .vg-inner{max-width:600px;position:relative;}
+.vg-pill{display:inline-block;font-size:1.25rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#C41E4D,#7a1030);border:none;padding:16px 36px;border-radius:999px;box-shadow:0 10px 30px -6px rgba(196,30,77,.6);margin-bottom:28px;}
+.vg-section .vg-inner h2{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:clamp(2.1rem,4.4vw,3rem);color:#1E2A44;line-height:1.16;margin:0 0 18px;}
+.vg-section .vg-inner h2 em{font-family:'Meow Script',cursive;color:#C41E4D;font-weight:400;font-size:1.2em;font-style:normal;}
+.vg-section .vg-inner p{font-size:1.06rem;color:#3E4C6B;margin:0 0 30px;line-height:1.65;}
+.vg-btn{display:inline-flex;align-items:center;gap:10px;padding:17px 36px;border-radius:999px;font-weight:600;font-size:1rem;background:linear-gradient(135deg,#C41E4D,#921538);color:#fff;text-decoration:none;animation:vgPulse 2.6s ease-in-out infinite;}
+@keyframes vgPulse{0%,100%{box-shadow:0 14px 28px -10px rgba(196,30,77,.55),0 0 0 0 rgba(196,30,77,.5);}50%{box-shadow:0 14px 30px -8px rgba(196,30,77,.65),0 0 0 9px rgba(196,30,77,0);}}
+.vg-trust{display:flex;flex-wrap:wrap;gap:22px;margin-top:32px;}
+.vg-trust span{display:flex;align-items:center;gap:8px;font-size:.85rem;color:#3E4C6B;font-weight:500;}
+.vg-trust svg{width:18px;height:18px;color:#C41E4D;flex-shrink:0;}
+@media(max-width:900px){.vg-section{min-height:auto;padding:90px 0 80px;}.vg-section .vg-bg img{object-position:55% 76%;}}
+</style>
+  <section id="viajes-grupales" class="vg-section">
+    <div class="vg-bg">
+      <img src="assets/img/ppal/grupal-hub-bg.jpg" alt="Grupo viajando con Magui a Disney y Universal" loading="eager">
+    </div>
+    <div style="max-width:1180px;margin:0 auto;padding:0 24px;width:100%;position:relative;z-index:1;">
+      <div class="vg-inner">
+        <span class="vg-pill">Viajes grupales · Disney &amp; Universal</span>
+        <h2>Viajá acompañada,<br>con todo resuelto <em>desde<br>el primer día</em></h2>
+        <p>Una experiencia pensada para amigas, mamás e hijas, hermanas, primas o familias que quieren viajar en grupo con organización real, respaldo y acompañamiento personalizado — no un contingente más.</p>
+        <div>
+          <a href="grupal-juntas.html" class="vg-btn">Ver viajes grupales →</a>
+        </div>
+        <div class="vg-trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 3.5 1.2 4 2.5C10.5 5.2 12 4 14 4c4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>Grupos reducidos</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>Magui viaja con ustedes</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Quinceaneras VIP -->
-<section id="quinceaneras" class="py-24 px-4 bg-[radial-gradient(circle_at_20%_25%,#4a3136_0%,#2f232c_45%,#251c22_100%)]">
+<section id="quinceaneras" class="py-24 px-4" style="position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="assets/img/ppal/magic-queens-bg.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(74,49,54,.92) 0%,rgba(47,35,44,.88) 50%,rgba(37,27,34,.90) 100%);"></div>
+  </div>
+  <div style="position:relative;z-index:1;">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12">
       <p class="inline-block text-sm font-semibold tracking-[0.04em] bg-[#3b2a33] text-[#cf8f99] px-5 py-2 rounded-full mb-5 border border-[#7a5d46]/40">
@@ -887,7 +932,7 @@
 
 
       <h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#f6efe9] leading-tight">
-        La experiencia de tus 15 en Disney & Universal junto a tus amigas
+        Y si pensabas ir en tus XV a Disney sola con tus amigas este es el plan ideal
       </h2>
 
       <p class="text-lg text-[#ddcfc3] max-w-3xl mx-auto">
@@ -932,6 +977,7 @@
         Ver programa completo
       </a>
     </div>
+  </div>
   </div>
 </section>
 
