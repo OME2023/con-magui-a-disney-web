@@ -162,7 +162,7 @@
       <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Las mejores novedades y ofertas del momento para tu viaje a Disney y Universal. ¡No te las pierdas!</p>
 
       <!-- Novedad destacada 2027 -->
-      <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40">
+      <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40 relative">
         <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-stretch">
           <a
             href="novedad-paquetes-disney-2027.html"
@@ -211,7 +211,8 @@
       </article>
 
       <!-- Novedad destacada Navidad -->
-      <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40">
+      <div style="position:relative;">
+        <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40">
         <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-stretch">
           <a
             href="navidad-orlando-2026.html"
@@ -233,6 +234,7 @@
                 Navidad en Disney
               </span>
             </div>
+
           </a>
 
           <div class="p-7 md:p-10 flex flex-col justify-center">
@@ -259,7 +261,15 @@
             </a>
           </div>
         </div>
-      </article>
+
+        </article>
+        <!-- SOLD OUT overlay — fuera del overflow:hidden -->
+        <img
+          src="assets/img/ppal/sold-out-neon.gif"
+          alt="Sold Out"
+          style="position:absolute;top:45%;left:30%;transform:translate(-50%,-50%) rotate(-18deg);width:380px;z-index:9999;pointer-events:none;"
+        />
+      </div>
 
       <!-- Carrusel wrapper -->
       <div class="relative" id="promoCarousel">
@@ -516,7 +526,7 @@
       const ctaLabel = meta.ctaLabel || (item.cta && item.cta.label) || 'Ver Oferta';
       const bullets = Array.isArray(meta.bullets) ? meta.bullets : [];
       return `
-        <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40">
+        <article class="mb-12 overflow-hidden rounded-[2rem] bg-brandSurface shadow-xl border border-brandSecondary/40 relative">
           <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] items-stretch">
             <a
               href="${escapeHtml(href)}"
