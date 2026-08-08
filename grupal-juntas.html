@@ -1825,6 +1825,10 @@ footer{ background:var(--navy); color:rgba(255,251,246,.7); padding:60px 0 26px;
 (function () {
   'use strict';
 
+  /* Forzar scroll al top al cargar la página */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
   /* ---------- NAV: scroll state ---------- */
   var nav = document.getElementById('nav');
   var onScroll = function () {
