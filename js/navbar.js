@@ -292,7 +292,7 @@ ${NAVBAR_STYLES}
           <svg class="w-3 h-3 opacity-50 mt-0.5" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
         <div class="nav-dropdown-panel">
-          <a class="menu-link" href="grupal-juntas.html#grupo"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="2.5" fill="#C56F95"/><circle cx="13" cy="7" r="2.5" fill="#C9A24A"/><path d="M3.5 16.5c0-2.3 2-4 4.5-4s4.5 1.7 4.5 4H3.5z" fill="#C56F95"/><path d="M10.5 16.5c0-2.3 1.7-4 4-4s4 1.7 4 4h-8z" fill="#C9A24A"/></svg>Programa grupal</a>
+          <a class="menu-link" href="grupal-juntas.html"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="2.5" fill="#C56F95"/><circle cx="13" cy="7" r="2.5" fill="#C9A24A"/><path d="M3.5 16.5c0-2.3 2-4 4.5-4s4.5 1.7 4.5 4H3.5z" fill="#C56F95"/><path d="M10.5 16.5c0-2.3 1.7-4 4-4s4 1.7 4 4h-8z" fill="#C9A24A"/></svg>Programa grupal</a>
           <a class="menu-link" href="grupal-juntas.html#inversion"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.4H17l-4.4 3.2 1.7 5.4L10 13.1 5.7 16 7.4 10.6 3 7.4h5.2z" fill="#C9A24A"/></svg>Inversión</a>
           <a class="menu-link" href="grupal-juntas.html#preguntas"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="#C56F95"/><path d="M10 6.5c-1 0-2 .8-2 1.8h1.5c0-.4.2-.5.5-.5.4 0 .6.2.6.5 0 .3-.2.5-.8.9C9.2 9.6 9 10.1 9 10.8h1.5c0-.4.1-.6.7-1 .7-.5 1.3-1 1.3-2 0-1.1-.9-1.8-2.5-1.8v-.5z" fill="white"/><circle cx="10" cy="13.5" r="0.8" fill="white"/></svg>Preguntas frecuentes</a>
         </div>
@@ -386,7 +386,7 @@ ${NAVBAR_STYLES}
       ${ICONS.group} Viajes grupales ▾
     </button>
     <div id="mobileGroupMenu" class="hidden pl-4 pb-2 space-y-1">
-      <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="grupal-juntas.html#grupo"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="2.5" fill="#C56F95"/><circle cx="13" cy="7" r="2.5" fill="#C9A24A"/><path d="M3.5 16.5c0-2.3 2-4 4.5-4s4.5 1.7 4.5 4H3.5z" fill="#C56F95"/><path d="M10.5 16.5c0-2.3 1.7-4 4-4s4 1.7 4 4h-8z" fill="#C9A24A"/></svg>Programa grupal</a>
+      <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="grupal-juntas.html"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="2.5" fill="#C56F95"/><circle cx="13" cy="7" r="2.5" fill="#C9A24A"/><path d="M3.5 16.5c0-2.3 2-4 4.5-4s4.5 1.7 4.5 4H3.5z" fill="#C56F95"/><path d="M10.5 16.5c0-2.3 1.7-4 4-4s4 1.7 4 4h-8z" fill="#C9A24A"/></svg>Programa grupal</a>
       <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="grupal-juntas.html#inversion"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.4H17l-4.4 3.2 1.7 5.4L10 13.1 5.7 16 7.4 10.6 3 7.4h5.2z" fill="#C9A24A"/></svg>Inversión</a>
       <a class="mobile-link flex items-center gap-2 py-1.5 text-gray-600" href="grupal-juntas.html#preguntas"><svg class="menu-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" fill="#C56F95"/><path d="M10 6.5c-1 0-2 .8-2 1.8h1.5c0-.4.2-.5.5-.5.4 0 .6.2.6.5 0 .3-.2.5-.8.9C9.2 9.6 9 10.1 9 10.8h1.5c0-.4.1-.6.7-1 .7-.5 1.3-1 1.3-2 0-1.1-.9-1.8-2.5-1.8v-.5z" fill="white"/><circle cx="10" cy="13.5" r="0.8" fill="white"/></svg>Preguntas frecuentes</a>
     </div>
