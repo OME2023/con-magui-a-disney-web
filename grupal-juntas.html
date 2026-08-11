@@ -219,9 +219,19 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .hero__eyebrow{ margin-bottom:22px; }
 .hero__title{ font-size:clamp(2.3rem, 5.2vw, 3.9rem); color:var(--white); }
+.hero__title{ max-width:780px; margin-left:auto; margin-right:auto; text-align:center; }
 .hero__title .script{ font-size:1.15em; display:inline-block; }
-.hero__lede{ margin-top:26px; font-size:1.14rem; color:rgba(255,251,246,.88); max-width:520px; }
-.hero__cta{ display:flex; flex-wrap:wrap; gap:16px; margin-top:36px; }
+.hero__lede{ display:none; }
+.hero__cta{ display:flex; flex-wrap:wrap; gap:16px; margin-top:36px; justify-content:center; }
+.hero__cta .btn-primary{
+  background:linear-gradient(135deg, var(--crimson), #d92e5e);
+  color:var(--white);
+  box-shadow:0 16px 30px -12px rgba(196,30,77,.68);
+  border-color:transparent;
+  min-width:230px;
+}
+.hero__cta .btn-primary:hover{ box-shadow:0 20px 34px -14px rgba(196,30,77,.8); }
+.hero__cta .btn-outline{ display:none; }
 .hero__trust{ display:flex; flex-wrap:wrap; gap:26px; margin-top:44px; }
 .trust-item{ display:flex; align-items:center; gap:10px; font-size:.86rem; color:rgba(255,251,246,.86); font-weight:500; }
 .trust-item--urgent{ color:var(--gold-light); font-weight:700; }
@@ -265,8 +275,8 @@ button{ font-family:inherit; cursor:pointer; }
   position:absolute;
   inset:0;
   background:
-    linear-gradient(90deg, rgba(15,20,35,.72) 0%, rgba(15,20,35,.34) 44%, rgba(15,20,35,.18) 72%, rgba(15,20,35,.40) 100%),
-    linear-gradient(180deg, rgba(15,20,35,.14) 0%, rgba(15,20,35,.42) 72%, rgba(15,20,35,.70) 100%);
+    linear-gradient(90deg, rgba(15,20,35,.42) 0%, rgba(15,20,35,.18) 44%, rgba(15,20,35,.08) 72%, rgba(15,20,35,.28) 100%),
+    linear-gradient(180deg, rgba(15,20,35,.08) 0%, rgba(15,20,35,.22) 72%, rgba(15,20,35,.46) 100%);
   pointer-events:none;
   z-index:1;
 }
@@ -282,6 +292,7 @@ button{ font-family:inherit; cursor:pointer; }
   object-fit:cover;
   object-position:center center;
   display:block;
+  filter:brightness(1.22) contrast(1.06) saturate(1.05);
   background:
     radial-gradient(900px 500px at 50% 30%, rgba(255,255,255,.08), transparent 60%),
     linear-gradient(180deg, #18233c 0%, #0f1627 100%);
