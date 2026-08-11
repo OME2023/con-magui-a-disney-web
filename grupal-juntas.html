@@ -186,7 +186,7 @@ button{ font-family:inherit; cursor:pointer; }
 /* ---------- HERO ---------- */
 .hero{
   position:relative; min-height:100svh; display:flex; align-items:center;
-  padding:150px 0 90px; overflow:hidden;
+  padding:150px 0 32px; overflow:hidden;
   background:
     radial-gradient(1200px 700px at 82% -10%, rgba(196,30,77,.10), transparent 60%),
     radial-gradient(900px 600px at 5% 110%, rgba(15,20,35,.30), transparent 58%),
@@ -202,15 +202,7 @@ button{ font-family:inherit; cursor:pointer; }
   min-height:100svh;
 }
 .hero::after{
-  content:'';
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:180px;
-  background:linear-gradient(180deg, rgba(15,20,35,0) 0%, rgba(15,20,35,.36) 46%, rgba(15,20,35,.84) 100%);
-  pointer-events:none;
-  z-index:0;
+  content:none;
 }
 .hero__grid{
   position:relative;
@@ -218,9 +210,16 @@ button{ font-family:inherit; cursor:pointer; }
   min-height:100svh;
 }
 .hero__eyebrow{ margin-bottom:22px; }
-.hero__title{ font-size:clamp(2.3rem, 5.2vw, 3.9rem); color:var(--white); }
-.hero__title{ max-width:780px; margin-left:auto; margin-right:auto; text-align:center; }
-.hero__title .script{ font-size:1.15em; display:inline-block; }
+.hero__title{
+  font-size:clamp(2.8rem, 6vw, 4.75rem);
+  color:var(--white);
+  max-width:680px;
+  margin:0 auto;
+  text-align:center;
+  line-height:.92;
+  letter-spacing:-.02em;
+}
+.hero__title .script{ font-size:1.12em; display:inline-block; }
 .hero__lede{ display:none; }
 .hero__cta{ display:flex; flex-wrap:wrap; gap:16px; margin-top:36px; justify-content:center; }
 .hero__cta .btn-primary{
@@ -231,7 +230,6 @@ button{ font-family:inherit; cursor:pointer; }
   min-width:230px;
 }
 .hero__cta .btn-primary:hover{ box-shadow:0 20px 34px -14px rgba(196,30,77,.8); }
-.hero__cta .btn-outline{ display:none; }
 .hero__trust{ display:flex; flex-wrap:wrap; gap:26px; margin-top:44px; }
 .trust-item{ display:flex; align-items:center; gap:10px; font-size:.86rem; color:rgba(255,251,246,.86); font-weight:500; }
 .trust-item--urgent{ color:var(--gold-light); font-weight:700; }
@@ -275,8 +273,8 @@ button{ font-family:inherit; cursor:pointer; }
   position:absolute;
   inset:0;
   background:
-    linear-gradient(90deg, rgba(15,20,35,.42) 0%, rgba(15,20,35,.18) 44%, rgba(15,20,35,.08) 72%, rgba(15,20,35,.28) 100%),
-    linear-gradient(180deg, rgba(15,20,35,.08) 0%, rgba(15,20,35,.22) 72%, rgba(15,20,35,.46) 100%);
+    linear-gradient(90deg, rgba(15,20,35,.22) 0%, rgba(15,20,35,.08) 44%, rgba(15,20,35,.02) 72%, rgba(15,20,35,.16) 100%),
+    linear-gradient(180deg, rgba(15,20,35,.02) 0%, rgba(15,20,35,.12) 72%, rgba(15,20,35,.28) 100%);
   pointer-events:none;
   z-index:1;
 }
@@ -292,7 +290,7 @@ button{ font-family:inherit; cursor:pointer; }
   object-fit:cover;
   object-position:center center;
   display:block;
-  filter:brightness(1.22) contrast(1.06) saturate(1.05);
+  filter:brightness(1.38) contrast(1.12) saturate(1.08);
   background:
     radial-gradient(900px 500px at 50% 30%, rgba(255,255,255,.08), transparent 60%),
     linear-gradient(180deg, #18233c 0%, #0f1627 100%);
@@ -319,7 +317,18 @@ section{ padding:96px 0; position:relative; }
 
 /* ---------- PROBLEM ---------- */
 /* ---------- PROBLEM HERO (foto de fondo + tarjetas vidrio) ---------- */
-.problem-hero{ position:relative; padding:100px 0; isolation:isolate; overflow:hidden; }
+.problem-hero{ position:relative; padding:148px 0 100px; margin-top:-96px; isolation:isolate; overflow:hidden; }
+.problem-hero::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:-1px;
+  height:96px;
+  background:linear-gradient(180deg, rgba(15,20,35,.94) 0%, rgba(15,20,35,.55) 45%, rgba(15,20,35,0) 100%);
+  pointer-events:none;
+  z-index:-1;
+}
 .problem-hero__bg{ position:absolute; inset:0; z-index:-2; }
 .problem-hero__bg img{ width:100%; height:100%; object-fit:cover; object-position:50% 25%; }
 .problem-hero::before{ content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(175deg, rgba(20,15,35,.68) 0%, rgba(35,15,35,.78) 55%, rgba(15,20,35,.9) 100%); }
@@ -888,13 +897,8 @@ footer{ background:var(--navy); color:rgba(255,251,246,.7); padding:60px 0 26px;
           No hace falta animarse a ir <em>sola.</em><br>
           Hay un grupo esperando para <span class="script sparkle">vivirlo con vos.</span>
         </h1>
-        <p class="hero__lede">
-          12 noches entre Magic Kingdom, EPCOT, Hollywood Studios, Animal Kingdom y los parques de Universal. Una experiencia boutique, acompañada personalmente por Magui de principio a fin — pensada para mamás, abuelas, primas, amigas o familias completas.
-        </p>
-
         <div class="hero__cta">
-          <a href="https://wa.me/5493834319891?text=Hola%20Magui%2C%20quiero%20ser%20parte%20del%20viaje%20grupal" class="btn btn-primary btn-primary--pulse">Quiero ser parte</a>
-          <a href="#itinerario" class="btn btn-outline">Conocer la experiencia</a>
+          <a href="#itinerario" class="btn btn-primary btn-primary--pulse">Conocer la experiencia</a>
         </div>
 
         <div class="hero__trust">
@@ -923,7 +927,7 @@ footer{ background:var(--navy); color:rgba(255,251,246,.7); padding:60px 0 26px;
 
   <!-- ============ PROBLEMA / IDENTIFICACIÓN ============ -->
   <section class="problem-hero" id="problema">
-    <div class="problem-hero__bg"><img src="assets/img/grupal/imagen-juntas-seccion-2.jpg" alt="Mamá e hija caminando de espaldas hacia el castillo al atardecer"></div>
+    <div class="problem-hero__bg"><img src="assets/img/grupal/Sección 2.PNG" alt="Mamá e hija caminando de espaldas hacia el castillo al atardecer"></div>
     <div class="container">
       <div class="section-kicker reveal">
         <span class="heart-mark" style="color:var(--gold-light);">♡</span>
